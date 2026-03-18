@@ -22,6 +22,8 @@ Build a bilingual (Traditional Chinese + English) landing page for the Keyly iOS
 | `keylyapp.com/terms/` | 繁中服務條款 |
 | `keylyapp.com/terms/en/` | English Terms of Service |
 
+**Note on URL depth:** zh-TW legal pages sit at `/privacy/` and `/terms/` (2 levels), while EN legal pages sit at `/privacy/en/` and `/terms/en/` (3 levels). This asymmetry is intentional and consistent with the pattern where root = zh-TW default and `/en/` is the EN variant.
+
 ---
 
 ## Tech Stack
@@ -48,13 +50,15 @@ keyly-website/
 │   ├── index.html              # 繁中服務條款
 │   └── en/
 │       └── index.html          # English terms of service
+├── 404.html                    # Custom 404 page: brand gradient bg, "找不到頁面 / Page Not Found" message, link back to /
 ├── assets/
 │   ├── css/
 │   │   └── style.css           # Shared styles
 │   ├── js/
-│   │   └── main.js             # Scroll animations, interactions
+│   │   └── main.js             # Intersection Observer fade-in on .animate elements; no other logic
 │   └── images/
-│       └── icon.png            # App icon (from Keyly project assets)
+│       ├── icon.png            # App icon 1024×1024 (from Keyly project assets)
+│       └── og-banner.png       # OG image 1200×630 for social sharing
 ├── CNAME                       # keylyapp.com
 ├── sitemap.xml                 # All 6 URLs for Google indexing
 └── robots.txt                  # Allow all crawlers, point to sitemap
@@ -69,9 +73,10 @@ keyly-website/
 - 繁中 tagline: 「AI 加持的注音鍵盤，完全在你的裝置上」
 - EN tagline: "The AI-powered Zhuyin keyboard. Fully on-device."
 - Sub-headline highlighting: privacy, offline processing, Apple Intelligence
-- Primary CTA button: 「即將推出，敬請期待」/ "Coming Soon" (disabled state)
+- Primary CTA button: 「即將推出，敬請期待」/ "Coming Soon"
+  - Implemented as `<a>` with `aria-disabled="true"` + `cursor: not-allowed` style (not `<button disabled>`, to remain focusable and accessible)
   - Will be replaced with TestFlight link, then App Store link
-- Language toggle: EN / 中文
+- Language toggle: EN / 中文 — simple links to sibling URL (`/` ↔ `/en/`)
 
 ### 2. Feature Cards (3 cards)
 | Icon | 繁中 | English |
@@ -88,7 +93,10 @@ keyly-website/
 ### 4. Footer
 - Copyright notice
 - Links: 隱私政策 / Privacy Policy, 服務條款 / Terms of Service
-- Language toggle
+- Language toggle — links to sibling URL:
+  - `/` ↔ `/en/` (landing pages)
+  - `/privacy/` ↔ `/privacy/en/` (privacy pages)
+  - `/terms/` ↔ `/terms/en/` (terms pages) (links to sibling URL)
 
 ---
 
@@ -110,15 +118,20 @@ keyly-website/
 ### Style
 - **Dark background** with `#0D142E → #331A66` diagonal gradient
 - **Brand gradient** (cyan → purple) for CTA buttons, highlights, card borders
-- **Scroll animations** — fade-in on enter viewport (Intersection Observer)
+- **Scroll animations** — fade-in on enter viewport via Intersection Observer on `.animate` elements
 - **Vibrant modern** feel with vivid gradients and dynamic elements
 - Mobile-first responsive design
+- Favicon: `<link rel="icon" href="/assets/images/icon.png">` (1024×1024 PNG, all pages)
 
 ---
 
 ## SEO
 
 ### Per-page Meta Tags
+
+Every page includes both a `canonical` tag and bidirectional `hreflang` tags for its zh-TW / EN pair.
+
+**Landing page (繁中):**
 ```html
 <title>Keyly - AI 注音鍵盤 | 隱私優先的 iOS 鍵盤</title>
 <meta name="description" content="Keyly 是 iOS 上的 AI 注音鍵盤，由 Apple Intelligence 驅動，完全離線處理，零資料收集。">
@@ -128,24 +141,97 @@ keyly-website/
 <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/">
 ```
 
-### Open Graph / Twitter Card
-- `og:title`, `og:description`, `og:image` (App icon), `og:type`
-- `twitter:card: summary_large_image`
+**Privacy page (繁中):**
+```html
+<link rel="canonical" href="https://keylyapp.com/privacy/">
+<link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/privacy/">
+<link rel="alternate" hreflang="en" href="https://keylyapp.com/privacy/en/">
+<link rel="alternate" hreflang="x-default" href="https://keylyapp.com/privacy/">
+```
 
-### Structured Data (JSON-LD)
+**Privacy page (EN):**
+```html
+<link rel="canonical" href="https://keylyapp.com/privacy/en/">
+<link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/privacy/">
+<link rel="alternate" hreflang="en" href="https://keylyapp.com/privacy/en/">
+<link rel="alternate" hreflang="x-default" href="https://keylyapp.com/privacy/">
+```
+
+**Terms page (繁中):**
+```html
+<link rel="canonical" href="https://keylyapp.com/terms/">
+<link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/terms/">
+<link rel="alternate" hreflang="en" href="https://keylyapp.com/terms/en/">
+<link rel="alternate" hreflang="x-default" href="https://keylyapp.com/terms/">
+```
+
+**Terms page (EN):**
+```html
+<link rel="canonical" href="https://keylyapp.com/terms/en/">
+<link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/terms/">
+<link rel="alternate" hreflang="en" href="https://keylyapp.com/terms/en/">
+<link rel="alternate" hreflang="x-default" href="https://keylyapp.com/terms/">
+```
+
+**Landing page (EN):**
+```html
+<link rel="canonical" href="https://keylyapp.com/en/">
+<link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/">
+<link rel="alternate" hreflang="en" href="https://keylyapp.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://keylyapp.com/">
+```
+
+`x-default` always points to the zh-TW variant as the unmatched-locale fallback.
+
+### Open Graph / Twitter Card
+```html
+<meta property="og:title" content="Keyly - AI 注音鍵盤">
+<meta property="og:description" content="...">
+<meta property="og:url" content="https://keylyapp.com/">
+<meta property="og:image" content="https://keylyapp.com/assets/images/og-banner.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+```
+
+`og:url` must match the page's canonical URL (changes per page).
+
+`og-banner.png` must be 1200×630 px — a dedicated social card featuring the app icon, tagline, and brand gradient background. Do not use the square app icon directly as it will be cropped on Twitter.
+
+### Structured Data (JSON-LD) — landing page only
 ```json
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Keyly",
+  "url": "https://keylyapp.com",
   "operatingSystem": "iOS",
   "applicationCategory": "UtilitiesApplication",
-  "offers": { "@type": "Offer", "price": "0" }
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 }
 ```
 
 ### sitemap.xml
-Lists all 6 page URLs with `<lastmod>` and `<changefreq>`.
+All 6 URLs with trailing slashes (matching canonical tags), `<lastmod>`, and `<changefreq>`:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://keylyapp.com/</loc><lastmod>2026-03-19</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://keylyapp.com/en/</loc><lastmod>2026-03-19</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://keylyapp.com/privacy/</loc><lastmod>2026-03-19</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://keylyapp.com/privacy/en/</loc><lastmod>2026-03-19</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://keylyapp.com/terms/</loc><lastmod>2026-03-19</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://keylyapp.com/terms/en/</loc><lastmod>2026-03-19</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>
+```
+
+Update `<lastmod>` dates whenever page content changes.
 
 ### robots.txt
 ```
@@ -161,8 +247,15 @@ Sitemap: https://keylyapp.com/sitemap.xml
 1. Repo: `keyly-website` (already exists, clean slate)
 2. Enable GitHub Pages → deploy from `main` branch, root `/`
 3. `CNAME` file in root: `keylyapp.com`
-4. Cloudflare DNS: Add `CNAME keylyapp.com → <username>.github.io` with **DNS-only** (grey cloud, not proxied)
-5. GitHub auto-provisions HTTPS via Let's Encrypt
+4. **Cloudflare DNS** — apex domain (`keylyapp.com`) requires **A records**, not CNAME (RFC prohibits CNAME on apex):
+   ```
+   A  keylyapp.com  185.199.108.153  DNS-only (grey cloud)
+   A  keylyapp.com  185.199.109.153  DNS-only (grey cloud)
+   A  keylyapp.com  185.199.110.153  DNS-only (grey cloud)
+   A  keylyapp.com  185.199.111.153  DNS-only (grey cloud)
+   ```
+   Optionally add `CNAME www → <username>.github.io` (also DNS-only) to support `www.keylyapp.com`.
+5. GitHub auto-provisions HTTPS via Let's Encrypt once DNS propagates.
 
 ---
 
