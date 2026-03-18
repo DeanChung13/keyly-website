@@ -340,12 +340,25 @@ body {
 .not-found a:hover { text-decoration: underline; }
 
 /* ----- Animations ----- */
-.animate {
+/* Only hide elements for animation when JS is confirmed available */
+.js-loaded .animate {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
-.animate.visible { opacity: 1; transform: translateY(0); }
+.js-loaded .animate.visible { opacity: 1; transform: translateY(0); }
+
+/* ----- Reduced motion ----- */
+@media (prefers-reduced-motion: reduce) {
+  .js-loaded .animate,
+  .js-loaded .animate.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .card { transition: none; }
+  .cta-btn { transition: none; }
+}
 
 /* ----- Responsive ----- */
 @media (max-width: 768px) {

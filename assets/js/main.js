@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  document.documentElement.classList.add('js-loaded');
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
