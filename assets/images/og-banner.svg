@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D142E"/>
+      <stop offset="100%" stop-color="#331A66"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#479ED1"/>
+      <stop offset="100%" stop-color="#8E61D9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="100" r="220" fill="#479ED1" opacity="0.08"/>
+  <circle cx="150" cy="530" r="160" fill="#8E61D9" opacity="0.08"/>
+  <circle cx="600" cy="315" r="400" fill="#40E5C7" opacity="0.03"/>
+  <text x="600" y="260" font-family="-apple-system, BlinkMacSystemFont, Helvetica, sans-serif"
+        font-size="110" font-weight="800" text-anchor="middle" fill="url(#brand)">Keyly</text>
+  <text x="600" y="330" font-family="-apple-system, BlinkMacSystemFont, Helvetica, sans-serif"
+        font-size="28" text-anchor="middle" fill="#E6EBF2">AI 加持的注音鍵盤，完全在你的裝置上</text>
+  <text x="600" y="375" font-family="-apple-system, BlinkMacSystemFont, Helvetica, sans-serif"
+        font-size="22" text-anchor="middle" fill="#BFCDE0">The AI-powered Zhuyin keyboard. Fully on-device.</text>
+  <text x="600" y="460" font-family="-apple-system, BlinkMacSystemFont, Helvetica, sans-serif"
+        font-size="20" text-anchor="middle" fill="#479ED1">keylyapp.com</text>
+</svg>
