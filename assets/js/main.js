@@ -14,4 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   document.querySelectorAll('.animate').forEach((el) => observer.observe(el));
+
+  document.querySelectorAll('.cta-btn[aria-disabled="true"]').forEach((btn) => {
+    btn.addEventListener('click', (e) => e.preventDefault());
+  });
 });
