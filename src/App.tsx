@@ -8,6 +8,16 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Zap, Globe, User, ChevronRight, Keyboard, Smartphone, CheckCircle2, Download, Menu, X, Wand2, Feather, Command, Music, ShieldCheck, ChevronDown } from 'lucide-react';
 import TypingAnimation from './components/TypingAnimation';
 
+declare const gtag: (...args: unknown[]) => void;
+
+const APP_STORE_URL = 'https://apps.apple.com/app/id6759639348';
+
+function trackDownload(location: string) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'download_click', { event_category: 'engagement', event_label: location });
+  }
+}
+
 function Logo({ className = "w-8 h-8" }: { className?: string }) {
   return (
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
@@ -31,10 +41,10 @@ function Logo({ className = "w-8 h-8" }: { className?: string }) {
 function DownloadCTA({ centered = false }: { centered?: boolean }) {
   return (
     <div className={`flex flex-col ${centered ? 'items-center' : 'items-center lg:items-start'} space-y-5`}>
-      <button className="w-full sm:w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all transform hover:scale-105 flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20">
+      <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(centered ? 'cta_section' : 'hero')} className="w-full sm:w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all transform hover:scale-105 flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20">
         <Smartphone className="w-5 h-5" />
         <span>立即解鎖 AI 智慧輸入</span>
-      </button>
+      </a>
 
       <div className={`flex flex-col space-y-4 text-sm text-text-secondary text-left ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md w-full' : ''}`}>
         <div className={`font-medium text-text-primary mb-1 ${centered ? 'text-center text-base' : ''}`}>
@@ -92,7 +102,7 @@ function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-text-secondary hover:text-brand-cyan transition-colors">功能特色</a>
             <a href="#faq" className="text-text-secondary hover:text-brand-cyan transition-colors">常見問題</a>
-            <a href="#download" className="bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors flex items-center space-x-2">
+            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload('navbar')} className="bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors flex items-center space-x-2">
               <Download className="w-4 h-4" />
               <span>立即下載</span>
             </a>
@@ -112,7 +122,7 @@ function Navbar() {
         <div className="md:hidden bg-white border-b border-metal-gray/30 px-4 pt-2 pb-4 space-y-2">
           <a href="#features" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md" onClick={() => setIsOpen(false)}>功能特色</a>
           <a href="#faq" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md" onClick={() => setIsOpen(false)}>常見問題</a>
-          <a href="#download" className="block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md" onClick={() => setIsOpen(false)}>立即下載</a>
+          <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md" onClick={() => { setIsOpen(false); trackDownload('navbar_mobile'); }}>立即下載</a>
         </div>
       )}
     </nav>

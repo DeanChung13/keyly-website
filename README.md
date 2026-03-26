@@ -66,6 +66,10 @@ git push origin main
    | A | @ | 185.199.111.153 |
    | CNAME | www | `<你的GitHub帳號>.github.io` |
 
+## 文件
+
+- [GA 事件追蹤總覽](docs/ga-events.md)
+
 ## 授權
 
 © 2026 Keyly. All rights reserved.
