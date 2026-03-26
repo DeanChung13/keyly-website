@@ -38,7 +38,7 @@ function Logo({ className = "w-8 h-8" }: { className?: string }) {
   );
 }
 
-function DownloadCTA({ centered = false }: { centered?: boolean }) {
+function DownloadCTA({ centered = false, buttonOnly = false }: { centered?: boolean; buttonOnly?: boolean }) {
   return (
     <div className={`flex flex-col ${centered ? 'items-center' : 'items-center lg:items-start'} space-y-5`}>
       <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(centered ? 'cta_section' : 'hero')} className="w-full sm:w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all transform hover:scale-105 flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20">
@@ -46,27 +46,29 @@ function DownloadCTA({ centered = false }: { centered?: boolean }) {
         <span>立即解鎖 AI 智慧輸入</span>
       </a>
 
-      <div className={`flex flex-col space-y-4 text-sm text-text-secondary text-left ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md w-full' : ''}`}>
-        <div className={`font-medium text-text-primary mb-1 ${centered ? 'text-center text-base' : ''}`}>
-          一次投資，終身進化<br />
-          僅需 NT$60，讓你的鍵盤長出大腦
+      {!buttonOnly && (
+        <div className={`flex flex-col space-y-4 text-sm text-text-secondary text-left ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md w-full' : ''}`}>
+          <div className={`font-medium text-text-primary mb-1 ${centered ? 'text-center text-base' : ''}`}>
+            一次投資，終身進化<br />
+            僅需 NT$60，讓你的鍵盤長出大腦
+          </div>
+          <div className="flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
+            <span><strong className="text-text-primary">職人級注音鍵盤</strong><br />台灣團隊深度優化，最懂在地用語。流暢、精準、不跳針，找回指尖最舒暢的打字節奏。</span>
+          </div>
+          <div className="flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
+            <span><strong className="text-text-primary">永久解鎖指令庫</strong><br />立即擁有現行所有 AI 快捷指令，並享有未來所有新功能的免費升級權限。</span>
+          </div>
+          <div className="flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
+            <span><strong className="text-text-primary">每日 AI 助攻（贈送 5 次）</strong><br />每日免費贈送 5 次高階雲端 AI 額度。模型等級與 Pro 版一致，幫你一鍵潤飾 Email、縮寫長文，讓靈感永不枯竭。</span>
+          </div>
+          <div className={`text-xs text-text-secondary/70 border-t border-metal-gray/20 pt-3 ${centered ? 'mt-2 text-center' : 'mt-1'}`}>
+            若您有大量專業文字產出需求，App 內另提供 Pro 訂閱方案，解鎖「無限次」AI 處理額度與專屬進階功能。
+          </div>
         </div>
-        <div className="flex items-start space-x-2">
-          <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-          <span><strong className="text-text-primary">職人級注音鍵盤</strong><br />台灣團隊深度優化，最懂在地用語。流暢、精準、不跳針，找回指尖最舒暢的打字節奏。</span>
-        </div>
-        <div className="flex items-start space-x-2">
-          <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-          <span><strong className="text-text-primary">永久解鎖指令庫</strong><br />立即擁有現行所有 AI 快捷指令，並享有未來所有新功能的免費升級權限。</span>
-        </div>
-        <div className="flex items-start space-x-2">
-          <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-          <span><strong className="text-text-primary">每日 AI 助攻（贈送 5 次）</strong><br />每日免費贈送 5 次高階雲端 AI 額度。模型等級與 Pro 版一致，幫你一鍵潤飾 Email、縮寫長文，讓靈感永不枯竭。</span>
-        </div>
-        <div className={`text-xs text-text-secondary/70 border-t border-metal-gray/20 pt-3 ${centered ? 'mt-2 text-center' : 'mt-1'}`}>
-          若您有大量專業文字產出需求，App 內另提供 Pro 訂閱方案，解鎖「無限次」AI 處理額度與專屬進階功能。
-        </div>
-      </div>
+      )}
     </div>
   );
 }
@@ -334,8 +336,7 @@ function CTA() {
         <p className="text-xl text-text-secondary mb-10">
           立即獲取 Keyly，開啟文字輸入的全新進化。
         </p>
-
-        <DownloadCTA centered />
+        <DownloadCTA centered buttonOnly />
       </div>
     </section>
   );
