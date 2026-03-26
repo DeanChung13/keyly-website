@@ -1,59 +1,71 @@
-# ⌨️ Keyly - AI 注音鍵盤 | 一秒優化你的輸入內容
+# Keyly - AI 注音鍵盤官網
 
-![Keyly Logo](data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='20' fill='%230D142E' /%3E%3Cdefs%3E%3ClinearGradient id='k-stem' x1='30' y1='20' x2='30' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2338C7BA' /%3E%3Cstop offset='1' stop-color='%238E61D9' /%3E%3C/linearGradient%3E%3ClinearGradient id='k-arm' x1='75' y1='20' x2='40' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E6EBF2' /%3E%3Cstop offset='1' stop-color='%23BFCDE0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='25' y='20' width='16' height='60' fill='url(%23k-stem)' /%3E%3Cpath d='M75 20L41 50L75 80H55L31 50L55 20H75Z' fill='url(%23k-arm)' /%3E%3C/svg%3E)
+**Keyly** 是專為 iOS 打造、由 AI 強化的注音鍵盤 Landing Page。使用 React + Vite 建置，部屬於 GitHub Pages，自訂網域為 `keylyapp.com`。
 
-**Keyly** is an AI-enhanced iOS Bopomofo (Zhuyin) keyboard built with React and Vite. It provides a seamless typing experience with integrated AI capabilities for text transformation and refinement.
+## 技術棧
 
-**Keyly** 是專為 iOS 打造、由 AI 強化的注音鍵盤 landing page。我們提供極致順暢的打字體驗，並將強大的 AI 處理能力直接帶入您的指尖。無論是撰寫短訊、Email 或是創意內容，Keyly 都能秒速潤飾您的文字。
+- **框架**: React 19 + Vite 6
+- **樣式**: Tailwind CSS v4
+- **動畫**: Motion
+- **圖標**: Lucide React
+- **語言**: TypeScript
 
-## ✨ 特色功能 | Features
+## 專案結構
 
-*   **🪄 AI 文字濾鏡 (AI Filters)**: 輸入完文字後，一鍵套用專屬 AI 濾鏡，瞬間轉換為完美的風格語氣。
-*   **🎹 指尖琴韻 (Piano Mode)**: 開啟後每次敲擊都會化作優美的名曲旋律，讓打字變成一種享受。
-*   **🚀 極致順滑注音引擎 (Bopomofo Engine)**: 專為流暢而生的注音引擎，搭配細膩的沉浸式震動回饋。
-*   **🔐 高規格隱私防線 (Privacy First)**: 採用「不落地處理」原則，支援完全斷網的離線隱私模式。
-*   **⚡ 智慧快捷指令 (Smart Shortcuts)**: 隨心自訂專屬 AI 指令，單手一滑即可召喚，便利至極。
-
-## 🛠️ 技術棧
-
-*   **框架**: [React 19](https://react.dev/) + [Vite 6](https://vitejs.dev/)
-*   **樣式**: [Tailwind CSS v4](https://tailwindcss.com/)
-*   **動畫**: [Motion](https://motion.dev/)
-*   **圖標**: [Lucide React](https://lucide.dev/)
-*   **AI**: [Google Generative AI](https://github.com/google-gemini/generative-ai-js)
-*   **語言**: [TypeScript](https://www.typescriptlang.org/)
-
-## 🚀 快速開始
-
-### 開發環境
-
-1.  克隆儲存庫
-2.  安裝依賴:
-    ```bash
-    npm install
-    ```
-3.  啟動開發伺服器:
-    ```bash
-    npm run dev
-    ```
-
-### 構建生產版本
-
-```bash
-npm run build
+```
+keyly-website/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml       # 自動部屬 GitHub Actions
+├── src/
+│   ├── App.tsx              # 主頁面（Navbar、Hero、Features、FAQ、CTA、Footer）
+│   ├── main.tsx             # React 進入點
+│   ├── index.css            # Tailwind 主題與全域樣式
+│   └── components/
+│       └── TypingAnimation.tsx  # Hero 打字動畫元件
+├── privacy/
+│   └── index.html           # 隱私權政策（靜態頁面）
+├── terms/
+│   └── index.html           # 服務條款（靜態頁面）
+├── assets/
+│   └── images/              # OG banner、icon 等靜態圖片
+├── CNAME                    # 自訂網域（keylyapp.com）
+├── index.html               # React App 入口模板
+├── vite.config.ts
+└── package.json
 ```
 
-## 📂 專案結構
+## 本地開發
 
-*   `src/`: 核心前端程式碼
-    *   `components/`: 可重用的 React 組件
-    *   `App.tsx`: 主要頁面邏輯
-    *   `main.tsx`: 專案進入點
-*   `docs/`: 營銷文案與文檔資料
-*   `assets/`: 靜態資源 (圖片、字體等)
-*   `public/`: 靜態檔案
+```bash
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # 建置到 dist/
+npm run lint       # TypeScript 型別檢查
+```
 
-## 📄 授權
+## 部屬
+
+push 到 `main` 後 GitHub Actions 自動觸發，完成建置並部屬到 GitHub Pages。
+
+```bash
+git push origin main
+```
+
+### 首次設定
+
+1. GitHub Repo → **Settings → Pages → Source** 選 **GitHub Actions**
+2. 自訂網域填入 `keylyapp.com`（`CNAME` 已包含在專案中）
+3. DNS 設定（在你的網域供應商）：
+
+   | 類型 | 名稱 | 值 |
+   |------|------|----|
+   | A | @ | 185.199.108.153 |
+   | A | @ | 185.199.109.153 |
+   | A | @ | 185.199.110.153 |
+   | A | @ | 185.199.111.153 |
+   | CNAME | www | `<你的GitHub帳號>.github.io` |
+
+## 授權
 
 © 2026 Keyly. All rights reserved.
-保護隱私，精準溝通。
