@@ -9,7 +9,7 @@
   <link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/privacy/">
   <link rel="alternate" hreflang="en"    href="https://keylyapp.com/privacy/en/">
   <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/privacy/">
-  <link rel="icon" href="/assets/images/icon.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='20' fill='%230D142E' /%3E%3Cdefs%3E%3ClinearGradient id='k-stem' x1='30' y1='20' x2='30' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2338C7BA' /%3E%3Cstop offset='1' stop-color='%238E61D9' /%3E%3C/linearGradient%3E%3ClinearGradient id='k-arm' x1='75' y1='20' x2='40' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E6EBF2' /%3E%3Cstop offset='1' stop-color='%23BFCDE0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='25' y='20' width='16' height='60' fill='url(%23k-stem)' /%3E%3Cpath d='M75 20L41 50L75 80H55L31 50L55 20H75Z' fill='url(%23k-arm)' /%3E%3C/svg%3E">
   <meta property="og:title"       content="隱私政策 — Keyly">
   <meta property="og:description" content="Keyly 隱私政策：我們不收集、不儲存、不傳輸您的任何數據。">
   <meta property="og:url"         content="https://keylyapp.com/privacy/">
@@ -18,80 +18,290 @@
   <meta property="og:image:height" content="630">
   <meta property="og:type"        content="website">
   <meta name="twitter:card"       content="summary_large_image">
-  <link rel="stylesheet" href="/assets/css/style.css?v=2">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TG8RM3J70R"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-TG8RM3J70R');
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-page:       #F4F7FA;
+      --bg-primary:    #0D142E;
+      --bg-secondary:  #172247;
+      --brand-cyan:    #479ED1;
+      --brand-purple:  #8E61D9;
+      --brand-teal:    #38C7BA;
+      --metal-white:   #E6EBF2;
+      --metal-gray:    #BFCDE0;
+      --text-primary:  #0F1726;
+      --text-secondary:#5C708C;
+    }
+
+    body {
+      font-family: "Noto Sans TC", ui-sans-serif, system-ui, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Navbar ── */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(191,205,224,0.35);
+    }
+    .navbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .navbar-brand svg { border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
+    .lang-btn {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--metal-gray);
+      border-radius: 999px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .lang-btn:hover { color: var(--brand-cyan); border-color: var(--brand-cyan); }
+
+    /* ── Layout ── */
+    .page-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 4rem;
+    }
+
+    /* ── Header ── */
+    .page-header { margin-bottom: 2.5rem; }
+    .page-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+    .page-meta {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    /* ── Summary card ── */
+    .summary-card {
+      background: white;
+      border: 1px solid var(--metal-gray);
+      border-left: 4px solid var(--brand-cyan);
+      border-radius: 16px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.975rem;
+      color: var(--text-primary);
+    }
+
+    /* ── Content ── */
+    .legal-content h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 2.5rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--metal-gray);
+    }
+    .legal-content h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 1.5rem 0 0.5rem;
+    }
+    .legal-content p {
+      color: var(--text-secondary);
+      margin-bottom: 0.875rem;
+    }
+    .legal-content ul {
+      margin: 0.5rem 0 0.875rem 1.25rem;
+      color: var(--text-secondary);
+    }
+    .legal-content li { margin-bottom: 0.4rem; }
+    .legal-content strong { color: var(--text-primary); font-weight: 700; }
+    .legal-content code {
+      font-family: ui-monospace, monospace;
+      font-size: 0.875em;
+      background: var(--metal-white);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      color: var(--text-primary);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: var(--bg-page);
+      border-top: 1px solid rgba(191,205,224,0.4);
+      padding: 2.5rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .footer-brand svg { border-radius: 6px; }
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--brand-cyan); }
+    .footer-links .sep { color: var(--metal-gray); }
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--metal-gray);
+    }
+  </style>
 </head>
 <body>
 
-  <nav class="nav">
-    <a href="/" class="nav-brand">Keyly</a>
-    <div class="lang-toggle">
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="ks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="ka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#ks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#ka)"/>
+        </svg>
+        Keyly
+      </a>
       <a href="/privacy/en/" class="lang-btn">EN</a>
-      <span class="lang-current">中文</span>
     </div>
   </nav>
 
-  <main class="legal-page">
-    <h1>隱私權政策 (Privacy Policy)</h1>
-    <p class="legal-meta">最後更新日期：2026年3月26日</p>
-    
-    <div class="legal-summary" style="background: var(--card-bg); padding: 1.5rem; border-radius: 24px; box-shadow: var(--shadow-md); margin-bottom: 2rem;">
-      <p style="margin: 0; font-size: 1.1rem;"><strong>💡 我們的核心承諾摘要：</strong>我們只拿我們需要的，雲端處理完即刻拋棄，絕不動你的基本隱私。</p>
+  <div class="page-wrapper">
+    <div class="page-header">
+      <h1>隱私權政策</h1>
+      <p class="page-meta">最後更新日期：2026年3月26日</p>
     </div>
 
-    <h2>1. 我們收集的資訊與用途</h2>
-    <p>Keyly 致力於提供您安心的輸入體驗，我們將 AI 的處理分為兩種模式：</p>
-    
-    <h3>A. 離線端 AI (內建基礎模型)</h3>
-    <p>如果您使用支援裝置內建 AI 功能的模型，所有處理皆於您的設備上<strong>完全離線</strong>進行，Keyly 絕對不會傳輸或儲存此類操作。</p>
+    <div class="summary-card">
+      💡 <strong>我們的核心承諾摘要：</strong>我們只拿我們需要的，雲端處理完即刻拋棄，絕不動你的基本隱私。
+    </div>
 
-    <h3>B. 雲端 AI 處理 (閱後即焚)</h3>
-    <p>為了獲得更強大且精準的句型潤飾，我們提供連線至頂級雲端模型（如 OpenAI API、Anthropic API）的功能。當您的草稿傳送至雲端時，我們嚴格遵守<strong>「閱後即焚」</strong>原則：</p>
-    <ul>
-      <li>您的文字僅作為短暫匿名請求，一旦取得 AI 潤飾結果，我們的伺服器<strong>不會</strong>儲存任何輸入日誌或對話紀錄。</li>
-      <li>我們嚴格要求合作的供應商遵循最高資料安全標準，且保證使用者的輸入絕不被用於訓練未來的 AI 模型。</li>
-    </ul>
+    <div class="legal-content">
+      <h2>1. 我們收集的資訊與用途</h2>
+      <p>Keyly 致力於提供您安心的輸入體驗，我們將 AI 的處理分為兩種模式：</p>
 
-    <h3>C. 為什麼需要「允許完全取用」（Full Access）？</h3>
-    <p>在 iOS 系統體系中，第三方鍵盤必須獲得「允許完全取用」權限才能進行網路連線。因為 Keyly 需要連接雲端 AI 來為您潤飾文句，故此權限為必備。但請放心，<strong>我們絕對不會側錄您的日常按鍵或收集與 Keyly 潤飾功能無關的一般打字內容</strong>。連線僅發生在您明確點擊 AI 處理時。</p>
+      <h3>A. 離線端 AI（內建基礎模型）</h3>
+      <p>如果您使用支援裝置內建 AI 功能的模型，所有處理皆於您的設備上<strong>完全離線</strong>進行，Keyly 絕對不會傳輸或儲存此類操作。</p>
 
-    <h3>D. 帳戶與額度驗證</h3>
-    <p>為了計算一般用戶（每日限額）以及辨識 Pro 訂閱用戶，系統會配發一組匿名的識別碼（<code>accessToken</code>）作為額度驗證，我們不會收集您的真實姓名、電話或地址等實體身分類別資訊。</p>
-    
-    <h3>E. 分析資料與第三方追蹤</h3>
-    <p>為了持續改善您的體驗，本應用程式使用了 Firebase 等數據分析工具：</p>
-    <ul>
-      <li>我們僅追蹤產品轉化漏斗、基本點擊事件與當機錯誤回報（Crachlytics）。</li>
-      <li><strong>這些分析套件絕不包含您的任何鍵盤輸入文字。</strong></li>
-    </ul>
+      <h3>B. 雲端 AI 處理（閱後即焚）</h3>
+      <p>為了獲得更強大且精準的句型潤飾，我們提供連線至頂級雲端模型（如 OpenAI API、Anthropic API）的功能。當您的草稿傳送至雲端時，我們嚴格遵守<strong>「閱後即焚」</strong>原則：</p>
+      <ul>
+        <li>您的文字僅作為短暫匿名請求，一旦取得 AI 潤飾結果，我們的伺服器<strong>不會</strong>儲存任何輸入日誌或對話紀錄。</li>
+        <li>我們嚴格要求合作的供應商遵循最高資料安全標準，且保證使用者的輸入絕不被用於訓練未來的 AI 模型。</li>
+      </ul>
 
-    <h2>2. 資料分享與第三方</h2>
-    <p>我們絕不出售您的任何資料給廣告商。僅在為您提供 AI 文字處理服務或付費訂閱流程時，您的必要數據才會與信賴的第三方基礎設施（如雲端模型提供商）進行短暫的加密通訊。</p>
+      <h3>C. 為什麼需要「允許完全取用」（Full Access）？</h3>
+      <p>在 iOS 系統體系中，第三方鍵盤必須獲得「允許完全取用」權限才能進行網路連線。因為 Keyly 需要連接雲端 AI 來為您潤飾文句，故此權限為必備。但請放心，<strong>我們絕對不會側錄您的日常按鍵或收集與 Keyly 潤飾功能無關的一般打字內容</strong>。連線僅發生在您明確點擊 AI 處理時。</p>
 
-    <h2>3. 您的隱私權利</h2>
-    <p>您可以隨時於 iOS 的「設定」>「一般」>「鍵盤」中撤銷 Keyly 的「完全取用」權限。一旦撤除，雲端連線功能將無法使用。如有任何隱私相關的問題或帳號刪除需求，歡迎隨時透過 App Store 支援開發者的方式聯繫我們。</p>
+      <h3>D. 帳戶與額度驗證</h3>
+      <p>為了計算一般用戶（每日限額）以及辨識 Pro 訂閱用戶，系統會配發一組匿名的識別碼（<code>accessToken</code>）作為額度驗證，我們不會收集您的真實姓名、電話或地址等實體身分類別資訊。</p>
 
-    <h2>4. 政策變更</h2>
-    <p>未來的更新可能包含本政策的修改。如有重大或實質的改變，我們將在官方網站首頁以及應用程式中通知您。</p>
-  </main>
+      <h3>E. 分析資料與第三方追蹤</h3>
+      <p>為了持續改善您的體驗，本應用程式使用了 Firebase 等數據分析工具：</p>
+      <ul>
+        <li>我們僅追蹤產品轉化漏斗、基本點擊事件與當機錯誤回報（Crashlytics）。</li>
+        <li><strong>這些分析套件絕不包含您的任何鍵盤輸入文字。</strong></li>
+      </ul>
+
+      <h2>2. 資料分享與第三方</h2>
+      <p>我們絕不出售您的任何資料給廣告商。僅在為您提供 AI 文字處理服務或付費訂閱流程時，您的必要數據才會與信賴的第三方基礎設施（如雲端模型提供商）進行短暫的加密通訊。</p>
+
+      <h2>3. 您的隱私權利</h2>
+      <p>您可以隨時於 iOS 的「設定」>「一般」>「鍵盤」中撤銷 Keyly 的「完全取用」權限。一旦撤除，雲端連線功能將無法使用。如有任何隱私相關的問題或帳號刪除需求，歡迎隨時透過 <a href="mailto:support@keylyapp.com" style="color: var(--brand-cyan); text-decoration: none;">support@keylyapp.com</a> 聯繫我們。</p>
+
+      <h2>4. 政策變更</h2>
+      <p>未來的更新可能包含本政策的修改。如有重大或實質的改變，我們將在官方網站首頁以及應用程式中通知您。</p>
+    </div>
+  </div>
 
   <footer class="footer">
-    <p class="footer-copy">© 2026 Keyly. All rights reserved.</p>
-    <nav class="footer-links">
-      <a href="/privacy/">隱私政策</a>
-      <a href="/terms/">服務條款</a>
-    </nav>
-    <div class="lang-toggle">
-      <a href="/privacy/en/" class="lang-btn">EN</a>
-      <span class="lang-current">中文</span>
+    <div class="footer-inner">
+      <a href="/" class="footer-brand">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="fks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="fka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#fks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#fka)"/>
+        </svg>
+        Keyly
+      </a>
+      <div class="footer-links">
+        <a href="/privacy/">隱私權政策</a>
+        <span class="sep">|</span>
+        <a href="/terms/">服務條款</a>
+        <span class="sep">|</span>
+        <a href="mailto:support@keylyapp.com">技術支援</a>
+      </div>
+      <p class="footer-copy">© 2026 Keyly 由台灣團隊專為高效溝通而生。</p>
     </div>
   </footer>
 
