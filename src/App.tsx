@@ -36,25 +36,25 @@ function DownloadCTA({ centered = false }: { centered?: boolean }) {
         <span>立即解鎖 AI 智慧輸入</span>
       </button>
 
-      <div className={`flex flex-col space-y-3 text-sm text-text-secondary text-left ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md w-full' : ''}`}>
-        <div className={`font-medium text-text-primary mb-2 ${centered ? 'text-center text-base' : ''}`}>
-          一次購買，終身享有職人級輸入體驗。<br />
-          僅需 NT$60，告別平庸：
+      <div className={`flex flex-col space-y-4 text-sm text-text-secondary text-left ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md w-full' : ''}`}>
+        <div className={`font-medium text-text-primary mb-1 ${centered ? 'text-center text-base' : ''}`}>
+          一次投資，終身進化<br />
+          僅需 NT$60，讓你的鍵盤長出大腦
         </div>
         <div className="flex items-start space-x-2">
           <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-          <span><strong className="text-text-primary">職人級注音：</strong> 台灣團隊優化，流暢精準。</span>
+          <span><strong className="text-text-primary">職人級注音鍵盤</strong><br />台灣團隊深度優化，最懂在地用語。流暢、精準、不跳針，找回指尖最舒暢的打字節奏。</span>
         </div>
         <div className="flex items-start space-x-2">
           <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-          <span><strong className="text-text-primary">永久指令庫：</strong> 立即解鎖所有 AI 指令與未來更新。</span>
+          <span><strong className="text-text-primary">永久解鎖指令庫</strong><br />立即擁有現行所有 AI 快捷指令，並享有未來所有新功能的免費升級權限。</span>
         </div>
         <div className="flex items-start space-x-2">
           <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-          <span><strong className="text-text-primary">每日 AI 助攻：</strong> 每天 5 次雲端靈感，潤飾、縮寫輕鬆搞定。</span>
+          <span><strong className="text-text-primary">每日 AI 助攻（贈送 5 次）</strong><br />每日免費贈送 5 次高階雲端 AI 額度。模型等級與 Pro 版一致，幫你一鍵潤飾 Email、縮寫長文，讓靈感永不枯竭。</span>
         </div>
-        <div className={`text-xs text-text-secondary/70 ${centered ? 'mt-4 text-center' : 'mt-2'}`}>
-          (另有 Pro 訂閱版，提供無限次 AI 處理與進階功能)
+        <div className={`text-xs text-text-secondary/70 border-t border-metal-gray/20 pt-3 ${centered ? 'mt-2 text-center' : 'mt-1'}`}>
+          若您有大量專業文字產出需求，App 內另提供 Pro 訂閱方案，解鎖「無限次」AI 處理額度與專屬進階功能。
         </div>
       </div>
     </div>
@@ -87,7 +87,7 @@ function Navbar() {
             <Logo className="w-8 h-8 rounded-lg shadow-sm" />
             <span className="font-bold text-xl tracking-tight">Keyly</span>
           </div>
-          
+
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-text-secondary hover:text-brand-cyan transition-colors">功能特色</a>
@@ -124,7 +124,7 @@ function Hero() {
     <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
-          
+
           {/* Text Content */}
           <div className="lg:col-span-6 text-center lg:text-left mb-16 lg:mb-0 z-10">
             <motion.div
@@ -138,7 +138,7 @@ function Hero() {
                   文字轉化一鍵完成
                 </span>
               </h1>
-              
+
               <div className="mt-8">
                 <DownloadCTA />
               </div>
@@ -155,7 +155,7 @@ function Hero() {
             >
               {/* Decorative blobs */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-brand-cyan/30 to-brand-purple/30 rounded-full blur-3xl -z-10 opacity-50"></div>
-              
+
               <TypingAnimation />
             </motion.div>
           </div>
@@ -203,7 +203,7 @@ function Features() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -271,16 +271,16 @@ function FAQSection() {
   return (
     <section id="faq" className="py-24 bg-bg-primary text-white overflow-hidden relative">
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-purple/15 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
-      
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">常見問題 <span className="text-accent-mint">Q&A</span></h2>
         </div>
-        
+
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden transition-all duration-300"
             >
               <button
@@ -288,11 +288,11 @@ function FAQSection() {
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
                 <span className="text-lg font-medium text-metal-white pr-8">{faq.question}</span>
-                <ChevronDown 
-                  className={`w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`} 
+                <ChevronDown
+                  className={`w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}
                 />
               </button>
-              
+
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
@@ -324,7 +324,7 @@ function CTA() {
         <p className="text-xl text-text-secondary mb-10">
           立即獲取 Keyly，開啟文字輸入的全新進化。
         </p>
-        
+
         <DownloadCTA centered />
       </div>
     </section>
@@ -340,15 +340,17 @@ function Footer() {
             <Logo className="w-8 h-8 rounded-lg shadow-sm" />
             <span className="font-bold text-text-primary">Keyly</span>
           </div>
-          
-          <div className="flex space-x-6 text-sm text-text-secondary">
+
+          <div className="flex items-center space-x-4 text-sm text-text-secondary">
             <a href="/privacy/" className="hover:text-brand-cyan transition-colors">隱私權政策</a>
+            <span className="text-metal-gray">|</span>
             <a href="/terms/" className="hover:text-brand-cyan transition-colors">服務條款</a>
-            <a href="#" className="hover:text-brand-cyan transition-colors">聯絡我們</a>
+            <span className="text-metal-gray">|</span>
+            <a href="mailto:support@keylyapp.com" className="hover:text-brand-cyan transition-colors">技術支援</a>
           </div>
         </div>
         <div className="mt-8 text-center text-sm text-metal-gray">
-          &copy; {new Date().getFullYear()} Keyly. All rights reserved.
+          &copy; 2026 Keyly 由台灣團隊專為高效溝通而生。
         </div>
       </div>
     </footer>
