@@ -28,6 +28,39 @@ function Logo({ className = "w-8 h-8" }: { className?: string }) {
   );
 }
 
+function DownloadCTA({ centered = false }: { centered?: boolean }) {
+  return (
+    <div className={`flex flex-col ${centered ? 'items-center' : 'items-center lg:items-start'} space-y-5`}>
+      <button className="w-full sm:w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all transform hover:scale-105 flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20">
+        <Smartphone className="w-5 h-5" />
+        <span>立即解鎖 AI 智慧輸入</span>
+      </button>
+
+      <div className={`flex flex-col space-y-3 text-sm text-text-secondary text-left ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md w-full' : ''}`}>
+        <div className={`font-medium text-text-primary mb-2 ${centered ? 'text-center text-base' : ''}`}>
+          一次購買，終身享有職人級輸入體驗。<br />
+          僅需 NT$60，告別平庸：
+        </div>
+        <div className="flex items-start space-x-2">
+          <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
+          <span><strong className="text-text-primary">職人級注音：</strong> 台灣團隊優化，流暢精準。</span>
+        </div>
+        <div className="flex items-start space-x-2">
+          <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
+          <span><strong className="text-text-primary">永久指令庫：</strong> 立即解鎖所有 AI 指令與未來更新。</span>
+        </div>
+        <div className="flex items-start space-x-2">
+          <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
+          <span><strong className="text-text-primary">每日 AI 助攻：</strong> 每天 5 次雲端靈感，潤飾、縮寫輕鬆搞定。</span>
+        </div>
+        <div className={`text-xs text-text-secondary/70 ${centered ? 'mt-4 text-center' : 'mt-2'}`}>
+          (另有 Pro 訂閱版，提供無限次 AI 處理與進階功能)
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <div className="min-h-screen bg-[#F4F7FA] text-text-primary font-sans selection:bg-brand-cyan/30 overflow-x-hidden">
@@ -58,7 +91,7 @@ function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-text-secondary hover:text-brand-cyan transition-colors">功能特色</a>
-            <a href="#demo" className="text-text-secondary hover:text-brand-cyan transition-colors">實際展示</a>
+            <a href="#faq" className="text-text-secondary hover:text-brand-cyan transition-colors">常見問題</a>
             <a href="#download" className="bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors flex items-center space-x-2">
               <Download className="w-4 h-4" />
               <span>立即下載</span>
@@ -78,7 +111,7 @@ function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white border-b border-metal-gray/30 px-4 pt-2 pb-4 space-y-2">
           <a href="#features" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md" onClick={() => setIsOpen(false)}>功能特色</a>
-          <a href="#demo" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md" onClick={() => setIsOpen(false)}>實際展示</a>
+          <a href="#faq" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md" onClick={() => setIsOpen(false)}>常見問題</a>
           <a href="#download" className="block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md" onClick={() => setIsOpen(false)}>立即下載</a>
         </div>
       )}
@@ -106,33 +139,8 @@ function Hero() {
                 </span>
               </h1>
               
-              <div className="flex flex-col items-center lg:items-start space-y-5 mt-8">
-                <button className="w-full sm:w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-medium hover:bg-bg-secondary transition-all transform hover:scale-105 flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20">
-                  <Smartphone className="w-5 h-5" />
-                  <span>立即解鎖 AI 智慧輸入</span>
-                </button>
-                
-                <div className="flex flex-col space-y-3 text-sm text-text-secondary text-left">
-                  <div className="font-medium text-text-primary mb-2">
-                    一次購買，終身享有職人級輸入體驗。<br />
-                    僅需 NT$60，告別平庸：
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-                    <span><strong className="text-text-primary">職人級注音：</strong> 台灣團隊優化，流暢精準。</span>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-                    <span><strong className="text-text-primary">永久指令庫：</strong> 立即解鎖所有 AI 指令與未來更新。</span>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-                    <span><strong className="text-text-primary">每日 AI 助攻：</strong> 每天 5 次雲端靈感，潤飾、縮寫輕鬆搞定。</span>
-                  </div>
-                  <div className="text-xs text-text-secondary/70 mt-2">
-                    (另有 Pro 訂閱版，提供無限次 AI 處理與進階功能)
-                  </div>
-                </div>
+              <div className="mt-8">
+                <DownloadCTA />
               </div>
             </motion.div>
           </div>
@@ -317,34 +325,7 @@ function CTA() {
           立即獲取 Keyly，開啟文字輸入的全新進化。
         </p>
         
-        <div className="flex flex-col items-center space-y-6">
-          <button className="w-full sm:w-auto bg-bg-primary text-white px-8 py-4 rounded-xl font-medium hover:bg-bg-secondary transition-all flex items-center justify-center space-x-3 shadow-xl shadow-bg-primary/10">
-            <Smartphone className="w-6 h-6" />
-            <span className="text-lg font-bold">立即解鎖 AI 智慧輸入</span>
-          </button>
-          
-          <div className="flex flex-col space-y-3 text-sm text-text-secondary text-left bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md mx-auto">
-            <div className="font-medium text-text-primary mb-3 text-center text-base">
-              一次購買，終身享有職人級輸入體驗。<br />
-              僅需 NT$60，告別平庸：
-            </div>
-            <div className="flex items-start space-x-2">
-              <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-              <span><strong className="text-text-primary">職人級注音：</strong> 台灣團隊優化，流暢精準。</span>
-            </div>
-            <div className="flex items-start space-x-2">
-              <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-              <span><strong className="text-text-primary">永久指令庫：</strong> 立即解鎖所有 AI 指令與未來更新。</span>
-            </div>
-            <div className="flex items-start space-x-2">
-              <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-              <span><strong className="text-text-primary">每日 AI 助攻：</strong> 每天 5 次雲端靈感，潤飾、縮寫輕鬆搞定。</span>
-            </div>
-            <div className="text-xs text-text-secondary/70 mt-4 text-center">
-              (另有 Pro 訂閱版，提供無限次 AI 處理與進階功能)
-            </div>
-          </div>
-        </div>
+        <DownloadCTA centered />
       </div>
     </section>
   );
