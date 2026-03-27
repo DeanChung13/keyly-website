@@ -1,75 +1,134 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Delete, CornerDownLeft, Globe, Mic, MousePointer2, CheckCircle, ShieldCheck } from 'lucide-react';
+import { Sparkles, Delete, CornerDownLeft, MousePointer2, ShieldCheck } from 'lucide-react';
 
-const showcases = [
+type Showcase = {
+  id: string;
+  promptTitle: string;
+  before: string;
+  after: string;
+};
+
+type Locale = 'zh-TW' | 'en';
+
+type TypingAnimationCopy = {
+  showcases: Showcase[];
+  previewTitle: string;
+  sourceLabel: string;
+  completeLabel: string;
+  processingLabel: string;
+  spaceLabel: string;
+};
+
+const zhTWShowcases: Showcase[] = [
   {
-    id: "style_polite_decline",
-    promptTitle: "專業拒絕",
-    before: "這我現在沒空做，你找別人或是等我下禮拜有空再說。",
-    after: "謝謝您的提案。目前我手邊的專案正處於關鍵執行期，暫無多餘心力投入新任務。為了確保品質，建議您可以先諮詢 [部門名稱] 或待下週我確認排程後再與您對接。感謝您的體諒！"
+    id: 'style_polite_decline',
+    promptTitle: '專業拒絕',
+    before: '這我現在沒空做，你找別人或是等我下禮拜有空再說。',
+    after: '謝謝您的提案。目前我手邊的專案正處於關鍵執行期，暫無多餘心力投入新任務。為了確保品質，建議您可以先諮詢 [部門名稱] 或待下週我確認排程後再與您對接。感謝您的體諒！'
   },
   {
-    id: "style_social_rescue",
-    promptTitle: "社交救星",
-    before: "尷尬了，主管問我對公司有什麼建議，我該怎麼說？",
-    after: "1. (專業) 建議公司可以評估優化內部的溝通流程，提升跨部門協作效率。\n2. (誠懇) 我觀察到目前的會議頻率較高，若能適度精簡將有助於執行端產出。\n3. (高情商) 我覺得目前的團隊氛圍很棒，若能增加專業技能的分享會就更完美了！"
+    id: 'style_social_rescue',
+    promptTitle: '社交救星',
+    before: '尷尬了，主管問我對公司有什麼建議，我該怎麼說？',
+    after: '1. (專業) 建議公司可以評估優化內部的溝通流程，提升跨部門協作效率。\n2. (誠懇) 我觀察到目前的會議頻率較高，若能適度精簡將有助於執行端產出。\n3. (高情商) 我覺得目前的團隊氛圍很棒，若能增加專業技能的分享會就更完美了！'
   },
   {
-    id: "style_high_eq",
-    promptTitle: "高情商回覆",
-    before: "你這樣做讓我很困擾，可以請你專業一點嗎？",
-    after: "關於目前的執行方式，我希望能與您對齊期待，以利後續合作更為順暢。我們是否能抽空討論如何優化流程，讓雙方的專業發揮最大效益？"
+    id: 'style_high_eq',
+    promptTitle: '高情商回覆',
+    before: '你這樣做讓我很困擾，可以請你專業一點嗎？',
+    after: '關於目前的執行方式，我希望能與您對齊期待，以利後續合作更為順暢。我們是否能抽空討論如何優化流程，讓雙方的專業發揮最大效益？'
   },
   {
-    id: "style_threads_shitpost",
-    promptTitle: "Threads 廢文風格",
-    before: "下班好累，想喝手搖飲，但又怕胖，怎麼辦？",
-    after: "脆友救我... 🫠\n\n靈魂在呼喊珍奶，但脂肪在警告我。這種「下班後的矛盾心理」有人懂嗎？到底要選擇快樂還是選擇體重？還是說微糖微冰就不會有熱量（誤）🧋✨\n\n#下班日常 #手搖飲控 #生活碎片"
+    id: 'style_threads_shitpost',
+    promptTitle: 'Threads 廢文風格',
+    before: '下班好累，想喝手搖飲，但又怕胖，怎麼辦？',
+    after: '脆友救我... 🫠\n\n靈魂在呼喊珍奶，但脂肪在警告我。這種「下班後的矛盾心理」有人懂嗎？到底要選擇快樂還是選擇體重？還是說微糖微冰就不會有熱量（誤）🧋✨\n\n#下班日常 #手搖飲控 #生活碎片'
   }
 ];
 
-export default function TypingAnimation() {
+const enShowcases: Showcase[] = [
+  {
+    id: 'style_polite_decline',
+    promptTitle: 'Polite Decline',
+    before: "I can't take this on right now. Please ask someone else or check back with me next week.",
+    after: 'Thank you for thinking of me. My current projects are in a critical execution phase, so I do not have the bandwidth to commit to additional work at the moment. To keep quality high, you may want to check with [team name] first, or reconnect with me next week once I have reviewed my schedule. I appreciate your understanding.'
+  },
+  {
+    id: 'style_social_rescue',
+    promptTitle: 'Social Rescue',
+    before: 'My manager asked what I think the company should improve. What should I say?',
+    after: '1. (Professional) The company could review internal communication workflows to improve cross-team execution.\n2. (Sincere) I have noticed meetings are fairly frequent, and trimming them slightly could create more room for delivery work.\n3. (High-EQ) The team atmosphere is already strong. Adding more skill-sharing sessions could make it even better.'
+  },
+  {
+    id: 'style_high_eq',
+    promptTitle: 'High-EQ Reply',
+    before: 'Your approach is making this difficult for me. Can you be more professional?',
+    after: 'I would like to align on expectations around the current workflow so our collaboration can move more smoothly. Would you be open to a quick discussion on how we can improve the process and help both sides work more effectively?'
+  },
+  {
+    id: 'style_threads_shitpost',
+    promptTitle: 'Threads Post',
+    before: "I'm exhausted after work and want bubble tea, but I also don't want to gain weight. What do I do?",
+    after: "Need help, internet...\n\nMy soul wants bubble tea, but my body is filing a formal complaint. Does anyone else know this exact after-work crisis? Do I choose happiness or the scale? Or does half sugar somehow cancel the calories out? Asking for a friend.\n\n#AfterWorkMood #BubbleTeaProblems #TinyLifeCrisis"
+  }
+];
+
+const copyMap: Record<Locale, TypingAnimationCopy> = {
+  'zh-TW': {
+    showcases: zhTWShowcases,
+    previewTitle: 'Keyly AI 預覽',
+    sourceLabel: '原始輸入內容',
+    completeLabel: 'AI 魔法優化完成',
+    processingLabel: '正在精煉您的文字...',
+    spaceLabel: '空白'
+  },
+  en: {
+    showcases: enShowcases,
+    previewTitle: 'Keyly AI Preview',
+    sourceLabel: 'Original Draft',
+    completeLabel: 'AI refinement complete',
+    processingLabel: 'Refining your text...',
+    spaceLabel: 'Space'
+  }
+};
+
+export default function TypingAnimation({ locale = 'zh-TW' }: { locale?: Locale }) {
+  const copy = copyMap[locale];
+  const showcases = copy.showcases;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [phase, setPhase] = useState<'typing' | 'waiting' | 'processing' | 'done' | 'idle'>('idle');
   const [displayedText, setDisplayedText] = useState('');
-  
+
   useEffect(() => {
     let isMounted = true;
-    
+
     const runAnimation = async () => {
       const currentShowcase = showcases[currentIndex];
-      
-      // Reset
+
       setPhase('typing');
       setDisplayedText('');
-      
-      // Type before text
+
       for (let i = 0; i <= currentShowcase.before.length; i++) {
         if (!isMounted) return;
         setDisplayedText(currentShowcase.before.substring(0, i));
-        await new Promise(r => setTimeout(r, 40 + Math.random() * 40));
+        await new Promise((r) => setTimeout(r, 40 + Math.random() * 40));
       }
-      
-      // Wait before clicking AI
+
       if (!isMounted) return;
       setPhase('waiting');
-      await new Promise(r => setTimeout(r, 1000));
-      
-      // Processing
+      await new Promise((r) => setTimeout(r, 1000));
+
       if (!isMounted) return;
       setPhase('processing');
-      await new Promise(r => setTimeout(r, 1200));
-      
-      // Done
+      await new Promise((r) => setTimeout(r, 1200));
+
       if (!isMounted) return;
       setDisplayedText(currentShowcase.after);
       setPhase('done');
-      
-      // Wait before next
-      await new Promise(r => setTimeout(r, 5000));
-      
-      // Next showcase
+
+      await new Promise((r) => setTimeout(r, 5000));
+
       if (isMounted) {
         setCurrentIndex((prev) => (prev + 1) % showcases.length);
       }
@@ -80,44 +139,40 @@ export default function TypingAnimation() {
     return () => {
       isMounted = false;
     };
-  }, [currentIndex]);
+  }, [currentIndex, showcases]);
 
   const currentShowcase = showcases[currentIndex];
 
   return (
     <div className="relative w-[300px] sm:w-[340px] h-[650px] bg-[#F4F5F7] rounded-[3rem] border-[10px] border-[#1E213A] shadow-2xl overflow-hidden ring-1 ring-black/10 mx-auto flex flex-col scale-90 sm:scale-100 origin-top">
-      {/* Notch */}
       <div className="absolute top-0 inset-x-0 h-5 bg-[#1E213A] rounded-b-2xl w-32 mx-auto z-20"></div>
-      
-      {/* App Header */}
+
       <div className="pt-10 pb-3 px-6 bg-white border-b border-gray-100 flex items-center justify-between shadow-sm z-10">
         <div className="w-10"></div>
-        <div className="font-bold text-sm text-gray-800">Keyly AI 預覽</div>
+        <div className="font-bold text-sm text-gray-800">{copy.previewTitle}</div>
         <div className="flex items-center text-brand-cyan">
           <ShieldCheck className="w-4 h-4" />
         </div>
       </div>
-      
-      {/* Text Area */}
+
       <div className="flex-1 p-5 bg-white relative overflow-hidden">
-        {/* Status Badge */}
         <div className="mb-4">
           <AnimatePresence mode="wait">
             {phase === 'done' ? (
-              <motion.span 
+              <motion.span
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800"
               >
-                <Sparkles className="w-3 h-3 mr-1" /> AI 魔法優化完成
+                <Sparkles className="w-3 h-3 mr-1" /> {copy.completeLabel}
               </motion.span>
             ) : (
-              <motion.span 
+              <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600"
               >
-                原始輸入內容
+                {copy.sourceLabel}
               </motion.span>
             )}
           </AnimatePresence>
@@ -134,7 +189,6 @@ export default function TypingAnimation() {
           )}
         </div>
 
-        {/* Processing Overlay */}
         <AnimatePresence>
           {phase === 'processing' && (
             <motion.div
@@ -144,29 +198,27 @@ export default function TypingAnimation() {
               className="absolute inset-0 bg-white/60 backdrop-blur-[2px] z-20 flex flex-col items-center justify-center"
             >
               <div className="relative">
-                <motion.div 
+                <motion.div
                   animate={{ rotate: 360 }}
-                  transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+                  transition={{ repeat: Infinity, duration: 2, ease: 'linear' }}
                   className="w-16 h-16 border-4 border-brand-cyan/20 border-t-brand-cyan rounded-full"
                 />
                 <Sparkles className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 text-brand-cyan animate-pulse" />
               </div>
-              <p className="mt-4 text-sm font-bold text-brand-cyan animate-pulse">正在精煉您的文字...</p>
-              
-              {/* Scan beam */}
-              <motion.div 
+              <p className="mt-4 text-sm font-bold text-brand-cyan animate-pulse">{copy.processingLabel}</p>
+
+              <motion.div
                 initial={{ top: '-10%' }}
                 animate={{ top: '110%' }}
-                transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-cyan/50 to-transparent shadow-[0_0_15px_rgba(71,158,209,0.5)]"
               />
             </motion.div>
           )}
         </AnimatePresence>
-        
-        {/* AI Action Button (Floating) */}
+
         <AnimatePresence>
-          {(phase === 'waiting') && (
+          {phase === 'waiting' && (
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -180,8 +232,7 @@ export default function TypingAnimation() {
                   <span>{currentShowcase.promptTitle}</span>
                 </button>
               </div>
-              
-              {/* Simulated Cursor */}
+
               <motion.div
                 initial={{ x: 40, y: 40, opacity: 0 }}
                 animate={{ x: -10, y: 10, opacity: 1 }}
@@ -194,44 +245,38 @@ export default function TypingAnimation() {
           )}
         </AnimatePresence>
       </div>
-      
-      {/* Keyboard Area */}
+
       <div className="bg-[#D1D5DB] pb-6 pt-2 px-1.5 flex flex-col gap-1.5">
-        {/* Row 1 */}
         <div className="flex justify-center gap-1">
-          {['ㄅ','ㄉ','ˇ','ˋ','ㄓ','ˊ','˙','ㄚ','ㄞ','ㄢ','ㄦ'].map(k => (
+          {['ㄅ', 'ㄉ', 'ˇ', 'ˋ', 'ㄓ', 'ˊ', '˙', 'ㄚ', 'ㄞ', 'ㄢ', 'ㄦ'].map((k) => (
             <div key={k} className="bg-white rounded shadow-sm flex-1 h-10 flex items-center justify-center text-xs text-black">{k}</div>
           ))}
         </div>
-        {/* Row 2 */}
         <div className="flex justify-center gap-1 px-1">
-          {['ㄆ','ㄊ','ㄍ','ㄐ','ㄔ','ㄗ','ㄧ','ㄛ','ㄟ','ㄣ'].map(k => (
+          {['ㄆ', 'ㄊ', 'ㄍ', 'ㄐ', 'ㄔ', 'ㄗ', 'ㄧ', 'ㄛ', 'ㄟ', 'ㄣ'].map((k) => (
             <div key={k} className="bg-white rounded shadow-sm flex-1 h-10 flex items-center justify-center text-xs text-black">{k}</div>
           ))}
         </div>
-        {/* Row 3 */}
         <div className="flex justify-center gap-1 px-3">
-          {['ㄇ','ㄋ','ㄎ','ㄑ','ㄕ','ㄘ','ㄨ','ㄜ','ㄠ','ㄤ'].map(k => (
+          {['ㄇ', 'ㄋ', 'ㄎ', 'ㄑ', 'ㄕ', 'ㄘ', 'ㄨ', 'ㄜ', 'ㄠ', 'ㄤ'].map((k) => (
             <div key={k} className="bg-white rounded shadow-sm flex-1 h-10 flex items-center justify-center text-xs text-black">{k}</div>
           ))}
         </div>
-        {/* Row 4 */}
         <div className="flex justify-center gap-1 pl-5 pr-1">
-          {['ㄈ','ㄌ','ㄏ','ㄒ','ㄖ','ㄙ','ㄩ','ㄝ','ㄡ','ㄥ'].map(k => (
+          {['ㄈ', 'ㄌ', 'ㄏ', 'ㄒ', 'ㄖ', 'ㄙ', 'ㄩ', 'ㄝ', 'ㄡ', 'ㄥ'].map((k) => (
             <div key={k} className="bg-white rounded shadow-sm flex-1 h-10 flex items-center justify-center text-xs text-black">{k}</div>
           ))}
           <div className="bg-[#AEB3BE] rounded shadow-sm w-[38px] h-10 flex items-center justify-center text-black">
             <Delete className="w-4 h-4" />
           </div>
         </div>
-        {/* Row 5 */}
         <div className="flex justify-center gap-1">
           <div className="bg-[#AEB3BE] rounded shadow-sm w-[38px] h-10 flex items-center justify-center text-[10px] text-black">123</div>
           <div className="bg-[#AEB3BE] rounded shadow-sm w-[38px] h-10 flex items-center justify-center text-[10px] text-black">ABC</div>
           <div className="bg-gradient-to-br from-brand-cyan to-brand-purple rounded shadow-sm w-10 h-10 flex items-center justify-center text-white">
             <Sparkles className="w-4 h-4" />
           </div>
-          <div className="bg-white rounded shadow-sm flex-1 h-10 flex items-center justify-center text-[10px] text-black">空白</div>
+          <div className="bg-white rounded shadow-sm flex-1 h-10 flex items-center justify-center text-[10px] text-black">{copy.spaceLabel}</div>
           <div className="bg-[#AEB3BE] rounded shadow-sm w-[55px] h-10 flex items-center justify-center text-black">
             <CornerDownLeft className="w-4 h-4" />
           </div>
