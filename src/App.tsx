@@ -47,71 +47,25 @@ function DownloadCTA({ centered = false, buttonOnly = false }: { centered?: bool
       </a>
 
       {!buttonOnly && (
-        <div className="flex flex-col space-y-6 text-sm text-text-secondary text-left w-full max-w-2xl mx-auto">
-          {/* 定價與核心價值 */}
+        <div className={`flex flex-col space-y-4 text-sm text-text-secondary text-left ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md w-full' : ''}`}>
           <div className={`font-medium text-text-primary ${centered ? 'text-center text-base' : ''}`}>
             <span className="line-through text-text-secondary/60">定價 NT$150</span>，限時入手 NT$90<br />
-            <div className="mb-2">一次投資，終身進化</div>
+            <div className="mb-3">一次投資，終身進化</div>
           </div>
-
-          {/* 功能對照表 */}
-          <div className="overflow-hidden rounded-2xl border border-metal-gray/20 bg-white shadow-sm">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-metal-white/30 text-text-primary">
-                  <th className="p-4 font-bold border-b border-metal-gray/10">核心功能差異</th>
-                  <th className="p-4 font-bold border-b border-metal-gray/10">一般用戶 (買斷)</th>
-                  <th className="p-4 font-bold border-b border-metal-gray/10 text-brand-cyan">Keyly Pro (訂閱)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-metal-gray/10">
-                <tr>
-                  <td className="p-4 font-medium text-text-primary">當前價格</td>
-                  <td className="p-4">NT$90 <span className="text-[10px] opacity-60">(原價 $150)</span></td>
-                  <td className="p-4 text-brand-cyan font-bold">NT$150 / 每月</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium text-text-primary">定位描述</td>
-                  <td className="p-4">基礎進階，智慧啟航</td>
-                  <td className="p-4">無限生產力，專家首選</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium text-text-primary">極速注音引擎</td>
-                  <td className="p-4 text-brand-teal">✅ 完整版 (含更新)</td>
-                  <td className="p-4 text-brand-teal">✅ 完整版 (含更新)</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium text-text-primary">本地離線 AI</td>
-                  <td className="p-4 text-brand-teal">✅ 無限次基礎修正</td>
-                  <td className="p-4 text-brand-teal">✅ 無限次基礎修正</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium text-text-primary">雲端 AI 魔法額度</td>
-                  <td className="p-4">每日 5 次 (現行額度)*</td>
-                  <td className="p-4 font-bold text-brand-purple">🚀 無限次數 (吃到飽)</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium text-text-primary">AI 指令庫</td>
-                  <td className="p-4">✅ 內建標準指令</td>
-                  <td className="p-4">✅ 內建標準指令</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium text-text-primary">AI 指令管理員</td>
-                  <td className="p-4 text-text-secondary/50">❌ 僅限內建指令</td>
-                  <td className="p-4 font-bold text-brand-cyan">✨ 自定義 / 編輯 / 收藏</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
+            <span><strong className="text-text-primary">職人級注音鍵盤</strong><br />台灣團隊深度優化，最懂在地用語。流暢、精準、不跳針，找回指尖最舒暢的打字節奏。</span>
           </div>
-
-          {/* 法律與溫馨提醒 */}
-          <div className="space-y-3 px-1">
-            <p className="text-[13px] leading-relaxed">
-              <strong>💡 溫馨提醒：</strong> 即便每日雲端額度用完，您依然能永久無限次使用流暢的注音引擎與本地端離線 AI 修正功能，核心輸入體驗絕不打折。
-            </p>
-            <p className="text-[12px] text-text-secondary/80 bg-brand-cyan/5 p-3 rounded-xl border border-brand-cyan/10">
-              <strong>⚠️ 限時優惠：</strong> NT$90 買斷優惠僅限首波推廣期間。現在入手，即可在 App 維運期間持續享有功能更新權限。
-            </p>
+          <div className="flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
+            <span><strong className="text-text-primary">永久解鎖指令庫</strong><br />立即擁有現行所有 AI 快捷指令，並享有未來所有新功能的免費升級權限。</span>
+          </div>
+          <div className="flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
+            <span><strong className="text-text-primary">每日 AI 助攻（預設 5 次）</strong><br />每日贈送基礎雲端 AI 額度（目前為 5 次，將視成本調整）。核心輸入體驗絕不打折，離線模式可無限次使用。</span>
+          </div>
+          <div className={`text-xs text-text-secondary/70 border-t border-metal-gray/20 pt-3 ${centered ? 'mt-2 text-center' : 'mt-1'}`}>
+            若您有大量專業文字產出需求，App 內另提供 Pro 訂閱方案，解鎖「無限次」AI 處理額度與專屬進階功能。
           </div>
         </div>
       )}
@@ -361,15 +315,15 @@ function ComparisonTable() {
             <ul className="space-y-4 mb-8 flex-grow">
               <li className="flex items-start space-x-3 text-metal-white">
                 <Sparkles className="w-5 h-5 text-accent-mint shrink-0 mt-0.5" />
-                <span className="font-medium text-white"><strong className="text-accent-mint">雲端 AI 魔法額度：</strong>🚀 無限次數 (吃到飽)</span>
+                <span className="font-medium text-white"><strong className="text-white">雲端 AI 魔法額度：</strong>🚀 無限次數 (吃到飽)</span>
               </li>
               <li className="flex items-start space-x-3 text-metal-white">
                 <Zap className="w-5 h-5 text-accent-mint shrink-0 mt-0.5" />
-                <span className="font-medium text-white"><strong className="text-accent-mint">模型優先權：</strong>全球頂尖 AI 模型優先對接</span>
+                <span className="font-medium text-white"><strong className="text-white">模型優先權：</strong>全球頂尖 AI 模型優先對接</span>
               </li>
               <li className="flex items-start space-x-3 text-metal-white">
                 <Command className="w-5 h-5 text-accent-mint shrink-0 mt-0.5" />
-                <span className="font-medium text-white"><strong className="text-accent-mint">AI 指令管理員：</strong>✨ 自定義 / 編輯 / 收藏</span>
+                <span className="font-medium text-white"><strong className="text-white">AI 指令管理員：</strong>✨ 自定義 / 編輯 / 收藏</span>
               </li>
               <li className="flex items-start space-x-3 text-metal-white">
                 <Globe className="w-5 h-5 text-accent-mint shrink-0 mt-0.5" />
@@ -380,7 +334,6 @@ function ComparisonTable() {
                 <span className="font-medium text-white">專屬進階功能優先體驗</span>
               </li>
             </ul>
-
             <div className="pt-6 border-t border-white/10">
               <p className="text-xs text-metal-gray">專為有大量專業文字產出需求的職人與創作者打造</p>
             </div>
@@ -511,14 +464,13 @@ function Footer() {
             <Logo className="w-8 h-8 rounded-lg shadow-sm" />
             <span className="font-bold text-text-primary">Keyly</span>
           </div>
-<div className="flex items-center gap-3 text-sm text-text-secondary">
-  <a href="/privacy/" className="hover:text-brand-cyan transition-colors">隱私權政策</a>
-  <span className="text-metal-gray/50">|</span>
-  <a href="/terms/" className="hover:text-brand-cyan transition-colors">服務條款</a>
-  <span className="text-metal-gray/50">|</span>
-  <a href="/subscriptions/" className="hover:text-brand-cyan transition-colors">自動續訂說明</a>
-</div>
-            <span className="text-metal-gray">|</span>
+          <div className="flex flex-wrap justify-center items-center gap-3 text-sm text-text-secondary">
+            <a href="/privacy/" className="hover:text-brand-cyan transition-colors">隱私權政策</a>
+            <span className="text-metal-gray/50">|</span>
+            <a href="/terms/" className="hover:text-brand-cyan transition-colors">服務條款</a>
+            <span className="text-metal-gray/50">|</span>
+            <a href="/subscriptions/" className="hover:text-brand-cyan transition-colors">自動續訂說明</a>
+            <span className="text-metal-gray/50">|</span>
             <a href="mailto:support@keylyapp.com" className="hover:text-brand-cyan transition-colors">技術支援</a>
           </div>
         </div>
