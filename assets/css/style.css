@@ -72,6 +72,30 @@ body {
   text-decoration: none;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--brand-cyan);
+}
+
 .lang-toggle {
   display: flex;
   gap: 0.5rem;
@@ -111,6 +135,16 @@ body {
 
 .hero-content {
   max-width: 660px;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  margin-bottom: 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-cyan);
 }
 
 .hero-icon {
@@ -170,6 +204,71 @@ body {
 .cta-btn[aria-disabled="true"] {
   opacity: 0.45;
   cursor: not-allowed;
+}
+
+.cta-group {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-offer {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.offer-price {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.offer-price s {
+  color: var(--text-secondary);
+}
+
+.offer-kicker {
+  display: block;
+  margin-top: 0.375rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.offer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.offer-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.offer-item ion-icon {
+  font-size: 1.1rem;
+  color: var(--accent-mint);
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.offer-item strong {
+  color: var(--text-primary);
+}
+
+.offer-note {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
 }
 
 /* ----- Features ----- */
@@ -368,6 +467,10 @@ body {
   padding-top: 1.25rem;
 }
 
+.faq-answer p + p {
+  margin-top: 0.875rem;
+}
+
 /* ----- Footer ----- */
 .footer {
   padding: 2.75rem 2rem;
@@ -540,6 +643,14 @@ body {
     padding: 1rem 1.25rem;
   }
 
+  .nav-right {
+    gap: 0.75rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
   .hero {
     padding: 2.5rem 1.25rem;
     min-height: 80vh;
@@ -549,6 +660,10 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 18px;
+  }
+
+  .hero-offer {
+    padding: 1.25rem;
   }
 
   .features {
@@ -561,6 +676,12 @@ body {
 
   .footer {
     padding: 2rem 1.25rem;
+  }
+
+  .footer-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .legal-page {

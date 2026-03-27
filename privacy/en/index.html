@@ -4,21 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Keyly</title>
-  <meta name="description" content="Keyly Privacy Policy: we do not collect, store, or transmit any user data.">
+  <meta name="description" content="Keyly Privacy Policy: ephemeral AI processing, no keystroke logging, and clear account and permission controls.">
   <link rel="canonical" href="https://keylyapp.com/privacy/en/">
   <link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/privacy/">
-  <link rel="alternate" hreflang="en"    href="https://keylyapp.com/privacy/en/">
+  <link rel="alternate" hreflang="en" href="https://keylyapp.com/privacy/en/">
   <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/privacy/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='20' fill='%230D142E' /%3E%3Cdefs%3E%3ClinearGradient id='k-stem' x1='30' y1='20' x2='30' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2338C7BA' /%3E%3Cstop offset='1' stop-color='%238E61D9' /%3E%3C/linearGradient%3E%3ClinearGradient id='k-arm' x1='75' y1='20' x2='40' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E6EBF2' /%3E%3Cstop offset='1' stop-color='%23BFCDE0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='25' y='20' width='16' height='60' fill='url(%23k-stem)' /%3E%3Cpath d='M75 20L41 50L75 80H55L31 50L55 20H75Z' fill='url(%23k-arm)' /%3E%3C/svg%3E">
-  <meta property="og:title"       content="Privacy Policy — Keyly">
-  <meta property="og:description" content="Keyly Privacy Policy: we do not collect, store, or transmit any user data.">
-  <meta property="og:url"         content="https://keylyapp.com/privacy/en/">
-  <meta property="og:image"       content="https://keylyapp.com/assets/images/og-banner.png">
-  <meta property="og:image:width"  content="1200">
+  <meta property="og:title" content="Privacy Policy — Keyly">
+  <meta property="og:description" content="Keyly Privacy Policy: ephemeral AI processing, no keystroke logging, and clear account and permission controls.">
+  <meta property="og:url" content="https://keylyapp.com/privacy/en/">
+  <meta property="og:image" content="https://keylyapp.com/assets/images/og-banner.png">
+  <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:type"        content="website">
-  <meta name="twitter:card"       content="summary_large_image">
-  <!-- Google tag (gtag.js) -->
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TG8RM3J70R"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -33,16 +32,14 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg-page:       #F4F7FA;
-      --bg-primary:    #0D142E;
-      --bg-secondary:  #172247;
-      --brand-cyan:    #479ED1;
-      --brand-purple:  #8E61D9;
-      --brand-teal:    #38C7BA;
-      --metal-white:   #E6EBF2;
-      --metal-gray:    #BFCDE0;
-      --text-primary:  #0F1726;
-      --text-secondary:#5C708C;
+      --bg-page: #F4F7FA;
+      --bg-primary: #0D142E;
+      --brand-cyan: #479ED1;
+      --brand-purple: #8E61D9;
+      --metal-white: #E6EBF2;
+      --metal-gray: #BFCDE0;
+      --text-primary: #0F1726;
+      --text-secondary: #5C708C;
     }
 
     body {
@@ -53,16 +50,18 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Navbar ── */
     .navbar {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 50;
-      background: rgba(255,255,255,0.85);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(191,205,224,0.35);
+      border-bottom: 1px solid rgba(191, 205, 224, 0.35);
     }
+
     .navbar-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -72,6 +71,7 @@
       align-items: center;
       justify-content: space-between;
     }
+
     .navbar-brand {
       display: flex;
       align-items: center;
@@ -81,7 +81,9 @@
       font-weight: 700;
       font-size: 1.2rem;
     }
-    .navbar-brand svg { border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
+
+    .navbar-brand svg { border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+
     .lang-btn {
       font-size: 0.85rem;
       font-weight: 500;
@@ -92,17 +94,17 @@
       border-radius: 999px;
       transition: color 0.2s, border-color 0.2s;
     }
+
     .lang-btn:hover { color: var(--brand-cyan); border-color: var(--brand-cyan); }
 
-    /* ── Layout ── */
     .page-wrapper {
       max-width: 760px;
       margin: 0 auto;
       padding: 6rem 1.5rem 4rem;
     }
 
-    /* ── Header ── */
     .page-header { margin-bottom: 2.5rem; }
+
     .page-header h1 {
       font-size: clamp(1.8rem, 4vw, 2.5rem);
       font-weight: 900;
@@ -110,12 +112,12 @@
       line-height: 1.25;
       margin-bottom: 0.5rem;
     }
+
     .page-meta {
       font-size: 0.875rem;
       color: var(--text-secondary);
     }
 
-    /* ── Summary card ── */
     .summary-card {
       background: white;
       border: 1px solid var(--metal-gray);
@@ -127,7 +129,6 @@
       color: var(--text-primary);
     }
 
-    /* ── Content ── */
     .legal-content h2 {
       font-size: 1.2rem;
       font-weight: 700;
@@ -136,22 +137,27 @@
       padding-bottom: 0.5rem;
       border-bottom: 1px solid var(--metal-gray);
     }
+
     .legal-content h3 {
       font-size: 1rem;
       font-weight: 700;
       color: var(--text-primary);
       margin: 1.5rem 0 0.5rem;
     }
+
     .legal-content p {
       color: var(--text-secondary);
       margin-bottom: 0.875rem;
     }
+
     .legal-content ul {
       margin: 0.5rem 0 0.875rem 1.25rem;
       color: var(--text-secondary);
     }
+
     .legal-content li { margin-bottom: 0.4rem; }
     .legal-content strong { color: var(--text-primary); font-weight: 700; }
+
     .legal-content code {
       font-family: ui-monospace, monospace;
       font-size: 0.875em;
@@ -160,15 +166,16 @@
       border-radius: 4px;
       color: var(--text-primary);
     }
+
     .legal-content a { color: var(--brand-cyan); text-decoration: none; }
     .legal-content a:hover { text-decoration: underline; }
 
-    /* ── Footer ── */
     .footer {
       background: var(--bg-page);
-      border-top: 1px solid rgba(191,205,224,0.4);
+      border-top: 1px solid rgba(191, 205, 224, 0.4);
       padding: 2.5rem 1.5rem;
     }
+
     .footer-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -177,6 +184,7 @@
       align-items: center;
       gap: 1rem;
     }
+
     .footer-brand {
       display: flex;
       align-items: center;
@@ -185,24 +193,32 @@
       color: var(--text-primary);
       text-decoration: none;
     }
+
     .footer-brand svg { border-radius: 6px; }
+
     .footer-links {
       display: flex;
       align-items: center;
       gap: 0.75rem;
       font-size: 0.875rem;
       color: var(--text-secondary);
+      flex-wrap: wrap;
+      justify-content: center;
     }
+
     .footer-links a {
       color: var(--text-secondary);
       text-decoration: none;
       transition: color 0.2s;
     }
+
     .footer-links a:hover { color: var(--brand-cyan); }
     .footer-links .sep { color: var(--metal-gray); }
+
     .footer-copy {
       font-size: 0.8rem;
       color: var(--metal-gray);
+      text-align: center;
     }
   </style>
 </head>
@@ -237,47 +253,56 @@
     </div>
 
     <div class="summary-card">
-      💡 <strong>Our Core Privacy Promise:</strong> We only take what we need to function, and we instantly discard your data after cloud processing. We never compromise your basic privacy.
+      💡 <strong>Our core promise:</strong> We only use what is necessary to provide the service, discard cloud-processing data immediately afterward, and never touch your ordinary private typing beyond that scope.
     </div>
 
     <div class="legal-content">
       <h2>1. Information We Collect and How We Use It</h2>
-      <p>Keyly is committed to providing a secure typing experience. Our AI processing is divided into two modes:</p>
+      <p>Keyly is designed to provide a typing experience that feels both useful and safe. Our AI processing operates in two modes:</p>
 
       <h3>A. Offline AI (On-Device Models)</h3>
-      <p>If you utilize models supported by your device's built-in AI capabilities, all processing occurs <strong>completely offline</strong> on your device. Keyly absolutely does not transmit or store these operations.</p>
+      <p>If your device supports on-device AI features, processing happens <strong>entirely offline</strong> on your device. Keyly does not transmit or store these requests.</p>
 
-      <h3>B. Cloud AI Processing (Ephemeral)</h3>
-      <p>To provide more powerful and precise text refinement, we offer features that connect to top-tier cloud models (such as the OpenAI API and Anthropic API). When your drafts are sent to the cloud, we strictly adhere to an <strong>"Ephemeral Processing"</strong> principle:</p>
+      <h3>B. Cloud AI Processing (Burn After Reading)</h3>
+      <p>To provide stronger and more precise refinement, we offer access to top-tier cloud models such as the OpenAI API and Anthropic API. When your draft is sent to the cloud, we follow a strict <strong>burn-after-reading</strong> principle:</p>
       <ul>
-        <li>Your text acts only as a brief anonymous request. Once the AI result is retrieved, our servers <strong>do not</strong> store any input logs or conversation history.</li>
-        <li>We strictly require our partner providers to follow the highest data security standards, guaranteeing that your inputs are never used to train future AI models.</li>
+        <li>Your text is handled only as a brief anonymous request. Once the refined result is returned, our servers <strong>do not</strong> retain the input log or conversation history.</li>
+        <li>We require our infrastructure partners to follow high data-security standards and not use your input to train future AI models.</li>
       </ul>
 
-      <h3>C. Why do we need "Allow Full Access"?</h3>
-      <p>In the iOS ecosystem, third-party keyboards must be granted "Allow Full Access" permission to initiate network connections. This permission is required because Keyly must connect to Cloud AI to refine your text. Rest assured, <strong>we absolutely do not log your daily keystrokes or collect general typing content unrelated to Keyly's refinement features</strong>. Network connections only occur when you explicitly tap to process text with AI.</p>
+      <h3>C. Why do we need “Allow Full Access”?</h3>
+      <p>Within iOS, third-party keyboards need the “Allow Full Access” permission in order to make network connections. Keyly needs that permission only to connect to cloud AI services when you ask for advanced refinement. Rest assured, <strong>we do not log your everyday keystrokes or collect general typing content unrelated to Keyly features</strong>. A network request is made only when you explicitly trigger an AI action.</p>
+      <p><strong>If you choose not to enable Full Access:</strong> you can still use Keyly's core Zhuyin engine and regular typing features. If your device supports local AI, basic text correction can still run fully offline with your privacy staying on-device.</p>
 
-      <h3>D. Accounts and Quota Verification</h3>
-      <p>To calculate quotas for general users (daily limits) and identify Pro subscription users, the system assigns an anonymous identifier (<code>accessToken</code>). We do not collect personally identifiable information such as your real name, phone number, or address.</p>
+      <h3>D. Account and Quota Verification</h3>
+      <p>To distinguish standard users with daily limits from Pro subscribers, the system issues an anonymous identifier (<code>accessToken</code>) for quota checks. We do not collect real-name identity data such as your legal name, phone number, or home address.</p>
 
       <h3>E. Analytics Data and Third-Party Tracking</h3>
-      <p>To continuously improve your experience, this app utilizes data analytics tools such as Firebase:</p>
+      <p>To keep improving the experience, the app uses analytics tools such as Firebase:</p>
       <ul>
-        <li>We only track product conversion funnels, basic click events, and crash reports (Crashlytics).</li>
-        <li><strong>These analytics SDKs absolutely do not contain any of your keyboard text inputs.</strong></li>
+        <li>We track product funnel conversion, basic click events, and crash reporting through Crashlytics.</li>
+        <li><strong>These analytics tools do not include your keyboard text input.</strong></li>
       </ul>
 
       <h2>2. Data Sharing and Third Parties</h2>
-      <p>We do not sell any of your data to advertisers. Your necessary data is only communicated via brief encrypted connections with trusted third-party infrastructure (such as Cloud AI providers) during the delivery of AI text processing or subscription services. All communications with third-party services are conducted through TLS/SSL encrypted channels, ensuring data cannot be intercepted during transmission.</p>
+      <p>We do not sell your data to advertisers. Data is shared only in brief encrypted communications with trusted third-party infrastructure when required to provide AI text processing or subscription services.</p>
 
-      <h2>3. Your Privacy Rights</h2>
-      <p>You may revoke Keyly's "Full Access" permission at any time in iOS under Settings > General > Keyboard. Once revoked, cloud connection features will become unavailable. If you have any privacy-related questions or wish to delete your account, please feel free to contact us via <a href="mailto:support@keylyapp.com">support@keylyapp.com</a>.</p>
+      <h2>3. Children's Privacy</h2>
+      <p>This service is not intended for children under 13 years old, or under the applicable age of digital consent in your region. We do not knowingly collect children's personal information. If you believe we have done so unintentionally, please contact us and we will delete it.</p>
 
-      <h2>4. Policy Changes</h2>
-      <p>Future updates may include changes to this policy. In the event of material or substantial changes, we will notify you on our official website's homepage and within the app.</p>
+      <h2>4. Your Privacy Rights and Account Management</h2>
+      <p>You may request access to, correction of, or deletion of personal data where applicable.</p>
+      <ul>
+        <li><strong>Revoking permission:</strong> You may disable Keyly's Full Access permission at any time in iOS under Settings &gt; General &gt; Keyboard.</li>
+        <li><strong>Deleting your account:</strong> If you created an account using Sign in with Apple, choosing “Delete Account” in the app will deactivate your anonymous identifier and remove the Apple ID linkage from our side.</li>
+      </ul>
+      <p><strong>Important:</strong> deleting your account does not cancel your subscription. Because billing is handled by Apple, you must cancel through App Store subscription management to stop future auto-renewal charges. For privacy questions, contact us at <a href="mailto:support@keylyapp.com">support@keylyapp.com</a>.</p>
+
+      <h2>5. Policy Changes</h2>
+      <p>Future releases may update this policy. If we make a material change, we will notify you on our website homepage and inside the app.</p>
 
       <div style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--metal-gray); font-size: 0.85rem; color: var(--text-secondary);">
-        <strong>GDPR Notice:</strong> For users in the European Union and the European Economic Area (EEA), the legal basis for processing your data is "performance of a contract" (i.e., to provide you with keyboard input and AI refinement services).
+        <strong>GDPR note:</strong> For users in the European Union and the European Economic Area, our legal basis for processing relevant data is the performance of a contract, meaning the delivery of keyboard input and AI refinement services you requested.
       </div>
     </div>
   </div>
@@ -305,30 +330,11 @@
         <span class="sep">|</span>
         <a href="/terms/en/">Terms of Service</a>
         <span class="sep">|</span>
+        <a href="/subscriptions/en/">Auto-Renewal Terms</a>
+        <span class="sep">|</span>
         <a href="mailto:support@keylyapp.com">Support</a>
       </div>
-      <p class="footer-copy">© 2026 Keyly. Designed by teams in Taiwan for elite communication.</p>
-    </div>
-  </footer>
-
-</body>
-</html>
- Keyly. Designed by teams in Taiwan for elite communication.</p>
-    </div>
-  </footer>
-
-</body>
-</html>
-s in Taiwan for elite communication.</p>
-    </div>
-  </footer>
-
-</body>
-</html>
-span>
-        <a href="mailto:support@keylyapp.com">Support</a>
-      </div>
-      <p class="footer-copy">© 2026 Keyly. Designed by teams in Taiwan for elite communication.</p>
+      <p class="footer-copy">© 2026 Keyly. Built by a Taiwan-based team for faster, sharper communication.</p>
     </div>
   </footer>
 

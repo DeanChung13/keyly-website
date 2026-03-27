@@ -4,21 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service — Keyly</title>
-  <meta name="description" content="Keyly Terms of Service.">
+  <meta name="description" content="Keyly Terms of Service covering eligibility, plans, AI limitations, subscriptions, and App Store terms.">
   <link rel="canonical" href="https://keylyapp.com/terms/en/">
   <link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/terms/">
-  <link rel="alternate" hreflang="en"    href="https://keylyapp.com/terms/en/">
+  <link rel="alternate" hreflang="en" href="https://keylyapp.com/terms/en/">
   <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/terms/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='20' fill='%230D142E' /%3E%3Cdefs%3E%3ClinearGradient id='k-stem' x1='30' y1='20' x2='30' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2338C7BA' /%3E%3Cstop offset='1' stop-color='%238E61D9' /%3E%3C/linearGradient%3E%3ClinearGradient id='k-arm' x1='75' y1='20' x2='40' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E6EBF2' /%3E%3Cstop offset='1' stop-color='%23BFCDE0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='25' y='20' width='16' height='60' fill='url(%23k-stem)' /%3E%3Cpath d='M75 20L41 50L75 80H55L31 50L55 20H75Z' fill='url(%23k-arm)' /%3E%3C/svg%3E">
-  <meta property="og:title"       content="Terms of Service — Keyly">
-  <meta property="og:description" content="Keyly Terms of Service.">
-  <meta property="og:url"         content="https://keylyapp.com/terms/en/">
-  <meta property="og:image"       content="https://keylyapp.com/assets/images/og-banner.png">
-  <meta property="og:image:width"  content="1200">
+  <meta property="og:title" content="Terms of Service — Keyly">
+  <meta property="og:description" content="Keyly Terms of Service covering eligibility, plans, AI limitations, subscriptions, and App Store terms.">
+  <meta property="og:url" content="https://keylyapp.com/terms/en/">
+  <meta property="og:image" content="https://keylyapp.com/assets/images/og-banner.png">
+  <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:type"        content="website">
-  <meta name="twitter:card"       content="summary_large_image">
-  <!-- Google tag (gtag.js) -->
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TG8RM3J70R"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -33,16 +32,13 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg-page:       #F4F7FA;
-      --bg-primary:    #0D142E;
-      --bg-secondary:  #172247;
-      --brand-cyan:    #479ED1;
-      --brand-purple:  #8E61D9;
-      --brand-teal:    #38C7BA;
-      --metal-white:   #E6EBF2;
-      --metal-gray:    #BFCDE0;
-      --text-primary:  #0F1726;
-      --text-secondary:#5C708C;
+      --bg-page: #F4F7FA;
+      --bg-primary: #0D142E;
+      --brand-cyan: #479ED1;
+      --brand-purple: #8E61D9;
+      --metal-gray: #BFCDE0;
+      --text-primary: #0F1726;
+      --text-secondary: #5C708C;
     }
 
     body {
@@ -53,16 +49,18 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Navbar ── */
     .navbar {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 50;
-      background: rgba(255,255,255,0.85);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(191,205,224,0.35);
+      border-bottom: 1px solid rgba(191, 205, 224, 0.35);
     }
+
     .navbar-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -72,6 +70,7 @@
       align-items: center;
       justify-content: space-between;
     }
+
     .navbar-brand {
       display: flex;
       align-items: center;
@@ -81,7 +80,9 @@
       font-weight: 700;
       font-size: 1.2rem;
     }
-    .navbar-brand svg { border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
+
+    .navbar-brand svg { border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+
     .lang-btn {
       font-size: 0.85rem;
       font-weight: 500;
@@ -92,17 +93,17 @@
       border-radius: 999px;
       transition: color 0.2s, border-color 0.2s;
     }
+
     .lang-btn:hover { color: var(--brand-cyan); border-color: var(--brand-cyan); }
 
-    /* ── Layout ── */
     .page-wrapper {
       max-width: 760px;
       margin: 0 auto;
       padding: 6rem 1.5rem 4rem;
     }
 
-    /* ── Header ── */
     .page-header { margin-bottom: 2.5rem; }
+
     .page-header h1 {
       font-size: clamp(1.8rem, 4vw, 2.5rem);
       font-weight: 900;
@@ -110,12 +111,12 @@
       line-height: 1.25;
       margin-bottom: 0.5rem;
     }
+
     .page-meta {
       font-size: 0.875rem;
       color: var(--text-secondary);
     }
 
-    /* ── Summary card ── */
     .summary-card {
       background: white;
       border: 1px solid var(--metal-gray);
@@ -127,7 +128,6 @@
       color: var(--text-primary);
     }
 
-    /* ── Content ── */
     .legal-content h2 {
       font-size: 1.2rem;
       font-weight: 700;
@@ -136,31 +136,28 @@
       padding-bottom: 0.5rem;
       border-bottom: 1px solid var(--metal-gray);
     }
-    .legal-content h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin: 1.5rem 0 0.5rem;
-    }
+
     .legal-content p {
       color: var(--text-secondary);
       margin-bottom: 0.875rem;
     }
+
     .legal-content ul {
       margin: 0.5rem 0 0.875rem 1.25rem;
       color: var(--text-secondary);
     }
+
     .legal-content li { margin-bottom: 0.4rem; }
     .legal-content strong { color: var(--text-primary); font-weight: 700; }
     .legal-content a { color: var(--brand-cyan); text-decoration: none; }
     .legal-content a:hover { text-decoration: underline; }
 
-    /* ── Footer ── */
     .footer {
       background: var(--bg-page);
-      border-top: 1px solid rgba(191,205,224,0.4);
+      border-top: 1px solid rgba(191, 205, 224, 0.4);
       padding: 2.5rem 1.5rem;
     }
+
     .footer-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -169,6 +166,7 @@
       align-items: center;
       gap: 1rem;
     }
+
     .footer-brand {
       display: flex;
       align-items: center;
@@ -177,24 +175,32 @@
       color: var(--text-primary);
       text-decoration: none;
     }
+
     .footer-brand svg { border-radius: 6px; }
+
     .footer-links {
       display: flex;
       align-items: center;
       gap: 0.75rem;
       font-size: 0.875rem;
       color: var(--text-secondary);
+      flex-wrap: wrap;
+      justify-content: center;
     }
+
     .footer-links a {
       color: var(--text-secondary);
       text-decoration: none;
       transition: color 0.2s;
     }
+
     .footer-links a:hover { color: var(--brand-cyan); }
     .footer-links .sep { color: var(--metal-gray); }
+
     .footer-copy {
       font-size: 0.8rem;
       color: var(--metal-gray);
+      text-align: center;
     }
   </style>
 </head>
@@ -229,43 +235,56 @@
     </div>
 
     <div class="summary-card">
-      💡 <strong>Welcome to Keyly:</strong> By downloading and using Keyly, you agree to these basic ground rules and licensing terms.
+      💡 <strong>Welcome to Keyly:</strong> by downloading and using Keyly, you agree to the ground rules and license terms below.
     </div>
 
     <div class="legal-content">
-      <h2>1. Service Content and Plans</h2>
-      <p>Keyly is a revolutionary iOS custom keyboard offering a zero-lag Zhuyin input engine and an ultimate AI text optimization experience.</p>
+      <h2>1. Eligible Users and Age Requirements</h2>
+      <p>You must be at least 13 years old, or the minimum legal age in your jurisdiction, to use this service. If you are under the age of majority where you live, you may use the service only with permission from a parent or legal guardian.</p>
+
+      <h2>2. Service Scope and Plans</h2>
+      <p>Keyly is an iOS custom keyboard built to provide an extremely fast Zhuyin input engine together with a premium AI text-refinement experience.</p>
       <ul>
-        <li><strong>General Users:</strong> Enjoy a daily allotment of Cloud AI processing quotas (defaulting to 5, subject to adjustment based on server load and costs). Supported devices can utilize unlimited local Offline AI.</li>
-        <li><strong>Keyly Pro Users:</strong> Enjoy unlimited or higher Cloud AI processing quotas, faster connection priority, and unlock all premium cloud model services.</li>
+        <li><strong>Standard users (one-time purchase):</strong> receive the high-speed Zhuyin engine plus a daily amount of cloud AI processing quota, currently 5 requests by default. On supported devices, local offline AI features may also be used without limit.</li>
+        <li><strong>Keyly Pro subscribers:</strong> are designed for high-frequency professional use. A Pro subscription unlocks unlimited or higher cloud AI quotas, gives priority connection access to top-tier AI models, and includes the AI Prompt Manager for creating, editing, and saving custom prompts.</li>
       </ul>
-      <p><strong>Pricing:</strong> Keyly Pro is standardly priced at NT$150, with potential limited-time offers (e.g., NT$90). We reserve the right to adjust these plans and pricing in the future. All final prices are subject to the amount shown on the Apple App Store checkout screen.</p>
+      <p><strong>Complimentary quota notice:</strong> the bundled cloud AI quota included with the one-time purchase is an additional benefit provided by us. We reserve the right to adjust, suspend, or discontinue that complimentary quota if third-party technical costs, such as API pricing, or operational needs change. Any adjustment will be announced in the app at least 7 days in advance.</p>
+      <p><strong>Permission notice:</strong> to use cloud AI refinement, you must enable “Allow Full Access” in iOS. If you do not enable it, you may still use Keyly's core Zhuyin engine without limit and, on supported devices, local offline AI features. You acknowledge that enabling Full Access is technically required for cloud AI features and that you are responsible for evaluating the system-permission risk on your own device.</p>
 
-      <h2>2. Acceptable Use and Prohibited Conduct</h2>
-      <p>You agree to use Keyly exclusively for legitimate text input and creative assistance, and you commit to <strong>never</strong> engage in the following activities:</p>
+      <h2>3. Acceptable Use and Prohibited Conduct</h2>
+      <p>You agree to use Keyly only for legitimate text input and writing assistance, and you agree <strong>not</strong> to do any of the following:</p>
       <ul>
-        <li>Attempting to reverse-engineer, crack, or bypass our APIs and quota calculation systems.</li>
-        <li>Utilizing bots, scripts, or automation to maliciously and frequently send requests, damaging servers or abusing cloud resources.</li>
-        <li>Distributing or engaging in any illegal digital content and activities via this keyboard in violation of local laws.</li>
+        <li>Attempt to reverse-engineer, crack, or bypass our APIs or quota-calculation systems.</li>
+        <li>Use bots, scripts, or other automation to send maliciously frequent requests, damage servers, or abuse cloud resources.</li>
+        <li>Use this keyboard to distribute or engage in any unlawful digital content or activity in violation of local law.</li>
       </ul>
-      <p>If our systems detect abnormally high-frequency malicious clicks or scraping behavior, we reserve the right to immediately freeze the associated identifier and terminate your service without notice.</p>
+      <p>If our systems detect abnormal high-frequency malicious clicking or scraping behavior, we may immediately freeze the related identifier and terminate service without prior notice.</p>
 
-      <h2>3. Subscriptions, Pricing, and Refunds</h2>
-      <p>All payments, including the one-time purchase and Keyly Pro subscriptions, are processed and billed through the Apple App Store. We reserve the right to adjust plan pricing and free quotas at any time, with prior notice. <strong>In accordance with relevant consumer protection laws, the digital content provided by this software (including one-time purchase features and subscription services) is considered fully delivered upon download or instant provision, and is therefore exempt from any 7-day cooling-off period or right of withdrawal.</strong></p>
-      <p>All matters regarding subscription management, payment details, auto-renewal settings, and refund requests must strictly follow Apple's official policies and application channels. The developer cannot intervene in Apple's refund review process or cancel subscription settings directly from our backend system. Please note: Deleting your account within the app will not automatically cancel your App Store subscription; you must manually manage and cancel your subscription via your Apple system settings.</p>
+      <h2>4. Subscriptions, Pricing, and Refunds</h2>
+      <p>All payments are processed through the Apple App Store. We reserve the right to change pricing and free quotas with prior notice. <strong>Under applicable law, this software is digital content that is deemed completed upon delivery and therefore is not subject to a 7-day cooling-off period.</strong> Subscription cancellation and refund requests are governed by Apple's policies, and the developer cannot intervene in Apple's refund review process. Please note that deleting your account inside the app does not automatically cancel your App Store subscription. You must manage and cancel the subscription through Apple's system settings.</p>
 
-      <h2>4. Disclaimer of Warranties and AI Limitations</h2>
-      <p>Regardless of whether you are on a free or paid plan, this software and service is provided "as is" without any express or implied guarantees. Please note that <strong>current Artificial Intelligence models have inherent limitations in understanding</strong>:</p>
+      <h2>5. Disclaimer and AI Response Limitations</h2>
+      <p>Whether you use a free or paid plan, the software and services are provided on an “as is” basis without express or implied guarantees. In particular, <strong>current AI systems have inherent limitations</strong>:</p>
       <ul>
-        <li>Text polished or rewritten by AI may be inaccurate, controversial, produce "hallucinations," or occasionally contain offensive content.</li>
-        <li>You should independently review the AI's refined text before sending it. The Keyly team assumes no responsibility for any communication misunderstandings, interpersonal conflicts, reputational damage, or commercial losses resulting from the use of our AI suggestions.</li>
+        <li>AI-generated rewrites and refinements may be inaccurate, controversial, hallucinatory, or occasionally offensive.</li>
+        <li><strong>Professional-content disclaimer:</strong> content generated by Keyly does not constitute legal, medical, financial, or other professional advice. If your writing involves formal legal rights, obligations, contracts, public statements, apologies, or professional consultation, you should have it reviewed by a qualified professional. You remain solely responsible for any liability arising from reliance on AI-generated output.</li>
+        <li>You should review AI-refined text before sending it. The Keyly team is not liable for communication misunderstandings, interpersonal conflict, reputational harm, or business loss resulting from use of our AI suggestions.</li>
       </ul>
 
-      <h2>5. Intellectual Property Rights</h2>
-      <p>The application design, UI interface, sound feedback, and source code of the Keyly app are owned by the developer team. However, the copyrights to the "final text creations" you type through Keyly and refine through AI belong entirely to you. We claim no rights over your generated text outcomes.</p>
+      <h2>6. Intellectual Property</h2>
+      <p>The design, UI, sound feedback, and source code of the Keyly app belong to the developer team. However, the copyright in the final text that you create through Keyly, including text refined by AI, belongs entirely to you. We claim no ownership over your final written output.</p>
 
-      <h2>6. Governing Law and Jurisdiction</h2>
-      <p>The interpretation, supplementation, and application of these Terms of Service are governed by the laws of the Republic of China (Taiwan). In the event of any disputes arising from the use of this service, both parties shall first seek good-faith negotiation; if negotiations fail, the Taipei District Court in Taiwan shall be the court of first instance jurisdiction.</p>
+      <h2>7. Apple App Store Additional Terms</h2>
+      <p>If you downloaded and use the service through the Apple App Store, you also agree to the following Apple-required terms:</p>
+      <ul>
+        <li>These Terms of Service are an agreement between you and the Keyly development team, not between you and Apple Inc. The Keyly team is solely responsible for the app and its content.</li>
+        <li>Apple has no obligation to provide maintenance or support services for the app.</li>
+        <li>If any third-party claim arises in connection with the app, including intellectual-property claims or regulatory non-compliance claims, the Keyly team is responsible for investigating, defending, settling, and discharging the claim, not Apple.</li>
+        <li><strong>You acknowledge and agree that Apple and its subsidiaries are third-party beneficiaries of these Terms of Service. Once you accept these terms, Apple has the right to enforce them against you as a third-party beneficiary.</strong></li>
+      </ul>
+
+      <h2>8. Governing Law and Jurisdiction</h2>
+      <p>These Terms of Service are governed by the laws of the Republic of China (Taiwan). If any dispute arises out of or in connection with the service, both parties will first attempt to resolve it through good-faith negotiation. If that fails, the Taipei District Court in Taiwan will have jurisdiction as the court of first instance.</p>
     </div>
   </div>
 
@@ -292,19 +311,11 @@
         <span class="sep">|</span>
         <a href="/terms/en/">Terms of Service</a>
         <span class="sep">|</span>
-        <a href="mailto:support@keylyapp.com">Support</a>
-      </div>
-      <p class="footer-copy">© 2026 Keyly. Designed by teams in Taiwan for elite communication.</p>
-    </div>
-  </footer>
-
-</body>
-</html>
-ervice</a>
+        <a href="/subscriptions/en/">Auto-Renewal Terms</a>
         <span class="sep">|</span>
         <a href="mailto:support@keylyapp.com">Support</a>
       </div>
-      <p class="footer-copy">© 2026 Keyly. Designed by teams in Taiwan for elite communication.</p>
+      <p class="footer-copy">© 2026 Keyly. Built by a Taiwan-based team for faster, sharper communication.</p>
     </div>
   </footer>
 
