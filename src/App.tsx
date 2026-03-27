@@ -48,9 +48,9 @@ function DownloadCTA({ centered = false, buttonOnly = false }: { centered?: bool
 
       {!buttonOnly && (
         <div className={`flex flex-col space-y-4 text-sm text-text-secondary text-left ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md w-full' : ''}`}>
-          <div className={`font-medium text-text-primary mb-1 ${centered ? 'text-center text-base' : ''}`}>
-            一次投資，終身進化<br />
-            僅需 NT$60，讓你的鍵盤長出大腦
+          <div className={`font-medium text-text-primary ${centered ? 'text-center text-base' : ''}`}>
+            <span className="line-through text-text-secondary/60">定價 NT$150</span>，限時入手 NT$90<br />
+            <div className="mb-3">一次投資，終身進化</div>
           </div>
           <div className="flex items-start space-x-2">
             <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
@@ -62,7 +62,7 @@ function DownloadCTA({ centered = false, buttonOnly = false }: { centered?: bool
           </div>
           <div className="flex items-start space-x-2">
             <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-            <span><strong className="text-text-primary">每日 AI 助攻（贈送 5 次）</strong><br />每日免費贈送 5 次高階雲端 AI 額度。模型等級與 Pro 版一致，幫你一鍵潤飾 Email、縮寫長文，讓靈感永不枯竭。</span>
+            <span><strong className="text-text-primary">每日 AI 助攻（預設 5 次）</strong><br />每日贈送基礎雲端 AI 額度（目前為 5 次，將視成本調整）。模型等級與 Pro 版一致，幫你一鍵潤飾 Email、縮寫長文，讓靈感永不枯竭。</span>
           </div>
           <div className={`text-xs text-text-secondary/70 border-t border-metal-gray/20 pt-3 ${centered ? 'mt-2 text-center' : 'mt-1'}`}>
             若您有大量專業文字產出需求，App 內另提供 Pro 訂閱方案，解鎖「無限次」AI 處理額度與專屬進階功能。
@@ -257,8 +257,14 @@ function FAQSection() {
       answer: "這是一項專為打字體驗注入靈魂的獨家彩蛋！我們內建了超擬真的鋼琴音色，讓您在打字的同時也能流暢彈奏各首世界名曲。無論快打慢敲，優美的旋律都會隨著指尖行雲流水般傾瀉而出，不僅為日常生活增添一抹文藝氣息，更讓每一次枯燥的訊息回覆，都昇華成專屬於您的微型音樂饗宴。"
     },
     {
-      question: "免費版跟 Keyly Pro 版有什麼差別？",
-      answer: "免費版本即配備每日 5 次的雲端 AI 魔法額度，滿足您的日常所需。若您渴望不受拘束的創作自由，升級至 Keyly Pro 後，不僅能徹底解鎖無限次的雲端運算，更享有專屬特權，優先連接至全球最頂尖、最聰明的 AI 模型，讓您的文字魅力瞬間昇華！"
+      question: "一般用戶 跟 訂閱用戶 有什麼差別？",
+      answer: (
+        <div className="space-y-3">
+          <p><strong>一般用戶（買斷版）：</strong>購買即享極速注音引擎，並隨附每日 5 次雲端 AI 魔法額度，滿足您的日常基本所需。若您的設備支援，更可無限次使用本地端離線 AI 功能。</p>
+          <p><strong>Keyly Pro 訂閱用戶：</strong>為追求專業效率的您打造。升級訂閱後，不僅徹底解鎖無限次雲端運算，更享有專屬連線特權，優先對接全球頂尖 AI 模型。此外，Pro 用戶專享「AI 指令管理員」：支援自定義指令的新增、編輯與收藏功能，讓 AI 完美契合您的使用習慣！</p>
+          <p className="text-xs text-text-secondary/70 border-t border-metal-gray/10 pt-2">註：雲端 AI 額度與模型由第三方技術提供，Keyly 保留依營運成本調整方案之權利，變更將提前告知。</p>
+        </div>
+      )
     },
     {
       question: "為什麼安裝時需要「允許完全取用」權限？",
