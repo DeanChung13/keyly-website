@@ -80,7 +80,6 @@ export default function App() {
       <main>
         <Hero />
         <Features />
-        <ComparisonTable />
         <FAQSection />
         <CTA />
       </main>
@@ -239,122 +238,6 @@ function Features() {
   );
 }
 
-function ComparisonTable() {
-  return (
-    <section id="pricing" className="py-24 bg-[#F4F7FA]">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">選擇適合您的方案</h2>
-          <p className="text-text-secondary text-lg">一次買斷基礎功能，或升級 Pro 解鎖無限可能</p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 items-stretch">
-          {/* General User */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-3xl p-8 border border-metal-gray/20 shadow-sm flex flex-col"
-          >
-            <div className="mb-8">
-              <h3 className="text-xl font-bold text-text-primary mb-2">一般用戶（推廣買斷制）</h3>
-              <div className="flex items-baseline space-x-1">
-                <span className="text-3xl font-black text-text-primary">NT$ 90</span>
-                <span className="text-text-secondary line-through text-sm">NT$ 150</span>
-              </div>
-              <p className="text-sm font-medium text-brand-purple mt-2">基礎進階，智慧啟航</p>
-            </div>
-
-            <ul className="space-y-4 mb-8 flex-grow">
-              <li className="flex items-start space-x-3 text-text-secondary">
-                <CheckCircle2 className="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" />
-                <span><strong className="text-text-primary">極速注音引擎：</strong>完整版 (含持續更新)</span>
-              </li>
-              <li className="flex items-start space-x-3 text-text-secondary">
-                <CheckCircle2 className="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" />
-                <span><strong className="text-text-primary">本地離線 AI：</strong>無限次基礎修正</span>
-              </li>
-              <li className="flex items-start space-x-3 text-text-secondary">
-                <CheckCircle2 className="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" />
-                <span><strong className="text-text-primary">雲端 AI 魔法額度：</strong>每日 5 次 (現行額度)*</span>
-              </li>
-              <li className="flex items-start space-x-3 text-text-secondary">
-                <CheckCircle2 className="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" />
-                <span><strong className="text-text-primary">AI 指令庫：</strong>內建所有標準指令</span>
-              </li>
-              <li className="flex items-start space-x-3 text-text-secondary/50 italic">
-                <X className="w-5 h-5 shrink-0 mt-0.5" />
-                <span><strong className="text-text-primary/50">AI 指令管理員：</strong>僅限使用內建指令</span>
-              </li>
-            </ul>
-
-            <div className="pt-6 border-t border-metal-gray/10">
-              <p className="text-xs text-brand-purple font-medium mb-1">⚠️ 限時優惠：</p>
-              <p className="text-xs text-text-secondary/70">NT$ 90 買斷優惠僅限首波推廣期間。現在入手，即可在 App 維運期間持續享有功能更新權限。</p>
-            </div>
-          </motion.div>
-
-          {/* Pro User */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-bg-primary rounded-3xl p-8 border border-white/10 shadow-xl shadow-brand-cyan/10 flex flex-col relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 px-5 py-1.5 bg-accent-mint text-bg-primary font-bold text-xs rounded-bl-2xl">
-              RECOMMENDED
-            </div>
-            <div className="mb-8">
-              <h3 className="text-xl font-bold text-white mb-2">Keyly Pro（專業訂閱制）</h3>
-              <div className="flex items-baseline space-x-1">
-                <span className="text-3xl font-black text-white">NT$ 150 <span className="text-lg font-normal text-metal-gray">/ 每月</span></span>
-              </div>
-              <p className="text-sm font-medium text-accent-mint mt-2">無限生產力，專家首選</p>
-            </div>
-
-            <ul className="space-y-4 mb-8 flex-grow">
-              <li className="flex items-start space-x-3 text-metal-white">
-                <Sparkles className="w-5 h-5 text-accent-mint shrink-0 mt-0.5" />
-                <span className="font-medium text-white"><strong className="text-white">雲端 AI 魔法額度：</strong>🚀 無限次數 (吃到飽)</span>
-              </li>
-              <li className="flex items-start space-x-3 text-metal-white">
-                <Zap className="w-5 h-5 text-accent-mint shrink-0 mt-0.5" />
-                <span className="font-medium text-white"><strong className="text-white">模型優先權：</strong>全球頂尖 AI 模型優先對接</span>
-              </li>
-              <li className="flex items-start space-x-3 text-metal-white">
-                <Command className="w-5 h-5 text-accent-mint shrink-0 mt-0.5" />
-                <span className="font-medium text-white"><strong className="text-white">AI 指令管理員：</strong>✨ 自定義 / 編輯 / 收藏</span>
-              </li>
-              <li className="flex items-start space-x-3 text-metal-white">
-                <Globe className="w-5 h-5 text-accent-mint shrink-0 mt-0.5" />
-                <span className="font-medium text-white">更快速的雲端連線優先權</span>
-              </li>
-              <li className="flex items-start space-x-3 text-metal-white">
-                <User className="w-5 h-5 text-accent-mint shrink-0 mt-0.5" />
-                <span className="font-medium text-white">專屬進階功能優先體驗</span>
-              </li>
-            </ul>
-            <div className="pt-6 border-t border-white/10">
-              <p className="text-xs text-metal-gray">專為有大量專業文字產出需求的職人與創作者打造</p>
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="mt-12 max-w-3xl mx-auto space-y-4 text-center">
-          <div className="bg-brand-cyan/5 border border-brand-cyan/20 rounded-2xl p-6">
-            <p className="text-sm text-text-primary font-medium leading-relaxed">
-              💡 溫馨提醒：即便每日雲端額度用完，您依然能永久無限次使用流暢的注音引擎與本地端離線 AI 修正功能，核心輸入體驗絕不打折。
-            </p>
-          </div>
-          <p className="text-xs text-text-secondary/60 italic">
-            * 雲端 AI 額度與模型由第三方技術提供，Keyly 保留依營運成本調整方案之權利，變更將提前告知。
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function FAQSection() {
   const faqs = [
     {
@@ -388,10 +271,20 @@ function FAQSection() {
     {
       question: "如果沒有網路，還可以使用 AI 潤飾嗎？",
       answer: "當然沒問題！若是您的設備支援 Apple 最前沿的原生 AI 框架，Keyly 就能如同裝備了隱形引擎一般，在完全斷網的環境下發揮實力。這不僅意味著閃電般的秒速反應，更確保了您的靈感與隱私，100% 留存在掌心的設備中。"
+    },
+    {
+      question: "一般用戶 跟 訂閱用戶 有什麼差別？",
+      answer: (
+        <div className="space-y-3">
+          <p><strong>一般用戶（買斷版）：</strong>購買即享極速注音引擎，並隨附每日 5 次雲端 AI 魔法額度，滿足您的日常基本所需。若您的設備支援，更可無限次使用本地端離線 AI 功能。</p>
+          <p><strong>Keyly Pro 訂閱用戶：</strong>為追求專業效率的您打造。升級訂閱後，不僅徹底解鎖無限次雲端運算，更享有專屬連線特權，優先對接全球頂尖 AI 模型。此外，Pro 用戶專享「AI 指令管理員」：支援自定義指令的新增、編輯與收藏功能，讓 AI 完美契合您的使用習慣！</p>
+          <p className="text-xs text-text-secondary/70 border-t border-white/10 pt-2">註：雲端 AI 額度與模型由第三方技術提供，Keyly 保留依營運成本調整方案之權利，變更將提前告知。</p>
+        </div>
+      )
     }
   ];
 
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section id="faq" className="py-24 bg-bg-primary text-white overflow-hidden relative">
