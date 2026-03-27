@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Keyly</title>
-  <meta name="description" content="Keyly Privacy Policy: ephemeral AI processing, no keystroke logging, and clear account and permission controls.">
+  <meta name="description" content="Keyly Privacy Policy: how we handle account, subscription, cloud AI, on-device data, and the 30-day account deletion flow.">
   <link rel="canonical" href="https://keylyapp.com/privacy/en/">
   <link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/privacy/">
   <link rel="alternate" hreflang="en" href="https://keylyapp.com/privacy/en/">
   <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/privacy/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='20' fill='%230D142E' /%3E%3Cdefs%3E%3ClinearGradient id='k-stem' x1='30' y1='20' x2='30' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2338C7BA' /%3E%3Cstop offset='1' stop-color='%238E61D9' /%3E%3C/linearGradient%3E%3ClinearGradient id='k-arm' x1='75' y1='20' x2='40' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E6EBF2' /%3E%3Cstop offset='1' stop-color='%23BFCDE0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='25' y='20' width='16' height='60' fill='url(%23k-stem)' /%3E%3Cpath d='M75 20L41 50L75 80H55L31 50L55 20H75Z' fill='url(%23k-arm)' /%3E%3C/svg%3E">
   <meta property="og:title" content="Privacy Policy — Keyly">
-  <meta property="og:description" content="Keyly Privacy Policy: ephemeral AI processing, no keystroke logging, and clear account and permission controls.">
+  <meta property="og:description" content="Keyly Privacy Policy: how we handle account, subscription, cloud AI, on-device data, and the 30-day account deletion flow.">
   <meta property="og:url" content="https://keylyapp.com/privacy/en/">
   <meta property="og:image" content="https://keylyapp.com/assets/images/og-banner.png">
   <meta property="og:image:width" content="1200">
@@ -249,60 +249,105 @@
   <div class="page-wrapper">
     <div class="page-header">
       <h1>Privacy Policy</h1>
-      <p class="page-meta">Last updated: March 27, 2026</p>
+      <p class="page-meta">Last updated: March 28, 2026</p>
     </div>
 
     <div class="summary-card">
-      💡 <strong>Our core promise:</strong> We only use what is necessary to provide the service, discard cloud-processing data immediately afterward, and never touch your ordinary private typing beyond that scope.
+      💡 <strong>Summary:</strong> Keyly processes data only to provide account, subscription, and cloud AI features that you actively use. We do not automatically upload your everyday typing just because you installed or use the keyboard.
     </div>
 
     <div class="legal-content">
-      <h2>1. Information We Collect and How We Use It</h2>
-      <p>Keyly is designed to provide a typing experience that feels both useful and safe. Our AI processing operates in two modes:</p>
+      <h2>1. Overview</h2>
+      <p>Keyly is an iOS third-party keyboard and AI-assisted writing app. It includes an on-device typing experience, a Sign in with Apple account system, optional cloud AI features, and subscription and quota management.</p>
+      <p>We follow a data minimization approach. We do not collect keyboard input for advertising, and we do not upload ordinary typing content to our servers unless you actively use a feature that requires it. When you use account, subscription, or cloud AI features, we do process the data needed to provide those services.</p>
+      <p>If you do not use account, billing, or cloud AI features, most of the Keyly typing and settings experience can remain on-device.</p>
 
-      <h3>A. Offline AI (On-Device Models)</h3>
-      <p>If your device supports on-device AI features, processing happens <strong>entirely offline</strong> on your device. Keyly does not transmit or store these requests.</p>
+      <h2>2. Categories of Data We Process</h2>
 
-      <h3>B. Cloud AI Processing (Burn After Reading)</h3>
-      <p>To provide stronger and more precise refinement, we offer access to top-tier cloud models such as the OpenAI API and Anthropic API. When your draft is sent to the cloud, we follow a strict <strong>burn-after-reading</strong> principle:</p>
+      <h3>2.1 Account and Authentication Data</h3>
+      <p>When you create or sign in to an account with Sign in with Apple, we may process:</p>
       <ul>
-        <li>Your text is handled only as a brief anonymous request. Once the refined result is returned, our servers <strong>do not</strong> retain the input log or conversation history.</li>
-        <li>We require our infrastructure partners to follow high data-security standards and not use your input to train future AI models.</li>
+        <li>Apple-provided sign-in credentials and identifier information</li>
+        <li>Your Keyly account identifier</li>
+        <li>Authentication sessions and access token / refresh token data</li>
+        <li>Account deletion requests and deletion scheduling status</li>
+      </ul>
+      <p>This data is used for sign-in, account security, session management, and account deletion flows.</p>
+
+      <h3>2.2 Subscription, Purchase, and Quota Data</h3>
+      <p>If you purchase a Keyly subscription or quota package, we may process transaction information needed for App Store verification, your current subscription status and renewal timing, and AI quota-related records.</p>
+
+      <h3>2.3 Cloud AI Request Data</h3>
+      <p>When you actively use a cloud AI feature, the system processes the text you submit and the request context needed to generate a result. This data is used only when you explicitly trigger cloud AI functionality and is not retained as general keyboard behavior tracking data.</p>
+      <p>If you use only local features or on-device AI modes, the related content does not need to go through the cloud AI path.</p>
+
+      <h3>2.4 Local Settings and Personalization Data</h3>
+      <p>Keyly stores necessary local data on your device, such as keyboard and AI preferences, settings shared between the app and the keyboard extension, personal dictionary or learning results, and local caches and session state.</p>
+
+      <h3>2.5 Diagnostics, Analytics, and Remote Configuration Data</h3>
+      <p>Keyly currently uses Firebase Analytics, Firebase Remote Config, and Supabase to support product operations. These services may process data related to product behavior, feature flags, reliability, diagnostics, or service security. We do not send keyboard text content as general analytics events.</p>
+
+      <h2>3. How We Use Data</h2>
+      <ul>
+        <li>To create and maintain your account</li>
+        <li>To verify session state and protect account security</li>
+        <li>To provide cloud AI features</li>
+        <li>To verify subscription, quota, and payment entitlements</li>
+        <li>To store your settings and personalization preferences</li>
+        <li>To prevent abuse, keep the service reliable, and troubleshoot problems</li>
+        <li>To fulfill account deletion and legal obligations</li>
       </ul>
 
-      <h3>C. Why do we need “Allow Full Access”?</h3>
-      <p>Within iOS, third-party keyboards need the “Allow Full Access” permission in order to make network connections. Keyly needs that permission only to connect to cloud AI services when you ask for advanced refinement. Rest assured, <strong>we do not log your everyday keystrokes or collect general typing content unrelated to Keyly features</strong>. A network request is made only when you explicitly trigger an AI action.</p>
-      <p><strong>If you choose not to enable Full Access:</strong> you can still use Keyly's core Zhuyin engine and regular typing features. If your device supports local AI, basic text correction can still run fully offline with your privacy staying on-device.</p>
-
-      <h3>D. Account and Quota Verification</h3>
-      <p>To distinguish standard users with daily limits from Pro subscribers, the system issues an anonymous identifier (<code>accessToken</code>) for quota checks. We do not collect real-name identity data such as your legal name, phone number, or home address.</p>
-
-      <h3>E. Analytics Data and Third-Party Tracking</h3>
-      <p>To keep improving the experience, the app uses analytics tools such as Firebase:</p>
+      <h2>4. What We Do Not Do</h2>
       <ul>
-        <li>We track product funnel conversion, basic click events, and crash reporting through Crashlytics.</li>
-        <li><strong>These analytics tools do not include your keyboard text input.</strong></li>
+        <li>We do not sell your personal data for advertising purposes</li>
+        <li>We do not collect keyboard input as general tracking data without your action</li>
+        <li>We do not automatically upload everything you type just because you installed the keyboard</li>
       </ul>
 
-      <h2>2. Data Sharing and Third Parties</h2>
-      <p>We do not sell your data to advertisers. Data is shared only in brief encrypted communications with trusted third-party infrastructure when required to provide AI text processing or subscription services.</p>
-
-      <h2>3. Children's Privacy</h2>
-      <p>This service is not intended for children under 13 years old, or under the applicable age of digital consent in your region. We do not knowingly collect children's personal information. If you believe we have done so unintentionally, please contact us and we will delete it.</p>
-
-      <h2>4. Your Privacy Rights and Account Management</h2>
-      <p>You may request access to, correction of, or deletion of personal data where applicable.</p>
+      <h2>5. Third-Party Services</h2>
+      <p>Keyly may use the following third-party services or platforms to process necessary data:</p>
       <ul>
-        <li><strong>Revoking permission:</strong> You may disable Keyly's Full Access permission at any time in iOS under Settings &gt; General &gt; Keyboard.</li>
-        <li><strong>Deleting your account:</strong> If you created an account using Sign in with Apple, choosing “Delete Account” in the app will deactivate your anonymous identifier and remove the Apple ID linkage from our side.</li>
+        <li>Apple: sign-in, App Store subscriptions, and transaction flows</li>
+        <li>Supabase: accounts, database, edge functions, and related backend capabilities</li>
+        <li>Firebase: analytics and remote configuration</li>
+        <li>Cloud AI providers and infrastructure: only when you actively use cloud AI features</li>
       </ul>
-      <p><strong>Important:</strong> deleting your account does not cancel your subscription. Because billing is handled by Apple, you must cancel through App Store subscription management to stop future auto-renewal charges. For privacy questions, contact us at <a href="mailto:support@keylyapp.com">support@keylyapp.com</a>.</p>
+      <p>Each third-party service handles data under its own policies and practices.</p>
 
-      <h2>5. Policy Changes</h2>
-      <p>Future releases may update this policy. If we make a material change, we will notify you on our website homepage and inside the app.</p>
+      <h2>6. Data Retention</h2>
+      <ul>
+        <li>Local settings and personalization data: generally remain on your device until you delete the app, clear data, or reset settings</li>
+        <li>Account, subscription, quota, and security-related data: retained for as long as needed to provide the service</li>
+        <li>Legal, tax, transaction, dispute-resolution, or security records: may be retained longer where required</li>
+      </ul>
+
+      <h2>7. Account Deletion</h2>
+      <p>You can submit an account deletion request inside the app. Once the request is accepted:</p>
+      <ul>
+        <li>Your account is immediately deactivated and signed out</li>
+        <li>A 30-day grace period begins</li>
+        <li>During those 30 days, you cannot sign in again or start over with the same Apple ID</li>
+        <li>After 30 days, we delete the account and deletable data</li>
+        <li>You immediately lose access to Keyly cloud AI, subscription-linked entitlements, and related account-based services</li>
+      </ul>
+      <p>Deleting your Keyly account does not automatically cancel your App Store subscription. You still need to cancel it yourself on the <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener noreferrer">Apple subscription management page</a>. Subscription billing and refund decisions remain subject to Apple's policies and handling.</p>
+      <p>Where required for legal obligations, tax, payment verification, dispute handling, or security purposes, we may retain limited data for the necessary period instead of deleting everything immediately.</p>
+
+      <h2>8. Your Rights</h2>
+      <p>Depending on the laws that apply to you, you may have rights to access, correct, delete eligible data, or object to specific processing activities.</p>
+
+      <h2>9. Children's Privacy</h2>
+      <p>Where required by applicable law, children should use services involving accounts, payments, or cloud features only with parent or guardian consent.</p>
+
+      <h2>10. Changes to This Policy</h2>
+      <p>If we update this policy, we may provide notice in the app, on the App Store page, or through other appropriate channels when required, and we will update the last updated date of this document.</p>
+
+      <h2>11. Contact</h2>
+      <p>If you have questions about this Privacy Policy or the account deletion flow, please contact us at <a href="mailto:support@keylyapp.com">support@keylyapp.com</a>.</p>
 
       <div style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--metal-gray); font-size: 0.85rem; color: var(--text-secondary);">
-        <strong>GDPR note:</strong> For users in the European Union and the European Economic Area, our legal basis for processing relevant data is the performance of a contract, meaning the delivery of keyboard input and AI refinement services you requested.
+        <strong>Important note:</strong> This document is a product-level privacy explanation and does not constitute formal legal advice for a specific matter. If you need advice for a particular jurisdiction, business model, or compliance obligation, you should consult a qualified lawyer.
       </div>
     </div>
   </div>
