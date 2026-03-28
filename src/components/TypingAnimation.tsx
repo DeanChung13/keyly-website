@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Delete, CornerDownLeft, MousePointer2, ShieldCheck } from 'lucide-react';
+import keyboardImg from '../../assets/images/keyboard.png';
 
 type Showcase = {
   id: string;
@@ -246,42 +247,7 @@ export default function TypingAnimation({ locale = 'zh-TW' }: { locale?: Locale 
         </AnimatePresence>
       </div>
 
-      <div className="bg-[#D1D5DB] pb-6 pt-2 px-1.5 flex flex-col gap-1.5">
-        <div className="flex justify-center gap-1">
-          {['ㄅ', 'ㄉ', 'ˇ', 'ˋ', 'ㄓ', 'ˊ', '˙', 'ㄚ', 'ㄞ', 'ㄢ', 'ㄦ'].map((k) => (
-            <div key={k} className="bg-white rounded shadow-sm flex-1 h-10 flex items-center justify-center text-xs text-black">{k}</div>
-          ))}
-        </div>
-        <div className="flex justify-center gap-1 px-1">
-          {['ㄆ', 'ㄊ', 'ㄍ', 'ㄐ', 'ㄔ', 'ㄗ', 'ㄧ', 'ㄛ', 'ㄟ', 'ㄣ'].map((k) => (
-            <div key={k} className="bg-white rounded shadow-sm flex-1 h-10 flex items-center justify-center text-xs text-black">{k}</div>
-          ))}
-        </div>
-        <div className="flex justify-center gap-1 px-3">
-          {['ㄇ', 'ㄋ', 'ㄎ', 'ㄑ', 'ㄕ', 'ㄘ', 'ㄨ', 'ㄜ', 'ㄠ', 'ㄤ'].map((k) => (
-            <div key={k} className="bg-white rounded shadow-sm flex-1 h-10 flex items-center justify-center text-xs text-black">{k}</div>
-          ))}
-        </div>
-        <div className="flex justify-center gap-1 pl-5 pr-1">
-          {['ㄈ', 'ㄌ', 'ㄏ', 'ㄒ', 'ㄖ', 'ㄙ', 'ㄩ', 'ㄝ', 'ㄡ', 'ㄥ'].map((k) => (
-            <div key={k} className="bg-white rounded shadow-sm flex-1 h-10 flex items-center justify-center text-xs text-black">{k}</div>
-          ))}
-          <div className="bg-[#AEB3BE] rounded shadow-sm w-[38px] h-10 flex items-center justify-center text-black">
-            <Delete className="w-4 h-4" />
-          </div>
-        </div>
-        <div className="flex justify-center gap-1">
-          <div className="bg-[#AEB3BE] rounded shadow-sm w-[38px] h-10 flex items-center justify-center text-[10px] text-black">123</div>
-          <div className="bg-[#AEB3BE] rounded shadow-sm w-[38px] h-10 flex items-center justify-center text-[10px] text-black">ABC</div>
-          <div className="bg-gradient-to-br from-brand-cyan to-brand-purple rounded shadow-sm w-10 h-10 flex items-center justify-center text-white">
-            <Sparkles className="w-4 h-4" />
-          </div>
-          <div className="bg-white rounded shadow-sm flex-1 h-10 flex items-center justify-center text-[10px] text-black">{copy.spaceLabel}</div>
-          <div className="bg-[#AEB3BE] rounded shadow-sm w-[55px] h-10 flex items-center justify-center text-black">
-            <CornerDownLeft className="w-4 h-4" />
-          </div>
-        </div>
-      </div>
+      <img src={keyboardImg} alt="Keyboard" className="w-full h-auto object-contain" />
     </div>
   );
 }
