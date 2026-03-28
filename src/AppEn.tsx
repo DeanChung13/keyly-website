@@ -40,31 +40,40 @@ function Logo({ className = 'w-8 h-8' }: { className?: string }) {
 
 function DownloadCTA({ centered = false, buttonOnly = false }: { centered?: boolean; buttonOnly?: boolean }) {
   return (
-    <div className={`flex flex-col ${centered ? 'items-center' : 'items-center lg:items-start'} space-y-5`}>
+    <div className={`flex flex-col w-full ${centered ? 'items-center' : 'items-center lg:items-start'} space-y-6`}>
       <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(centered ? 'cta_section_en' : 'hero_en')} className="w-full sm:w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all transform hover:scale-105 flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20">
         <Smartphone className="w-5 h-5" />
         <span>Unlock AI Typing Now</span>
       </a>
 
       {!buttonOnly && (
-        <div className={`flex flex-col space-y-4 text-sm text-text-secondary text-left ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md w-full' : ''}`}>
-          <div className={`font-medium text-text-primary ${centered ? 'text-center text-base' : ''}`}>
-            <span className="line-through text-text-secondary/60">Regular price NT$150</span>, limited-time price NT$90<br />
-            <div className="mb-3">Pay once. Keep improving for life.</div>
+        <div className={`flex flex-col space-y-5 text-sm text-text-secondary text-left w-full ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md' : 'bg-white/60 backdrop-blur-sm p-6 sm:p-7 rounded-2xl border border-metal-gray/20 shadow-sm max-w-md lg:max-w-none lg:bg-transparent lg:border-none lg:shadow-none lg:p-0'}`}>
+          <div className={`font-medium text-text-primary border-b border-metal-gray/20 pb-4 ${centered ? 'text-center text-base' : 'text-center lg:text-left text-base'}`}>
+            <span className="line-through text-text-secondary/60">Regular price NT$150</span>, limited-time price <span className="text-brand-purple font-bold text-lg">NT$90</span><br />
+            <div className="mt-1 text-text-secondary text-sm">Pay once. Keep improving for life.</div>
           </div>
-          <div className="flex items-start space-x-2">
-            <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-            <span><strong className="text-text-primary">Craft-level Zhuyin keyboard</strong><br />Deeply tuned by a Taiwan-based team for local language habits, fast correction, and clean, stable typing flow.</span>
+          <div className="flex items-start space-x-3">
+            <CheckCircle2 className="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" />
+            <div className="flex flex-col">
+              <strong className="text-text-primary text-base">Craft-level Zhuyin keyboard</strong>
+              <span className="text-text-secondary/90 mt-1 leading-relaxed">Deeply tuned by a Taiwan-based team for local language habits, fast correction, and clean, stable typing flow.</span>
+            </div>
           </div>
-          <div className="flex items-start space-x-2">
-            <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-            <span><strong className="text-text-primary">Permanent access to the standard prompt library</strong><br />Get every current AI shortcut and all future standard-feature updates without buying again.</span>
+          <div className="flex items-start space-x-3">
+            <CheckCircle2 className="w-5 h-5 text-brand-purple shrink-0 mt-0.5" />
+            <div className="flex flex-col">
+              <strong className="text-text-primary text-base">Permanent access to the standard prompt library</strong>
+              <span className="text-text-secondary/90 mt-1 leading-relaxed">Get every current AI shortcut and all future standard-feature updates without buying again.</span>
+            </div>
           </div>
-          <div className="flex items-start space-x-2">
-            <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-            <span><strong className="text-text-primary">Daily AI assistance included (5 by default)</strong><br />Receive a base daily cloud AI quota, currently 5 requests by default and subject to future cost adjustments. Core keyboard typing remains available without compromise, and offline mode stays unlimited.</span>
+          <div className="flex items-start space-x-3">
+            <CheckCircle2 className="w-5 h-5 text-accent-mint shrink-0 mt-0.5" />
+            <div className="flex flex-col">
+              <strong className="text-text-primary text-base">Daily AI assistance included (5 by default)</strong>
+              <span className="text-text-secondary/90 mt-1 leading-relaxed">Receive a base daily cloud AI quota. Core keyboard typing remains available without compromise, and offline mode stays unlimited.</span>
+            </div>
           </div>
-          <div className={`text-xs text-text-secondary/70 border-t border-metal-gray/20 pt-3 ${centered ? 'mt-2 text-center' : 'mt-1'}`}>
+          <div className={`text-xs text-text-secondary/70 border-t border-metal-gray/20 pt-4 ${centered ? 'text-center' : 'text-center lg:text-left'}`}>
             If you produce high volumes of professional writing, Keyly Pro is available in the app for unlimited AI processing and advanced prompt features.
           </div>
         </div>

@@ -40,31 +40,40 @@ function Logo({ className = "w-8 h-8" }: { className?: string }) {
 
 function DownloadCTA({ centered = false, buttonOnly = false }: { centered?: boolean; buttonOnly?: boolean }) {
   return (
-    <div className={`flex flex-col ${centered ? 'items-center' : 'items-center lg:items-start'} space-y-5`}>
+    <div className={`flex flex-col w-full ${centered ? 'items-center' : 'items-center lg:items-start'} space-y-6`}>
       <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(centered ? 'cta_section' : 'hero')} className="w-full sm:w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all transform hover:scale-105 flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20">
         <Smartphone className="w-5 h-5" />
         <span>立即解鎖 AI 智慧輸入</span>
       </a>
 
       {!buttonOnly && (
-        <div className={`flex flex-col space-y-4 text-sm text-text-secondary text-left ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md w-full' : ''}`}>
-          <div className={`font-medium text-text-primary ${centered ? 'text-center text-base' : ''}`}>
-            <span className="line-through text-text-secondary/60">定價 NT$150</span>，限時入手 NT$90<br />
-            <div className="mb-3">一次投資，終身進化</div>
+        <div className={`flex flex-col space-y-5 text-sm text-text-secondary text-left w-full ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md' : 'bg-white/60 backdrop-blur-sm p-6 sm:p-7 rounded-2xl border border-metal-gray/20 shadow-sm max-w-md lg:max-w-none lg:bg-transparent lg:border-none lg:shadow-none lg:p-0'}`}>
+          <div className={`font-medium text-text-primary border-b border-metal-gray/20 pb-4 ${centered ? 'text-center text-base' : 'text-center lg:text-left text-base'}`}>
+            <span className="line-through text-text-secondary/60">定價 NT$150</span>，限時入手 <span className="text-brand-purple font-bold text-lg">NT$90</span><br />
+            <div className="mt-1 text-text-secondary text-sm">一次投資，終身進化</div>
           </div>
-          <div className="flex items-start space-x-2">
-            <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-            <span><strong className="text-text-primary">職人級注音鍵盤</strong><br />台灣團隊深度優化，最懂在地用語。流暢、精準、不跳針，找回指尖最舒暢的打字節奏。</span>
+          <div className="flex items-start space-x-3">
+            <CheckCircle2 className="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" />
+            <div className="flex flex-col">
+              <strong className="text-text-primary text-base">職人級注音鍵盤</strong>
+              <span className="text-text-secondary/90 mt-1 leading-relaxed">台灣團隊深度優化，最懂在地用語。流暢、精準、不跳針，找回指尖最舒暢的打字節奏。</span>
+            </div>
           </div>
-          <div className="flex items-start space-x-2">
-            <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-            <span><strong className="text-text-primary">永久解鎖指令庫</strong><br />立即擁有現行所有 AI 快捷指令，並享有未來所有新功能的免費升級權限。</span>
+          <div className="flex items-start space-x-3">
+            <CheckCircle2 className="w-5 h-5 text-brand-purple shrink-0 mt-0.5" />
+            <div className="flex flex-col">
+              <strong className="text-text-primary text-base">永久解鎖指令庫</strong>
+              <span className="text-text-secondary/90 mt-1 leading-relaxed">立即擁有現行所有 AI 快捷指令，並享有未來所有新功能的免費升級權限。</span>
+            </div>
           </div>
-          <div className="flex items-start space-x-2">
-            <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-            <span><strong className="text-text-primary">每日 AI 助攻（預設 5 次）</strong><br />每日贈送基礎雲端 AI 額度（目前為 5 次，將視成本調整）。核心輸入體驗絕不打折，離線模式可無限次使用。</span>
+          <div className="flex items-start space-x-3">
+            <CheckCircle2 className="w-5 h-5 text-accent-mint shrink-0 mt-0.5" />
+            <div className="flex flex-col">
+              <strong className="text-text-primary text-base">每日 AI 助攻（預設 5 次）</strong>
+              <span className="text-text-secondary/90 mt-1 leading-relaxed">每日贈送基礎雲端 AI 額度。核心輸入體驗絕不打折，離線模式可無限次使用。</span>
+            </div>
           </div>
-          <div className={`text-xs text-text-secondary/70 border-t border-metal-gray/20 pt-3 ${centered ? 'mt-2 text-center' : 'mt-1'}`}>
+          <div className={`text-xs text-text-secondary/70 border-t border-metal-gray/20 pt-4 ${centered ? 'text-center' : 'text-center lg:text-left'}`}>
             若您有大量專業文字產出需求，App 內另提供 Pro 訂閱方案，解鎖「無限次」AI 處理額度與專屬進階功能。
           </div>
         </div>
