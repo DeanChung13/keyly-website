@@ -47,7 +47,7 @@ function DownloadCTA({ centered = false, buttonOnly = false }: { centered?: bool
       </a>
 
       {!buttonOnly && (
-        <div className={`flex flex-col space-y-5 text-sm text-text-secondary text-left w-full ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md' : 'bg-white/60 backdrop-blur-sm p-6 sm:p-7 rounded-2xl border border-metal-gray/20 shadow-sm max-w-md lg:max-w-none lg:bg-transparent lg:border-none lg:shadow-none lg:p-0'}`}>
+        <div className={`flex flex-col space-y-5 text-sm text-text-secondary text-left w-full ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md' : 'bg-white/60 backdrop-blur-sm p-6 sm:p-7 rounded-2xl border border-metal-gray/20 shadow-sm max-w-md lg:max-w-none'}`}>
           <div className={`font-medium text-text-primary border-b border-metal-gray/20 pb-4 ${centered ? 'text-center text-base' : 'text-center lg:text-left text-base'}`}>
             <span className="line-through text-text-secondary/60">定價 NT$150</span>，限時入手 <span className="text-brand-purple font-bold text-lg">NT$90</span><br />
             <div className="mt-1 text-text-secondary text-sm">一次投資，終身進化</div>
