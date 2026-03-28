@@ -219,9 +219,9 @@ function Features() {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-[#F4F7FA] rounded-2xl p-6 border border-metal-gray/20 hover:shadow-lg hover:border-brand-cyan/30 transition-all"
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ delay: index * 0.1, duration: 0.4, ease: "easeOut" }}
+              className="bg-[#F4F7FA] rounded-2xl p-6 border border-metal-gray/20 hover:shadow-lg hover:border-brand-cyan/30 transition-[box-shadow,border-color]"
             >
               <div className="flex items-center space-x-4 mb-4">
                 <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0">
@@ -310,7 +310,7 @@ function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden transition-all duration-300"
+              className="bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden"
             >
               <button
                 className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
@@ -322,13 +322,14 @@ function FAQSection() {
                 />
               </button>
 
-              <AnimatePresence>
+              <AnimatePresence initial={false}>
                 {openIndex === index && (
                   <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+                    initial={{ height: 0 }}
+                    animate={{ height: 'auto' }}
+                    exit={{ height: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    style={{ overflow: 'hidden' }}
                   >
                     <div className="px-6 pb-6 text-metal-gray leading-relaxed">
                       {faq.answer}
