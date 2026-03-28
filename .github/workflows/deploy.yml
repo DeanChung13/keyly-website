@@ -30,12 +30,6 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      - name: Copy static subpages and CNAME to dist
-        run: |
-          cp -r privacy dist/privacy
-          cp -r terms dist/terms
-          cp CNAME dist/CNAME
-
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
