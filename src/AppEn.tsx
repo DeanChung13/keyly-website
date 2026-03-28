@@ -292,7 +292,7 @@ function FAQSection() {
 
   return (
     <section id="faq" className="py-24 bg-bg-primary text-white overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-purple/15 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-purple/15 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none transform-gpu will-change-transform"></div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -301,29 +301,28 @@ function FAQSection() {
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden">
-              <button className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onClick={() => setOpenIndex(openIndex === index ? null : index)} aria-expanded={openIndex === index} aria-controls={getFaqAnswerId(index)}>
+            <div key={index} className="bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden transform-gpu">
+              <button className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none active:bg-white/5 transition-colors" onClick={() => setOpenIndex(openIndex === index ? null : index)} aria-expanded={openIndex === index} aria-controls={getFaqAnswerId(index)}>
                 <span className="text-lg font-medium text-metal-white pr-8">{faq.question}</span>
                 <ChevronDown className={`w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`} />
               </button>
 
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateRows: openIndex === index ? '1fr' : '0fr',
-                  transition: 'grid-template-rows 300ms ease-out',
-                }}
-              >
-                <div
-                  id={getFaqAnswerId(index)}
-                  aria-hidden={openIndex !== index}
-                  className={`min-h-0 overflow-hidden px-6 text-metal-gray leading-relaxed transition-opacity duration-300 ${
-                    openIndex === index ? 'opacity-100 pb-6' : 'opacity-0 pb-0'
-                  }`}
-                >
-                  {faq.answer}
-                </div>
-              </div>
+              <AnimatePresence initial={false}>
+                {openIndex === index && (
+                  <motion.div
+                    id={getFaqAnswerId(index)}
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 pb-6 text-metal-gray leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
         </div>
