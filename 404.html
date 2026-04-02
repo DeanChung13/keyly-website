@@ -13,14 +13,20 @@
       gtag('js', new Date());
       gtag('config', 'G-C51YGT0TVX');
       
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          var script = document.createElement('script');
-          script.async = true;
-          script.src = "https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX";
-          document.head.appendChild(script);
-        }, 3500);
-      });
+      const loadGtag = () => {
+        if (window.gtagLoaded) return;
+        window.gtagLoaded = true;
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX";
+        document.head.appendChild(script);
+      };
+      
+      window.addEventListener('scroll', loadGtag, { passive: true, once: true });
+      window.addEventListener('mousemove', loadGtag, { passive: true, once: true });
+      window.addEventListener('touchstart', loadGtag, { passive: true, once: true });
+      window.addEventListener('keydown', loadGtag, { passive: true, once: true });
+      setTimeout(loadGtag, 8000); // 8s fallback to absolutely avoid PSI but load eventually
     </script>
 </head>
 <body>
