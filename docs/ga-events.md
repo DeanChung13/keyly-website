@@ -1,6 +1,6 @@
 # Google Analytics 事件追蹤總覽
 
-**Measurement ID**: `G-TG8RM3J70R`
+**Measurement ID**: `G-C51YGT0TVX`
 
 ---
 
