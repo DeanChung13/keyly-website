@@ -29,6 +29,9 @@
 | `download_click` | `engagement` | `hero` | Hero 區塊「立即解鎖 AI 智慧輸入」 | `src/App.tsx` |
 | `download_click` | `engagement` | `cta_section` | CTA 區塊「立即解鎖 AI 智慧輸入」 | `src/App.tsx` |
 | `faq_click` | `engagement` | (FAQ 題目) | FAQ 問題點擊展開 | `src/App.tsx` / `AppEn.tsx` |
+| `section_view` | `engagement` | (區塊 ID) | 區塊可見度（捲動深度追蹤） | `src/App.tsx` / `AppEn.tsx` |
+| `feature_click` | `engagement` | (功能標題) | 特色區塊功能卡片點擊 | `src/App.tsx` / `AppEn.tsx` |
+| `link_click` | `engagement` | (連結名稱) | 頁尾或其他外部連結點擊 | `src/App.tsx` / `AppEn.tsx` |
 
 ---
 

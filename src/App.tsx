@@ -24,6 +24,24 @@ const trackFaqClick = (question: string) => {
   }
 };
 
+const trackSectionView = (sectionName: string) => {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'section_view', { event_category: 'engagement', event_label: sectionName });
+  }
+};
+
+const trackFeatureClick = (featureTitle: string) => {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'feature_click', { event_category: 'engagement', event_label: featureTitle });
+  }
+};
+
+const trackLinkClick = (linkName: string, destination: string) => {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'link_click', { event_category: 'engagement', event_label: linkName, destination: destination });
+  }
+};
+
 function Logo({ className = "w-8 h-8" }: { className?: string }) {
   return (
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
@@ -89,6 +107,32 @@ function DownloadCTA({ centered = false, buttonOnly = false }: { centered?: bool
 }
 
 export default function App() {
+  useEffect(() => {
+    const trackedSections = new Set<string>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+            if (sectionId && !trackedSections.has(sectionId)) {
+              trackSectionView(sectionId);
+              trackedSections.add(sectionId);
+            }
+          }
+        });
+      },
+      { threshold: 0.3 } // 區塊出現 30% 時觸發
+    );
+
+    const sections = ['features', 'faq', 'download'];
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#F4F7FA] text-text-primary font-sans selection:bg-brand-cyan/30 overflow-x-hidden">
       <Navbar />
@@ -232,11 +276,12 @@ function Features() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
+              onClick={() => trackFeatureClick(feature.title)}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ delay: index * 0.1, duration: 0.4, ease: "easeOut" }}
-              className="bg-[#F4F7FA] rounded-2xl p-6 border border-metal-gray/20 hover:shadow-lg hover:border-brand-cyan/30 transition-[box-shadow,border-color]"
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-[#F4F7FA] rounded-2xl p-6 border border-metal-gray/20 hover:shadow-lg hover:border-brand-cyan/30 transition-[box-shadow,border-color] cursor-pointer"
             >
               <div className="flex items-center space-x-4 mb-4">
                 <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0">
@@ -392,13 +437,13 @@ function Footer() {
             <span className="font-bold text-text-primary">Keyly</span>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-3 text-sm text-text-secondary">
-            <a href="/privacy/" className="hover:text-brand-cyan transition-colors">隱私權政策</a>
+            <a href="/privacy/" onClick={() => trackLinkClick('privacy_policy', '/privacy/')} className="hover:text-brand-cyan transition-colors">隱私權政策</a>
             <span className="text-metal-gray/50">|</span>
-            <a href="/terms/" className="hover:text-brand-cyan transition-colors">服務條款</a>
+            <a href="/terms/" onClick={() => trackLinkClick('terms_of_service', '/terms/')} className="hover:text-brand-cyan transition-colors">服務條款</a>
             <span className="text-metal-gray/50">|</span>
-            <a href="/subscriptions/" className="hover:text-brand-cyan transition-colors">自動續訂說明</a>
+            <a href="/subscriptions/" onClick={() => trackLinkClick('subscription_terms', '/subscriptions/')} className="hover:text-brand-cyan transition-colors">自動續訂說明</a>
             <span className="text-metal-gray/50">|</span>
-            <a href="mailto:support@keylyapp.com" className="hover:text-brand-cyan transition-colors">技術支援</a>
+            <a href="mailto:support@keylyapp.com" onClick={() => trackLinkClick('support_email', 'mailto:support@keylyapp.com')} className="hover:text-brand-cyan transition-colors">技術支援</a>
           </div>
         </div>
         <div className="mt-8 text-center text-sm text-metal-gray">
