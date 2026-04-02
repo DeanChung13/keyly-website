@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Delete, CornerDownLeft, MousePointer2, ShieldCheck } from 'lucide-react';
-import keyboardImg from '../../assets/images/keyboard.png';
+import keyboardImg from '../../assets/images/keyboard.webp';
 
 import { Showcase, zhTWShowcases, enShowcases } from '@/src/data/showcases';
 
