@@ -138,7 +138,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#F4F7FA] text-text-primary selection:bg-brand-cyan/30 overflow-x-hidden" style={{ fontFamily: '"Noto Sans", "Noto Sans TC", ui-sans-serif, system-ui, sans-serif' }}>
+    <div className="min-h-screen bg-[#F4F7FA] text-text-primary selection:bg-brand-cyan/30 overflow-x-hidden" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "PingFang TC", "Heiti TC", "Microsoft JhengHei", system-ui, sans-serif' }}>
       <Navbar />
       <main>
         <Hero />
