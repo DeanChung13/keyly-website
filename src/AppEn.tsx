@@ -12,11 +12,17 @@ declare const gtag: (...args: unknown[]) => void;
 
 const APP_STORE_URL = 'https://apps.apple.com/app/id6759639348';
 
-function trackDownload(location: string) {
+const trackDownload = (location: string) => {
   if (typeof gtag !== 'undefined') {
     gtag('event', 'download_click', { event_category: 'engagement', event_label: location });
   }
-}
+};
+
+const trackFaqClick = (question: string) => {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'faq_click', { event_category: 'engagement', event_label: question });
+  }
+};
 
 function Logo({ className = 'w-8 h-8' }: { className?: string }) {
   return (
@@ -302,7 +308,10 @@ function FAQSection() {
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div key={index} className="bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden transform-gpu">
-              <button className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none active:bg-white/5 transition-colors" onClick={() => setOpenIndex(openIndex === index ? null : index)} aria-expanded={openIndex === index} aria-controls={getFaqAnswerId(index)}>
+              <button className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none active:bg-white/5 transition-colors" onClick={() => {
+                if (openIndex !== index) trackFaqClick(faq.question);
+                setOpenIndex(openIndex === index ? null : index);
+              }} aria-expanded={openIndex === index} aria-controls={getFaqAnswerId(index)}>
                 <span className="text-lg font-medium text-metal-white pr-8">{faq.question}</span>
                 <ChevronDown className={`w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`} />
               </button>

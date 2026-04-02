@@ -28,6 +28,7 @@
 | `download_click` | `engagement` | `navbar_mobile` | Navbar 立即下載（手機） | `src/App.tsx` |
 | `download_click` | `engagement` | `hero` | Hero 區塊「立即解鎖 AI 智慧輸入」 | `src/App.tsx` |
 | `download_click` | `engagement` | `cta_section` | CTA 區塊「立即解鎖 AI 智慧輸入」 | `src/App.tsx` |
+| `faq_click` | `engagement` | (FAQ 題目) | FAQ 問題點擊展開 | `src/App.tsx` / `AppEn.tsx` |
 
 ---
 
