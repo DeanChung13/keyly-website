@@ -10,11 +10,15 @@ import TypingAnimation from './components/TypingAnimation';
 
 declare const gtag: (...args: unknown[]) => void;
 
-const APP_STORE_URL = 'https://apps.apple.com/app/id6759639348';
+// TODO: 上架後：取消下方兩行註解，並把現行兩行改成註解
+// const DOWNLOAD_URL = 'https://apps.apple.com/app/id6759639348';
+// const DOWNLOAD_EVENT = 'download_click';
+const DOWNLOAD_URL = 'https://forms.gle/PNmmw27u5HXnAtJ19';
+const DOWNLOAD_EVENT = 'waitlist_click';
 
 const trackDownload = (location: string) => {
   if (typeof gtag !== 'undefined') {
-    gtag('event', 'download_click', { event_category: 'engagement', event_label: location });
+    gtag('event', DOWNLOAD_EVENT, { event_category: 'engagement', event_label: location });
   }
 };
 
@@ -65,9 +69,9 @@ function Logo({ className = 'w-8 h-8' }: { className?: string }) {
 function DownloadCTA({ centered = false, buttonOnly = false }: { centered?: boolean; buttonOnly?: boolean }) {
   return (
     <div className={`flex flex-col w-full ${centered ? 'items-center' : 'items-center lg:items-start'} space-y-6`}>
-      <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(centered ? 'cta_section_en' : 'hero_en')} className="w-full sm:w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all transform hover:scale-105 flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20">
+      <a href={DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(centered ? 'cta_section_en' : 'hero_en')} className="w-full sm:w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all transform hover:scale-105 flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20">
         <Smartphone className="w-5 h-5" />
-        <span>Unlock AI Typing Now</span>
+        <span>Coming Soon — Join Waitlist</span>
       </a>
 
       {!buttonOnly && (
@@ -162,9 +166,9 @@ function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-text-secondary hover:text-brand-cyan transition-colors">Features</a>
             <a href="#faq" className="text-text-secondary hover:text-brand-cyan transition-colors">FAQ</a>
-            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload('navbar_en')} className="bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors flex items-center space-x-2">
+            <a href={DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload('navbar_en')} className="bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors flex items-center space-x-2">
               <Download className="w-4 h-4" />
-              <span>Download</span>
+              <span>Coming Soon</span>
             </a>
           </div>
 
@@ -180,7 +184,7 @@ function Navbar() {
         <div className="md:hidden bg-white border-b border-metal-gray/30 px-4 pt-2 pb-4 space-y-2">
           <a href="#features" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md" onClick={() => setIsOpen(false)}>Features</a>
           <a href="#faq" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md" onClick={() => setIsOpen(false)}>FAQ</a>
-          <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md" onClick={() => { setIsOpen(false); trackDownload('navbar_mobile_en'); }}>Download</a>
+          <a href={DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md" onClick={() => { setIsOpen(false); trackDownload('navbar_mobile_en'); }}>Coming Soon</a>
         </div>
       )}
     </nav>
