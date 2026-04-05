@@ -10,7 +10,6 @@
   <link rel="alternate" hreflang="en" href="https://keylyapp.com/subscriptions/en/">
   <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/subscriptions/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='20' fill='%230D142E' /%3E%3Cdefs%3E%3ClinearGradient id='k-stem' x1='30' y1='20' x2='30' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2338C7BA' /%3E%3Cstop offset='1' stop-color='%238E61D9' /%3E%3C/linearGradient%3E%3ClinearGradient id='k-arm' x1='75' y1='20' x2='40' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E6EBF2' /%3E%3Cstop offset='1' stop-color='%23BFCDE0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='25' y='20' width='16' height='60' fill='url(%23k-stem)' /%3E%3Cpath d='M75 20L41 50L75 80H55L31 50L55 20H75Z' fill='url(%23k-arm)' /%3E%3C/svg%3E">
-  
   <meta property="og:title" content="自動續訂說明 — Keyly">
   <meta property="og:description" content="Keyly Pro 自動續訂說明：包含扣款時間、取消步驟及退款政策。">
   <meta property="og:url" content="https://keylyapp.com/subscriptions/">
@@ -19,7 +18,6 @@
   <meta property="og:image:height" content="630">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -55,55 +53,271 @@
       setTimeout(loadGtag, 8000); // 8s fallback to absolutely avoid PSI but load eventually
     </script>
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
       --bg-page: #F4F7FA;
+      --bg-primary: #0D142E;
+      --brand-cyan: #479ED1;
+      --brand-purple: #8E61D9;
+      --metal-white: #E6EBF2;
+      --metal-gray: #BFCDE0;
       --text-primary: #0F1726;
       --text-secondary: #5C708C;
-      --brand-cyan: #479ED1;
-      --metal-gray: #BFCDE0;
     }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Heiti TC", "Microsoft JhengHei", system-ui, sans-serif;
       background: var(--bg-page);
       color: var(--text-primary);
       line-height: 1.75;
-      padding: 4rem 1.5rem;
+      -webkit-font-smoothing: antialiased;
     }
-    .container { max-width: 760px; margin: 0 auto; background: white; padding: 2rem; border-radius: 16px; border: 1px solid var(--metal-gray); }
-    h1 { font-size: 2rem; font-weight: 900; margin-bottom: 1.5rem; }
-    h2 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--brand-cyan); }
-    p { margin-bottom: 1rem; color: var(--text-secondary); }
-    ul { margin-bottom: 1.5rem; padding-left: 1.5rem; color: var(--text-secondary); }
-    li { margin-bottom: 0.5rem; }
-    .back-link { display: inline-block; margin-top: 2rem; color: var(--brand-cyan); text-decoration: none; font-weight: 500; }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(191, 205, 224, 0.35);
+    }
+
+    .navbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .navbar-brand svg { border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+
+    .lang-btn {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--metal-gray);
+      border-radius: 999px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .lang-btn:hover { color: var(--brand-cyan); border-color: var(--brand-cyan); }
+
+    .page-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 4rem;
+    }
+
+    .page-header { margin-bottom: 2.5rem; }
+
+    .page-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-meta {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .legal-content h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 2.5rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--metal-gray);
+    }
+
+    .legal-content h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .legal-content p {
+      color: var(--text-secondary);
+      margin-bottom: 0.875rem;
+    }
+
+    .legal-content ul {
+      margin: 0.5rem 0 0.875rem 1.25rem;
+      color: var(--text-secondary);
+    }
+
+    .legal-content li { margin-bottom: 0.4rem; }
+    .legal-content strong { color: var(--text-primary); font-weight: 700; }
+
+    .legal-content code {
+      font-family: ui-monospace, monospace;
+      font-size: 0.875em;
+      background: var(--metal-white);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      color: var(--text-primary);
+    }
+
+    .legal-content a { color: var(--brand-cyan); text-decoration: none; }
+    .legal-content a:hover { text-decoration: underline; }
+
+    .footer {
+      background: var(--bg-page);
+      border-top: 1px solid rgba(191, 205, 224, 0.4);
+      padding: 2.5rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .footer-brand svg { border-radius: 6px; }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--brand-cyan); }
+    .footer-links .sep { color: var(--metal-gray); }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--metal-gray);
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>自動續訂說明</h1>
-    <p>感謝您選擇 Keyly Pro。為了確保您的服務不中斷，我們的訂閱服務採用自動續訂機制。以下是關於訂閱管理的重要資訊：</p>
 
-    <h2>1. 訂閱機制與週期</h2>
-    <p>Keyly Pro 提供「月度訂閱」與「年度訂閱」兩種週期方案。款項均透過 Apple App Store 結帳與扣款。除非您在目前訂閱週期結束前至少 24 小時取消訂閱，否則系統將自動為您續約下一週期的服務。</p>
-    <p><strong>關於免費試用：</strong>若您的訂閱方案包含免費試用期，試用期結束後將會自動轉為付費訂閱並扣除相應費用。若您不希望續費，請務必在試用期結束前至少 24 小時完成取消訂閱。</p>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="ks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="ka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#ks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#ka)"/>
+        </svg>
+        Keyly
+      </a>
+      <a href="/subscriptions/en/" class="lang-btn">EN</a>
+    </div>
+  </nav>
 
+  <div class="page-wrapper">
+    <div class="page-header">
+      <h1>自動續訂說明</h1>
+    </div>
 
-    <h2>2. 如何管理與取消訂閱</h2>
-    <p>開發者無法直接從後端系統介入取消您在 Apple 裝置上的訂閱設定。您可以透過以下步驟自行管理：</p>
-    <ul>
-      <li>打開您的 iPhone 或 iPad 的「設定」。</li>
-      <li>點擊最上方的「您的姓名 / Apple ID」。</li>
-      <li>點擊「訂閱項目」。</li>
-      <li>找到「Keyly」並點擊進入，即可選擇取消訂閱。</li>
-    </ul>
+    <div class="legal-content">
+      <p>感謝您選擇 Keyly Pro。為了確保您的服務不中斷，我們的訂閱服務採用自動續訂機制。以下是關於訂閱管理的重要資訊：</p>
 
-    <h2>3. 扣款時間</h2>
-    <p>續約款項通常會在目前訂閱期滿前的 24 小時內，由 Apple 系統自動發起扣款驗證。</p>
+      <h2>1. 訂閱機制與週期</h2>
+      <p>Keyly Pro 提供「月度訂閱」與「年度訂閱」兩種週期方案。款項均透過 Apple App Store 結帳與扣款。除非您在目前訂閱週期結束前至少 24 小時取消訂閱，否則系統將自動為您續約下一週期的服務。</p>
+      <p><strong>關於免費試用：</strong>若您的訂閱方案包含免費試用期，試用期結束後將會自動轉為付費訂閱並扣除相應費用。若您不希望續費，請務必在試用期結束前至少 24 小時完成取消訂閱。</p>
 
-    <h2>4. 退款政策</h2>
-    <p>由於 Keyly 提供的訂閱服務屬於「經消費者拆封之影音商品或電腦軟體」或「非以有形媒介提供之數位內容」，依據台灣消費者保護法規定，經消費者事先同意即可排除 7 天鑑賞期之適用。退款請求須遵循 Apple App Store 的官方退款流程申請。</p>
+      <h2>2. 如何管理與取消訂閱</h2>
+      <p>開發者無法直接從後端系統介入取消您在 Apple 裝置上的訂閱設定。您可以透過以下步驟自行管理：</p>
+      <ul>
+        <li>打開您的 iPhone 或 iPad 的「設定」。</li>
+        <li>點擊最上方的「您的姓名 / Apple ID」。</li>
+        <li>點擊「訂閱項目」。</li>
+        <li>找到「Keyly」並點擊進入，即可選擇取消訂閱。</li>
+      </ul>
 
-    <a href="/" class="back-link">← 返回首頁</a>
+      <h2>3. 扣款時間</h2>
+      <p>續約款項通常會在目前訂閱期滿前的 24 小時內，由 Apple 系統自動發起扣款驗證。</p>
+
+      <h2>4. 退款政策</h2>
+      <p>由於 Keyly 提供的訂閱服務屬於「經消費者拆封之影音商品或電腦軟體」或「非以有形媒介提供之數位內容」，依據台灣消費者保護法規定，經消費者事先同意即可排除 7 天鑑賞期之適用。退款請求須遵循 Apple App Store 的官方退款流程申請。</p>
+    </div>
   </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-brand">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="fks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="fka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#fks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#fka)"/>
+        </svg>
+        Keyly
+      </a>
+      <div class="footer-links">
+        <a href="/privacy/">隱私權政策</a>
+        <span class="sep">|</span>
+        <a href="/terms/">服務條款</a>
+        <span class="sep">|</span>
+        <a href="/subscriptions/">自動續訂說明</a>
+        <span class="sep">|</span>
+        <a href="mailto:support@keylyapp.com">技術支援</a>
+      </div>
+      <p class="footer-copy">© 2026 Keyly 由台灣團隊專為高效溝通而生。</p>
+    </div>
+  </footer>
+
 </body>
 </html>
