@@ -220,9 +220,9 @@ function Hero() {
           {/* Animation Mockup */}
           <div className="lg:col-span-6 relative flex justify-center lg:justify-end mt-12 lg:mt-0">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              initial={{ opacity: 0, y: 40, scale: 0.95, rotate: 4 }}
+              animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+              transition={{ type: "spring", stiffness: 120, damping: 25, delay: 0.2 }}
               className="relative z-10 w-full"
             >
               {/* Decorative blobs */}

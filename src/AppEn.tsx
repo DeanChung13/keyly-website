@@ -209,7 +209,12 @@ function Hero() {
           </div>
 
           <div className="lg:col-span-6 relative flex justify-center lg:justify-end mt-12 lg:mt-0">
-            <motion.div initial={{ opacity: 0, scale: 0.9, rotate: 2 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="relative z-10 w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 40, scale: 0.95, rotate: 4 }}
+              animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+              transition={{ type: "spring", stiffness: 120, damping: 25, delay: 0.2 }}
+              className="relative z-10 w-full"
+            >
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-brand-cyan/30 to-brand-purple/30 rounded-full blur-3xl -z-10 opacity-50"></div>
               <React.Suspense fallback={<div className="w-full aspect-[4/3] rounded-3xl bg-metal-gray/10 animate-pulse border border-metal-gray/20"></div>}>
                 <TypingAnimation locale="en" />
