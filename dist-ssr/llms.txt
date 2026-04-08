@@ -5,6 +5,7 @@
 ## Canonical Site
 
 - https://keylyapp.com/
+- Full reference: https://keylyapp.com/llms-full.txt
 
 ## Primary Pages
 
