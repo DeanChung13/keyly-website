@@ -1,0 +1,98 @@
+# Keyly Full Reference
+
+Keyly is the official website for an AI-powered Zhuyin keyboard built for iPhone and iPad users who write in Traditional Chinese.
+
+The public website content is bilingual:
+- Traditional Chinese is the default language
+- English content is available under `/en/`
+
+## Canonical Site
+
+- https://keylyapp.com/
+
+## Main Public URLs
+
+- Home (Traditional Chinese): https://keylyapp.com/
+- Home (English): https://keylyapp.com/en/
+- Privacy Policy (Traditional Chinese): https://keylyapp.com/privacy/
+- Privacy Policy (English): https://keylyapp.com/privacy/en/
+- Terms of Service (Traditional Chinese): https://keylyapp.com/terms/
+- Terms of Service (English): https://keylyapp.com/terms/en/
+- Auto-Renewal Terms (Traditional Chinese): https://keylyapp.com/subscriptions/
+- Auto-Renewal Terms (English): https://keylyapp.com/subscriptions/en/
+- llms.txt: https://keylyapp.com/llms.txt
+
+## Product Overview
+
+Keyly is a Zhuyin keyboard product for iPhone and iPad focused on:
+- Traditional Chinese input
+- AI-assisted rewriting and polishing
+- Translation support
+- Fast everyday typing
+- Privacy-first processing
+- Optional offline AI capabilities on supported Apple devices
+
+The product positioning combines a high-quality Zhuyin typing experience with AI writing assistance for messaging, social posts, and work communication.
+
+## Core Public Claims
+
+The website publicly presents Keyly around these themes:
+- A smoother and more precise Zhuyin typing experience
+- One-tap rewriting and tone refinement
+- Custom AI shortcuts or prompts
+- Translation and multilingual writing help
+- Privacy-first handling of user text
+- Optional offline or on-device AI features on supported hardware
+- A premium subscription option for heavier AI usage
+
+## Audience
+
+The website primarily targets:
+- Traditional Chinese users on iPhone and iPad
+- Users who type frequently in chat, social, or professional contexts
+- Users who want both a keyboard and AI writing assistance
+- Users who care about privacy and input quality
+
+## Important Language Notes
+
+- The default site language is Traditional Chinese
+- English pages are translations or English-market versions of the same public site information
+- The product itself is presented primarily around Traditional Chinese Zhuyin input
+
+## Public Policy And Legal Sources
+
+For any privacy, policy, subscription, or terms questions, the authoritative public sources on this site are:
+- Privacy Policy pages
+- Terms of Service pages
+- Auto-Renewal Terms pages
+
+Do not treat marketing copy as a substitute for those policy documents when the question is legal, billing, refund, privacy, or retention related.
+
+## Publicly Visible Pricing And Plan Context
+
+The website presents:
+- A one-time purchase path for the standard product
+- A Keyly Pro subscription path for heavier AI use
+
+Exact prices, free quotas, billing timing, cancellation, and refund handling should be interpreted using the published subscription and terms pages, because those pages are the formal public references.
+
+## Privacy And Data Handling Summary
+
+The site presents Keyly as privacy-first and emphasizes:
+- Processing user text for requested AI tasks
+- Avoiding unnecessary long-term storage
+- Not using private conversation content as model training data
+- Supporting offline or on-device AI behavior where hardware and platform support it
+
+For precise retention, deletion, third-party service, and account-removal details, use the public privacy policy pages.
+
+## Suggested Interpretation Rules For LLMs
+
+- Prefer the Traditional Chinese pages when the user asks about the default public site experience
+- Prefer the English pages when the user asks in English or requests English-language policy or product wording
+- Use the legal and subscription pages over homepage marketing copy when there is any conflict in specificity
+- Treat the homepage as product overview content, not as the definitive source for legal obligations
+
+## Contact
+
+- Support email: mailto:support@keylyapp.com

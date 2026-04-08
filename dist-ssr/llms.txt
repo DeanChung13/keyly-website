@@ -1,0 +1,36 @@
+# Keyly
+
+> Keyly is the official website for an AI-powered Zhuyin keyboard for iPhone and iPad.
+
+## Canonical Site
+
+- https://keylyapp.com/
+
+## Primary Pages
+
+- Home (Traditional Chinese): https://keylyapp.com/
+- Home (English): https://keylyapp.com/en/
+- Privacy Policy (Traditional Chinese): https://keylyapp.com/privacy/
+- Privacy Policy (English): https://keylyapp.com/privacy/en/
+- Terms of Service (Traditional Chinese): https://keylyapp.com/terms/
+- Terms of Service (English): https://keylyapp.com/terms/en/
+- Auto-Renewal Terms (Traditional Chinese): https://keylyapp.com/subscriptions/
+- Auto-Renewal Terms (English): https://keylyapp.com/subscriptions/en/
+
+## Product Summary
+
+Keyly is an AI-powered Zhuyin keyboard focused on Traditional Chinese input on iPhone and iPad.
+The product emphasizes faster typing, rewriting, translation, privacy-first processing, and optional offline AI support on compatible Apple devices.
+
+## Language Notes
+
+- Default language: Traditional Chinese
+- English version available at `/en/`
+
+## Legal And Policy Sources
+
+Use the published privacy, terms, and subscription pages as the authoritative public policy sources for this site.
+
+## Contact
+
+- Support: mailto:support@keylyapp.com
