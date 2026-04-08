@@ -1,0 +1,4 @@
+interface:
+  display_name: "Website SEO Assistant"
+  short_description: "Website SEO optimization guidance"
+  default_prompt: "Use $website-seo-assistant to audit my website SEO and suggest the highest-impact fixes."

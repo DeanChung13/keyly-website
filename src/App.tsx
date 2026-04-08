@@ -205,9 +205,9 @@ function Hero() {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black text-text-primary leading-tight mb-6">
-                指尖上的 AI 智慧，<br />
+                AI 注音鍵盤，讓 iPhone 中文輸入更快更準<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">
-                  文字轉化一鍵完成
+                  文字潤飾與改寫一鍵完成
                 </span>
               </h1>
 
@@ -272,7 +272,7 @@ function Features() {
     <section id="features" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-text-primary">為什麼選擇 Keyly？</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-text-primary">為什麼 Keyly 是更好的 AI 注音鍵盤？</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -420,9 +420,9 @@ function CTA() {
     <section id="download" className="py-24 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-brand-cyan/5"></div>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <h2 className="text-4xl font-bold text-text-primary mb-6">體驗未來的輸入法</h2>
+        <h2 className="text-4xl font-bold text-text-primary mb-6">體驗更聰明的 iPhone 注音輸入法</h2>
         <p className="text-xl text-text-secondary mb-10">
-          立即獲取 Keyly，開啟文字輸入的全新進化。
+          立即下載 Keyly，用 AI 加速繁體中文輸入、潤飾與翻譯流程。
         </p>
         <DownloadCTA centered buttonOnly />
       </div>
