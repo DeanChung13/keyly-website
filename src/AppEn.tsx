@@ -273,13 +273,13 @@ function FAQSection() {
         <div className="space-y-3">
           <p>This is the technical requirement that allows a third-party iOS keyboard to connect to cloud AI services.</p>
           <p><strong>If you keep it off:</strong> you can still use Keyly&apos;s core Zhuyin engine without limitation. On supported devices, you can also keep basic on-device AI correction fully offline.</p>
-          <p><strong>If you turn it on:</strong> we use an ephemeral-processing model. Data is handled only for the requested AI task, then removed from cache. Keyly does not monitor, record, or store your everyday private conversations.</p>
+          <p><strong>If you turn it on:</strong> we process only the data needed for features you actively trigger. Processing is primarily request-based, and retention is minimized where technically and operationally feasible; limited records may still be retained when required for legal compliance, security, or transaction verification. Keyly does not monitor or keylog your everyday private conversations.</p>
         </div>
       )
     },
     {
       question: 'Which cloud AI providers do you use, and is it safe?',
-      answer: 'We build on global top-tier providers including Google, OpenAI, and Anthropic. Keyly limits data use to immediate requests only and does not allow your personal conversations to be used for model training. Automatic cache clearing further reduces retention risk.'
+      answer: 'We build on global top-tier providers including Google, OpenAI, and Anthropic. Keyly limits data use to user-initiated requests and does not allow your personal conversations to be used for model training. Request data retention is minimized subject to legal, security, and operational requirements.'
     },
     {
       question: 'Can I still use AI refinement without internet access?',
