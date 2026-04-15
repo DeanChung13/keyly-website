@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Zap, Globe, User, ChevronRight, Keyboard, Smartphone, CheckCircle2, Download, Menu, X, Wand2, Feather, Command, Music, ShieldCheck, ChevronDown } from 'lucide-react';
+import { Sparkles, Zap, Globe, User, ChevronRight, Keyboard, Smartphone, Download, Menu, X, Wand2, Feather, Command, ShieldCheck, ChevronDown } from 'lucide-react';
 import TypingAnimation from './components/TypingAnimation';
 
 declare const gtag: (...args: unknown[]) => void;
@@ -63,46 +63,13 @@ function Logo({ className = "w-8 h-8" }: { className?: string }) {
   );
 }
 
-function DownloadCTA({ centered = false, buttonOnly = false }: { centered?: boolean; buttonOnly?: boolean }) {
+function DownloadCTA({ centered = false }: { centered?: boolean }) {
   return (
     <div className={`flex flex-col w-full ${centered ? 'items-center' : 'items-center lg:items-start'} space-y-6`}>
-      <a href={DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(centered ? 'cta_section' : 'hero')} className="w-full sm:w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all transform hover:scale-105 flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20">
+      <a href={DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(centered ? 'cta_section' : 'hero')} className="w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none inline-flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2">
         <Smartphone className="w-5 h-5" />
-        <span>立即下載</span>
+        <span>免費下載</span>
       </a>
-
-      {!buttonOnly && (
-        <div className={`flex flex-col space-y-5 text-sm text-text-secondary text-left w-full ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md' : 'bg-white/60 backdrop-blur-sm p-6 sm:p-7 rounded-2xl border border-metal-gray/20 shadow-sm max-w-md lg:max-w-none'}`}>
-          <div className={`font-medium text-text-primary border-b border-metal-gray/20 pb-4 ${centered ? 'text-center text-base' : 'text-center lg:text-left text-base'}`}>
-            <span className="line-through text-text-secondary/60">定價 NT$150</span>，限時入手 <span className="text-brand-purple font-bold text-lg">NT$90</span><br />
-            <div className="mt-1 text-text-secondary text-sm">一次投資，終身進化</div>
-          </div>
-          <div className="flex items-start space-x-3">
-            <CheckCircle2 className="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" />
-            <div className="flex flex-col">
-              <strong className="text-text-primary text-base">職人級注音鍵盤</strong>
-              <span className="text-text-secondary/90 mt-1 leading-relaxed">台灣團隊深度優化，最懂在地用語。流暢、精準、不跳針，找回指尖最舒暢的打字節奏。</span>
-            </div>
-          </div>
-          <div className="flex items-start space-x-3">
-            <CheckCircle2 className="w-5 h-5 text-brand-purple shrink-0 mt-0.5" />
-            <div className="flex flex-col">
-              <strong className="text-text-primary text-base">永久解鎖指令庫</strong>
-              <span className="text-text-secondary/90 mt-1 leading-relaxed">立即擁有現行所有 AI 快捷指令，並享有未來所有新功能的免費升級權限。</span>
-            </div>
-          </div>
-          <div className="flex items-start space-x-3">
-            <CheckCircle2 className="w-5 h-5 text-accent-mint shrink-0 mt-0.5" />
-            <div className="flex flex-col">
-              <strong className="text-text-primary text-base">每日 AI 助攻（預設 5 次）</strong>
-              <span className="text-text-secondary/90 mt-1 leading-relaxed">每日贈送基礎雲端 AI 額度。核心輸入體驗絕不打折，離線模式可無限次使用。</span>
-            </div>
-          </div>
-          <div className={`text-xs text-text-secondary/70 border-t border-metal-gray/20 pt-4 ${centered ? 'text-center' : 'text-center lg:text-left'}`}>
-            若您有大量專業文字產出需求，App 內另提供 Pro 訂閱方案，解鎖「無限次」AI 處理額度與專屬進階功能。
-          </div>
-        </div>
-      )}
     </div>
   );
 }
@@ -152,9 +119,9 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-metal-gray/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="fixed top-3 left-0 right-0 z-50 px-3 sm:px-4">
+      <div className="max-w-6xl mx-auto bg-white/85 backdrop-blur-xl border border-metal-gray/30 rounded-2xl shadow-[0_10px_35px_rgba(13,20,46,0.08)]">
+        <div className="px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
             <Logo className="w-8 h-8 rounded-lg shadow-sm" />
             <span className="font-bold text-xl tracking-tight">Keyly</span>
@@ -162,17 +129,17 @@ function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-text-secondary hover:text-brand-cyan transition-colors">功能特色</a>
-            <a href="#faq" className="text-text-secondary hover:text-brand-cyan transition-colors">常見問題</a>
-            <a href={DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload('navbar')} className="bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors flex items-center space-x-2">
+            <a href="#features" className="text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1">功能特色</a>
+            <a href="#faq" className="text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1">常見問題</a>
+            <a href={DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload('navbar')} className="bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors duration-200 flex items-center space-x-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2">
               <Download className="w-4 h-4" />
-              <span>立即下載</span>
+              <span>免費下載</span>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-text-secondary">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md p-1" aria-label="切換選單">
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
@@ -181,10 +148,10 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-metal-gray/30 px-4 pt-2 pb-4 space-y-2">
-          <a href="#features" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md" onClick={() => setIsOpen(false)}>功能特色</a>
-          <a href="#faq" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md" onClick={() => setIsOpen(false)}>常見問題</a>
-          <a href={DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md" onClick={() => { setIsOpen(false); trackDownload('navbar_mobile'); }}>立即下載</a>
+        <div className="md:hidden mt-2 max-w-6xl mx-auto bg-white/95 backdrop-blur-xl border border-metal-gray/30 rounded-2xl px-4 pt-2 pb-4 space-y-2 shadow-lg">
+          <a href="#features" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200" onClick={() => setIsOpen(false)}>功能特色</a>
+          <a href="#faq" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200" onClick={() => setIsOpen(false)}>常見問題</a>
+          <a href={DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md transition-colors duration-200" onClick={() => { setIsOpen(false); trackDownload('navbar_mobile'); }}>免費下載</a>
         </div>
       )}
     </nav>
@@ -193,7 +160,7 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <section className="pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
 
@@ -204,12 +171,18 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black text-text-primary leading-tight mb-6">
-                AI 注音鍵盤，讓 iPhone 中文輸入更快更準<br />
+              <div className="text-sm font-semibold tracking-[0.08em] text-text-secondary/80 mb-4">
+                台灣團隊打造 · iOS 注音輸入體驗
+              </div>
+              <h1 className="text-5xl lg:text-5xl xl:text-6xl font-black text-text-primary leading-tight mb-6">
+                指尖上的 AI 智慧，<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">
-                  文字潤飾與改寫一鍵完成
+                  文字轉化一鍵完成
                 </span>
               </h1>
+              <p className="text-base lg:text-lg text-text-secondary/90 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                兼顧速度、手感與隱私的智慧注音鍵盤，讓翻譯、潤飾、改寫都能在同一個輸入流程完成。
+              </p>
 
               <div className="mt-8">
                 <DownloadCTA />
@@ -257,11 +230,6 @@ function Features() {
       description: "遠遠不只是挑錯字！這是專屬於您的文字魔法盒。您可以隨心自訂專屬的「AI 指令」，無論是瞬翻專業外文、精煉長篇大論，抑或是將隻言片語化為優雅的高情商客套話，只需單手一滑即可輕鬆召喚，便利至極。"
     },
     {
-      icon: <Music className="w-6 h-6 text-accent-sky" />,
-      title: "撫平焦躁的指尖琴韻",
-      description: "為平淡的打字體驗注入迷人的藝術氣息！開啟專屬的鋼琴模式後，您的每次敲擊都會化作優美的名曲旋律。縱使是回覆枯燥冷硬的公事訊息，指尖流淌出的輕柔琴韻，依然能為您撫平煩躁，舒緩一整天的緊繃與壓力。"
-    },
-    {
       icon: <ShieldCheck className="w-6 h-6 text-brand-cyan" />,
       title: "高規格隱私防線",
       description: "您的對話隱私是我們的核心使命。Keyly 採用「不落地處理」原則，確保您的輸入內容在處理完畢後自動銷毀，不進行任何持久化儲存。我們嚴格遵守 Apple 隱私規範，不監控、不側錄，亦不將您的私人數據用於模型訓練，提供真正純淨且安全的輸入體驗。"
@@ -275,7 +243,7 @@ function Features() {
           <h2 className="text-3xl md:text-4xl font-bold text-text-primary">為什麼 Keyly 是更好的 AI 注音鍵盤？</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -338,16 +306,12 @@ function FAQSection() {
       answer: "您的專屬指令由您掌控。目前所有自訂指令均透過加密技術儲存於設備本地端。我們也正籌劃具備端到端加密的雲端同步服務，讓您未來更換設備也能無縫接軌。"
     },
     {
-      question: "音樂鍵盤（鋼琴模式）是什麼？",
-      answer: "這是為打字體驗注入靈魂的獨家彩蛋！我們內建了高品質鋼琴音色，讓您在打字同時也能流暢彈奏。此功能可依喜好隨時開啟或關閉，讓每一次訊息回覆都昇華成專屬於您的微型音樂饗宴。"
-    },
-    {
-      question: "一般用戶（買斷版）跟 Keyly Pro 訂閱用戶有什麼差別？",
+      question: "一般用戶（免費下載）跟 Keyly Pro 訂閱用戶有什麼差別？",
       answer: (
         <div className="space-y-4">
           <p>
-            <strong>一般用戶（限時特價 NT$90）：</strong><br />
-            一次購買，持續進化！享有極速注音引擎、完整標準指令庫，並包含目前每日 5 次的雲端 AI 魔法額度。
+              <strong>一般用戶（免費下載）：</strong><br />
+            免費下載即可享有極速注音引擎、完整標準指令庫，並在新登入帳號時一次性獲得 50 次雲端 AI 魔法額度。
           </p>
           <p>
             <strong>Keyly Pro 訂閱（NT$150/月）：</strong><br />
@@ -377,7 +341,7 @@ function FAQSection() {
               className="bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden transform-gpu"
             >
               <button
-                className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none active:bg-white/5 transition-colors"
+                  className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan/70 active:bg-white/5 transition-colors duration-200"
                 onClick={() => {
                   if (openIndex !== index) trackFaqClick(faq.question);
                   setOpenIndex(openIndex === index ? null : index);
@@ -387,7 +351,7 @@ function FAQSection() {
               >
                 <span className="text-lg font-medium text-metal-white pr-8">{faq.question}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}
+                  className={`w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 motion-reduce:transition-none ${openIndex === index ? 'rotate-180' : ''}`}
                 />
               </button>
 
@@ -422,9 +386,9 @@ function CTA() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <h2 className="text-4xl font-bold text-text-primary mb-6">體驗更聰明的 iPhone 注音輸入法</h2>
         <p className="text-xl text-text-secondary mb-10">
-          立即下載 Keyly，用 AI 加速繁體中文輸入、潤飾與翻譯流程。
+          這不是輸入法，是你的私人文字特助。誠摯邀請你體驗：什麼叫「打字不費力」。
         </p>
-        <DownloadCTA centered buttonOnly />
+        <DownloadCTA centered />
       </div>
     </section>
   );

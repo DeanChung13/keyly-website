@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle2, Download, Menu, X, Wand2, Feather, Command, Music, ShieldCheck, ChevronDown, Smartphone } from 'lucide-react';
+import { Download, Menu, X, Wand2, Feather, Command, ShieldCheck, ChevronDown, Smartphone } from 'lucide-react';
 import TypingAnimation from './components/TypingAnimation';
 
 declare const gtag: (...args: unknown[]) => void;
@@ -63,46 +63,13 @@ function Logo({ className = 'w-8 h-8' }: { className?: string }) {
   );
 }
 
-function DownloadCTA({ centered = false, buttonOnly = false }: { centered?: boolean; buttonOnly?: boolean }) {
+function DownloadCTA({ centered = false }: { centered?: boolean }) {
   return (
     <div className={`flex flex-col w-full ${centered ? 'items-center' : 'items-center lg:items-start'} space-y-6`}>
-      <a href={DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(centered ? 'cta_section_en' : 'hero_en')} className="w-full sm:w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all transform hover:scale-105 flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20">
+      <a href={DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload(centered ? 'cta_section_en' : 'hero_en')} className="w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none inline-flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2">
         <Smartphone className="w-5 h-5" />
         <span>Download Now</span>
       </a>
-
-      {!buttonOnly && (
-        <div className={`flex flex-col space-y-5 text-sm text-text-secondary text-left w-full ${centered ? 'bg-metal-white/50 p-6 rounded-2xl border border-metal-gray/20 max-w-md' : 'bg-white/60 backdrop-blur-sm p-6 sm:p-7 rounded-2xl border border-metal-gray/20 shadow-sm max-w-md lg:max-w-none'}`}>
-          <div className={`font-medium text-text-primary border-b border-metal-gray/20 pb-4 ${centered ? 'text-center text-base' : 'text-center lg:text-left text-base'}`}>
-            <span className="line-through text-text-secondary/60">Regular price NT$150</span>, limited-time price <span className="text-brand-purple font-bold text-lg">NT$90</span><br />
-            <div className="mt-1 text-text-secondary text-sm">Pay once. Keep improving for life.</div>
-          </div>
-          <div className="flex items-start space-x-3">
-            <CheckCircle2 className="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" />
-            <div className="flex flex-col">
-              <strong className="text-text-primary text-base">Craft-level Zhuyin keyboard</strong>
-              <span className="text-text-secondary/90 mt-1 leading-relaxed">Deeply tuned by a Taiwan-based team for local language habits, fast correction, and clean, stable typing flow.</span>
-            </div>
-          </div>
-          <div className="flex items-start space-x-3">
-            <CheckCircle2 className="w-5 h-5 text-brand-purple shrink-0 mt-0.5" />
-            <div className="flex flex-col">
-              <strong className="text-text-primary text-base">Permanent access to the standard prompt library</strong>
-              <span className="text-text-secondary/90 mt-1 leading-relaxed">Get every current AI shortcut and all future standard-feature updates without buying again.</span>
-            </div>
-          </div>
-          <div className="flex items-start space-x-3">
-            <CheckCircle2 className="w-5 h-5 text-accent-mint shrink-0 mt-0.5" />
-            <div className="flex flex-col">
-              <strong className="text-text-primary text-base">Daily AI assistance included (5 by default)</strong>
-              <span className="text-text-secondary/90 mt-1 leading-relaxed">Receive a base daily cloud AI quota. Core keyboard typing remains available without compromise, and offline mode stays unlimited.</span>
-            </div>
-          </div>
-          <div className={`text-xs text-text-secondary/70 border-t border-metal-gray/20 pt-4 ${centered ? 'text-center' : 'text-center lg:text-left'}`}>
-            If you produce high volumes of professional writing, Keyly Pro is available in the app for unlimited AI processing and advanced prompt features.
-          </div>
-        </div>
-      )}
     </div>
   );
 }
@@ -152,25 +119,25 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-metal-gray/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="fixed top-3 left-0 right-0 z-50 px-3 sm:px-4">
+      <div className="max-w-6xl mx-auto bg-white/85 backdrop-blur-xl border border-metal-gray/30 rounded-2xl shadow-[0_10px_35px_rgba(13,20,46,0.08)]">
+        <div className="px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
             <Logo className="w-8 h-8 rounded-lg shadow-sm" />
             <span className="font-bold text-xl tracking-tight">Keyly</span>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-text-secondary hover:text-brand-cyan transition-colors">Features</a>
-            <a href="#faq" className="text-text-secondary hover:text-brand-cyan transition-colors">FAQ</a>
-            <a href={DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload('navbar_en')} className="bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors flex items-center space-x-2">
+            <a href="#features" className="text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1">Features</a>
+            <a href="#faq" className="text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1">FAQ</a>
+            <a href={DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackDownload('navbar_en')} className="bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors duration-200 flex items-center space-x-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2">
               <Download className="w-4 h-4" />
               <span>Download Now</span>
             </a>
           </div>
 
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-text-secondary" aria-label="Toggle menu">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md p-1" aria-label="Toggle menu">
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
@@ -178,10 +145,10 @@ function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-metal-gray/30 px-4 pt-2 pb-4 space-y-2">
-          <a href="#features" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md" onClick={() => setIsOpen(false)}>Features</a>
-          <a href="#faq" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md" onClick={() => setIsOpen(false)}>FAQ</a>
-          <a href={DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md" onClick={() => { setIsOpen(false); trackDownload('navbar_mobile_en'); }}>Download Now</a>
+        <div className="md:hidden mt-2 max-w-6xl mx-auto bg-white/95 backdrop-blur-xl border border-metal-gray/30 rounded-2xl px-4 pt-2 pb-4 space-y-2 shadow-lg">
+          <a href="#features" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200" onClick={() => setIsOpen(false)}>Features</a>
+          <a href="#faq" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200" onClick={() => setIsOpen(false)}>FAQ</a>
+          <a href={DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md transition-colors duration-200" onClick={() => { setIsOpen(false); trackDownload('navbar_mobile_en'); }}>Download Now</a>
         </div>
       )}
     </nav>
@@ -190,17 +157,23 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <section className="pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
           <div className="lg:col-span-6 text-center lg:text-left mb-16 lg:mb-0 z-10">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+              <div className="text-sm font-semibold tracking-[0.08em] text-text-secondary/80 mb-4">
+                Built in Taiwan · tuned for iOS Zhuyin input
+              </div>
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black text-text-primary leading-tight mb-6">
                 AI Zhuyin keyboard for faster, clearer writing on iPhone<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">
                   rewrite and refine text in one tap
                 </span>
               </h1>
+              <p className="text-lg text-text-secondary/90 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                Keyly unifies speed, writing quality, and privacy so translation, rewriting, and refinement happen directly in your typing flow.
+              </p>
 
               <div className="mt-8">
                 <DownloadCTA />
@@ -245,11 +218,6 @@ function Features() {
       description: 'This goes far beyond typo correction. Build your own AI commands for instant translation, long-form compression, or polished high-EQ replies, then call them with a quick gesture directly from the keyboard.'
     },
     {
-      icon: <Music className="w-6 h-6 text-accent-sky" />,
-      title: 'Piano tone that softens the mood',
-      description: 'Piano Mode turns ordinary typing into something more playful. Each keystroke can become part of a flowing melody, making even dry work replies feel lighter and less abrasive.'
-    },
-    {
       icon: <ShieldCheck className="w-6 h-6 text-brand-cyan" />,
       title: 'A high-standard privacy boundary',
       description: 'Conversation privacy is central to Keyly. We follow an ephemeral-processing principle so your text is destroyed after processing rather than stored long-term. We do not monitor, log, or repurpose your private data for model training.'
@@ -263,7 +231,7 @@ function Features() {
           <h2 className="text-3xl md:text-4xl font-bold text-text-primary">Why Keyly is a better Zhuyin keyboard</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -326,16 +294,12 @@ function FAQSection() {
       answer: 'Your custom prompts stay under your control. They are currently stored locally on your device using encryption, and we are planning end-to-end encrypted sync so switching devices becomes more seamless later.'
     },
     {
-      question: 'What is the music keyboard, or Piano Mode?',
-      answer: 'It is a built-in easter egg that adds high-quality piano tones to your typing. You can switch it on or off whenever you want and turn even routine replies into a small, more expressive interaction.'
-    },
-    {
-      question: 'What is the difference between the one-time purchase and Keyly Pro?',
+      question: 'What is the difference between free download users and Keyly Pro?',
       answer: (
         <div className="space-y-4">
           <p>
-            <strong>One-time purchase (limited-time NT$90):</strong><br />
-            A single purchase that keeps evolving. It includes the high-speed Zhuyin engine, the full standard prompt library, and the current daily quota of 5 cloud AI requests.
+            <strong>Standard users (free download):</strong><br />
+            Free download includes the high-speed Zhuyin engine, the full standard prompt library, and a one-time gift of 50 cloud AI requests for newly signed-in accounts.
           </p>
           <p>
             <strong>Keyly Pro subscription (NT$150/month):</strong><br />
@@ -361,12 +325,12 @@ function FAQSection() {
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div key={index} className="bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden transform-gpu">
-              <button className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none active:bg-white/5 transition-colors" onClick={() => {
+              <button className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan/70 active:bg-white/5 transition-colors duration-200" onClick={() => {
                 if (openIndex !== index) trackFaqClick(faq.question);
                 setOpenIndex(openIndex === index ? null : index);
               }} aria-expanded={openIndex === index} aria-controls={getFaqAnswerId(index)}>
                 <span className="text-lg font-medium text-metal-white pr-8">{faq.question}</span>
-                <ChevronDown className={`w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 motion-reduce:transition-none ${openIndex === index ? 'rotate-180' : ''}`} />
               </button>
 
               <AnimatePresence initial={false}>
@@ -402,7 +366,7 @@ function CTA() {
         <p className="text-xl text-text-secondary mb-10">
           Get Keyly and speed up Traditional Chinese typing, rewriting, and translation in one keyboard.
         </p>
-        <DownloadCTA centered buttonOnly />
+        <DownloadCTA centered />
       </div>
     </section>
   );
