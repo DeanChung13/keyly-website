@@ -71,7 +71,7 @@ Do not treat marketing copy as a substitute for those policy documents when the 
 ## Publicly Visible Pricing And Plan Context
 
 The website presents:
-- A one-time purchase path for the standard product
+- A free-download path for the standard product
 - A Keyly Pro subscription path for heavier AI use
 
 Exact prices, free quotas, billing timing, cancellation, and refund handling should be interpreted using the published subscription and terms pages, because those pages are the formal public references.
