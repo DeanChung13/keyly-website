@@ -2,7 +2,7 @@ import { jsxs, jsx } from "react/jsx-runtime";
 import { renderToString } from "react-dom/server";
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { ShieldCheck, Sparkles, MousePointer2, Download, X, Menu, ChevronDown, Smartphone, Wand2, Feather, Command, Music } from "lucide-react";
+import { ShieldCheck, Sparkles, MousePointer2, Download, X, Menu, ChevronDown, Smartphone, Wand2, Feather, Command } from "lucide-react";
 const keyboardImg = "/assets/keyboard-C-cJCmuM.webp";
 const zhTWShowcases = [
   // 1. 視覺震撼：混亂變秩序。第一秒就讓使用者看到 AI 處理繁瑣資訊的強大實力。
@@ -362,7 +362,7 @@ function Logo$1({ className = "w-8 h-8" }) {
   ] });
 }
 function DownloadCTA$1({ centered = false }) {
-  return /* @__PURE__ */ jsx("div", { className: `flex flex-col w-full ${centered ? "items-center" : "items-center lg:items-start"} space-y-6`, children: /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL$1, target: "_blank", rel: "noopener noreferrer", onClick: () => trackDownload$1(centered ? "cta_section" : "hero"), className: "w-full sm:w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
+  return /* @__PURE__ */ jsx("div", { className: `flex flex-col w-full ${centered ? "items-center" : "items-center lg:items-start"} space-y-6`, children: /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL$1, target: "_blank", rel: "noopener noreferrer", onClick: () => trackDownload$1(centered ? "cta_section" : "hero"), className: "w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none inline-flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
     /* @__PURE__ */ jsx(Smartphone, { className: "w-5 h-5" }),
     /* @__PURE__ */ jsx("span", { children: "免費下載" })
   ] }) });
@@ -440,27 +440,13 @@ function Hero$1() {
         animate: { opacity: 1, y: 0 },
         transition: { duration: 0.5 },
         children: [
-          /* @__PURE__ */ jsx("div", { className: "inline-flex items-center rounded-full border border-brand-cyan/30 bg-white/80 px-4 py-2 text-sm font-medium text-text-secondary mb-6", children: "台灣團隊打造 · iOS 注音輸入體驗" }),
-          /* @__PURE__ */ jsxs("h1", { className: "text-4xl lg:text-5xl xl:text-6xl font-black text-text-primary leading-tight mb-6", children: [
+          /* @__PURE__ */ jsx("div", { className: "text-sm font-semibold tracking-[0.08em] text-text-secondary/80 mb-4", children: "台灣團隊打造 · iOS 注音輸入體驗" }),
+          /* @__PURE__ */ jsxs("h1", { className: "text-5xl lg:text-5xl xl:text-6xl font-black text-text-primary leading-tight mb-6", children: [
             "指尖上的 AI 智慧，",
             /* @__PURE__ */ jsx("br", {}),
             /* @__PURE__ */ jsx("span", { className: "text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple", children: "文字轉化一鍵完成" })
           ] }),
-          /* @__PURE__ */ jsx("p", { className: "text-lg text-text-secondary/90 leading-relaxed max-w-xl mx-auto lg:mx-0", children: "兼顧速度、手感與隱私的智慧注音鍵盤，讓翻譯、潤飾、改寫都能在同一個輸入流程完成。" }),
-          /* @__PURE__ */ jsxs("div", { className: "mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl mx-auto lg:mx-0", children: [
-            /* @__PURE__ */ jsxs("div", { className: "rounded-xl bg-white/80 border border-metal-gray/20 px-4 py-3", children: [
-              /* @__PURE__ */ jsx("p", { className: "text-sm text-text-secondary", children: "下載方式" }),
-              /* @__PURE__ */ jsx("p", { className: "font-semibold text-text-primary", children: "免費下載" })
-            ] }),
-            /* @__PURE__ */ jsxs("div", { className: "rounded-xl bg-white/80 border border-metal-gray/20 px-4 py-3", children: [
-              /* @__PURE__ */ jsx("p", { className: "text-sm text-text-secondary", children: "新登入獎勵" }),
-              /* @__PURE__ */ jsx("p", { className: "font-semibold text-text-primary", children: "一次性 50 次" })
-            ] }),
-            /* @__PURE__ */ jsxs("div", { className: "rounded-xl bg-white/80 border border-metal-gray/20 px-4 py-3", children: [
-              /* @__PURE__ */ jsx("p", { className: "text-sm text-text-secondary", children: "離線模式" }),
-              /* @__PURE__ */ jsx("p", { className: "font-semibold text-text-primary", children: "支援無限使用" })
-            ] })
-          ] }),
+          /* @__PURE__ */ jsx("p", { className: "text-base lg:text-lg text-text-secondary/90 leading-relaxed max-w-xl mx-auto lg:mx-0", children: "兼顧速度、手感與隱私的智慧注音鍵盤，讓翻譯、潤飾、改寫都能在同一個輸入流程完成。" }),
           /* @__PURE__ */ jsx("div", { className: "mt-8", children: /* @__PURE__ */ jsx(DownloadCTA$1, {}) })
         ]
       }
@@ -498,19 +484,14 @@ function Features$1() {
       description: "遠遠不只是挑錯字！這是專屬於您的文字魔法盒。您可以隨心自訂專屬的「AI 指令」，無論是瞬翻專業外文、精煉長篇大論，抑或是將隻言片語化為優雅的高情商客套話，只需單手一滑即可輕鬆召喚，便利至極。"
     },
     {
-      icon: /* @__PURE__ */ jsx(Music, { className: "w-6 h-6 text-accent-sky" }),
-      title: "撫平焦躁的指尖琴韻",
-      description: "為平淡的打字體驗注入迷人的藝術氣息！開啟專屬的鋼琴模式後，您的每次敲擊都會化作優美的名曲旋律。縱使是回覆枯燥冷硬的公事訊息，指尖流淌出的輕柔琴韻，依然能為您撫平煩躁，舒緩一整天的緊繃與壓力。"
-    },
-    {
       icon: /* @__PURE__ */ jsx(ShieldCheck, { className: "w-6 h-6 text-brand-cyan" }),
       title: "高規格隱私防線",
-      description: "您的對話隱私是我們的核心使命。Keyly 採用「不落地處理」原則，確保您的輸入內容在處理完畢後自動銷毀，不進行任何持久化儲存。我們嚴格遵守 Apple 隱私規範，不監控、不側錄，亦不將您的私人數據用於模型訓練，提供真正純淨且安全的輸入體驗。"
+      description: "您的對話隱私是我們的核心使命。Keyly 採用「最小化與必要性」原則，僅在提供服務所需範圍內處理資料，原則上不作不必要的長期保存；若因法令義務、安全防護或交易驗證需要，才會在必要期間內保留部分資料。我們嚴格遵守 Apple 隱私規範，不監控、不側錄，亦不將您的私人數據用於模型訓練。"
     }
   ];
   return /* @__PURE__ */ jsx("section", { id: "features", className: "py-24 bg-white", children: /* @__PURE__ */ jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
     /* @__PURE__ */ jsx("div", { className: "text-center max-w-3xl mx-auto mb-16", children: /* @__PURE__ */ jsx("h2", { className: "text-3xl md:text-4xl font-bold text-text-primary", children: "為什麼 Keyly 是更好的 AI 注音鍵盤？" }) }),
-    /* @__PURE__ */ jsx("div", { className: "grid md:grid-cols-2 lg:grid-cols-3 gap-8", children: features.map((feature, index) => /* @__PURE__ */ jsxs(
+    /* @__PURE__ */ jsx("div", { className: "grid md:grid-cols-2 gap-8", children: features.map((feature, index) => /* @__PURE__ */ jsxs(
       motion.div,
       {
         onClick: () => trackFeatureClick$1(feature.title),
@@ -551,7 +532,7 @@ function FAQSection$1() {
         ] }),
         /* @__PURE__ */ jsxs("p", { children: [
           /* @__PURE__ */ jsx("strong", { children: "若您選擇開啟：" }),
-          "我們秉持最高規格隱私承諾，採納「即時處理」機制，所有數據僅供 AI 運算並在完成後即刻從快取移除。Keyly 嚴格遵守 Apple 規範，不監控、不側錄、不儲存您的私人對話內容。"
+          "我們採取最小化資料原則，僅在您主動觸發 AI 功能時處理必要內容。資料以即時處理為主，並在技術與營運可行範圍內縮短保存時間；如涉及法令遵循、安全防護或交易驗證需求，可能於必要期間保留部分紀錄。Keyly 嚴格遵守 Apple 規範，不監控、不側錄您的私人對話。"
         ] })
       ] })
     },
@@ -561,7 +542,7 @@ function FAQSection$1() {
     },
     {
       question: "如果沒有網路，還可以使用 AI 潤飾嗎？",
-      answer: "沒問題！只要您的設備支援 Apple 原生 AI 框架（如 iPhone 15 Pro, M 系列晶片或更新機型），Keyly 即可在離線環境下發揮實力。這不僅意味著閃電般的秒速反應，更確保您的靈感 100% 留存在設備中。"
+      answer: "沒問題！只要您的設備支援 Apple 原生 AI 框架（如 iPhone 15 Pro, M 系列晶片或更新機型），Keyly 即可在離線環境下發揮實力。這不僅意味著更快的反應，也能降低資料傳輸需求，讓更多內容留在您的設備端處理。"
     },
     {
       question: "打字速度很快時，會不會容易卡頓或閃退？",
@@ -570,10 +551,6 @@ function FAQSection$1() {
     {
       question: "我自己設定的專屬 AI 指令會如何儲存？",
       answer: "您的專屬指令由您掌控。目前所有自訂指令均透過加密技術儲存於設備本地端。我們也正籌劃具備端到端加密的雲端同步服務，讓您未來更換設備也能無縫接軌。"
-    },
-    {
-      question: "音樂鍵盤（鋼琴模式）是什麼？",
-      answer: "這是為打字體驗注入靈魂的獨家彩蛋！我們內建了高品質鋼琴音色，讓您在打字同時也能流暢彈奏。此功能可依喜好隨時開啟或關閉，讓每一次訊息回覆都昇華成專屬於您的微型音樂饗宴。"
     },
     {
       question: "一般用戶（免費下載）跟 Keyly Pro 訂閱用戶有什麼差別？",
@@ -650,7 +627,7 @@ function CTA$1() {
     /* @__PURE__ */ jsx("div", { className: "absolute inset-0 bg-brand-cyan/5" }),
     /* @__PURE__ */ jsxs("div", { className: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center", children: [
       /* @__PURE__ */ jsx("h2", { className: "text-4xl font-bold text-text-primary mb-6", children: "體驗更聰明的 iPhone 注音輸入法" }),
-      /* @__PURE__ */ jsx("p", { className: "text-xl text-text-secondary mb-10", children: "立即下載 Keyly，用 AI 加速繁體中文輸入、潤飾與翻譯流程。" }),
+      /* @__PURE__ */ jsx("p", { className: "text-xl text-text-secondary mb-10", children: "這不是輸入法，是你的私人文字特助。誠摯邀請你體驗：什麼叫「打字不費力」。" }),
       /* @__PURE__ */ jsx(DownloadCTA$1, { centered: true })
     ] })
   ] });
@@ -720,7 +697,7 @@ function Logo({ className = "w-8 h-8" }) {
   ] });
 }
 function DownloadCTA({ centered = false }) {
-  return /* @__PURE__ */ jsx("div", { className: `flex flex-col w-full ${centered ? "items-center" : "items-center lg:items-start"} space-y-6`, children: /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener noreferrer", onClick: () => trackDownload(centered ? "cta_section_en" : "hero_en"), className: "w-full sm:w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
+  return /* @__PURE__ */ jsx("div", { className: `flex flex-col w-full ${centered ? "items-center" : "items-center lg:items-start"} space-y-6`, children: /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener noreferrer", onClick: () => trackDownload(centered ? "cta_section_en" : "hero_en"), className: "w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none inline-flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
     /* @__PURE__ */ jsx(Smartphone, { className: "w-5 h-5" }),
     /* @__PURE__ */ jsx("span", { children: "Download Now" })
   ] }) });
@@ -791,27 +768,13 @@ function Navbar() {
 function Hero() {
   return /* @__PURE__ */ jsx("section", { className: "pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden", children: /* @__PURE__ */ jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative", children: /* @__PURE__ */ jsxs("div", { className: "lg:grid lg:grid-cols-12 lg:gap-16 items-center", children: [
     /* @__PURE__ */ jsx("div", { className: "lg:col-span-6 text-center lg:text-left mb-16 lg:mb-0 z-10", children: /* @__PURE__ */ jsxs(motion.div, { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.5 }, children: [
-      /* @__PURE__ */ jsx("div", { className: "inline-flex items-center rounded-full border border-brand-cyan/30 bg-white/80 px-4 py-2 text-sm font-medium text-text-secondary mb-6", children: "Built in Taiwan · tuned for iOS Zhuyin input" }),
+      /* @__PURE__ */ jsx("div", { className: "text-sm font-semibold tracking-[0.08em] text-text-secondary/80 mb-4", children: "Built in Taiwan · tuned for iOS Zhuyin input" }),
       /* @__PURE__ */ jsxs("h1", { className: "text-4xl lg:text-5xl xl:text-6xl font-black text-text-primary leading-tight mb-6", children: [
         "AI Zhuyin keyboard for faster, clearer writing on iPhone",
         /* @__PURE__ */ jsx("br", {}),
         /* @__PURE__ */ jsx("span", { className: "text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple", children: "rewrite and refine text in one tap" })
       ] }),
       /* @__PURE__ */ jsx("p", { className: "text-lg text-text-secondary/90 leading-relaxed max-w-xl mx-auto lg:mx-0", children: "Keyly unifies speed, writing quality, and privacy so translation, rewriting, and refinement happen directly in your typing flow." }),
-      /* @__PURE__ */ jsxs("div", { className: "mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl mx-auto lg:mx-0", children: [
-        /* @__PURE__ */ jsxs("div", { className: "rounded-xl bg-white/80 border border-metal-gray/20 px-4 py-3", children: [
-          /* @__PURE__ */ jsx("p", { className: "text-sm text-text-secondary", children: "Download" }),
-          /* @__PURE__ */ jsx("p", { className: "font-semibold text-text-primary", children: "Free" })
-        ] }),
-        /* @__PURE__ */ jsxs("div", { className: "rounded-xl bg-white/80 border border-metal-gray/20 px-4 py-3", children: [
-          /* @__PURE__ */ jsx("p", { className: "text-sm text-text-secondary", children: "New sign-ins" }),
-          /* @__PURE__ */ jsx("p", { className: "font-semibold text-text-primary", children: "One-time 50 requests" })
-        ] }),
-        /* @__PURE__ */ jsxs("div", { className: "rounded-xl bg-white/80 border border-metal-gray/20 px-4 py-3", children: [
-          /* @__PURE__ */ jsx("p", { className: "text-sm text-text-secondary", children: "Offline mode" }),
-          /* @__PURE__ */ jsx("p", { className: "font-semibold text-text-primary", children: "Unlimited use" })
-        ] })
-      ] }),
       /* @__PURE__ */ jsx("div", { className: "mt-8", children: /* @__PURE__ */ jsx(DownloadCTA, {}) })
     ] }) }),
     /* @__PURE__ */ jsx("div", { className: "lg:col-span-6 relative flex justify-center lg:justify-end mt-12 lg:mt-0", children: /* @__PURE__ */ jsxs(
@@ -847,11 +810,6 @@ function Features() {
       description: "This goes far beyond typo correction. Build your own AI commands for instant translation, long-form compression, or polished high-EQ replies, then call them with a quick gesture directly from the keyboard."
     },
     {
-      icon: /* @__PURE__ */ jsx(Music, { className: "w-6 h-6 text-accent-sky" }),
-      title: "Piano tone that softens the mood",
-      description: "Piano Mode turns ordinary typing into something more playful. Each keystroke can become part of a flowing melody, making even dry work replies feel lighter and less abrasive."
-    },
-    {
       icon: /* @__PURE__ */ jsx(ShieldCheck, { className: "w-6 h-6 text-brand-cyan" }),
       title: "A high-standard privacy boundary",
       description: "Conversation privacy is central to Keyly. We follow an ephemeral-processing principle so your text is destroyed after processing rather than stored long-term. We do not monitor, log, or repurpose your private data for model training."
@@ -859,7 +817,7 @@ function Features() {
   ];
   return /* @__PURE__ */ jsx("section", { id: "features", className: "py-24 bg-white", children: /* @__PURE__ */ jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
     /* @__PURE__ */ jsx("div", { className: "text-center max-w-3xl mx-auto mb-16", children: /* @__PURE__ */ jsx("h2", { className: "text-3xl md:text-4xl font-bold text-text-primary", children: "Why Keyly is a better Zhuyin keyboard" }) }),
-    /* @__PURE__ */ jsx("div", { className: "grid md:grid-cols-2 lg:grid-cols-3 gap-8", children: features.map((feature, index) => /* @__PURE__ */ jsxs(
+    /* @__PURE__ */ jsx("div", { className: "grid md:grid-cols-2 gap-8", children: features.map((feature, index) => /* @__PURE__ */ jsxs(
       motion.div,
       {
         onClick: () => trackFeatureClick(feature.title),
@@ -900,13 +858,13 @@ function FAQSection() {
         ] }),
         /* @__PURE__ */ jsxs("p", { children: [
           /* @__PURE__ */ jsx("strong", { children: "If you turn it on:" }),
-          " we use an ephemeral-processing model. Data is handled only for the requested AI task, then removed from cache. Keyly does not monitor, record, or store your everyday private conversations."
+          " we process only the data needed for features you actively trigger. Processing is primarily request-based, and retention is minimized where technically and operationally feasible; limited records may still be retained when required for legal compliance, security, or transaction verification. Keyly does not monitor or keylog your everyday private conversations."
         ] })
       ] })
     },
     {
       question: "Which cloud AI providers do you use, and is it safe?",
-      answer: "We build on global top-tier providers including Google, OpenAI, and Anthropic. Keyly limits data use to immediate requests only and does not allow your personal conversations to be used for model training. Automatic cache clearing further reduces retention risk."
+      answer: "We build on global top-tier providers including Google, OpenAI, and Anthropic. Keyly limits data use to user-initiated requests and does not allow your personal conversations to be used for model training. Request data retention is minimized subject to legal, security, and operational requirements."
     },
     {
       question: "Can I still use AI refinement without internet access?",
@@ -919,10 +877,6 @@ function FAQSection() {
     {
       question: "How are my custom AI commands stored?",
       answer: "Your custom prompts stay under your control. They are currently stored locally on your device using encryption, and we are planning end-to-end encrypted sync so switching devices becomes more seamless later."
-    },
-    {
-      question: "What is the music keyboard, or Piano Mode?",
-      answer: "It is a built-in easter egg that adds high-quality piano tones to your typing. You can switch it on or off whenever you want and turn even routine replies into a small, more expressive interaction."
     },
     {
       question: "What is the difference between free download users and Keyly Pro?",
