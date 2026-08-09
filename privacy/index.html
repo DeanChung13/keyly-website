@@ -30,28 +30,14 @@
     }
   }
   </script>
-  <!-- Google tag (gtag.js) deferred -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-C51YGT0TVX');
-      
-      const loadGtag = () => {
-        if (window.gtagLoaded) return;
-        window.gtagLoaded = true;
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = "https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX";
-        document.head.appendChild(script);
-      };
-      
-      window.addEventListener('scroll', loadGtag, { passive: true, once: true });
-      window.addEventListener('mousemove', loadGtag, { passive: true, once: true });
-      window.addEventListener('touchstart', loadGtag, { passive: true, once: true });
-      window.addEventListener('keydown', loadGtag, { passive: true, once: true });
-      setTimeout(loadGtag, 8000); // 8s fallback to absolutely avoid PSI but load eventually
-    </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C51YGT0TVX');
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -407,6 +393,8 @@
         Keyly
       </a>
       <div class="footer-links">
+        <a href="/guides/full-access/">允許完全取用說明</a>
+        <span class="sep">|</span>
         <a href="/privacy/">隱私權政策</a>
         <span class="sep">|</span>
         <a href="/terms/">服務條款</a>

@@ -16,6 +16,7 @@ export default defineConfig({
           termsEn: path.resolve(__dirname, 'terms/en/index.html'),
           subscriptions: path.resolve(__dirname, 'subscriptions/index.html'),
           subscriptionsEn: path.resolve(__dirname, 'subscriptions/en/index.html'),
+          guidesFullAccess: path.resolve(__dirname, 'guides/full-access/index.html'),
           notFound: path.resolve(__dirname, '404.html'),
         },
       },

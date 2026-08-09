@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>自動續訂說明 — Keyly</title>
-  <meta name="description" content="Keyly Pro 自動續訂說明：包含扣款時間、取消步驟及退款政策。">
-  <link rel="canonical" href="https://keylyapp.com/subscriptions/">
-  <link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/subscriptions/">
-  <link rel="alternate" hreflang="en" href="https://keylyapp.com/subscriptions/en/">
-  <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/subscriptions/">
+  <title>iPhone 鍵盤「允許完全取用」是什麼？安全嗎？ — Keyly</title>
+  <meta name="description" content="解釋 iOS 第三方鍵盤的「允許完全取用」權限實際開放了什麼、為什麼 AI 鍵盤需要它、不開啟會少哪些功能，以及怎麼判斷一款鍵盤值不值得信任。">
+  <link rel="canonical" href="https://keylyapp.com/guides/full-access/">
+  <link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/guides/full-access/">
+  <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/guides/full-access/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='20' fill='%230D142E' /%3E%3Cdefs%3E%3ClinearGradient id='k-stem' x1='30' y1='20' x2='30' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2338C7BA' /%3E%3Cstop offset='1' stop-color='%238E61D9' /%3E%3C/linearGradient%3E%3ClinearGradient id='k-arm' x1='75' y1='20' x2='40' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E6EBF2' /%3E%3Cstop offset='1' stop-color='%23BFCDE0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='25' y='20' width='16' height='60' fill='url(%23k-stem)' /%3E%3Cpath d='M75 20L41 50L75 80H55L31 50L55 20H75Z' fill='url(%23k-arm)' /%3E%3C/svg%3E">
-  <meta property="og:title" content="自動續訂說明 — Keyly">
-  <meta property="og:description" content="Keyly Pro 自動續訂說明：包含扣款時間、取消步驟及退款政策。">
-  <meta property="og:url" content="https://keylyapp.com/subscriptions/">
+  <meta property="og:title" content="iPhone 鍵盤「允許完全取用」是什麼？安全嗎？">
+  <meta property="og:description" content="解釋 iOS 第三方鍵盤的「允許完全取用」權限實際開放了什麼、為什麼 AI 鍵盤需要它、不開啟會少哪些功能，以及怎麼判斷一款鍵盤值不值得信任。">
+  <meta property="og:url" content="https://keylyapp.com/guides/full-access/">
   <meta property="og:image" content="https://keylyapp.com/assets/images/og-banner.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "自動續訂說明 — Keyly",
-    "description": "Keyly Pro 自動續訂說明：包含扣款時間、取消步驟及退款政策。",
+    "name": "iPhone 鍵盤「允許完全取用」是什麼？安全嗎？",
+    "description": "解釋 iOS 第三方鍵盤的「允許完全取用」權限實際開放了什麼、為什麼 AI 鍵盤需要它、不開啟會少哪些功能，以及怎麼判斷一款鍵盤值不值得信任。",
+    "inLanguage": "zh-Hant-TW",
     "publisher": {
       "@type": "Organization",
       "name": "Keyly"
@@ -113,6 +113,15 @@
       padding: 6rem 1.5rem 4rem;
     }
 
+    .breadcrumb {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--brand-cyan); }
+
     .page-header { margin-bottom: 2.5rem; }
 
     .page-header h1 {
@@ -123,9 +132,9 @@
       margin-bottom: 0.5rem;
     }
 
-    .page-meta {
-      font-size: 0.875rem;
+    .page-lead {
       color: var(--text-secondary);
+      font-size: 1.05rem;
     }
 
     .legal-content h2 {
@@ -149,7 +158,7 @@
       margin-bottom: 0.875rem;
     }
 
-    .legal-content ul {
+    .legal-content ul, .legal-content ol {
       margin: 0.5rem 0 0.875rem 1.25rem;
       color: var(--text-secondary);
     }
@@ -157,17 +166,50 @@
     .legal-content li { margin-bottom: 0.4rem; }
     .legal-content strong { color: var(--text-primary); font-weight: 700; }
 
-    .legal-content code {
-      font-family: ui-monospace, monospace;
-      font-size: 0.875em;
-      background: var(--metal-white);
-      padding: 0.15em 0.4em;
-      border-radius: 4px;
-      color: var(--text-primary);
-    }
-
     .legal-content a { color: var(--brand-cyan); text-decoration: none; }
     .legal-content a:hover { text-decoration: underline; }
+
+    .callout {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-left: 4px solid var(--brand-cyan);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .callout p:last-child { margin-bottom: 0; }
+
+    .cta-box {
+      background: var(--bg-primary);
+      color: var(--metal-white);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem;
+      margin: 3rem 0 0;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      border: 0;
+      color: var(--metal-white);
+      margin: 0 0 0.5rem;
+      padding: 0;
+      font-size: 1.15rem;
+    }
+
+    .cta-box p { color: var(--metal-gray); margin-bottom: 1.1rem; }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--brand-cyan);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+    }
+
+    .cta-btn:hover { background: var(--brand-purple); }
 
     .footer {
       background: var(--bg-page);
@@ -226,7 +268,7 @@
   <nav class="navbar">
     <div class="navbar-inner">
       <a href="/" class="navbar-brand">
-        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect width="100" height="100" rx="20" fill="#0D142E"/>
           <defs>
             <linearGradient id="ks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
@@ -241,43 +283,77 @@
         </svg>
         Keyly
       </a>
-      <a href="/subscriptions/en/" class="lang-btn">EN</a>
+      <a href="/" class="lang-btn">回首頁</a>
     </div>
   </nav>
 
   <div class="page-wrapper">
+    <p class="breadcrumb"><a href="/">Keyly</a> ／ 使用指南 ／ 允許完全取用</p>
+
     <div class="page-header">
-      <h1>自動續訂說明</h1>
+      <h1>iPhone 鍵盤「允許完全取用」是什麼？安全嗎？</h1>
+      <p class="page-lead">安裝第三方注音鍵盤時，iOS 會跳出一段看起來很嚇人的警告。這篇說明這個開關實際開放了什麼、不開會少什麼，以及怎麼判斷一款鍵盤值不值得你打開它。</p>
     </div>
 
     <div class="legal-content">
-      <p>感謝您選擇 Keyly Pro。為了確保您的服務不中斷，我們的訂閱服務採用自動續訂機制。以下是關於訂閱管理的重要資訊：</p>
-
-      <h2>1. 訂閱機制與週期</h2>
-      <p>Keyly Pro 提供「月度訂閱」與「年度訂閱」兩種週期方案。款項均透過 Apple App Store 結帳與扣款。除非您在目前訂閱週期結束前至少 24 小時取消訂閱，否則系統將自動為您續約下一週期的服務。</p>
-      <p><strong>關於免費試用：</strong>若您的訂閱方案包含免費試用期，試用期結束後將會自動轉為付費訂閱並扣除相應費用。若您不希望續費，請務必在試用期結束前至少 24 小時完成取消訂閱。</p>
-
-      <h2>2. 如何管理與取消訂閱</h2>
-      <p>開發者無法直接從後端系統介入取消您在 Apple 裝置上的訂閱設定。您可以透過以下步驟自行管理：</p>
+      <h2>一、這個開關到底控制什麼</h2>
+      <p>在 iOS 上，第三方鍵盤預設運行在一個受限制的沙盒中。這個狀態下，鍵盤<strong>無法連線網路</strong>，也無法與自己的主 App 共用資料。你打的字只會送進當下的輸入框。</p>
+      <p>「允許完全取用」（Allow Full Access）打開後，鍵盤才被允許：</p>
       <ul>
-        <li>打開您的 iPhone 或 iPad 的「設定」。</li>
-        <li>點擊最上方的「您的姓名 / Apple ID」。</li>
-        <li>點擊「訂閱項目」。</li>
-        <li>找到「Keyly」並點擊進入，即可選擇取消訂閱。</li>
+        <li>連線網路（雲端運算、同步、翻譯等功能的前提）</li>
+        <li>與同一開發者的主 App 共用資料（例如把你在 App 裡設定的自訂指令帶到鍵盤上）</li>
+        <li>使用部分系統資源，例如觸覺回饋（haptic feedback）</li>
+      </ul>
+      <p>iOS 顯示的警告文字是<strong>對所有第三方鍵盤一視同仁的系統提示</strong>，不是針對某一款 App 的風險評估結果。它描述的是「取得此權限後技術上有可能做到什麼」，而不是「這款鍵盤正在做什麼」。</p>
+
+      <div class="callout">
+        <p><strong>重點：</strong>「不開啟」不等於「鍵盤不能用」。不開啟時，注音輸入、選字、鍵盤本身的所有離線功能都完全正常，只是需要連網的功能會停用。</p>
+      </div>
+
+      <h2>二、不開啟的話，會少掉哪些功能？</h2>
+      <p>以 Keyly 為例，關閉「允許完全取用」時：</p>
+      <ul>
+        <li><strong>仍然可用：</strong>完整的注音輸入與選字引擎、標準指令庫，以及在支援的機型上、完全在裝置端執行的基礎 AI 修正。</li>
+        <li><strong>會停用：</strong>需要連線雲端模型的潤飾、翻譯與改寫功能，以及與主 App 之間的設定同步。</li>
+      </ul>
+      <p>換句話說，如果你只想要一套好打的注音鍵盤，可以完全不開這個權限。要不要開，取決於你要不要用雲端 AI。</p>
+
+      <h2>三、怎麼開啟或關閉</h2>
+      <p>權限隨時可以改，不需要重新安裝：</p>
+      <ol>
+        <li>開啟「設定」App</li>
+        <li>點「一般」→「鍵盤」→「鍵盤」</li>
+        <li>選擇你要調整的第三方鍵盤</li>
+        <li>切換「允許完全取用」</li>
+      </ol>
+      <p>Apple 對於加入與切換鍵盤的官方說明，可參考 <a href="https://support.apple.com/zh-tw/guide/iphone/iph73b71eb/ios" target="_blank" rel="noopener noreferrer">Apple 支援：在 iPhone 上加入或更改鍵盤</a>。</p>
+
+      <h2>四、怎麼判斷一款鍵盤值不值得信任</h2>
+      <p>權限本身是中性的，差別在於開發者拿它做什麼。實際可以檢查的幾件事：</p>
+      <ul>
+        <li><strong>隱私政策是否具體。</strong>有沒有寫清楚哪些資料會送出、送到哪裡、保存多久。只寫「我們重視您的隱私」而沒有細節的，等於沒有承諾。</li>
+        <li><strong>App Store 的「App 隱私」欄位。</strong>Apple 要求開發者申報蒐集的資料類型，這是可以直接比對的公開資訊。</li>
+        <li><strong>密碼欄位的行為。</strong>iOS 在密碼欄位會自動切回系統鍵盤，第三方鍵盤在這種欄位本來就取不到內容。</li>
+        <li><strong>有沒有提供不開權限也能用的模式。</strong>願意讓核心功能在無權限狀態下完整運作的鍵盤，代表它的商業模式不是建立在你的輸入資料上。</li>
+        <li><strong>資料是否被拿去訓練模型。</strong>這通常要在隱私政策裡明確排除，不會自動成立。</li>
       </ul>
 
-      <h2>3. 扣款時間</h2>
-      <p>續約款項通常會在目前訂閱期滿前的 24 小時內，由 Apple 系統自動發起扣款驗證。</p>
+      <h2>五、Keyly 在這件事上的作法</h2>
+      <p>Keyly 採取最小化與必要性原則：僅在你<strong>主動觸發</strong> AI 功能時處理必要內容，資料以即時處理為主，並在技術與營運可行範圍內縮短保存時間；若涉及法令遵循、安全防護或交易驗證需求，才會在必要期間內保留部分紀錄。我們不監控、不側錄輸入內容，也不將你的個人對話用於模型訓練。</p>
+      <p>完整說明請見 <a href="/privacy/">Keyly 隱私權政策</a>。</p>
+    </div>
 
-      <h2>4. 退款政策</h2>
-      <p>由於 Keyly 提供的訂閱服務屬於「經消費者拆封之影音商品或電腦軟體」或「非以有形媒介提供之數位內容」，依據台灣消費者保護法規定，經消費者事先同意即可排除 7 天鑑賞期之適用。退款請求須遵循 Apple App Store 的官方退款流程申請。</p>
+    <div class="cta-box">
+      <h2>想先試試不開權限的注音體驗？</h2>
+      <p>Keyly 免費下載，核心注音引擎不需要「允許完全取用」也能完整使用。</p>
+      <a class="cta-btn" href="https://apps.apple.com/app/id6759639348" target="_blank" rel="noopener noreferrer">在 App Store 下載 Keyly</a>
     </div>
   </div>
 
   <footer class="footer">
     <div class="footer-inner">
       <a href="/" class="footer-brand">
-        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect width="100" height="100" rx="20" fill="#0D142E"/>
           <defs>
             <linearGradient id="fks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
