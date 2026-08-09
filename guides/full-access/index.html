@@ -300,10 +300,12 @@
       <p>在 iOS 上，第三方鍵盤預設運行在一個受限制的沙盒中。這個狀態下，鍵盤<strong>無法連線網路</strong>，也無法與自己的主 App 共用資料。你打的字只會送進當下的輸入框。</p>
       <p>「允許完全取用」（Allow Full Access）打開後，鍵盤才被允許：</p>
       <ul>
-        <li>連線網路（雲端運算、同步、翻譯等功能的前提）</li>
-        <li>與同一開發者的主 App 共用資料（例如把你在 App 裡設定的自訂指令帶到鍵盤上）</li>
-        <li>使用部分系統資源，例如觸覺回饋（haptic feedback）</li>
+        <li>將輸入事件與資料透過網路送出處理（雲端運算、同步、翻譯等功能的前提）</li>
+        <li>與同一開發者的主 App 共用容器資料（例如把你在 App 裡設定的自訂指令帶到鍵盤上）</li>
+        <li>使用剪貼簿、播放鍵盤音效，以及存取 iCloud 同步設定</li>
       </ul>
+      <p>以上為 Apple 開發者文件對 <code>RequestsOpenAccess</code> 所列出的能力範圍，來源：<a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html" target="_blank" rel="noopener noreferrer">Apple Developer — Custom Keyboard</a>（封存文件）。</p>
+      <p><strong>另一個實際會遇到的差別：按鍵震動。</strong>在 iPhone 上，第三方鍵盤關閉「允許完全取用」後，按鍵的觸覺回饋可能無法使用——這不只是 Keyly，其他第三方鍵盤也是相同狀況。此時注音輸入本身完全正常，只是不會有按鍵震動。這是實際裝置上觀察到的行為，Apple 並未在公開文件中說明其原因。</p>
       <p>iOS 顯示的警告文字是<strong>對所有第三方鍵盤一視同仁的系統提示</strong>，不是針對某一款 App 的風險評估結果。它描述的是「取得此權限後技術上有可能做到什麼」，而不是「這款鍵盤正在做什麼」。</p>
 
       <div class="callout">
@@ -333,7 +335,7 @@
       <ul>
         <li><strong>隱私政策是否具體。</strong>有沒有寫清楚哪些資料會送出、送到哪裡、保存多久。只寫「我們重視您的隱私」而沒有細節的，等於沒有承諾。</li>
         <li><strong>App Store 的「App 隱私」欄位。</strong>Apple 要求開發者申報蒐集的資料類型，這是可以直接比對的公開資訊。</li>
-        <li><strong>密碼欄位的行為。</strong>iOS 在密碼欄位會自動切回系統鍵盤，第三方鍵盤在這種欄位本來就取不到內容。</li>
+        <li><strong>密碼欄位的行為。</strong>這一點你不必依賴開發者的承諾：Apple 文件明定，當使用者點入安全文字輸入欄位（<code>secureTextEntry</code>）時，系統會<strong>暫時以系統鍵盤取代自訂鍵盤</strong>，離開該欄位後才恢復。第三方鍵盤在密碼欄位本來就取不到內容。來源：<a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html" target="_blank" rel="noopener noreferrer">Apple Developer — Custom Keyboard</a>（封存文件）。</li>
         <li><strong>有沒有提供不開權限也能用的模式。</strong>願意讓核心功能在無權限狀態下完整運作的鍵盤，代表它的商業模式不是建立在你的輸入資料上。</li>
         <li><strong>資料是否被拿去訓練模型。</strong>這通常要在隱私政策裡明確排除，不會自動成立。</li>
       </ul>
