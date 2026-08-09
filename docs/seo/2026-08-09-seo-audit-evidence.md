@@ -2,7 +2,9 @@
 
 稽核日期：2026-08-09（HTTP `date` header：Sun, 09 Aug 2026 07:34:33 GMT）
 方法：對 https://keylyapp.com 直接發 HTTP 請求（curl）+ 本地原始碼檢查
-**未取得的資料**：Search Console、GA4、Keyword Planner／Ahrefs／Semrush、PageSpeed Insights／CrUX、條件受控的 Google TW SERP
+**當時未取得的資料**：Search Console、GA4、Keyword Planner／Ahrefs／Semrush、PageSpeed Insights／CrUX、條件受控的 Google TW SERP
+
+> 本文是修正前的歷史證據快照。GSC 已於同日完成連接；最新研究規則、GSC 基準與定期監測方式見 [Keyly SEO 研究與 GSC 定期監測方式](gsc-research-and-monitoring.md)。
 
 本文只記錄證據與分級，修正方案見 `docs/superpowers/plans/2026-08-09-seo-audit-fixes.md`。
 

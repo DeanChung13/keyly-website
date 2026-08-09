@@ -70,6 +70,13 @@ git push origin main
 
 - [GA 事件追蹤總覽](docs/ga-events.md)
 
+### SEO
+
+- [SEO 自然流量改善計劃](docs/seo-growth-plan.md)
+- [SEO 稽核證據報告](docs/seo/2026-08-09-seo-audit-evidence.md)
+- [SEO 研究與 GSC 定期監測方式](docs/seo/gsc-research-and-monitoring.md)
+- [SEO 修正方案](docs/superpowers/plans/2026-08-09-seo-audit-fixes.md)
+
 ## 授權
 
 © 2026 Keyly. All rights reserved.
