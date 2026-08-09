@@ -38,27 +38,13 @@
       "description": "Keyly 是 iPhone 與 iPad 上的 AI 注音鍵盤，支援繁體中文輸入、文字潤飾、翻譯與離線隱私模式，讓訊息、貼文與工作寫作更快更準。"
     }
     </script>
-    <!-- Google tag (gtag.js) deferred -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-C51YGT0TVX');
-      
-      const loadGtag = () => {
-        if (window.gtagLoaded) return;
-        window.gtagLoaded = true;
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = "https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX";
-        document.head.appendChild(script);
-      };
-      
-      window.addEventListener('scroll', loadGtag, { passive: true, once: true });
-      window.addEventListener('mousemove', loadGtag, { passive: true, once: true });
-      window.addEventListener('touchstart', loadGtag, { passive: true, once: true });
-      window.addEventListener('keydown', loadGtag, { passive: true, once: true });
-      setTimeout(loadGtag, 8000); // 8s fallback to absolutely avoid PSI but load eventually
     </script>
   </head>
   <body>

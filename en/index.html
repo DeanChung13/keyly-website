@@ -35,27 +35,13 @@
       "description": "Keyly is an AI-powered Zhuyin keyboard for iPhone and iPad with Traditional Chinese typing, rewriting, translation, and privacy-first offline support."
     }
     </script>
-    <!-- Google tag (gtag.js) deferred -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-C51YGT0TVX');
-      
-      const loadGtag = () => {
-        if (window.gtagLoaded) return;
-        window.gtagLoaded = true;
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = "https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX";
-        document.head.appendChild(script);
-      };
-      
-      window.addEventListener('scroll', loadGtag, { passive: true, once: true });
-      window.addEventListener('mousemove', loadGtag, { passive: true, once: true });
-      window.addEventListener('touchstart', loadGtag, { passive: true, once: true });
-      window.addEventListener('keydown', loadGtag, { passive: true, once: true });
-      setTimeout(loadGtag, 8000); // 8s fallback to absolutely avoid PSI but load eventually
     </script>
   </head>
   <body>
