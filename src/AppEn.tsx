@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { Download, Menu, X, Wand2, Feather, Command, ShieldCheck, ChevronDown, Smartphone } from 'lucide-react';
 import TypingAnimation from './components/TypingAnimation';
 
@@ -310,7 +310,6 @@ function FAQSection() {
     }
   ];
 
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const getFaqAnswerId = (index: number) => `faq-answer-en-${index}`;
 
   return (
@@ -324,32 +323,22 @@ function FAQSection() {
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden transform-gpu">
-              <button className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan/70 active:bg-white/5 transition-colors duration-200" onClick={() => {
-                if (openIndex !== index) trackFaqClick(faq.question);
-                setOpenIndex(openIndex === index ? null : index);
-              }} aria-expanded={openIndex === index} aria-controls={getFaqAnswerId(index)}>
+            <details
+              key={index}
+              className="group bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden"
+              onToggle={(event) => {
+                if (event.currentTarget.open) trackFaqClick(faq.question);
+              }}
+            >
+              <summary className="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer list-none [&::-webkit-details-marker]:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan/70 active:bg-white/5 transition-colors duration-200">
                 <span className="text-lg font-medium text-metal-white pr-8">{faq.question}</span>
-                <ChevronDown className={`w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 motion-reduce:transition-none ${openIndex === index ? 'rotate-180' : ''}`} />
-              </button>
+                <ChevronDown aria-hidden="true" className="w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 motion-reduce:transition-none group-open:rotate-180" />
+              </summary>
 
-              <AnimatePresence initial={false}>
-                {openIndex === index && (
-                  <motion.div
-                    id={getFaqAnswerId(index)}
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-6 pb-6 text-metal-gray leading-relaxed">
-                      {faq.answer}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+              <div id={getFaqAnswerId(index)} className="px-6 pb-6 text-metal-gray leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
           ))}
         </div>
       </div>
@@ -389,6 +378,8 @@ function Footer() {
             <a href="/subscriptions/en/" onClick={() => trackLinkClick('subscription_terms_en', '/subscriptions/en/')} className="hover:text-brand-cyan transition-colors">Auto-Renewal Terms</a>
             <span className="text-metal-gray/50">|</span>
             <a href="mailto:support@keylyapp.com" onClick={() => trackLinkClick('support_email_en', 'mailto:support@keylyapp.com')} className="hover:text-brand-cyan transition-colors">Support</a>
+            <span className="text-metal-gray/50">|</span>
+            <a href="/" hrefLang="zh-TW" onClick={() => trackLinkClick('lang_switch_zh', '/')} className="hover:text-brand-cyan transition-colors">繁體中文</a>
           </div>
         </div>
         <div className="mt-8 text-center text-sm text-metal-gray">

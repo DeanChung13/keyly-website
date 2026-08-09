@@ -14,6 +14,7 @@ type TypingAnimationCopy = {
   completeLabel: string;
   processingLabel: string;
   spaceLabel: string;
+  keyboardAlt: string;
 };
 
 
@@ -24,7 +25,8 @@ const copyMap: Record<Locale, TypingAnimationCopy> = {
     sourceLabel: '原始輸入內容',
     completeLabel: 'AI 魔法優化完成',
     processingLabel: '正在精煉您的文字...',
-    spaceLabel: '空白'
+    spaceLabel: '空白',
+    keyboardAlt: 'Keyly AI 注音鍵盤在 iPhone 上的介面預覽'
   },
   en: {
     showcases: enShowcases,
@@ -32,7 +34,8 @@ const copyMap: Record<Locale, TypingAnimationCopy> = {
     sourceLabel: 'Original Draft',
     completeLabel: 'AI refinement complete',
     processingLabel: 'Refining your text...',
-    spaceLabel: 'Space'
+    spaceLabel: 'Space',
+    keyboardAlt: 'Preview of the Keyly AI Zhuyin keyboard on iPhone'
   }
 };
 
@@ -229,7 +232,7 @@ export default function TypingAnimation({ locale = 'zh-TW' }: { locale?: Locale 
           </AnimatePresence>
         </div>
 
-        <img src={keyboardImg} alt="Keyboard" className="w-full h-auto object-contain z-10 relative -mt-4 drop-shadow-lg" />
+        <img src={keyboardImg} alt={copy.keyboardAlt} className="w-full h-auto object-contain z-10 relative -mt-4 drop-shadow-lg" />
 
         {/* Home Indicator */}
         <div className="absolute bottom-[6px] left-1/2 -translate-x-1/2 w-[120px] h-[4px] bg-black/80 rounded-full z-50"></div>

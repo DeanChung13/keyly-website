@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { Sparkles, Zap, Globe, User, ChevronRight, Keyboard, Smartphone, Download, Menu, X, Wand2, Feather, Command, ShieldCheck, ChevronDown } from 'lucide-react';
 import TypingAnimation from './components/TypingAnimation';
 
@@ -174,14 +174,17 @@ function Hero() {
               <div className="text-sm font-semibold tracking-[0.08em] text-text-secondary/80 mb-4">
                 台灣團隊打造 · iOS 注音輸入體驗
               </div>
-              <h1 className="text-5xl lg:text-5xl xl:text-6xl font-black text-text-primary leading-tight mb-6">
-                指尖上的 AI 智慧，<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">
-                  文字轉化一鍵完成
+              <h1 className="font-black text-text-primary leading-tight mb-6">
+                <span className="block text-2xl lg:text-3xl xl:text-4xl mb-2">iPhone AI 注音鍵盤</span>
+                <span className="block text-5xl lg:text-5xl xl:text-6xl">
+                  指尖上的 AI 智慧，<br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">
+                    文字轉化一鍵完成
+                  </span>
                 </span>
               </h1>
               <p className="text-base lg:text-lg text-text-secondary/90 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                兼顧速度、手感與隱私的智慧注音鍵盤，讓翻譯、潤飾、改寫都能在同一個輸入流程完成。
+                專為繁體中文打造的注音選字引擎，讓翻譯、潤飾、改寫都能在同一個輸入流程完成，並支援完全離線的隱私模式。
               </p>
 
               <div className="mt-8">
@@ -286,6 +289,11 @@ function FAQSection() {
           <p>這是開啟 AI 魔法的技術門票！受限於 iOS 安全機制，第三方鍵盤必須取得此權限，才能透過網路與雲端 AI 引擎連線以提供潤飾服務。</p>
           <p><strong>如果不開啟也沒關係：</strong>您依然能永久無限次使用 Keyly 最引以為傲、極速順暢的注音輸入引擎。核心打字功能完全不受影響，確保您在純淨環境下也能享受高品質輸入。此外，在支援的硬體設備上，您仍可享有基礎的本地端 AI 修正功能，這不需要連網，隱私 100% 留存在您的設備中。</p>
           <p><strong>若您選擇開啟：</strong>我們採取最小化資料原則，僅在您主動觸發 AI 功能時處理必要內容。資料以即時處理為主，並在技術與營運可行範圍內縮短保存時間；如涉及法令遵循、安全防護或交易驗證需求，可能於必要期間保留部分紀錄。Keyly 嚴格遵守 Apple 規範，不監控、不側錄您的私人對話。</p>
+          <p>
+            <a href="/guides/full-access/" className="text-brand-cyan underline underline-offset-4 hover:text-accent-mint">
+              延伸閱讀：「允許完全取用」到底開放了什麼？安全嗎？
+            </a>
+          </p>
         </div>
       )
     },
@@ -322,7 +330,6 @@ function FAQSection() {
     }
   ];
 
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const getFaqAnswerId = (index: number) => `faq-answer-${index}`;
 
   return (
@@ -336,42 +343,25 @@ function FAQSection() {
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div
+            <details
               key={index}
-              className="bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden transform-gpu"
+              className="group bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden"
+              onToggle={(event) => {
+                if (event.currentTarget.open) trackFaqClick(faq.question);
+              }}
             >
-              <button
-                  className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan/70 active:bg-white/5 transition-colors duration-200"
-                onClick={() => {
-                  if (openIndex !== index) trackFaqClick(faq.question);
-                  setOpenIndex(openIndex === index ? null : index);
-                }}
-                aria-expanded={openIndex === index}
-                aria-controls={getFaqAnswerId(index)}
-              >
+              <summary className="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer list-none [&::-webkit-details-marker]:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan/70 active:bg-white/5 transition-colors duration-200">
                 <span className="text-lg font-medium text-metal-white pr-8">{faq.question}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 motion-reduce:transition-none ${openIndex === index ? 'rotate-180' : ''}`}
+                  aria-hidden="true"
+                  className="w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 motion-reduce:transition-none group-open:rotate-180"
                 />
-              </button>
+              </summary>
 
-              <AnimatePresence initial={false}>
-                {openIndex === index && (
-                  <motion.div
-                    id={getFaqAnswerId(index)}
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-6 pb-6 text-metal-gray leading-relaxed">
-                      {faq.answer}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+              <div id={getFaqAnswerId(index)} className="px-6 pb-6 text-metal-gray leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
           ))}
         </div>
       </div>
@@ -404,6 +394,8 @@ function Footer() {
             <span className="font-bold text-text-primary">Keyly</span>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-3 text-sm text-text-secondary">
+            <a href="/guides/full-access/" onClick={() => trackLinkClick('guide_full_access', '/guides/full-access/')} className="hover:text-brand-cyan transition-colors">允許完全取用說明</a>
+            <span className="text-metal-gray/50">|</span>
             <a href="/privacy/" onClick={() => trackLinkClick('privacy_policy', '/privacy/')} className="hover:text-brand-cyan transition-colors">隱私權政策</a>
             <span className="text-metal-gray/50">|</span>
             <a href="/terms/" onClick={() => trackLinkClick('terms_of_service', '/terms/')} className="hover:text-brand-cyan transition-colors">服務條款</a>
@@ -411,6 +403,8 @@ function Footer() {
             <a href="/subscriptions/" onClick={() => trackLinkClick('subscription_terms', '/subscriptions/')} className="hover:text-brand-cyan transition-colors">自動續訂說明</a>
             <span className="text-metal-gray/50">|</span>
             <a href="mailto:support@keylyapp.com" onClick={() => trackLinkClick('support_email', 'mailto:support@keylyapp.com')} className="hover:text-brand-cyan transition-colors">技術支援</a>
+            <span className="text-metal-gray/50">|</span>
+            <a href="/en/" hrefLang="en" onClick={() => trackLinkClick('lang_switch_en', '/en/')} className="hover:text-brand-cyan transition-colors">English</a>
           </div>
         </div>
         <div className="mt-8 text-center text-sm text-metal-gray">
