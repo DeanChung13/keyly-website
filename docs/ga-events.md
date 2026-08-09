@@ -38,7 +38,7 @@
 ## GA 後台查看方式
 
 - **即時事件**：Reports → Realtime → Events
-- **download_click 分析**：Reports → Engagement → Events → 點擊 `download_click`
+- **download_click 分析**：Reports → Engagement → Events → 點擊 `download_click`；此事件已於 2026-08-09 設為重要事件
 - **頁面流量**：Reports → Engagement → Pages and screens
 
-`event_label` 尚未註冊為 GA4 自訂維度；要拆分 navbar、hero 與 CTA 區塊前，需先完成註冊。研究時的篩選、基準與判讀規則見 [GA4 研究與定期監測方式](analytics/ga4-research-and-monitoring.md)。
+`event_label` 已於 2026-08-09 註冊為事件範圍自訂維度；註冊後的新事件可用它拆分 navbar、hero 與 CTA 區塊，歷史資料不會回填。研究時的篩選、基準與判讀規則見 [GA4 研究與定期監測方式](analytics/ga4-research-and-monitoring.md)。

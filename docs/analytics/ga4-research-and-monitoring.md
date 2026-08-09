@@ -45,7 +45,7 @@
 | 獲客來源 | `sessionSourceMedium` | `sessions`, `engagedSessions` | `platform = web`, 正式站範圍 |
 | 下載轉換 | `eventName` | `eventCount`, `activeUsers` | `platform = web`, `eventName = download_click` |
 
-需要判斷不同 CTA 表現時才查 CTA 位置。`event_label` 目前尚未註冊為 GA4 自訂維度，因此不能假設報表能可靠拆分 `navbar`、`hero` 與 `cta_section`。
+需要判斷不同 CTA 表現時才查 CTA 位置。`event_label` 已於 2026-08-09 註冊為事件範圍自訂維度；只有註冊後的新資料能可靠拆分 `navbar`、`hero` 與 `cta_section`。
 
 ## 2026-08-09 基準與限制
 
@@ -58,10 +58,10 @@
 | Web page views | 28 | 包含正式站與測試環境 |
 | Google organic sessions | 1 | 當前主要問題是自然搜尋獲客不足 |
 | `download_click` | 1 次／1 位使用者 | 事件可收到，但樣本不足 |
-| Web key events | 0 | `download_click` 尚未設為重要事件 |
+| Web key events | 0 | 查詢當時 `download_click` 尚未設為重要事件；已於同日完成設定，歷史資料不回填 |
 | iOS key events | 39 | 全部來自 App，不得當成網站轉換 |
 | 測試流量 | Pages.dev 5 page views、localhost 2 page views | 必須與正式站分開 |
-| GA4 自訂維度 | 0 | 目前無法用自訂維度拆分 CTA 位置 |
+| GA4 自訂維度 | 查詢當時為 0 | 同日已新增 `event_label`；只適用於後續事件 |
 
 因此目前可以證實「網站流量少」，不能證實「網站轉換率差」。
 
@@ -89,4 +89,3 @@
 - 明確寫出是否已套用 `platform` 與 `hostName` 篩選。
 - App Store 點擊只是導流事件，不等於安裝、啟用或付費。
 - GA4 的 `keyEvents` 必須確認事件定義與平台，不能把所有重要事件合併成網站轉換。
-
