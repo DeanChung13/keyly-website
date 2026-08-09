@@ -134,7 +134,8 @@ const copyMap = {
     sourceLabel: "原始輸入內容",
     completeLabel: "AI 魔法優化完成",
     processingLabel: "正在精煉您的文字...",
-    spaceLabel: "空白"
+    spaceLabel: "空白",
+    keyboardAlt: "Keyly AI 注音鍵盤在 iPhone 上的介面預覽"
   },
   en: {
     showcases: enShowcases,
@@ -142,7 +143,8 @@ const copyMap = {
     sourceLabel: "Original Draft",
     completeLabel: "AI refinement complete",
     processingLabel: "Refining your text...",
-    spaceLabel: "Space"
+    spaceLabel: "Space",
+    keyboardAlt: "Preview of the Keyly AI Zhuyin keyboard on iPhone"
   }
 };
 function TypingAnimation({ locale = "zh-TW" }) {
@@ -312,7 +314,7 @@ function TypingAnimation({ locale = "zh-TW" }) {
           }
         ) })
       ] }),
-      /* @__PURE__ */ jsx("img", { src: keyboardImg, alt: "Keyboard", className: "w-full h-auto object-contain z-10 relative -mt-4 drop-shadow-lg" }),
+      /* @__PURE__ */ jsx("img", { src: keyboardImg, alt: copy.keyboardAlt, className: "w-full h-auto object-contain z-10 relative -mt-4 drop-shadow-lg" }),
       /* @__PURE__ */ jsx("div", { className: "absolute bottom-[6px] left-1/2 -translate-x-1/2 w-[120px] h-[4px] bg-black/80 rounded-full z-50" })
     ] })
   ] });
@@ -441,12 +443,15 @@ function Hero$1() {
         transition: { duration: 0.5 },
         children: [
           /* @__PURE__ */ jsx("div", { className: "text-sm font-semibold tracking-[0.08em] text-text-secondary/80 mb-4", children: "台灣團隊打造 · iOS 注音輸入體驗" }),
-          /* @__PURE__ */ jsxs("h1", { className: "text-5xl lg:text-5xl xl:text-6xl font-black text-text-primary leading-tight mb-6", children: [
-            "指尖上的 AI 智慧，",
-            /* @__PURE__ */ jsx("br", {}),
-            /* @__PURE__ */ jsx("span", { className: "text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple", children: "文字轉化一鍵完成" })
+          /* @__PURE__ */ jsxs("h1", { className: "font-black text-text-primary leading-tight mb-6", children: [
+            /* @__PURE__ */ jsx("span", { className: "block text-2xl lg:text-3xl xl:text-4xl mb-2", children: "iPhone AI 注音鍵盤" }),
+            /* @__PURE__ */ jsxs("span", { className: "block text-5xl lg:text-5xl xl:text-6xl", children: [
+              "指尖上的 AI 智慧，",
+              /* @__PURE__ */ jsx("br", {}),
+              /* @__PURE__ */ jsx("span", { className: "text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple", children: "文字轉化一鍵完成" })
+            ] })
           ] }),
-          /* @__PURE__ */ jsx("p", { className: "text-base lg:text-lg text-text-secondary/90 leading-relaxed max-w-xl mx-auto lg:mx-0", children: "兼顧速度、手感與隱私的智慧注音鍵盤，讓翻譯、潤飾、改寫都能在同一個輸入流程完成。" }),
+          /* @__PURE__ */ jsx("p", { className: "text-base lg:text-lg text-text-secondary/90 leading-relaxed max-w-xl mx-auto lg:mx-0", children: "專為繁體中文打造的注音選字引擎，讓翻譯、潤飾、改寫都能在同一個輸入流程完成，並支援完全離線的隱私模式。" }),
           /* @__PURE__ */ jsx("div", { className: "mt-8", children: /* @__PURE__ */ jsx(DownloadCTA$1, {}) })
         ]
       }
@@ -533,7 +538,8 @@ function FAQSection$1() {
         /* @__PURE__ */ jsxs("p", { children: [
           /* @__PURE__ */ jsx("strong", { children: "若您選擇開啟：" }),
           "我們採取最小化資料原則，僅在您主動觸發 AI 功能時處理必要內容。資料以即時處理為主，並在技術與營運可行範圍內縮短保存時間；如涉及法令遵循、安全防護或交易驗證需求，可能於必要期間保留部分紀錄。Keyly 嚴格遵守 Apple 規範，不監控、不側錄您的私人對話。"
-        ] })
+        ] }),
+        /* @__PURE__ */ jsx("p", { children: /* @__PURE__ */ jsx("a", { href: "/guides/full-access/", className: "text-brand-cyan underline underline-offset-4 hover:text-accent-mint", children: "延伸閱讀：「允許完全取用」到底開放了什麼？安全嗎？" }) })
       ] })
     },
     {
@@ -568,7 +574,6 @@ function FAQSection$1() {
       ] })
     }
   ];
-  const [openIndex, setOpenIndex] = useState(null);
   const getFaqAnswerId = (index) => `faq-answer-${index}`;
   return /* @__PURE__ */ jsxs("section", { id: "faq", className: "py-24 bg-bg-primary text-white overflow-hidden relative", children: [
     /* @__PURE__ */ jsx("div", { className: "absolute top-0 right-0 w-[800px] h-[800px] bg-brand-purple/15 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none transform-gpu will-change-transform" }),
@@ -578,43 +583,24 @@ function FAQSection$1() {
         /* @__PURE__ */ jsx("span", { className: "text-accent-mint", children: "Q&A" })
       ] }) }),
       /* @__PURE__ */ jsx("div", { className: "space-y-4", children: faqs.map((faq, index) => /* @__PURE__ */ jsxs(
-        "div",
+        "details",
         {
-          className: "bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden transform-gpu",
+          className: "group bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden",
+          onToggle: (event) => {
+            if (event.currentTarget.open) trackFaqClick$1(faq.question);
+          },
           children: [
-            /* @__PURE__ */ jsxs(
-              "button",
-              {
-                className: "w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan/70 active:bg-white/5 transition-colors duration-200",
-                onClick: () => {
-                  if (openIndex !== index) trackFaqClick$1(faq.question);
-                  setOpenIndex(openIndex === index ? null : index);
-                },
-                "aria-expanded": openIndex === index,
-                "aria-controls": getFaqAnswerId(index),
-                children: [
-                  /* @__PURE__ */ jsx("span", { className: "text-lg font-medium text-metal-white pr-8", children: faq.question }),
-                  /* @__PURE__ */ jsx(
-                    ChevronDown,
-                    {
-                      className: `w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 motion-reduce:transition-none ${openIndex === index ? "rotate-180" : ""}`
-                    }
-                  )
-                ]
-              }
-            ),
-            /* @__PURE__ */ jsx(AnimatePresence, { initial: false, children: openIndex === index && /* @__PURE__ */ jsx(
-              motion.div,
-              {
-                id: getFaqAnswerId(index),
-                initial: { height: 0, opacity: 0 },
-                animate: { height: "auto", opacity: 1 },
-                exit: { height: 0, opacity: 0 },
-                transition: { duration: 0.3, ease: "easeInOut" },
-                className: "overflow-hidden",
-                children: /* @__PURE__ */ jsx("div", { className: "px-6 pb-6 text-metal-gray leading-relaxed", children: faq.answer })
-              }
-            ) })
+            /* @__PURE__ */ jsxs("summary", { className: "w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer list-none [&::-webkit-details-marker]:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan/70 active:bg-white/5 transition-colors duration-200", children: [
+              /* @__PURE__ */ jsx("span", { className: "text-lg font-medium text-metal-white pr-8", children: faq.question }),
+              /* @__PURE__ */ jsx(
+                ChevronDown,
+                {
+                  "aria-hidden": "true",
+                  className: "w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 motion-reduce:transition-none group-open:rotate-180"
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsx("div", { id: getFaqAnswerId(index), className: "px-6 pb-6 text-metal-gray leading-relaxed", children: faq.answer })
           ]
         },
         index
@@ -640,13 +626,17 @@ function Footer$1() {
         /* @__PURE__ */ jsx("span", { className: "font-bold text-text-primary", children: "Keyly" })
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-wrap justify-center items-center gap-3 text-sm text-text-secondary", children: [
+        /* @__PURE__ */ jsx("a", { href: "/guides/full-access/", onClick: () => trackLinkClick$1("guide_full_access", "/guides/full-access/"), className: "hover:text-brand-cyan transition-colors", children: "允許完全取用說明" }),
+        /* @__PURE__ */ jsx("span", { className: "text-metal-gray/50", children: "|" }),
         /* @__PURE__ */ jsx("a", { href: "/privacy/", onClick: () => trackLinkClick$1("privacy_policy", "/privacy/"), className: "hover:text-brand-cyan transition-colors", children: "隱私權政策" }),
         /* @__PURE__ */ jsx("span", { className: "text-metal-gray/50", children: "|" }),
         /* @__PURE__ */ jsx("a", { href: "/terms/", onClick: () => trackLinkClick$1("terms_of_service", "/terms/"), className: "hover:text-brand-cyan transition-colors", children: "服務條款" }),
         /* @__PURE__ */ jsx("span", { className: "text-metal-gray/50", children: "|" }),
         /* @__PURE__ */ jsx("a", { href: "/subscriptions/", onClick: () => trackLinkClick$1("subscription_terms", "/subscriptions/"), className: "hover:text-brand-cyan transition-colors", children: "自動續訂說明" }),
         /* @__PURE__ */ jsx("span", { className: "text-metal-gray/50", children: "|" }),
-        /* @__PURE__ */ jsx("a", { href: "mailto:support@keylyapp.com", onClick: () => trackLinkClick$1("support_email", "mailto:support@keylyapp.com"), className: "hover:text-brand-cyan transition-colors", children: "技術支援" })
+        /* @__PURE__ */ jsx("a", { href: "mailto:support@keylyapp.com", onClick: () => trackLinkClick$1("support_email", "mailto:support@keylyapp.com"), className: "hover:text-brand-cyan transition-colors", children: "技術支援" }),
+        /* @__PURE__ */ jsx("span", { className: "text-metal-gray/50", children: "|" }),
+        /* @__PURE__ */ jsx("a", { href: "/en/", hrefLang: "en", onClick: () => trackLinkClick$1("lang_switch_en", "/en/"), className: "hover:text-brand-cyan transition-colors", children: "English" })
       ] })
     ] }),
     /* @__PURE__ */ jsx("div", { className: "mt-8 text-center text-sm text-metal-gray", children: "© 2026 Keyly 由台灣團隊專為高效溝通而生。" })
@@ -894,7 +884,6 @@ function FAQSection() {
       ] })
     }
   ];
-  const [openIndex, setOpenIndex] = useState(null);
   const getFaqAnswerId = (index) => `faq-answer-en-${index}`;
   return /* @__PURE__ */ jsxs("section", { id: "faq", className: "py-24 bg-bg-primary text-white overflow-hidden relative", children: [
     /* @__PURE__ */ jsx("div", { className: "absolute top-0 right-0 w-[800px] h-[800px] bg-brand-purple/15 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none transform-gpu will-change-transform" }),
@@ -903,27 +892,23 @@ function FAQSection() {
         "FAQ ",
         /* @__PURE__ */ jsx("span", { className: "text-accent-mint", children: "Q&A" })
       ] }) }),
-      /* @__PURE__ */ jsx("div", { className: "space-y-4", children: faqs.map((faq, index) => /* @__PURE__ */ jsxs("div", { className: "bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden transform-gpu", children: [
-        /* @__PURE__ */ jsxs("button", { className: "w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan/70 active:bg-white/5 transition-colors duration-200", onClick: () => {
-          if (openIndex !== index) trackFaqClick(faq.question);
-          setOpenIndex(openIndex === index ? null : index);
-        }, "aria-expanded": openIndex === index, "aria-controls": getFaqAnswerId(index), children: [
-          /* @__PURE__ */ jsx("span", { className: "text-lg font-medium text-metal-white pr-8", children: faq.question }),
-          /* @__PURE__ */ jsx(ChevronDown, { className: `w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 motion-reduce:transition-none ${openIndex === index ? "rotate-180" : ""}` })
-        ] }),
-        /* @__PURE__ */ jsx(AnimatePresence, { initial: false, children: openIndex === index && /* @__PURE__ */ jsx(
-          motion.div,
-          {
-            id: getFaqAnswerId(index),
-            initial: { height: 0, opacity: 0 },
-            animate: { height: "auto", opacity: 1 },
-            exit: { height: 0, opacity: 0 },
-            transition: { duration: 0.3, ease: "easeInOut" },
-            className: "overflow-hidden",
-            children: /* @__PURE__ */ jsx("div", { className: "px-6 pb-6 text-metal-gray leading-relaxed", children: faq.answer })
-          }
-        ) })
-      ] }, index)) })
+      /* @__PURE__ */ jsx("div", { className: "space-y-4", children: faqs.map((faq, index) => /* @__PURE__ */ jsxs(
+        "details",
+        {
+          className: "group bg-bg-secondary rounded-2xl border border-white/10 overflow-hidden",
+          onToggle: (event) => {
+            if (event.currentTarget.open) trackFaqClick(faq.question);
+          },
+          children: [
+            /* @__PURE__ */ jsxs("summary", { className: "w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer list-none [&::-webkit-details-marker]:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan/70 active:bg-white/5 transition-colors duration-200", children: [
+              /* @__PURE__ */ jsx("span", { className: "text-lg font-medium text-metal-white pr-8", children: faq.question }),
+              /* @__PURE__ */ jsx(ChevronDown, { "aria-hidden": "true", className: "w-5 h-5 text-brand-cyan shrink-0 transition-transform duration-300 motion-reduce:transition-none group-open:rotate-180" })
+            ] }),
+            /* @__PURE__ */ jsx("div", { id: getFaqAnswerId(index), className: "px-6 pb-6 text-metal-gray leading-relaxed", children: faq.answer })
+          ]
+        },
+        index
+      )) })
     ] })
   ] });
 }
@@ -951,7 +936,9 @@ function Footer() {
         /* @__PURE__ */ jsx("span", { className: "text-metal-gray/50", children: "|" }),
         /* @__PURE__ */ jsx("a", { href: "/subscriptions/en/", onClick: () => trackLinkClick("subscription_terms_en", "/subscriptions/en/"), className: "hover:text-brand-cyan transition-colors", children: "Auto-Renewal Terms" }),
         /* @__PURE__ */ jsx("span", { className: "text-metal-gray/50", children: "|" }),
-        /* @__PURE__ */ jsx("a", { href: "mailto:support@keylyapp.com", onClick: () => trackLinkClick("support_email_en", "mailto:support@keylyapp.com"), className: "hover:text-brand-cyan transition-colors", children: "Support" })
+        /* @__PURE__ */ jsx("a", { href: "mailto:support@keylyapp.com", onClick: () => trackLinkClick("support_email_en", "mailto:support@keylyapp.com"), className: "hover:text-brand-cyan transition-colors", children: "Support" }),
+        /* @__PURE__ */ jsx("span", { className: "text-metal-gray/50", children: "|" }),
+        /* @__PURE__ */ jsx("a", { href: "/", hrefLang: "zh-TW", onClick: () => trackLinkClick("lang_switch_zh", "/"), className: "hover:text-brand-cyan transition-colors", children: "繁體中文" })
       ] })
     ] }),
     /* @__PURE__ */ jsx("div", { className: "mt-8 text-center text-sm text-metal-gray", children: "© 2026 Keyly. Built by a Taiwan-based team for faster, sharper communication." })
