@@ -69,6 +69,7 @@ git push origin main
 ## 文件
 
 - [GA 事件追蹤總覽](docs/ga-events.md)
+- [GA4 研究與定期監測方式](docs/analytics/ga4-research-and-monitoring.md)
 
 ### SEO
 
