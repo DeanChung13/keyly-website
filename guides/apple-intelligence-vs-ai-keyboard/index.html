@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Intelligence 書寫工具 vs AI 鍵盤：差異與支援機型</title>
+  <meta name="description" content="Apple Intelligence 書寫工具與第三方 AI 鍵盤有什麼不同？整理繁體中文、支援機型、操作方式、網路與權限差異，幫你判斷哪種方式適合。">
+  <link rel="canonical" href="https://keylyapp.com/guides/apple-intelligence-vs-ai-keyboard/">
+  <link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/guides/apple-intelligence-vs-ai-keyboard/">
+  <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/guides/apple-intelligence-vs-ai-keyboard/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='20' fill='%230D142E' /%3E%3Cdefs%3E%3ClinearGradient id='k-stem' x1='30' y1='20' x2='30' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2338C7BA' /%3E%3Cstop offset='1' stop-color='%238E61D9' /%3E%3C/linearGradient%3E%3ClinearGradient id='k-arm' x1='75' y1='20' x2='40' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E6EBF2' /%3E%3Cstop offset='1' stop-color='%23BFCDE0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='25' y='20' width='16' height='60' fill='url(%23k-stem)' /%3E%3Cpath d='M75 20L41 50L75 80H55L31 50L55 20H75Z' fill='url(%23k-arm)' /%3E%3C/svg%3E">
+  <meta property="og:title" content="Apple Intelligence 書寫工具 vs AI 鍵盤：差異與支援機型">
+  <meta property="og:description" content="Apple Intelligence 書寫工具與第三方 AI 鍵盤有什麼不同？整理繁體中文、支援機型、操作方式、網路與權限差異，幫你判斷哪種方式適合。">
+  <meta property="og:url" content="https://keylyapp.com/guides/apple-intelligence-vs-ai-keyboard/">
+  <meta property="og:image" content="https://keylyapp.com/assets/images/og-banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Apple Intelligence 書寫工具與 AI 鍵盤怎麼選？",
+    "description": "Apple Intelligence 書寫工具與第三方 AI 鍵盤有什麼不同？整理繁體中文、支援機型、操作方式、網路與權限差異，幫你判斷哪種方式適合。",
+    "inLanguage": "zh-Hant-TW",
+    "datePublished": "2026-08-11",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Keyly"
+    }
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (window.location.hostname === 'keylyapp.com' || window.location.hostname === 'www.keylyapp.com') {
+      gtag('js', new Date());
+      gtag('config', 'G-C51YGT0TVX');
+    }
+    function trackDownload(label) {
+      gtag('event', 'download_click', { event_category: 'engagement', event_label: label });
+    }
+    function trackLink(name, destination) {
+      gtag('event', 'link_click', { event_category: 'engagement', event_label: name, destination: destination });
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-page: #F4F7FA;
+      --bg-primary: #0D142E;
+      --brand-cyan: #479ED1;
+      --brand-purple: #8E61D9;
+      --metal-white: #E6EBF2;
+      --metal-gray: #BFCDE0;
+      --text-primary: #0F1726;
+      --text-secondary: #5C708C;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Heiti TC", "Microsoft JhengHei", system-ui, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(191, 205, 224, 0.35);
+    }
+
+    .navbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .navbar-brand svg { border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+
+    .lang-btn {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--metal-gray);
+      border-radius: 999px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .lang-btn:hover { color: var(--brand-cyan); border-color: var(--brand-cyan); }
+
+    .page-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 4rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--brand-cyan); }
+
+    .page-header { margin-bottom: 1.5rem; }
+
+    .page-header h1 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-meta { font-size: 0.85rem; color: var(--text-secondary); }
+
+    .disclosure {
+      background: #FFF8E7;
+      border: 1px solid #E8D9A8;
+      border-radius: 12px;
+      padding: 0.9rem 1.1rem;
+      font-size: 0.9rem;
+      color: #6B5A2B;
+      margin-bottom: 2rem;
+    }
+
+    .legal-content h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 2.75rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--metal-gray);
+    }
+
+    .legal-content h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 1.75rem 0 0.5rem;
+    }
+
+    .legal-content p { color: var(--text-secondary); margin-bottom: 0.875rem; }
+
+    .legal-content ul, .legal-content ol {
+      margin: 0.5rem 0 0.875rem 1.25rem;
+      color: var(--text-secondary);
+    }
+
+    .legal-content li { margin-bottom: 0.4rem; }
+    .legal-content strong { color: var(--text-primary); font-weight: 700; }
+
+    .legal-content a { color: var(--brand-cyan); text-decoration: none; }
+    .legal-content a:hover { text-decoration: underline; }
+
+    .summary-box {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 14px;
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .summary-box ul { margin: 0.5rem 0 0.5rem 1.1rem; }
+    .summary-box p:last-child { margin-bottom: 0; }
+
+    .note {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-left: 4px solid var(--brand-cyan);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      margin: 1.25rem 0;
+      font-size: 0.92rem;
+    }
+
+    .note p:last-child { margin-bottom: 0; }
+
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid rgba(191, 205, 224, 0.7);
+      border-radius: 12px;
+      background: #fff;
+      margin: 1rem 0 0.5rem;
+    }
+
+    table.compare {
+      border-collapse: collapse;
+      min-width: 760px;
+      width: 100%;
+      font-size: 0.875rem;
+    }
+
+    table.compare th, table.compare td {
+      border-bottom: 1px solid rgba(191, 205, 224, 0.5);
+      border-right: 1px solid rgba(191, 205, 224, 0.35);
+      padding: 0.7rem 0.85rem;
+      text-align: left;
+      vertical-align: top;
+      color: var(--text-secondary);
+    }
+
+    table.compare thead th {
+      background: var(--metal-white);
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    table.compare th[scope="row"] {
+      background: #fff;
+      color: var(--text-primary);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    table.compare tr:last-child th, table.compare tr:last-child td { border-bottom: 0; }
+
+    .table-hint { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
+
+    details.faq {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+
+    details.faq > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.9rem 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    details.faq > summary::-webkit-details-marker { display: none; }
+    details.faq > summary::after { content: " ＋"; color: var(--brand-cyan); }
+    details.faq[open] > summary::after { content: " －"; }
+    details.faq .faq-body { padding: 0 1.15rem 1.1rem; }
+    details.faq .faq-body p:last-child { margin-bottom: 0; }
+
+    .cta-box {
+      background: var(--bg-primary);
+      color: var(--metal-white);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem;
+      margin: 3rem 0 0;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      border: 0;
+      color: var(--metal-white);
+      margin: 0 0 0.5rem;
+      padding: 0;
+      font-size: 1.15rem;
+    }
+
+    .cta-box p { color: var(--metal-gray); margin-bottom: 1.1rem; }
+    .cta-box a.inline { color: var(--metal-white); text-decoration: underline; }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--brand-cyan);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+    }
+
+    .cta-btn:hover { background: var(--brand-purple); }
+
+    .footer {
+      background: var(--bg-page);
+      border-top: 1px solid rgba(191, 205, 224, 0.4);
+      padding: 2.5rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .footer-brand svg { border-radius: 6px; }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--brand-cyan); }
+    .footer-links .sep { color: var(--metal-gray); }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--metal-gray);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="ks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="ka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#ks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#ka)"/>
+        </svg>
+        Keyly
+      </a>
+      <a href="/" class="lang-btn">回首頁</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+    <p class="breadcrumb"><a href="/">Keyly</a> ／ 使用指南 ／ 書寫工具與 AI 鍵盤</p>
+
+    <div class="page-header">
+      <h1>Apple Intelligence 書寫工具與 AI 鍵盤怎麼選？</h1>
+      <p class="page-meta">Apple 官方資料查核日期：2026 年 8 月 11 日</p>
+    </div>
+
+    <p class="disclosure"><strong>利益揭露：</strong>本文由 Keyly 團隊製作，Keyly 是文中被提到的第三方 AI 鍵盤。Apple Intelligence 的所有說法一律引用 Apple 官方支援文件並附上連結；官方沒有說明的項目一律標示為「官方頁面未說明」。本文<strong>不主張 Keyly 優於 Apple Intelligence</strong>，兩者也不是互斥的選擇。</p>
+
+    <div class="legal-content">
+      <h2>30 秒答案</h2>
+
+      <div class="summary-box">
+        <ul>
+          <li>如果你的裝置<strong>支援 Apple Intelligence</strong>，而且需求是把<strong>已經寫好的文字</strong>拿來校對、改寫或生成摘要——先用系統內建的「書寫工具」就好，不需要另外裝東西。</li>
+          <li>如果你的裝置<strong>不在 Apple Intelligence 的支援機型清單內</strong>，或者你想把<strong>注音輸入與主動觸發的 AI 動作放在同一個鍵盤流程裡</strong>，才需要評估第三方 AI 鍵盤。</li>
+        </ul>
+        <p>這不是優劣判決。兩者可以同時存在於同一支手機上，解決的也不完全是同一件事。</p>
+      </div>
+
+      <h2>先確認你的 iPhone 能不能使用 Apple Intelligence</h2>
+      <p>依 Apple 官方說明，在 iPhone 上使用 Apple Intelligence 需要同時滿足以下條件：</p>
+      <ul>
+        <li><strong>裝置需求：</strong>iPhone 15 Pro 機型，以及 iPhone 16 機型或後續機型。</li>
+        <li><strong>系統需求：</strong>iOS 18.1 或以上版本。</li>
+        <li><strong>儲存空間：</strong>裝置上有 7 GB 的儲存空間。</li>
+        <li><strong>語言設定：</strong>裝置語言和 Siri 語言必須設為相同的支援語言。</li>
+        <li><strong>開啟位置：</strong>「設定」→「Apple Intelligence 與 Siri」。更新軟體後，裝置端模型會開始下載。</li>
+      </ul>
+
+      <div class="note">
+        <p><strong>這兩個版本號不是同一件事，很容易看錯：</strong></p>
+        <p><strong>iOS 18.1</strong> 是 Apple Intelligence 本身的最低系統需求。<strong>繁體中文</strong>則是列在另一段——Apple 寫的是「在 iOS 26.1、iPadOS 26.1 和 macOS 26.1 中」支援包含繁體中文在內的多種語言。也就是說，機型與 iOS 18.1 只讓你能開啟 Apple Intelligence，要用繁體中文還要看後面那個版本條件。</p>
+        <p>Apple 同時註明：功能的適用性可能因平台、語言和地區而異。</p>
+      </div>
+
+      <p>本文不列舉尚未被 Apple 官方頁面明確納入的機型。條件會隨版本更新調整，做決定前建議直接開官方頁對照：<a href="https://support.apple.com/zh-tw/121115" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_intelligence_requirements','support.apple.com')">Apple 支援：如何取得 Apple Intelligence</a>（該頁標示發佈日期 2026 年 7 月 10 日）、<a href="https://www.apple.com/tw/ios/feature-availability/" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_feature_availability','apple.com')">Apple：iOS 和 iPadOS 功能特色適用範圍</a>。</p>
+
+      <h2>Apple「書寫工具」可以做什麼</h2>
+      <p>依 Apple 使用手冊，「書寫工具」可以校對你的內容、製作相同文字的不同版本以協助你找到合適的用詞與語氣，以及為選取的文字生成摘要。官方明確說明它<strong>能在你需要書寫的任何地方使用，包括第三方 App 和網站</strong>。</p>
+
+      <h3>官方列出的操作</h3>
+      <ul>
+        <li><strong>校對：</strong>檢查文法和拼字錯誤，更動會標上發光底線，可逐項檢視說明、切換原文或全部捨棄。</li>
+        <li><strong>改寫：</strong>可直接改寫，或指定「平易近人」、「專業」、「簡潔」語氣，也可以自行描述你要的更動。</li>
+        <li><strong>摘要與整理：</strong>生成摘要、重點、列表或表格；摘要可拷貝、取代原文或分享（原文無法編輯時不會有「取代」選項）。</li>
+      </ul>
+
+      <p><strong>入口：</strong>官方流程是先<strong>選取要處理的文字</strong>，再叫出「書寫工具」；官方也提示可以點一下鍵盤右上角的按鈕進入。</p>
+
+      <div class="note">
+        <p><strong>ChatGPT 是另外一件事，不要混在一起。</strong>Apple 的說法是：如果你<strong>開啟 ChatGPT 延伸功能</strong>，便可以透過「書寫工具」編寫文字。這是一項可選的整合，<strong>不代表書寫工具的所有功能都會使用 ChatGPT</strong>。</p>
+        <p>另外 Apple 明確提醒：Apple Intelligence 採用生成式模型，輸出內容可能會有所不同，請檢查重要資訊的準確性。</p>
+      </div>
+
+      <p>來源：<a href="https://support.apple.com/zh-tw/guide/iphone/iph6f08da1d2/ios" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_writing_tools','support.apple.com')">Apple 使用手冊：在 iPhone 上搭配 Apple Intelligence 使用「書寫工具」</a></p>
+
+      <h2>AI 鍵盤的工作方式有什麼不同</h2>
+      <p>第三方 AI 鍵盤本質上是<strong>輸入介面</strong>。它跟書寫工具的差別不在於「功能比較多」或「品質比較好」——那是需要測試才能講的事，本文不做這種宣稱——而在於<strong>操作發生的位置</strong>。</p>
+      <ul>
+        <li><strong>書寫工具</strong>的流程是：先寫完或選取一段既有文字，再叫出工具處理它。</li>
+        <li><strong>AI 鍵盤</strong>的流程是：你本來就在鍵盤上打字，AI 動作在同一個鍵盤介面裡主動觸發。</li>
+      </ul>
+      <p>哪一種順手，取決於你平常是「先寫完再修」還是「邊打邊處理」。</p>
+
+      <h3>以 Keyly 為例（產品方資訊）</h3>
+      <p>以下是本站產品的公開資訊，與 App Store 說明及<a href="/privacy/">隱私權政策</a>一致：</p>
+      <ul>
+        <li>Keyly 是需要 <strong>iOS 18 或以上版本</strong>的第三方注音鍵盤。</li>
+        <li><strong>日常注音輸入可以離線使用。</strong></li>
+        <li>使用者<strong>主動觸發</strong>線上 AI 潤飾時，才會傳送該段文字進行運算。</li>
+        <li><strong>雲端 AI 功能需要網路，也需要開啟「允許完全取用」。</strong></li>
+      </ul>
+      <p>「允許完全取用」是所有第三方鍵盤共用的系統權限，關閉時鍵盤無法連網。這個權限實際開放哪些能力、關閉時鍵盤還能做什麼，我們另外寫了一篇完整說明：<a href="/guides/full-access/" onclick="trackLink('guide_full_access','/guides/full-access/')">「允許完全取用」是什麼？安全嗎？</a></p>
+
+      <h2>功能與條件比較表</h2>
+      <p>每一格都對應 Apple 官方文件或 Keyly 的公開產品資訊；無法從官方來源確認的一律寫「官方頁面未說明」。</p>
+
+      <div class="table-scroll">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th scope="col">判斷項目</th>
+              <th scope="col">Apple Intelligence 書寫工具</th>
+              <th scope="col">第三方 AI 鍵盤（以 Keyly 為例）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">iPhone 條件</th>
+              <td>iPhone 15 Pro 機型，以及 iPhone 16 機型或後續機型；iOS 18.1 或以上版本</td>
+              <td>iOS 18 或以上版本</td>
+            </tr>
+            <tr>
+              <th scope="row">繁體中文條件</th>
+              <td>Apple 列於「在 iOS 26.1、iPadOS 26.1 和 macOS 26.1 中」支援的語言之一；功能適用性可能因平台、語言和地區而異</td>
+              <td>產品定位為繁體中文（注音）鍵盤</td>
+            </tr>
+            <tr>
+              <th scope="row">主要入口</th>
+              <td>選取文字後叫出「書寫工具」；也可點鍵盤右上角按鈕</td>
+              <td>在鍵盤介面內主動觸發</td>
+            </tr>
+            <tr>
+              <th scope="row">注音輸入</th>
+              <td>不是注音輸入法產品</td>
+              <td>提供注音輸入</td>
+            </tr>
+            <tr>
+              <th scope="row">校對／改寫／摘要</th>
+              <td>校對、改寫（平易近人／專業／簡潔／自訂描述）、摘要、重點、列表、表格</td>
+              <td>AI 潤飾、改寫、語氣調整、翻譯</td>
+            </tr>
+            <tr>
+              <th scope="row">可用範圍</th>
+              <td>Apple 說明可在你需要書寫的任何地方使用，包括第三方 App 和網站</td>
+              <td>作為鍵盤，於可叫出鍵盤的輸入欄位使用</td>
+            </tr>
+            <tr>
+              <th scope="row">網路與處理</th>
+              <td>Apple 說明更新後裝置端模型會下載到裝置；官方頁面未以「完全離線」描述整體處理方式，本文不推論</td>
+              <td>日常注音輸入可離線；雲端 AI 功能需要網路</td>
+            </tr>
+            <tr>
+              <th scope="row">額外整合</th>
+              <td>ChatGPT 為可選的延伸功能，開啟後可透過書寫工具編寫文字</td>
+              <td>官方頁面未說明與 ChatGPT 的整合</td>
+            </tr>
+            <tr>
+              <th scope="row">權限</th>
+              <td>系統內建功能，於「設定」→「Apple Intelligence 與 Siri」開啟</td>
+              <td>雲端 AI 需開啟第三方鍵盤的「允許完全取用」</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-hint">表格可左右捲動以檢視全部欄位。查核日期：2026-08-11。</p>
+
+      <h2>哪一種情況適合你</h2>
+      <ul>
+        <li><strong>機型有支援，而且只需要處理已經寫好的文字</strong> → 先試 Apple「書寫工具」。它是系統內建的，不用多裝 App，也不需要第三方鍵盤的「允許完全取用」權限（Apple Intelligence 與 ChatGPT 延伸功能各自仍有需要開啟的設定）。</li>
+        <li><strong>機型不支援 Apple Intelligence，但符合 Keyly 的系統需求</strong> → 可以評估第三方 AI 鍵盤。請注意這條路徑的雲端 AI 功能需要網路與權限，本文<strong>不承諾任何離線 AI 能力</strong>。</li>
+        <li><strong>主要需求是繁體中文注音輸入，再加上鍵盤內的 AI 動作</strong> → 可以評估 Keyly，因為書寫工具本身不是注音輸入法。</li>
+        <li><strong>不願意開啟第三方鍵盤的「允許完全取用」</strong> → 就不要使用需要該權限的雲端 AI 功能。這是很合理的選擇，不需要為了功能勉強開啟。</li>
+        <li><strong>重視隱私</strong> → 請分別讀過雙方的公開說明，依你實際要傳送的內容與要用的功能決定。本文不對任何一方下「絕對安全」的結論。</li>
+      </ul>
+
+      <h2>常見問題</h2>
+
+      <details class="faq">
+        <summary>哪些 iPhone 支援 Apple Intelligence？</summary>
+        <div class="faq-body">
+          <p>依 Apple 官方說明，iPhone 的裝置需求是 iPhone 15 Pro 機型，以及 iPhone 16 機型或後續機型，系統需為 iOS 18.1 或以上版本，並需要裝置上有 7 GB 儲存空間，且裝置語言與 Siri 語言設為相同的支援語言。我們不會替 Apple 列舉尚未被官方頁面納入的機型，最新清單請以 <a href="https://support.apple.com/zh-tw/121115" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_intelligence_requirements','support.apple.com')">Apple 官方頁面</a>為準。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>Apple Intelligence 支援繁體中文嗎？</summary>
+        <div class="faq-body">
+          <p>Apple 把繁體中文列在支援語言中，但寫法是「在 iOS 26.1、iPadOS 26.1 和 macOS 26.1 中」支援這些語言。請注意這個版本條件與 Apple Intelligence 本身的最低需求（iOS 18.1）<strong>不是同一件事</strong>——裝置符合 iOS 18.1 只代表能開啟 Apple Intelligence，不等於繁體中文可用。Apple 另外註明功能適用性可能因平台、語言和地區而異。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>Apple「書寫工具」可以在 LINE、郵件或第三方 App 使用嗎？</summary>
+        <div class="faq-body">
+          <p>Apple 官方說明「書寫工具」<strong>能在你需要書寫的任何地方使用，包括第三方 App 和網站</strong>。不過我們無法逐一保證每個 App、每個輸入欄位或每個版本的實際表現，官方也註明功能適用性可能因平台、語言和地區而異。要確認你常用的那個 App，最直接的方式是選取一段文字實際叫一次書寫工具看看。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>有 Apple Intelligence 還需要 AI 鍵盤嗎？</summary>
+        <div class="faq-body">
+          <p>不一定，看三件事。第一是<strong>裝置</strong>：機型不在支援清單內就用不到書寫工具。第二是<strong>輸入方式</strong>：書寫工具不是注音輸入法，如果你要的是注音輸入本身，那是兩回事。第三是<strong>權限偏好</strong>：第三方鍵盤的雲端 AI 需要「允許完全取用」，不願意開就別用那部分功能。如果你的裝置支援、需求又只是處理已寫好的文字，系統內建的書寫工具通常就夠了。</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-box">
+      <h2>兩者不是互斥的選擇</h2>
+      <p>還在比較各家注音鍵盤，可以看<a class="inline" href="/guides/iphone-zhuyin-keyboard/" onclick="trackLink('guide_zhuyin_comparison','/guides/iphone-zhuyin-keyboard/')">官方資料整理的比較</a>；決定安裝第三方鍵盤前，建議先了解<a class="inline" href="/guides/full-access/" onclick="trackLink('guide_full_access','/guides/full-access/')">「允許完全取用」的實際範圍</a>。</p>
+      <a class="cta-btn" href="https://apps.apple.com/app/id6759639348" target="_blank" rel="noopener noreferrer" onclick="trackDownload('guide_apple_intelligence_bottom')">在 App Store 下載 Keyly</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-brand">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="fks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="fka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#fks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#fka)"/>
+        </svg>
+        Keyly
+      </a>
+      <div class="footer-links">
+        <a href="/guides/iphone-zhuyin-keyboard/">iPhone 注音輸入法比較</a>
+        <span class="sep">|</span>
+        <a href="/guides/full-access/">允許完全取用說明</a>
+        <span class="sep">|</span>
+        <a href="/privacy/">隱私權政策</a>
+        <span class="sep">|</span>
+        <a href="/terms/">服務條款</a>
+        <span class="sep">|</span>
+        <a href="mailto:support@keylyapp.com">技術支援</a>
+      </div>
+      <p class="footer-copy">© 2026 Keyly 由台灣團隊專為高效溝通而生。</p>
+    </div>
+  </footer>
+
+</body>
+</html>
