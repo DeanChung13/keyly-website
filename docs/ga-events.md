@@ -20,6 +20,7 @@
 | 自動續訂說明（英文） | `/subscriptions/en/` | `subscriptions/en/index.html` |
 | Guide — 允許完全取用 | `/guides/full-access/` | `guides/full-access/index.html` |
 | Guide — iPhone 注音輸入法比較 | `/guides/iphone-zhuyin-keyboard/` | `guides/iphone-zhuyin-keyboard/index.html` |
+| Guide — 注音選字不準的檢查方法 | `/guides/iphone-zhuyin-selection-fixes/` | `guides/iphone-zhuyin-selection-fixes/index.html` |
 | 404 頁面 | `/*` | `404.html` |
 
 `gtag('config', ...)` 自 2026-08-11 起以 hostname 判斷是否執行，只有 `keylyapp.com` 與 `www.keylyapp.com` 會送出 page_view；本機與預覽環境不計入。
@@ -36,11 +37,15 @@
 | `download_click` | `engagement` | `cta_section` | CTA 區塊「立即解鎖 AI 智慧輸入」 | `src/App.tsx` |
 | `download_click` | `engagement` | `guide_zhuyin_comparison_top` | 比較頁 Keyly 選項卡內的「免費下載 Keyly」 | `guides/iphone-zhuyin-keyboard/index.html` |
 | `download_click` | `engagement` | `guide_zhuyin_comparison_bottom` | 比較頁結尾 CTA「在 App Store 下載 Keyly」 | `guides/iphone-zhuyin-keyboard/index.html` |
+| `download_click` | `engagement` | `guide_selection_fixes_bottom` | 選字排查頁結尾 CTA（全頁唯一一個下載 CTA） | `guides/iphone-zhuyin-selection-fixes/index.html` |
 | `faq_click` | `engagement` | (FAQ 題目) | FAQ 問題點擊展開 | `src/App.tsx` / `AppEn.tsx` |
 | `section_view` | `engagement` | (區塊 ID) | 區塊可見度（捲動深度追蹤） | `src/App.tsx` / `AppEn.tsx` |
 | `feature_click` | `engagement` | (功能標題) | 特色區塊功能卡片點擊 | `src/App.tsx` / `AppEn.tsx` |
 | `link_click` | `engagement` | (連結名稱) | 頁尾或其他外部連結點擊 | `src/App.tsx` / `AppEn.tsx` |
 | `link_click` | `engagement` | `guide_zhuyin_comparison` | 首頁頁尾前往比較頁 | `src/App.tsx` |
+| `link_click` | `engagement` | `guide_selection_fixes` | 首頁頁尾前往選字排查頁 | `src/App.tsx` |
+| `link_click` | `engagement` | `guide_zhuyin_comparison` | 選字排查頁方法六前往比較頁 | `guides/iphone-zhuyin-selection-fixes/index.html` |
+| `link_click` | `engagement` | `guide_full_access` | 選字排查頁方法六前往完全取用說明 | `guides/iphone-zhuyin-selection-fixes/index.html` |
 | `link_click` | `engagement` | `guide_full_access` | 首頁頁尾前往完全取用說明 | `src/App.tsx` |
 | `link_click` | `engagement` | `lang_switch_en` / `lang_switch_zh` | 頁尾語言切換 | `src/App.tsx` / `AppEn.tsx` |
 | `link_click` | `engagement` | `source_apple_keyboard_guide` | 比較頁引用的 Apple 支援文件 | `guides/iphone-zhuyin-keyboard/index.html` |
@@ -49,6 +54,10 @@
 | `link_click` | `engagement` | `source_app_store_panda` | 比較頁引用的胖打注音 App Store | `guides/iphone-zhuyin-keyboard/index.html` |
 | `link_click` | `engagement` | `source_app_store_superzhuyin` | 比較頁引用的超注音 App Store | `guides/iphone-zhuyin-keyboard/index.html` |
 | `link_click` | `engagement` | `source_app_store_urkeyboard` | 比較頁引用的 UrKeyboard App Store | `guides/iphone-zhuyin-keyboard/index.html` |
+| `link_click` | `engagement` | `source_apple_autocorrect` | 選字排查頁引用的自動修正／預測字詞說明 | `guides/iphone-zhuyin-selection-fixes/index.html` |
+| `link_click` | `engagement` | `source_apple_predictive_text` | 選字排查頁引用的預測字詞使用手冊 | `guides/iphone-zhuyin-selection-fixes/index.html` |
+| `link_click` | `engagement` | `source_apple_text_replacement` | 選字排查頁引用的替代文字使用手冊 | `guides/iphone-zhuyin-selection-fixes/index.html` |
+| `link_click` | `engagement` | `source_apple_support_home` | 選字排查頁指向 Apple 支援首頁 | `guides/iphone-zhuyin-selection-fixes/index.html` |
 
 競品官方連結一律使用既有的 `link_click`，以 `source_` 前綴的 `event_label` 區分產品；不為此新增事件種類。`destination` 參數帶網域。
 

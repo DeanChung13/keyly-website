@@ -77,6 +77,7 @@ git push origin main
 - [SEO 稽核證據報告](docs/seo/2026-08-09-seo-audit-evidence.md)
 - [SEO 研究與 GSC 定期監測方式](docs/seo/gsc-research-and-monitoring.md)
 - [內容 Brief：2026 iPhone 注音輸入法推薦與比較](docs/seo/content-brief-iphone-zhuyin-keyboard.md)
+- [內容 Brief：iPhone 注音選字不準的檢查與改善方法](docs/seo/content-brief-iphone-zhuyin-selection-fixes.md)
 - [SEO 修正方案](docs/superpowers/plans/2026-08-09-seo-audit-fixes.md)
 
 ## 授權
