@@ -48,6 +48,7 @@ GA4 目前延遲至使用者互動後或最多八秒才載入，可能漏記停�
 2. ~~讓所有 FAQ 答案存在初始 HTML。~~ 已完成。
 3. 建立第一批對應高價值搜尋意圖的獨立內容頁。第一個商業比較頁依 [2026 iPhone 注音輸入法推薦與比較 Brief](seo/content-brief-iphone-zhuyin-keyboard.md) 執行。
 4. 第二個問題排除頁依 [iPhone 注音選字不準的檢查與改善方法 Brief](seo/content-brief-iphone-zhuyin-selection-fixes.md) 執行。
+5. 第三個操作教學頁依 [iPhone 鍵盤震動與觸覺回饋設定 Brief](seo/content-brief-iphone-keyboard-haptics.md) 執行。
 
 ## 持續驗證
 
