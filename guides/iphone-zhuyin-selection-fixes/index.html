@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPhone 注音選字不準、輸入法怪怪的？6 個檢查與改善方法 — Keyly</title>
+  <meta name="description" content="iPhone 注音候選字不準或打字不順時，先分辨是選字、預測字詞、鍵盤辭典或單一 App 問題，再依序檢查設定與重置方式。">
+  <link rel="canonical" href="https://keylyapp.com/guides/iphone-zhuyin-selection-fixes/">
+  <link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/guides/iphone-zhuyin-selection-fixes/">
+  <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/guides/iphone-zhuyin-selection-fixes/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='20' fill='%230D142E' /%3E%3Cdefs%3E%3ClinearGradient id='k-stem' x1='30' y1='20' x2='30' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2338C7BA' /%3E%3Cstop offset='1' stop-color='%238E61D9' /%3E%3C/linearGradient%3E%3ClinearGradient id='k-arm' x1='75' y1='20' x2='40' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E6EBF2' /%3E%3Cstop offset='1' stop-color='%23BFCDE0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='25' y='20' width='16' height='60' fill='url(%23k-stem)' /%3E%3Cpath d='M75 20L41 50L75 80H55L31 50L55 20H75Z' fill='url(%23k-arm)' /%3E%3C/svg%3E">
+  <meta property="og:title" content="iPhone 注音選字不準、輸入法怪怪的？6 個檢查與改善方法">
+  <meta property="og:description" content="iPhone 注音候選字不準或打字不順時，先分辨是選字、預測字詞、鍵盤辭典或單一 App 問題，再依序檢查設定與重置方式。">
+  <meta property="og:url" content="https://keylyapp.com/guides/iphone-zhuyin-selection-fixes/">
+  <meta property="og:image" content="https://keylyapp.com/assets/images/og-banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "iPhone 注音選字不準？先做這 6 個檢查",
+    "description": "iPhone 注音候選字不準或打字不順時，先分辨是選字、預測字詞、鍵盤辭典或單一 App 問題，再依序檢查設定與重置方式。",
+    "inLanguage": "zh-Hant-TW",
+    "datePublished": "2026-08-11",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Keyly"
+    }
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (window.location.hostname === 'keylyapp.com' || window.location.hostname === 'www.keylyapp.com') {
+      gtag('js', new Date());
+      gtag('config', 'G-C51YGT0TVX');
+    }
+    function trackDownload(label) {
+      gtag('event', 'download_click', { event_category: 'engagement', event_label: label });
+    }
+    function trackLink(name, destination) {
+      gtag('event', 'link_click', { event_category: 'engagement', event_label: name, destination: destination });
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-page: #F4F7FA;
+      --bg-primary: #0D142E;
+      --brand-cyan: #479ED1;
+      --brand-purple: #8E61D9;
+      --metal-white: #E6EBF2;
+      --metal-gray: #BFCDE0;
+      --text-primary: #0F1726;
+      --text-secondary: #5C708C;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Heiti TC", "Microsoft JhengHei", system-ui, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(191, 205, 224, 0.35);
+    }
+
+    .navbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .navbar-brand svg { border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+
+    .lang-btn {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--metal-gray);
+      border-radius: 999px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .lang-btn:hover { color: var(--brand-cyan); border-color: var(--brand-cyan); }
+
+    .page-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 4rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--brand-cyan); }
+
+    .page-header { margin-bottom: 1.75rem; }
+
+    .page-header h1 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-meta { font-size: 0.85rem; color: var(--text-secondary); }
+
+    .legal-content h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 2.75rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--metal-gray);
+    }
+
+    .legal-content h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 1.75rem 0 0.5rem;
+    }
+
+    .legal-content p { color: var(--text-secondary); margin-bottom: 0.875rem; }
+
+    .legal-content ul, .legal-content ol {
+      margin: 0.5rem 0 0.875rem 1.25rem;
+      color: var(--text-secondary);
+    }
+
+    .legal-content li { margin-bottom: 0.4rem; }
+    .legal-content strong { color: var(--text-primary); font-weight: 700; }
+
+    .legal-content code {
+      font-family: ui-monospace, monospace;
+      font-size: 0.875em;
+      background: var(--metal-white);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      color: var(--text-primary);
+    }
+
+    .legal-content a { color: var(--brand-cyan); text-decoration: none; }
+    .legal-content a:hover { text-decoration: underline; }
+
+    .summary-box {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 14px;
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .summary-box ol { margin: 0.5rem 0 0 1.2rem; }
+
+    .warning {
+      background: #FFF1F0;
+      border: 1px solid #E8B4AE;
+      border-left: 5px solid #C0392B;
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      margin: 1.5rem 0;
+      color: #7A2B22;
+    }
+
+    .warning strong { color: #96271B; }
+    .warning p { color: #7A2B22; margin-bottom: 0.5rem; }
+    .warning p:last-child { margin-bottom: 0; }
+
+    .note {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-left: 4px solid var(--brand-cyan);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      margin: 1.25rem 0;
+      font-size: 0.92rem;
+    }
+
+    .note p:last-child { margin-bottom: 0; }
+
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid rgba(191, 205, 224, 0.7);
+      border-radius: 12px;
+      background: #fff;
+      margin: 1rem 0 1.5rem;
+    }
+
+    table.triage {
+      border-collapse: collapse;
+      min-width: 560px;
+      width: 100%;
+      font-size: 0.9rem;
+    }
+
+    table.triage th, table.triage td {
+      border-bottom: 1px solid rgba(191, 205, 224, 0.5);
+      padding: 0.7rem 0.9rem;
+      text-align: left;
+      vertical-align: top;
+      color: var(--text-secondary);
+    }
+
+    table.triage thead th {
+      background: var(--metal-white);
+      color: var(--text-primary);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    table.triage tr:last-child td { border-bottom: 0; }
+
+    details.faq {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+
+    details.faq > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.9rem 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    details.faq > summary::-webkit-details-marker { display: none; }
+    details.faq > summary::after { content: " ＋"; color: var(--brand-cyan); }
+    details.faq[open] > summary::after { content: " －"; }
+    details.faq .faq-body { padding: 0 1.15rem 1.1rem; }
+    details.faq .faq-body p:last-child { margin-bottom: 0; }
+
+    .cta-box {
+      background: var(--bg-primary);
+      color: var(--metal-white);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem;
+      margin: 3rem 0 0;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      border: 0;
+      color: var(--metal-white);
+      margin: 0 0 0.5rem;
+      padding: 0;
+      font-size: 1.15rem;
+    }
+
+    .cta-box p { color: var(--metal-gray); margin-bottom: 1.1rem; }
+    .cta-box a.inline { color: var(--metal-white); text-decoration: underline; }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--brand-cyan);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+    }
+
+    .cta-btn:hover { background: var(--brand-purple); }
+
+    .footer {
+      background: var(--bg-page);
+      border-top: 1px solid rgba(191, 205, 224, 0.4);
+      padding: 2.5rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .footer-brand svg { border-radius: 6px; }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--brand-cyan); }
+    .footer-links .sep { color: var(--metal-gray); }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--metal-gray);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="ks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="ka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#ks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#ka)"/>
+        </svg>
+        Keyly
+      </a>
+      <a href="/" class="lang-btn">回首頁</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+    <p class="breadcrumb"><a href="/">Keyly</a> ／ 使用指南 ／ 注音選字不準的檢查方法</p>
+
+    <div class="page-header">
+      <h1>iPhone 注音選字不準？先做這 6 個檢查</h1>
+      <p class="page-meta">更新日期：2026 年 8 月 11 日</p>
+    </div>
+
+    <div class="legal-content">
+      <div class="summary-box">
+        <p><strong>30 秒排查順序</strong>——由影響最小、最容易復原的步驟開始：</p>
+        <ol>
+          <li>先確認問題是<strong>只出現在單一 App</strong>，還是到處都發生。</li>
+          <li>重新啟動 iPhone，並確認 iOS 與該 App 已更新。</li>
+          <li>檢查<strong>自動修正</strong>與<strong>預測字詞</strong>設定。</li>
+          <li>檢查<strong>替代文字</strong>與自訂輸入碼是否造成干擾。</li>
+          <li>問題持續時，才考慮<strong>重置鍵盤辭典</strong>（會刪除自訂字詞，放在後面是有原因的）。</li>
+          <li>如果你要的其實是<strong>不同的選字邏輯或功能</strong>，再去比較第三方注音鍵盤。</li>
+        </ol>
+      </div>
+
+      <p>沒有任何一個步驟保證能解決你的狀況。這份順序的用意是先縮小範圍，讓你知道問題出在哪一層，再決定要不要動到會刪資料的操作。</p>
+
+      <h2>先判斷你遇到的是哪一種問題</h2>
+      <p>「選字不準」這四個字底下其實混了好幾種不同的狀況，處理方式完全不同。先對照下表找出你比較接近哪一種：</p>
+
+      <div class="table-scroll">
+        <table class="triage">
+          <thead>
+            <tr>
+              <th scope="col">症狀</th>
+              <th scope="col">優先檢查</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>注音打對了，但第一個候選字常常不合上下文</td>
+              <td>預測字詞設定、鍵盤辭典、試著輸入完整詞句而非單字</td>
+            </tr>
+            <tr>
+              <td>按下去的注音符號常常不是你要按的那個</td>
+              <td>螢幕觸控、保護貼、鍵盤佈局與鍵盤大小；這不是選字問題，別急著重置辭典</td>
+            </tr>
+            <tr>
+              <td>游標或文字位置會自己跳動</td>
+              <td>該 App 或 iOS 的文字輸入問題；重置鍵盤辭典通常幫不上忙</td>
+            </tr>
+            <tr>
+              <td>只有某一個 App 會這樣</td>
+              <td>更新或重啟該 App，並到備忘錄等其他文字欄位交叉測試</td>
+            </tr>
+            <tr>
+              <td>特定人名或專有名詞永遠選不到</td>
+              <td>用替代文字或自訂詞處理這幾個特定詞，不必動整體設定</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>這張表是分流用的入口，不是確定的因果判斷。同一種症狀可能有多個成因，往下的方法一到方法五就是逐層縮小範圍。</p>
+
+      <h2>方法一｜在不同 App 交叉測試並重新啟動</h2>
+      <p>先確定問題的範圍。找一句你固定會用的測試句，在「備忘錄」打一次，再到你原本出問題的 App 打同一句。</p>
+      <ul>
+        <li><strong>只有某個 App 異常</strong>：問題比較可能在那個 App，先更新它、關掉重開，或聯絡該 App 的開發者。這種情況下改鍵盤設定通常沒有幫助。</li>
+        <li><strong>每個 App 都一樣</strong>：往下繼續檢查系統層的鍵盤設定。</li>
+      </ul>
+      <p>接著重新啟動 iPhone，並確認 iOS 與該 App 都是最新版本。這是通用的排查步驟——它可以排除暫時性的狀態問題，但不保證能修好特定的選字行為。</p>
+
+      <h2>方法二｜檢查自動修正與預測字詞</h2>
+      <p>依 Apple 官方說明，<strong>「自動修正」會使用鍵盤辭典來檢查你輸入的內容</strong>並自動修正。「預測字詞」則會依你過去的對話、書寫風格，甚至你在 Safari 造訪過的網站，顯示接下來可能輸入的字詞選項。Apple 沒有說明這兩項與注音候選字的排序之間有什麼關係，本文也不做這個推論；把它們列在這裡的用意，是它們都是<strong>可以隨時開關、隨時復原</strong>的設定，適合拿來做交叉測試，先確認你的狀況跟它們有沒有關。</p>
+
+      <h3>開啟或關閉「自動修正」</h3>
+      <ol>
+        <li>打開「設定」App，點「一般」。</li>
+        <li>點「鍵盤」。</li>
+        <li>開啟或關閉「自動修正」（預設為開啟）。</li>
+      </ol>
+
+      <h3>開啟或關閉「預測字詞」</h3>
+      <ol>
+        <li>按住鍵盤上的笑臉表情符號或地球圖像。</li>
+        <li>點「鍵盤設定」，然後開啟或關閉「預測字詞」。</li>
+      </ol>
+      <p>也可以走「設定」→「一般」→「鍵盤」→「預測字詞」。在 iOS 18 中，另外還可以開啟或關閉內文預測字詞建議。</p>
+
+      <div class="note">
+        <p><strong>測試建議：</strong>一次只切換一個設定，然後用你固定的那句測試句重打一次，記下有沒有差別。同時改兩三項，之後就分不出是哪一項造成的、哪一項其實沒差。若切換後沒有任何變化，就把它改回原狀，繼續往下一個方法。</p>
+      </div>
+
+      <p>來源：<a href="https://support.apple.com/zh-tw/104995" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_autocorrect','support.apple.com')">Apple 支援：如何使用「自動修正」和預測字詞</a>（該頁標示發佈日期 2026 年 4 月 13 日）、<a href="https://support.apple.com/zh-tw/guide/iphone/-iphd4ea90231/ios" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_predictive_text','support.apple.com')">Apple 使用手冊：在 iPhone 上使用預測字詞</a></p>
+
+      <h2>方法三｜檢查替代文字與自訂輸入碼</h2>
+      <p>「替代文字」是你自己設定的快速鍵：輸入短碼會自動換成完整字詞。設定久了很容易累積一些忘記自己設過的項目，而它們會實際干擾你的輸入結果。</p>
+
+      <h3>檢視或刪除既有的替代文字</h3>
+      <ol>
+        <li>「設定」→「一般」→「鍵盤」→「替代文字」。</li>
+        <li>點「編輯」，找到重複、過時或設錯的項目。</li>
+        <li>點「移除」按鈕，再點「刪除」，最後點「完成」。</li>
+      </ol>
+
+      <h3>為常用的人名或專有名詞新增替代文字</h3>
+      <ol>
+        <li>「設定」→「一般」→「鍵盤」→「替代文字」。</li>
+        <li>點「新增」按鈕。</li>
+        <li>輸入完整字詞與你要用的快速鍵，點「儲存」。</li>
+      </ol>
+      <p>這個做法適合處理「就是那幾個詞永遠選不到」的情況——公司名、人名、產品代號之類。它是針對特定詞的解法，<strong>不會改善整體的選字引擎表現</strong>，不要把它當成通用修復。</p>
+      <p>來源：<a href="https://support.apple.com/zh-tw/guide/iphone/iph6d01d862/ios" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_text_replacement','support.apple.com')">Apple 使用手冊：在 iPhone 上儲存替代文字的按鍵</a></p>
+
+      <h2>方法四｜用完整詞句協助候選排序</h2>
+      <p>單一個字的同音候選往往很多，中文尤其如此。當你只打一個字的注音時，輸入法能參考的資訊很少；打完整的詞或短句，前後文就成為額外線索。</p>
+      <p>實際做法是：試著把整個詞或整句打完再選字，而不是打一個字選一個字。例如打「ㄊㄧㄢ ㄑㄧˋ」比只打「ㄑㄧˋ」更容易得到你要的結果。</p>
+      <p>這是使用方式上的建議，<strong>不代表能改變或重新訓練 Apple 的輸入模型</strong>。如果你的習慣是逐字選字，這個方法可能會讓你覺得不順手，那就跳過。</p>
+
+      <h2>方法五｜最後才重置鍵盤辭典</h2>
+
+      <div class="warning">
+        <p><strong>⚠ 先讀這段再往下做</strong></p>
+        <p>重置鍵盤辭典會<strong>刪除你的自訂字詞與輸入碼</strong>，並把辭典回復為預設狀態。這個動作無法復原。請先確認你願意失去這些資料。</p>
+      </div>
+
+      <p><strong>什麼時候才值得考慮：</strong>方法一到方法四都試過、問題在多個 App 都持續發生、而且你確定不是觸控或單一 App 的問題。如果你只是某幾個詞選不到，方法三比重置划算得多。</p>
+
+      <p><strong>設定路徑（Apple 官方說明的步驟）：</strong></p>
+      <ol>
+        <li>前往「設定」→「一般」→「移轉或重置 iPhone」。</li>
+        <li>點一下「重置」，然後再點一次「重置鍵盤辭典」。</li>
+      </ol>
+      <p>Apple 對這個動作的說明是：「這會刪除所有自訂的字詞和輸入碼，並會將鍵盤辭典回復成預設狀態。」</p>
+
+      <div class="note">
+        <p>來源：<a href="https://support.apple.com/zh-tw/guide/iphone/iph6d01d862/ios" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_text_replacement','support.apple.com')">Apple 使用手冊：在 iPhone 上儲存替代文字的按鍵</a>（「重置個人辭典」一節）。選單字樣可能隨 iOS 版本調整，請以裝置畫面實際顯示的文字為準。</p>
+      </div>
+
+      <p><strong>注意這與「重置所有設定」不是同一件事。</strong>「重置所有設定」影響範圍大得多，本頁不建議、也不說明那個做法。你要找的是「重置鍵盤辭典」這一項。</p>
+
+      <p><strong>重置後怎麼確認有沒有差：</strong>用你前面一直在用的那句固定測試句，重打一次並記下結果。剛重置完辭典沒有你的使用紀錄，短期內某些原本順手的詞可能反而變難選，這是預期內的。</p>
+
+      <h2>方法六｜考慮不同選字邏輯的第三方注音鍵盤</h2>
+      <p>先說清楚：第三方鍵盤<strong>不是拿來修復 Apple 內建鍵盤的工具</strong>。如果你的問題是觸控失靈或某個 App 異常，換鍵盤不會解決。</p>
+      <p>換鍵盤合理的情況是：你已經確認內建鍵盤運作正常，只是它的選字邏輯、詞庫或功能不符合你的使用方式——例如你想要不同的鍵位配置、想要自訂詞庫的彈性，或是想在輸入流程裡直接做潤飾與翻譯。</p>
+      <p>各家鍵盤的定位、離線能力、價格與適合族群，整理在<a href="/guides/iphone-zhuyin-keyboard/" onclick="trackLink('guide_zhuyin_comparison','/guides/iphone-zhuyin-keyboard/')">2026 iPhone 注音輸入法推薦與比較</a>，資料一律引用官方來源。</p>
+      <p>本站的產品 Keyly 也是其中之一：定位是在注音輸入之後直接做 AI 潤飾、改寫與翻譯。它需要 iOS 18.0 以上，雲端 AI 功能需要連網並開啟「允許完全取用」。安裝第三方鍵盤前，建議先了解這個權限的實際範圍：<a href="/guides/full-access/" onclick="trackLink('guide_full_access','/guides/full-access/')">「允許完全取用」是什麼？安全嗎？</a></p>
+
+      <h2>哪些情況不該只處理鍵盤設定</h2>
+      <p>下列狀況比較不像是輸入法設定的問題，繼續調鍵盤設定通常只是浪費時間：</p>
+      <ul>
+        <li>多個 App 都出現按鍵誤判或觸控位置偏移。</li>
+        <li>螢幕其他區域（不只鍵盤）也無法正常觸控。</li>
+        <li>系統更新後出現廣泛的游標跳動或文字欄位異常。</li>
+        <li>重新啟動與跨 App 交叉測試之後，問題依然完全一樣。</li>
+      </ul>
+      <p>這時候建議直接聯絡 <a href="https://support.apple.com/zh-tw" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_support_home','support.apple.com')">Apple 支援</a>，或在問題只發生於單一 App 時聯絡該 App 的開發者。本文不對硬體狀況做任何判斷。</p>
+
+      <h2>常見問題</h2>
+
+      <details class="faq">
+        <summary>重置鍵盤辭典會刪除哪些內容？</summary>
+        <div class="faq-body">
+          <p>會刪除你的自訂字詞與輸入碼，並把鍵盤辭典回復為預設狀態。它不會清除你的照片、訊息或 App，但被刪掉的自訂內容無法復原。這也是本文把它排在第五步、而不是第一步的原因。Apple 的原文說明是「這會刪除所有自訂的字詞和輸入碼，並會將鍵盤辭典回復成預設狀態」，見 <a href="https://support.apple.com/zh-tw/guide/iphone/iph6d01d862/ios" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_text_replacement','support.apple.com')">Apple 使用手冊的「重置個人辭典」一節</a>。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>關閉預測字詞會不會影響注音輸入？</summary>
+        <div class="faq-body">
+          <p>會影響你看到的候選內容——預測字詞是依過去對話、書寫風格等資訊提供接下來可能輸入的字詞選項，關掉之後這類建議就不會出現。注音輸入本身不會停止運作。建議把它當成一個可逆的測試：關掉、用固定測試句打一次、再決定要不要留著。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>特定人名一直選不到，可以怎麼處理？</summary>
+        <div class="faq-body">
+          <p>用「替代文字」為那個詞建立一組快速鍵，路徑是「設定」→「一般」→「鍵盤」→「替代文字」→「新增」。這是針對特定詞的解法，效果直接，也不會動到其他設定。為了幾個詞去重置整個鍵盤辭典並不划算。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>換第三方鍵盤就一定會更準嗎？</summary>
+        <div class="faq-body">
+          <p>不一定，本文也不做這種宣稱。不同鍵盤的選字邏輯與詞庫不同，適不適合取決於你的輸入習慣與需求，而不是單一的「準確率」高低。如果你的問題其實出在觸控、單一 App 或系統設定，換鍵盤不會解決。真的要換，先看<a href="/guides/iphone-zhuyin-keyboard/">各家鍵盤的官方資料比較</a>再決定。</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-box">
+      <h2>先排除設定問題，需求不同再換鍵盤</h2>
+      <p>如果上面的檢查做完之後，內建鍵盤其實運作正常，只是不符合你的輸入需求，可以從<a class="inline" href="/guides/iphone-zhuyin-keyboard/">各家注音鍵盤的官方資料比較</a>開始看起。</p>
+      <a class="cta-btn" href="https://apps.apple.com/app/id6759639348" target="_blank" rel="noopener noreferrer" onclick="trackDownload('guide_selection_fixes_bottom')">在 App Store 下載 Keyly</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-brand">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="fks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="fka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#fks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#fka)"/>
+        </svg>
+        Keyly
+      </a>
+      <div class="footer-links">
+        <a href="/guides/iphone-zhuyin-selection-fixes/">注音選字不準怎麼辦</a>
+        <span class="sep">|</span>
+        <a href="/guides/iphone-zhuyin-keyboard/">iPhone 注音輸入法比較</a>
+        <span class="sep">|</span>
+        <a href="/guides/full-access/">允許完全取用說明</a>
+        <span class="sep">|</span>
+        <a href="/privacy/">隱私權政策</a>
+        <span class="sep">|</span>
+        <a href="/terms/">服務條款</a>
+        <span class="sep">|</span>
+        <a href="mailto:support@keylyapp.com">技術支援</a>
+      </div>
+      <p class="footer-copy">© 2026 Keyly 由台灣團隊專為高效溝通而生。</p>
+    </div>
+  </footer>
+
+</body>
+</html>

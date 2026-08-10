@@ -18,6 +18,7 @@ export default defineConfig({
           subscriptionsEn: path.resolve(__dirname, 'subscriptions/en/index.html'),
           guidesFullAccess: path.resolve(__dirname, 'guides/full-access/index.html'),
           guidesZhuyinKeyboard: path.resolve(__dirname, 'guides/iphone-zhuyin-keyboard/index.html'),
+          guidesSelectionFixes: path.resolve(__dirname, 'guides/iphone-zhuyin-selection-fixes/index.html'),
           notFound: path.resolve(__dirname, '404.html'),
         },
       },
