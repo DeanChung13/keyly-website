@@ -84,6 +84,11 @@ git push origin main
 - [內容 Brief：Apple Intelligence 書寫工具與 AI 鍵盤怎麼選](docs/seo/content-brief-apple-intelligence-vs-ai-keyboard.md)
 - [SEO 修正方案](docs/superpowers/plans/2026-08-09-seo-audit-fixes.md)
 
+### ASO
+
+- [App Store Metadata 免費 ASO 稽核](docs/aso/2026-08-11-app-store-metadata-audit.md)
+- [ASO Metadata 變更記錄 — 第一輪（未送出）](docs/aso/2026-08-11-metadata-change-round-1.md)
+
 ## 授權
 
 © 2026 Keyly. All rights reserved.
