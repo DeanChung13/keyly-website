@@ -77,6 +77,8 @@ git push origin main
 - [SEO 稽核證據報告](docs/seo/2026-08-09-seo-audit-evidence.md)
 - [SEO 研究與 GSC 定期監測方式](docs/seo/gsc-research-and-monitoring.md)
 - [SEO 下一階段任務研究與價值排序](docs/seo/2026-08-11-next-task-prioritization.md)
+- [零成本提升 Google 曝光策略與價值排序](docs/seo/2026-08-11-zero-cost-google-exposure-strategies.md)
+- [Google 曝光研究與 SEO 優化計畫](docs/seo/2026-08-11-search-demand-research-plan.md)
 - [外部曝光與自然連結機會研究](docs/seo/2026-08-11-earned-media-opportunities.md)
 - [內容 Brief：2026 iPhone 注音輸入法推薦與比較](docs/seo/content-brief-iphone-zhuyin-keyboard.md)
 - [內容 Brief：iPhone 注音選字不準的檢查與改善方法](docs/seo/content-brief-iphone-zhuyin-selection-fixes.md)

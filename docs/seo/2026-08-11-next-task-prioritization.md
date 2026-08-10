@@ -2,7 +2,7 @@
 
 更新日期：2026-08-11
 
-> 執行狀態更新：使用者於 2026-08-11 決定暫緩外部媒體推廣。研究結論保留，但該任務不在目前執行佇列；下一個執行項目為 Apple Intelligence 與第三方 AI 鍵盤決策頁；該頁已實作，等待 Review／部署。
+> 執行狀態更新：Apple Intelligence 與第三方 AI 鍵盤決策頁已部署並要求建立索引，第一輪 ASO metadata 亦已完成。使用者決定暫緩外部媒體推廣。後續策略已重新擴展到工具、影片、原創資料、圖片與既有頁面成長，見 [零成本提升 Google 曝光策略](2026-08-11-zero-cost-google-exposure-strategies.md)。
 
 > 成本限制：目前所有主動任務必須零額外現金支出，只使用既有程式、內容、人力、GA4、GSC、Apple 官方資料與免費工具。付費廣告、付費 SEO 工具、買連結、付費媒體或合作不列入執行佇列。
 
@@ -51,14 +51,14 @@
 
 判定：潛在曝光與連結價值高，但轉換相關性較弱、成本與不確定性最高；先做原型驗證，不直接投入正式開發。
 
-## 統一價值排序
+## 當時的統一價值排序（已被新排序取代）
 
 排序依序考量：台灣非品牌曝光潛力、Keyly 產品關聯、可驗證性、成本與目前網站階段。
 
 | 排名 | 任務 | 新／舊 | 價值判定 | 現在怎麼做 |
 |---:|---|---|---|---|
-| 1 | Apple Intelligence 與第三方 AI 鍵盤決策頁 | 新 | 當期需求與產品功能高度重疊，能承接書寫工具、繁中、支援機型及 AI 鍵盤意圖 | 已完成 [MVP 內容 brief](content-brief-apple-intelligence-vs-ai-keyboard.md)，頁面已實作，等待 Review／部署 |
-| 2 | 免費 App Store ASO 優化 | 舊 | 已唯讀取得 1.1.0 正式 metadata；發現關鍵字相關性、商標、新功能缺詞及支援網址問題 | 依 [免費 ASO 稽核](../aso/2026-08-11-app-store-metadata-audit.md) 先完成產品事實確認，再準備一輪 metadata 測試 |
+| 1 | Apple Intelligence 與第三方 AI 鍵盤決策頁 | 新 | 當期需求與產品功能高度重疊，能承接書寫工具、繁中、支援機型及 AI 鍵盤意圖 | 已部署並要求建立索引 |
+| 2 | 免費 App Store ASO 優化 | 舊 | 已唯讀取得 1.1.0 正式 metadata；發現關鍵字相關性、商標、新功能缺詞及支援網址問題 | 第一輪 ASO metadata 已完成 |
 | 3 | iPhone 第三方鍵盤安裝與切換 Guide | 新 | 搜尋意圖清楚且非常靠近安裝，但流量面可能較窄 | 第 1 項上線後再做，不與 full-access 重複 |
 | 4 | 現有 Guide 的 GSC／GA4 成效驗證 | 舊 | 是必要的決策基礎，但監測本身不會創造曝光 | 第 7、14 天確認索引與曝光；滿 28 天才做內容判定 |
 | 5 | 首頁與 Guide 的下載轉換優化 | 舊 | 可改善既有流量價值，但目前樣本量不足 | 等 GA4 累積有效閱讀與下載事件後再判斷，不先改版 |
@@ -75,4 +75,4 @@
 
 ## 下一步
 
-外部推廣已由使用者決定暫緩。Apple Intelligence 決策頁的官方事實、搜尋意圖、內容邊界與零成本停止條件已寫成 [MVP 內容 brief](content-brief-apple-intelligence-vs-ai-keyboard.md)；該頁已實作完成，等待 Review／部署。
+本文件的原排序已完成或失效，不再以新增 Apple Intelligence Guide 作為下一步，也不預設打字測試工具必然是第一名。現階段先依 [Google 曝光研究與 SEO 優化計畫](2026-08-11-search-demand-research-plan.md) 建立 GSC 基準、搜尋需求與 SERP 機會矩陣；有證據的第一名才交由 Claude 實作。候選策略見 [零成本提升 Google 曝光策略](2026-08-11-zero-cost-google-exposure-strategies.md)。
