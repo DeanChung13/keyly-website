@@ -175,7 +175,7 @@ function Hero() {
                 台灣團隊打造 · iOS 注音輸入體驗
               </div>
               <h1 className="font-black text-text-primary leading-tight mb-6">
-                <span className="block text-2xl lg:text-3xl xl:text-4xl mb-2">iPhone AI 注音鍵盤</span>
+                <span className="block text-2xl lg:text-3xl xl:text-4xl mb-2">iPhone 注音鍵盤</span>
                 <span className="block text-5xl lg:text-5xl xl:text-6xl">
                   指尖上的 AI 智慧，<br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">
@@ -184,7 +184,7 @@ function Hero() {
                 </span>
               </h1>
               <p className="text-base lg:text-lg text-text-secondary/90 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                專為繁體中文打造的注音選字引擎，讓翻譯、潤飾、改寫都能在同一個輸入流程完成，並支援完全離線的隱私模式。
+                為 iPhone 與 iPad 的繁體中文使用者打造的注音輸入法。核心是注音輸入與選字，離線就能使用。AI 分兩種：雲端 AI 的潤飾、翻譯與改寫需要網路；在支援 Apple 裝置端 AI 框架的機型上，另有可離線使用的基礎修正。
               </p>
 
               <div className="mt-8">
@@ -220,17 +220,17 @@ function Features() {
     {
       icon: <Wand2 className="w-6 h-6 text-brand-cyan" />,
       title: "專屬你的文字濾鏡",
-      description: "無論是由衷的情書、隨性的抒發，抑或是嚴謹的商業報告，只需隨心打下草稿，一鍵套用專屬的 AI 濾鏡，瞬間就能將其轉換為最完美的風格語氣。支援完全斷網的離線隱私模式，亦可連結雲端，釋放頂級模型無與倫比的創作潛能。"
+      description: "情書、隨手抒發或商業報告，先把草稿打出來，再套用你設定的 AI 濾鏡調整語氣。這一層是選用的：離線時鍵盤照常運作，連上網路才會使用雲端模型。"
     },
     {
       icon: <Feather className="w-6 h-6 text-brand-purple" />,
-      title: "極致順滑的輸入手感",
-      description: "為了追求第三方鍵盤的極速體驗，我們研發出專為流暢而生的注音引擎。精準微調的觸控邊界，搭配細膩的沉浸式震動回饋，每一次敲擊都是享受，流暢手感讓您愛不釋手。"
+      title: "為打字手感調校的注音引擎",
+      description: "我們自行開發注音引擎，並針對第三方鍵盤的反應速度調校觸控邊界與震動回饋。目標是讓連續輸入不卡頓，尤其在盲打時。"
     },
     {
       icon: <Command className="w-6 h-6 text-accent-mint" />,
       title: "隨打即用的智慧快捷",
-      description: "遠遠不只是挑錯字！這是專屬於您的文字魔法盒。您可以隨心自訂專屬的「AI 指令」，無論是瞬翻專業外文、精煉長篇大論，抑或是將隻言片語化為優雅的高情商客套話，只需單手一滑即可輕鬆召喚，便利至極。"
+      description: "除了挑錯字，你可以自訂專屬的「AI 指令」：翻譯外文、精簡長段落，或把一句話改寫成得體的說法，單手一滑就能叫出來。"
     },
     {
       icon: <ShieldCheck className="w-6 h-6 text-brand-cyan" />,
@@ -243,7 +243,7 @@ function Features() {
     <section id="features" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-text-primary">為什麼 Keyly 是更好的 AI 注音鍵盤？</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-text-primary">Keyly 這套 iPhone 注音輸入法怎麼運作？</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -276,18 +276,18 @@ function FAQSection() {
   const faqs = [
     {
       question: "如果不常用 AI，單純當作一般鍵盤好用嗎？",
-      answer: "絕對讓您愛不釋手！Keyly 的靈魂所在，正是一套專為「極速順暢、精準除錯」而生的頂級注音引擎。即便在離線或不使用 AI 的狀態下，它依然能提供 iOS 平台上最俐落、最暢快的純粹打字享受。"
+      answer: "可以。Keyly 的核心就是注音輸入本身，AI 是額外那一層。即使離線或完全不使用 AI，注音輸入、選字與自訂詞都照常運作，不需要開啟任何連網功能。"
     },
     {
       question: "Keyly 鍵盤支援哪些語言？",
-      answer: "我們傾注全力打造最完美的「繁體中文（注音）」體驗，並完整支援中英混合輸入。透過強大的 AI 引擎，Keyly 能協助您跨越語言隔閡，一鍵完成外語翻譯與文字潤飾。(註：AI 生成內容僅供參考，請於正式場合自行核實。)"
+      answer: "主要是繁體中文（注音），並支援中英混合輸入。翻譯與潤飾則由 AI 功能處理，需要連線。（註：AI 生成內容僅供參考，請於正式場合自行核實。）"
     },
     {
       question: "為什麼安裝時需要開啟「允許完全取用」權限？",
       answer: (
         <div className="space-y-3">
           <p>這是開啟 AI 魔法的技術門票！受限於 iOS 安全機制，第三方鍵盤必須取得此權限，才能透過網路與雲端 AI 引擎連線以提供潤飾服務。</p>
-          <p><strong>如果不開啟也沒關係：</strong>您依然能永久無限次使用 Keyly 最引以為傲、極速順暢的注音輸入引擎。核心打字功能完全不受影響，確保您在純淨環境下也能享受高品質輸入。此外，在支援的硬體設備上，您仍可享有基礎的本地端 AI 修正功能，這不需要連網，隱私 100% 留存在您的設備中。</p>
+          <p><strong>如果不開啟也沒關係：</strong>注音輸入引擎不需要這個權限，選字、自訂詞與日常打字都能照常使用。另外，在支援 Apple 裝置端 AI 框架的機型上，基礎的裝置端 AI 修正也不需要連網，該功能處理的內容留在裝置上。</p>
           <p><strong>若您選擇開啟：</strong>我們採取最小化資料原則，僅在您主動觸發 AI 功能時處理必要內容。資料以即時處理為主，並在技術與營運可行範圍內縮短保存時間；如涉及法令遵循、安全防護或交易驗證需求，可能於必要期間保留部分紀錄。Keyly 嚴格遵守 Apple 規範，不監控、不側錄您的私人對話。</p>
           <p>
             <a href="/guides/full-access/" className="text-brand-cyan underline underline-offset-4 hover:text-accent-mint">
@@ -299,15 +299,15 @@ function FAQSection() {
     },
     {
       question: "你們的雲端 AI 是用哪家的模型？安全嗎？",
-      answer: "我們選用 Google、OpenAI 與 Anthropic 等全球頂尖技術架構。Keyly 嚴格限制資料僅用於「即時請求」，且承諾不將您的個人對話用於模型訓練。搭配自動清除機制，確保數據在完成任務後即從伺服器緩存移除，嚴密守護您的數位足跡。"
+      answer: "雲端 AI 使用 Google、OpenAI 與 Anthropic 的模型服務。Keyly 限制資料僅用於當次即時請求，不會把你的個人對話用於模型訓練，任務完成後即從伺服器緩存移除。"
     },
     {
       question: "如果沒有網路，還可以使用 AI 潤飾嗎？",
-      answer: "沒問題！只要您的設備支援 Apple 原生 AI 框架（如 iPhone 15 Pro, M 系列晶片或更新機型），Keyly 即可在離線環境下發揮實力。這不僅意味著更快的反應，也能降低資料傳輸需求，讓更多內容留在您的設備端處理。"
+      answer: "要看是哪一種 AI。雲端 AI 的潤飾、翻譯與改寫需要網路，也需要開啟「允許完全取用」。至於裝置端 AI，只要機型支援 Apple 的裝置端 AI 框架（例如 iPhone 15 Pro、M 系列晶片或更新機型），基礎修正可以在離線狀態下使用，處理內容留在裝置上。注音輸入本身則不受網路影響。"
     },
     {
       question: "打字速度很快時，會不會容易卡頓或閃退？",
-      answer: "我們對效能充滿信心。Keyly 由資深 iOS 工程團隊親自操刀，歷經多型號極端測試與優化。我們精準還原了原生級的細膩震動回饋，確保無論手速多快，都能提供行雲流水的流暢體驗。"
+      answer: "Keyly 由 iOS 工程團隊開發，並在多種機型上測試過連續高速輸入。震動回饋也依原生鍵盤的手感調校。若你遇到卡頓或閃退，請來信告訴我們實際機型與情境。"
     },
     {
       question: "我自己設定的專屬 AI 指令會如何儲存？",
@@ -319,11 +319,11 @@ function FAQSection() {
         <div className="space-y-4">
           <p>
               <strong>一般用戶（免費下載）：</strong><br />
-            免費下載即可享有極速注音引擎、完整標準指令庫，並在新登入帳號時一次性獲得 50 次雲端 AI 魔法額度。
+            免費下載即可使用注音引擎、完整標準指令庫，並在新登入帳號時一次性獲得 50 次雲端 AI 魔法額度。
           </p>
           <p>
             <strong>Keyly Pro 訂閱（NT$150/月）：</strong><br />
-            專為高頻率專業人士打造。徹底解鎖無限次雲端 AI 運算，並獨享「AI 指令管理員」，支援自定義指令的新增、編輯與收藏，讓 AI 完美契合您的使用習慣。
+            專為高頻率專業人士打造。徹底解鎖無限次雲端 AI 運算，並獨享「AI 指令管理員」，支援自定義指令的新增、編輯與收藏，讓 AI 貼近你的使用習慣。
           </p>
         </div>
       )
@@ -374,9 +374,9 @@ function CTA() {
     <section id="download" className="py-24 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-brand-cyan/5"></div>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <h2 className="text-4xl font-bold text-text-primary mb-6">體驗更聰明的 iPhone 注音輸入法</h2>
+        <h2 className="text-4xl font-bold text-text-primary mb-6">試試這套 iPhone 注音輸入法</h2>
         <p className="text-xl text-text-secondary mb-10">
-          這不是輸入法，是你的私人文字特助。誠摯邀請你體驗：什麼叫「打字不費力」。
+          先當一套好打的注音鍵盤，需要的時候再讓 AI 接手潤飾與翻譯。免費下載，離線也能用。
         </p>
         <DownloadCTA centered />
       </div>
