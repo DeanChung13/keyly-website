@@ -394,6 +394,8 @@ function Footer() {
             <span className="font-bold text-text-primary">Keyly</span>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-3 text-sm text-text-secondary">
+            <a href="/guides/iphone-zhuyin-keyboard/" onClick={() => trackLinkClick('guide_zhuyin_comparison', '/guides/iphone-zhuyin-keyboard/')} className="hover:text-brand-cyan transition-colors">iPhone 注音輸入法比較</a>
+            <span className="text-metal-gray/50">|</span>
             <a href="/guides/full-access/" onClick={() => trackLinkClick('guide_full_access', '/guides/full-access/')} className="hover:text-brand-cyan transition-colors">允許完全取用說明</a>
             <span className="text-metal-gray/50">|</span>
             <a href="/privacy/" onClick={() => trackLinkClick('privacy_policy', '/privacy/')} className="hover:text-brand-cyan transition-colors">隱私權政策</a>

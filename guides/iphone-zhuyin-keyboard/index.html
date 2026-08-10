@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 iPhone 注音輸入法推薦：內建與第三方鍵盤怎麼選？ — Keyly</title>
+  <meta name="description" content="比較 iPhone 內建注音與 Keyly、Gboard、胖打注音、超注音、UrKeyboard 的主要特色、離線能力、AI 功能與適合族群，幫你選擇符合需求的注音鍵盤。">
+  <link rel="canonical" href="https://keylyapp.com/guides/iphone-zhuyin-keyboard/">
+  <link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/guides/iphone-zhuyin-keyboard/">
+  <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/guides/iphone-zhuyin-keyboard/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='20' fill='%230D142E' /%3E%3Cdefs%3E%3ClinearGradient id='k-stem' x1='30' y1='20' x2='30' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2338C7BA' /%3E%3Cstop offset='1' stop-color='%238E61D9' /%3E%3C/linearGradient%3E%3ClinearGradient id='k-arm' x1='75' y1='20' x2='40' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E6EBF2' /%3E%3Cstop offset='1' stop-color='%23BFCDE0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='25' y='20' width='16' height='60' fill='url(%23k-stem)' /%3E%3Cpath d='M75 20L41 50L75 80H55L31 50L55 20H75Z' fill='url(%23k-arm)' /%3E%3C/svg%3E">
+  <meta property="og:title" content="2026 iPhone 注音輸入法推薦：內建與第三方鍵盤怎麼選？">
+  <meta property="og:description" content="比較 iPhone 內建注音與 Keyly、Gboard、胖打注音、超注音、UrKeyboard 的主要特色、離線能力、AI 功能與適合族群，幫你選擇符合需求的注音鍵盤。">
+  <meta property="og:url" content="https://keylyapp.com/guides/iphone-zhuyin-keyboard/">
+  <meta property="og:image" content="https://keylyapp.com/assets/images/og-banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "2026 iPhone 注音輸入法推薦：內建與第三方鍵盤完整比較",
+    "description": "比較 iPhone 內建注音與 Keyly、Gboard、胖打注音、超注音、UrKeyboard 的主要特色、離線能力、AI 功能與適合族群，幫你選擇符合需求的注音鍵盤。",
+    "inLanguage": "zh-Hant-TW",
+    "datePublished": "2026-08-11",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Keyly"
+    }
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (window.location.hostname === 'keylyapp.com' || window.location.hostname === 'www.keylyapp.com') {
+      gtag('js', new Date());
+      gtag('config', 'G-C51YGT0TVX');
+    }
+    function trackDownload(label) {
+      gtag('event', 'download_click', { event_category: 'engagement', event_label: label });
+    }
+    function trackLink(name, destination) {
+      gtag('event', 'link_click', { event_category: 'engagement', event_label: name, destination: destination });
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-page: #F4F7FA;
+      --bg-primary: #0D142E;
+      --brand-cyan: #479ED1;
+      --brand-purple: #8E61D9;
+      --metal-white: #E6EBF2;
+      --metal-gray: #BFCDE0;
+      --text-primary: #0F1726;
+      --text-secondary: #5C708C;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Heiti TC", "Microsoft JhengHei", system-ui, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(191, 205, 224, 0.35);
+    }
+
+    .navbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .navbar-brand svg { border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+
+    .lang-btn {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--metal-gray);
+      border-radius: 999px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .lang-btn:hover { color: var(--brand-cyan); border-color: var(--brand-cyan); }
+
+    .page-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 4rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--brand-cyan); }
+
+    .page-header { margin-bottom: 1.5rem; }
+
+    .page-header h1 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-meta { font-size: 0.85rem; color: var(--text-secondary); }
+
+    .disclosure {
+      background: #FFF8E7;
+      border: 1px solid #E8D9A8;
+      border-radius: 12px;
+      padding: 0.9rem 1.1rem;
+      font-size: 0.9rem;
+      color: #6B5A2B;
+      margin-bottom: 2rem;
+    }
+
+    .legal-content h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 2.75rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--metal-gray);
+    }
+
+    .legal-content h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 1.75rem 0 0.5rem;
+    }
+
+    .legal-content p {
+      color: var(--text-secondary);
+      margin-bottom: 0.875rem;
+    }
+
+    .legal-content ul, .legal-content ol {
+      margin: 0.5rem 0 0.875rem 1.25rem;
+      color: var(--text-secondary);
+    }
+
+    .legal-content li { margin-bottom: 0.4rem; }
+    .legal-content strong { color: var(--text-primary); font-weight: 700; }
+
+    .legal-content code {
+      font-family: ui-monospace, monospace;
+      font-size: 0.875em;
+      background: var(--metal-white);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      color: var(--text-primary);
+    }
+
+    .legal-content a { color: var(--brand-cyan); text-decoration: none; }
+    .legal-content a:hover { text-decoration: underline; }
+
+    .summary-box {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 14px;
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .summary-box ul { margin: 0.5rem 0 0 1.1rem; }
+
+    .callout {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-left: 4px solid var(--brand-cyan);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .callout p:last-child { margin-bottom: 0; }
+
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid rgba(191, 205, 224, 0.7);
+      border-radius: 12px;
+      background: #fff;
+      margin: 1rem 0 0.5rem;
+    }
+
+    table.compare {
+      border-collapse: collapse;
+      min-width: 1000px;
+      width: 100%;
+      font-size: 0.875rem;
+    }
+
+    table.compare th, table.compare td {
+      border-bottom: 1px solid rgba(191, 205, 224, 0.5);
+      border-right: 1px solid rgba(191, 205, 224, 0.35);
+      padding: 0.7rem 0.85rem;
+      text-align: left;
+      vertical-align: top;
+      color: var(--text-secondary);
+    }
+
+    table.compare th {
+      background: var(--metal-white);
+      color: var(--text-primary);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    table.compare th[scope="row"] {
+      background: #fff;
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      border-right: 1px solid var(--metal-gray);
+    }
+
+    table.compare tr:last-child th, table.compare tr:last-child td { border-bottom: 0; }
+
+    .table-hint { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
+
+    .option-card {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .option-card h3 { margin-top: 0; }
+    .option-card p:last-child { margin-bottom: 0; }
+
+    details.faq {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+
+    details.faq > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.9rem 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    details.faq > summary::-webkit-details-marker { display: none; }
+    details.faq > summary::after { content: " ＋"; color: var(--brand-cyan); }
+    details.faq[open] > summary::after { content: " －"; }
+    details.faq .faq-body { padding: 0 1.15rem 1.1rem; }
+    details.faq .faq-body p:last-child { margin-bottom: 0; }
+
+    .cta-box {
+      background: var(--bg-primary);
+      color: var(--metal-white);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem;
+      margin: 3rem 0 0;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      border: 0;
+      color: var(--metal-white);
+      margin: 0 0 0.5rem;
+      padding: 0;
+      font-size: 1.15rem;
+    }
+
+    .cta-box p { color: var(--metal-gray); margin-bottom: 1.1rem; }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--brand-cyan);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+    }
+
+    .cta-btn:hover { background: var(--brand-purple); }
+
+    .footer {
+      background: var(--bg-page);
+      border-top: 1px solid rgba(191, 205, 224, 0.4);
+      padding: 2.5rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .footer-brand svg { border-radius: 6px; }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--brand-cyan); }
+    .footer-links .sep { color: var(--metal-gray); }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--metal-gray);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="ks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="ka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#ks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#ka)"/>
+        </svg>
+        Keyly
+      </a>
+      <a href="/" class="lang-btn">回首頁</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+    <p class="breadcrumb"><a href="/">Keyly</a> ／ 使用指南 ／ iPhone 注音輸入法比較</p>
+
+    <div class="page-header">
+      <h1>2026 iPhone 注音輸入法推薦：內建與第三方鍵盤完整比較</h1>
+      <p class="page-meta">資料查核日期：2026 年 8 月 11 日</p>
+    </div>
+
+    <p class="disclosure"><strong>利益揭露：</strong>本文由 Keyly 團隊製作，Keyly 是文中被比較的產品之一。為了讓比較可被查證，所有競品資訊一律取自 Apple 支援文件或該 App 在台灣 App Store 的官方描述，並附上來源連結；官方頁面沒有說明的項目，一律標示為「官方頁面未說明」，不以推測填補。</p>
+
+    <div class="legal-content">
+      <h2>30 秒結論</h2>
+
+      <div class="summary-box">
+        <p>沒有一款鍵盤適合所有人。先看你屬於哪一種需求：</p>
+        <ul>
+          <li><strong>想要零安裝、與系統整合最單純</strong> → 先用 Apple 內建注音鍵盤，不必安裝任何東西。</li>
+          <li><strong>要求鍵盤完全不連網</strong> → 看<a href="#panda">胖打注音</a>，其官方描述明載「不連網——鍵盤完全離線運作」。</li>
+          <li><strong>想要 Google 搜尋、GIF、貼圖與滑行輸入</strong> → 看 <a href="#gboard">Gboard</a>，但請留意它在台灣 App Store 顯示的最後更新日期。</li>
+          <li><strong>要多種輸入法（倉頡、行列、蝦米…）或主題自訂</strong> → 看 <a href="#urkeyboard">UrKeyboard</a>；<a href="#superzhuyin">超注音</a>則主打注音縮寫輸入與語音輸入。</li>
+          <li><strong>想在注音打完後直接做 AI 潤飾、翻譯與自訂指令</strong> → 看 <a href="#keyly">Keyly</a>（本站產品）。</li>
+        </ul>
+      </div>
+
+      <p>以下每一項都可以往下對照官方來源。這是 2026 年 8 月 11 日的查核結果，App 功能與價格會隨版本更新變動，做決定前建議再開一次官方頁面確認。</p>
+
+      <h2>先決定你需要哪一種 iPhone 注音鍵盤</h2>
+      <p>比較功能表之前，先想清楚你真正在意什麼。多數人的落差其實只集中在四個維度：</p>
+      <ol>
+        <li><strong>選字與長句輸入。</strong>你是一次打幾個字就選，還是習慣整句打完再讓引擎斷詞？後者對引擎的要求高得多。</li>
+        <li><strong>是否需要完全離線。</strong>有些鍵盤明確標示完全不連網；有些則有連網功能（雲端同步、搜尋、AI），差別會直接影響你要不要開「允許完全取用」。</li>
+        <li><strong>AI 潤飾、翻譯或語音。</strong>這是近年差異最大的一塊，也是最需要看清楚「哪些要連網、哪些機型才支援」的一塊。</li>
+        <li><strong>外觀、自訂詞庫與快捷功能。</strong>主題、鍵盤大小、自建詞彙、剪貼簿面板——這些不影響輸入正確性，但影響每天的使用感受。</li>
+      </ol>
+
+      <h2>iPhone 注音鍵盤比較表</h2>
+      <p>表格內容一律引用官方描述，未經官方說明的一律標示「官方頁面未說明」。價格為台灣 App Store 於 2026-08-11 顯示的金額。</p>
+
+      <div class="table-scroll">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th scope="col">項目</th>
+              <th scope="col">主要定位</th>
+              <th scope="col">繁中注音</th>
+              <th scope="col">離線輸入</th>
+              <th scope="col">AI／語音功能</th>
+              <th scope="col">自訂能力</th>
+              <th scope="col">訂閱或內購</th>
+              <th scope="col">適合族群</th>
+              <th scope="col">官方來源</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Apple 內建鍵盤</th>
+              <td>iOS 系統內建輸入法</td>
+              <td>系統內建注音，於「設定 → 一般 → 鍵盤」加入</td>
+              <td>官方頁面未說明</td>
+              <td>官方頁面未說明（此處僅比較鍵盤本身）</td>
+              <td>官方頁面未說明</td>
+              <td>無，隨系統提供</td>
+              <td>不想安裝額外 App、需求單純的人</td>
+              <td><a href="https://support.apple.com/zh-tw/guide/iphone/iph73b71eb/ios" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_keyboard_guide','support.apple.com')">Apple 支援</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Keyly</th>
+              <td>整合 AI 寫作與潤飾的注音鍵盤</td>
+              <td>繁體中文（注音），官方描述稱針對台灣輸入習慣最佳化</td>
+              <td>官方描述：未連網時仍提供離線注音輸入</td>
+              <td>雲端 AI 潤飾、改寫、語氣調整與即時翻譯（需連網）</td>
+              <td>自訂 AI 指令、自訂打字音效</td>
+              <td>App 免費；Keyly Pro 為自動續訂訂閱</td>
+              <td>想在打字流程裡直接完成潤飾與翻譯的人</td>
+              <td><a href="https://apps.apple.com/tw/app/id6759639348" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_keyly','apps.apple.com')">App Store</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Gboard</th>
+              <td>Google 推出、內建搜尋的鍵盤</td>
+              <td>官方語言清單列有「繁體中文 (台灣)」</td>
+              <td>官方頁面未說明整體離線能力；官方載明搜尋與語音內容會傳送 Google</td>
+              <td>語音輸入會傳送 Google 轉成文字；內建 Google 搜尋、GIF、貼圖、滑行輸入</td>
+              <td>官方頁面未說明自訂詞庫</td>
+              <td>免費</td>
+              <td>重視搜尋、GIF、貼圖與滑行輸入的人</td>
+              <td><a href="https://apps.apple.com/tw/app/id1091700242" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_gboard','apps.apple.com')">App Store</a></td>
+            </tr>
+            <tr>
+              <th scope="row">胖打注音</th>
+              <td>大鍵位＋滑動選音的注音與台語鍵盤</td>
+              <td>注音，另支援台語方音符號（7 聲調、入聲、鼻化韻）</td>
+              <td>官方描述：不連網，鍵盤完全離線運作</td>
+              <td>無 AI 功能（官方描述明指需要雲端 AI 預測者應選其他鍵盤）</td>
+              <td>主題編輯器、自訂詞彙＋自動學習、iCloud 同步（走使用者自己的 iCloud）</td>
+              <td>App 免費；Supporter 訂閱每月 NT$30 或每年 NT$290，解鎖外觀進階功能</td>
+              <td>要求資料完全不出裝置、或需要台語輸入的人</td>
+              <td><a href="https://apps.apple.com/tw/app/id6761426494" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_panda','apps.apple.com')">App Store</a></td>
+            </tr>
+            <tr>
+              <th scope="row">超注音</th>
+              <td>以「注音縮寫」為核心的注音輸入法</td>
+              <td>注音縮寫輸入，聲調可作為過濾與分隔符號</td>
+              <td>官方頁面未說明整體離線能力</td>
+              <td>語音輸入支援 Apple 內建語音辨識與 OpenAI Whisper 兩種引擎；智慧鄰近修正與智慧聯想</td>
+              <td>自建詞彙、常用短語、鍵盤顏色與大小調整、iCloud 備份詞庫</td>
+              <td>付費下載 NT$150</td>
+              <td>習慣用縮寫快速輸入、想要語音輸入選擇的人</td>
+              <td><a href="https://apps.apple.com/tw/app/id983145797" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_superzhuyin','apps.apple.com')">App Store</a></td>
+            </tr>
+            <tr>
+              <th scope="row">UrKeyboard</th>
+              <td>多種中文輸入法合一的鍵盤</td>
+              <td>注音，另支援蝦米、倉頡、大易、行列、拼音；有連續輸入模式</td>
+              <td>官方頁面未說明整體離線能力；官方載明完整取用用於雲端同步、主題商店與剪貼簿</td>
+              <td>官方頁面未說明 AI 或語音功能</td>
+              <td>主題商店、40 種以上外觀屬性（Pro）、自訂詞庫與快捷碼、剪貼簿面板</td>
+              <td>付費下載 NT$120；另有 Pro 訂閱解鎖主題編輯器與雲端同步</td>
+              <td>需要多種輸入法並存、或重視外觀自訂的人</td>
+              <td><a href="https://apps.apple.com/tw/app/id898188878" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_urkeyboard','apps.apple.com')">App Store</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-hint">表格可左右捲動以檢視全部欄位。所有欄位查核日期：2026-08-11。</p>
+
+      <h2>各選項適合誰</h2>
+
+      <div class="option-card">
+        <h3 id="apple">Apple 內建注音鍵盤</h3>
+        <p>iOS 本身就提供注音輸入，在「設定 → 一般 → 鍵盤 → 鍵盤」加入即可使用，不需要安裝任何 App，也不需要處理「允許完全取用」這類權限問題。</p>
+        <p><strong>適合：</strong>只想要一套能用的注音、不想多裝東西的人。</p>
+        <p><strong>要知道的限制：</strong>Apple 的支援文件著重在如何加入與切換鍵盤，並未逐項說明注音引擎的選字策略或自訂能力，因此表格中多數欄位標示為未說明。</p>
+        <p>來源：<a href="https://support.apple.com/zh-tw/guide/iphone/iph73b71eb/ios" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_keyboard_guide','support.apple.com')">Apple 支援：在 iPhone 上加入或更改鍵盤</a></p>
+      </div>
+
+      <div class="option-card">
+        <h3 id="keyly">Keyly（本站產品）</h3>
+        <p>官方描述的定位是把 AI 寫作與潤飾直接放進鍵盤：在任何輸入框內做語氣調整、改寫與即時翻譯，不必切換 App。注音輸入本身在未連網時仍可使用。</p>
+        <p><strong>適合：</strong>經常要把草稿改成得體訊息、或需要邊打邊翻譯的人。</p>
+        <p><strong>要知道的限制：</strong>需 iOS 18.0 以上。雲端 AI 功能需要連網，並需開啟「允許完全取用」才能連線；在支援 Apple 裝置端 AI 框架的機型上另有基礎的離線修正功能（此項來源為本站 FAQ，非 App Store 描述）。Keyly Pro 為自動續訂訂閱。</p>
+        <p>來源：<a href="https://apps.apple.com/tw/app/id6759639348" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_keyly','apps.apple.com')">Keyly 台灣 App Store</a>、<a href="/subscriptions/">自動續訂說明</a>　·　<a href="https://apps.apple.com/app/id6759639348" target="_blank" rel="noopener noreferrer" onclick="trackDownload('guide_zhuyin_comparison_top')">免費下載 Keyly</a></p>
+      </div>
+
+      <div class="option-card">
+        <h3 id="gboard">Gboard</h3>
+        <p>Google 的鍵盤，主打把 Google 搜尋直接放進輸入列，另有 GIF 搜尋、表情符號搜尋、貼圖與滑行輸入。官方語言清單包含「繁體中文 (台灣)」。</p>
+        <p><strong>適合：</strong>常在聊天中查資料、傳 GIF 或貼圖的人。</p>
+        <p><strong>要知道的限制：</strong>台灣 App Store 顯示的最後更新日期為 2022 年 5 月 2 日（查核日 2026-08-11），下載前建議自行確認維護狀態。官方隱私說明載明：搜尋內容與語音輸入會傳送給 Google，其餘輸入內容不會。</p>
+        <p>來源：<a href="https://apps.apple.com/tw/app/id1091700242" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_gboard','apps.apple.com')">Gboard 台灣 App Store</a></p>
+      </div>
+
+      <div class="option-card">
+        <h3 id="panda">胖打注音</h3>
+        <p>把 37 個注音符號收進少量大鍵，點中央或往四個方向滑選同組，靈感來自日文 flick 鍵盤。2.0 版加入台語方音鍵盤，支援完整 7 聲調、入聲與鼻化韻。使用開源 Homa 組字引擎。</p>
+        <p><strong>適合：</strong>手指常按錯隔壁鍵的人；要求資料完全不離開裝置的人；需要台語輸入的人。</p>
+        <p><strong>要知道的限制：</strong>需 iOS 18 以上。官方描述明確表示沒有雲端 AI 預測，需要這類功能者應選其他鍵盤。外觀進階功能需 Supporter 訂閱（每月 NT$30 或每年 NT$290）。</p>
+        <p>來源：<a href="https://apps.apple.com/tw/app/id6761426494" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_panda','apps.apple.com')">胖打注音台灣 App Store</a></p>
+      </div>
+
+      <div class="option-card">
+        <h3 id="superzhuyin">超注音</h3>
+        <p>核心是「注音縮寫」輸入：輸入開頭注音符號再加上其他任意符號，聲調可作為過濾與分隔。另有智慧鄰近修正、智慧聯想、自建詞彙、常用短語，以及包含全台縣市鄉鎮村里與街道名的詞庫。</p>
+        <p><strong>適合：</strong>已經習慣縮寫輸入、或想要語音輸入引擎可選的人。</p>
+        <p><strong>要知道的限制：</strong>為付費下載 NT$150（非免費試用制）。語音功能之一使用 OpenAI Whisper，官方頁面未整體說明離線能力。需 iOS 15.6 以上。</p>
+        <p>來源：<a href="https://apps.apple.com/tw/app/id983145797" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_superzhuyin','apps.apple.com')">超注音台灣 App Store</a></p>
+      </div>
+
+      <div class="option-card">
+        <h3 id="urkeyboard">UrKeyboard</h3>
+        <p>一個 App 內含蝦米、注音、倉頡、大易、行列、拼音等多種輸入法，注音與拼音支援連續輸入模式。另有社群主題商店、5 種鍵盤佈局、15 種按鍵音效與剪貼簿面板。</p>
+        <p><strong>適合：</strong>同時使用多種中文輸入法、或很在意鍵盤外觀自訂的人。</p>
+        <p><strong>要知道的限制：</strong>為付費下載 NT$120，雲端同步與主題編輯器另需 Pro 訂閱。官方載明「允許完整取用」是為了雲端同步、主題商店與剪貼簿等網路功能。官方頁面未說明 AI 或語音功能。需 iOS 16 以上。</p>
+        <p>來源：<a href="https://apps.apple.com/tw/app/id898188878" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_urkeyboard','apps.apple.com')">UrKeyboard 台灣 App Store</a></p>
+      </div>
+
+      <h2>第三方鍵盤與「允許完全取用」安全嗎？</h2>
+      <p>簡短版：這個開關是所有第三方鍵盤共用的系統權限，iOS 的警告文字對每一款鍵盤都一樣，不是針對特定 App 的風險評估。關閉時鍵盤無法連網；打開後才能使用雲端同步、翻譯、AI 等需要連線的功能。要不要打開，取決於你要不要用那些功能。</p>
+      <p>另外，iOS 在密碼欄位會暫時改用系統鍵盤，第三方鍵盤在這種欄位本來就取不到內容。</p>
+      <p>完整說明（含 Apple 開發者文件的權限清單、如何開關、以及判斷鍵盤是否值得信任的檢查項目）請見<a href="/guides/full-access/">「允許完全取用」是什麼？安全嗎？</a>；Keyly 自身的資料處理方式見<a href="/privacy/">隱私權政策</a>。</p>
+
+      <h2>如何在 iPhone 新增或切換第三方鍵盤</h2>
+      <ol>
+        <li>先從 App Store 安裝該鍵盤 App。</li>
+        <li>開啟「設定」→「一般」→「鍵盤」→「鍵盤」。</li>
+        <li>點「加入新的鍵盤…」，在第三方鍵盤區段選擇剛安裝的鍵盤。</li>
+        <li>若該鍵盤的連網功能需要，再回到同一畫面點進該鍵盤，開啟「允許完全取用」。</li>
+        <li>打字時點鍵盤上的地球圖示即可切換輸入法。</li>
+      </ol>
+      <p>Apple 的官方步驟說明：<a href="https://support.apple.com/zh-tw/guide/iphone/iph73b71eb/ios" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_keyboard_guide','support.apple.com')">在 iPhone 上加入或更改鍵盤</a>。</p>
+
+      <h2>常見問題</h2>
+
+      <details class="faq">
+        <summary>iPhone 第三方鍵盤可以取代內建鍵盤嗎？</summary>
+        <div class="faq-body">
+          <p>可以在絕大多數輸入場合改用第三方鍵盤，但無法完全取代。內建鍵盤不會被移除，而且在安全文字輸入欄位（例如密碼欄）系統會自動切回內建鍵盤。實務上是兩者並存、用地球鍵切換。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>沒有網路時哪些功能還能使用？</summary>
+        <div class="faq-body">
+          <p>要看各家官方怎麼說，不能一概而論。胖打注音的官方描述明載鍵盤完全離線運作、不連網。Keyly 的官方描述說未連網時仍提供離線注音輸入，AI 潤飾則屬於連網服務。Gboard、超注音、UrKeyboard 的官方頁面未整體說明離線能力，但都載明有需要連網的功能（分別是搜尋與語音、Whisper 語音、雲端同步與主題商店）。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>第三方鍵盤在密碼欄位為什麼會切回系統鍵盤？</summary>
+        <div class="faq-body">
+          <p>這是 iOS 的設計。Apple 開發者文件說明，當使用者點入安全文字輸入欄位（<code>secureTextEntry</code>）時，系統會暫時以系統鍵盤取代自訂鍵盤，離開該欄位後自訂鍵盤才恢復。也就是說，第三方鍵盤在密碼欄位本來就無法取得輸入內容。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>AI 注音鍵盤與一般注音鍵盤差在哪裡？</summary>
+        <div class="faq-body">
+          <p>一般注音鍵盤處理的是「把注音變成正確的字」——選字、斷詞、詞庫、自動學習。AI 鍵盤是在那之上多一層：字打完之後，再對整段文字做潤飾、改寫、語氣調整或翻譯。兩者解決的不是同一個問題，所以「選字準不準」和「有沒有 AI」要分開評估。需要注意的是，這類 AI 功能多半需要連網，也就需要開啟「允許完全取用」。</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-box">
+      <h2>選哪一款，取決於你的需求</h2>
+      <p>如果你想要的是「注音打完直接做 AI 潤飾與翻譯」這條路線，可以免費下載 Keyly 試試；核心注音引擎不需要開啟「允許完全取用」也能完整使用。</p>
+      <a class="cta-btn" href="https://apps.apple.com/app/id6759639348" target="_blank" rel="noopener noreferrer" onclick="trackDownload('guide_zhuyin_comparison_bottom')">在 App Store 下載 Keyly</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-brand">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="fks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="fka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#fks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#fka)"/>
+        </svg>
+        Keyly
+      </a>
+      <div class="footer-links">
+        <a href="/guides/iphone-zhuyin-keyboard/">iPhone 注音輸入法比較</a>
+        <span class="sep">|</span>
+        <a href="/guides/full-access/">允許完全取用說明</a>
+        <span class="sep">|</span>
+        <a href="/privacy/">隱私權政策</a>
+        <span class="sep">|</span>
+        <a href="/terms/">服務條款</a>
+        <span class="sep">|</span>
+        <a href="/subscriptions/">自動續訂說明</a>
+        <span class="sep">|</span>
+        <a href="mailto:support@keylyapp.com">技術支援</a>
+      </div>
+      <p class="footer-copy">© 2026 Keyly 由台灣團隊專為高效溝通而生。</p>
+    </div>
+  </footer>
+
+</body>
+</html>
