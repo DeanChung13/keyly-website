@@ -58,7 +58,7 @@
 | 排名 | 任務 | 新／舊 | 價值判定 | 現在怎麼做 |
 |---:|---|---|---|---|
 | 1 | Apple Intelligence 與第三方 AI 鍵盤決策頁 | 新 | 當期需求與產品功能高度重疊，能承接書寫工具、繁中、支援機型及 AI 鍵盤意圖 | 已完成 [MVP 內容 brief](content-brief-apple-intelligence-vs-ai-keyboard.md)，頁面已實作，等待 Review／部署 |
-| 2 | 免費 App Store ASO 優化 | 舊 | 對下載轉換很重要，但不能直接解決網站日曝光目標 | 只用 fastlane 與 App Store Connect 既有資料，處理高信心 metadata／素材問題 |
+| 2 | 免費 App Store ASO 優化 | 舊 | 已唯讀取得 1.1.0 正式 metadata；發現關鍵字相關性、商標、新功能缺詞及支援網址問題 | 依 [免費 ASO 稽核](../aso/2026-08-11-app-store-metadata-audit.md) 先完成產品事實確認，再準備一輪 metadata 測試 |
 | 3 | iPhone 第三方鍵盤安裝與切換 Guide | 新 | 搜尋意圖清楚且非常靠近安裝，但流量面可能較窄 | 第 1 項上線後再做，不與 full-access 重複 |
 | 4 | 現有 Guide 的 GSC／GA4 成效驗證 | 舊 | 是必要的決策基礎，但監測本身不會創造曝光 | 第 7、14 天確認索引與曝光；滿 28 天才做內容判定 |
 | 5 | 首頁與 Guide 的下載轉換優化 | 舊 | 可改善既有流量價值，但目前樣本量不足 | 等 GA4 累積有效閱讀與下載事件後再判斷，不先改版 |
