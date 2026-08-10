@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPhone 鍵盤震動怎麼開？觸覺回饋沒反應的檢查方法 — Keyly</title>
+  <meta name="description" content="iPhone 打字沒有震動時，先開啟鍵盤觸覺回饋，再檢查輔助使用的震動設定；另說明第三方鍵盤與允許完全取用的差異。">
+  <link rel="canonical" href="https://keylyapp.com/guides/iphone-keyboard-haptics/">
+  <link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/guides/iphone-keyboard-haptics/">
+  <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/guides/iphone-keyboard-haptics/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='20' fill='%230D142E' /%3E%3Cdefs%3E%3ClinearGradient id='k-stem' x1='30' y1='20' x2='30' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2338C7BA' /%3E%3Cstop offset='1' stop-color='%238E61D9' /%3E%3C/linearGradient%3E%3ClinearGradient id='k-arm' x1='75' y1='20' x2='40' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E6EBF2' /%3E%3Cstop offset='1' stop-color='%23BFCDE0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='25' y='20' width='16' height='60' fill='url(%23k-stem)' /%3E%3Cpath d='M75 20L41 50L75 80H55L31 50L55 20H75Z' fill='url(%23k-arm)' /%3E%3C/svg%3E">
+  <meta property="og:title" content="iPhone 鍵盤震動怎麼開？觸覺回饋沒反應的檢查方法">
+  <meta property="og:description" content="iPhone 打字沒有震動時，先開啟鍵盤觸覺回饋，再檢查輔助使用的震動設定；另說明第三方鍵盤與允許完全取用的差異。">
+  <meta property="og:url" content="https://keylyapp.com/guides/iphone-keyboard-haptics/">
+  <meta property="og:image" content="https://keylyapp.com/assets/images/og-banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "iPhone 鍵盤震動怎麼開？沒反應先檢查這些設定",
+    "description": "iPhone 打字沒有震動時，先開啟鍵盤觸覺回饋，再檢查輔助使用的震動設定；另說明第三方鍵盤與允許完全取用的差異。",
+    "inLanguage": "zh-Hant-TW",
+    "datePublished": "2026-08-11",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Keyly"
+    }
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (window.location.hostname === 'keylyapp.com' || window.location.hostname === 'www.keylyapp.com') {
+      gtag('js', new Date());
+      gtag('config', 'G-C51YGT0TVX');
+    }
+    function trackDownload(label) {
+      gtag('event', 'download_click', { event_category: 'engagement', event_label: label });
+    }
+    function trackLink(name, destination) {
+      gtag('event', 'link_click', { event_category: 'engagement', event_label: name, destination: destination });
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-page: #F4F7FA;
+      --bg-primary: #0D142E;
+      --brand-cyan: #479ED1;
+      --brand-purple: #8E61D9;
+      --metal-white: #E6EBF2;
+      --metal-gray: #BFCDE0;
+      --text-primary: #0F1726;
+      --text-secondary: #5C708C;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Heiti TC", "Microsoft JhengHei", system-ui, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(191, 205, 224, 0.35);
+    }
+
+    .navbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .navbar-brand svg { border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+
+    .lang-btn {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--metal-gray);
+      border-radius: 999px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .lang-btn:hover { color: var(--brand-cyan); border-color: var(--brand-cyan); }
+
+    .page-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 4rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--brand-cyan); }
+
+    .page-header { margin-bottom: 1.75rem; }
+
+    .page-header h1 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-meta { font-size: 0.85rem; color: var(--text-secondary); }
+
+    .legal-content h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 2.75rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--metal-gray);
+    }
+
+    .legal-content h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 1.75rem 0 0.5rem;
+    }
+
+    .legal-content p { color: var(--text-secondary); margin-bottom: 0.875rem; }
+
+    .legal-content ul, .legal-content ol {
+      margin: 0.5rem 0 0.875rem 1.25rem;
+      color: var(--text-secondary);
+    }
+
+    .legal-content li { margin-bottom: 0.4rem; }
+    .legal-content strong { color: var(--text-primary); font-weight: 700; }
+
+    .legal-content a { color: var(--brand-cyan); text-decoration: none; }
+    .legal-content a:hover { text-decoration: underline; }
+
+    .summary-box {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 14px;
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .summary-box ol { margin: 0.5rem 0 0.5rem 1.2rem; }
+    .summary-box p:last-child { margin-bottom: 0; }
+
+    .note {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-left: 4px solid var(--brand-cyan);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      margin: 1.25rem 0;
+      font-size: 0.92rem;
+    }
+
+    .note p:last-child { margin-bottom: 0; }
+
+    .observed {
+      background: #F4F7FA;
+      border: 1px dashed var(--metal-gray);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      margin: 1.25rem 0;
+    }
+
+    .observed .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--brand-purple);
+      border: 1px solid var(--brand-purple);
+      border-radius: 999px;
+      padding: 0.1rem 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .observed p:last-child { margin-bottom: 0; }
+
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid rgba(191, 205, 224, 0.7);
+      border-radius: 12px;
+      background: #fff;
+      margin: 1rem 0 1.5rem;
+    }
+
+    table.triage {
+      border-collapse: collapse;
+      min-width: 520px;
+      width: 100%;
+      font-size: 0.9rem;
+    }
+
+    table.triage th, table.triage td {
+      border-bottom: 1px solid rgba(191, 205, 224, 0.5);
+      padding: 0.7rem 0.9rem;
+      text-align: left;
+      vertical-align: top;
+      color: var(--text-secondary);
+    }
+
+    table.triage thead th {
+      background: var(--metal-white);
+      color: var(--text-primary);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    table.triage tr:last-child td { border-bottom: 0; }
+
+    details.faq {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+
+    details.faq > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.9rem 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    details.faq > summary::-webkit-details-marker { display: none; }
+    details.faq > summary::after { content: " ＋"; color: var(--brand-cyan); }
+    details.faq[open] > summary::after { content: " －"; }
+    details.faq .faq-body { padding: 0 1.15rem 1.1rem; }
+    details.faq .faq-body p:last-child { margin-bottom: 0; }
+
+    .cta-box {
+      background: var(--bg-primary);
+      color: var(--metal-white);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem;
+      margin: 3rem 0 0;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      border: 0;
+      color: var(--metal-white);
+      margin: 0 0 0.5rem;
+      padding: 0;
+      font-size: 1.15rem;
+    }
+
+    .cta-box p { color: var(--metal-gray); margin-bottom: 1.1rem; }
+    .cta-box a.inline { color: var(--metal-white); text-decoration: underline; }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--brand-cyan);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+    }
+
+    .cta-btn:hover { background: var(--brand-purple); }
+
+    .footer {
+      background: var(--bg-page);
+      border-top: 1px solid rgba(191, 205, 224, 0.4);
+      padding: 2.5rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .footer-brand svg { border-radius: 6px; }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--brand-cyan); }
+    .footer-links .sep { color: var(--metal-gray); }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--metal-gray);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="ks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="ka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#ks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#ka)"/>
+        </svg>
+        Keyly
+      </a>
+      <a href="/" class="lang-btn">回首頁</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+    <p class="breadcrumb"><a href="/">Keyly</a> ／ 使用指南 ／ 鍵盤震動與觸覺回饋</p>
+
+    <div class="page-header">
+      <h1>iPhone 鍵盤震動怎麼開？沒反應先檢查這些設定</h1>
+      <p class="page-meta">更新日期：2026 年 8 月 11 日</p>
+    </div>
+
+    <div class="legal-content">
+      <div class="summary-box">
+        <p><strong>30 秒答案</strong>——Apple 內建鍵盤的震動開關在這裡：</p>
+        <ol>
+          <li>打開「設定」App。</li>
+          <li>前往「聲音與觸覺回饋」→「鍵盤回饋」。</li>
+          <li>開啟或關閉「觸覺回饋」。</li>
+        </ol>
+        <p>Apple 說明此功能適用於 <strong>iOS 16 或以上版本</strong>。同一個畫面裡的「聲音」是另一個獨立開關。</p>
+      </div>
+
+      <p>如果照上面設定完還是沒有震動，往下看第二段的官方排查；如果你用的是第三方鍵盤，狀況會不太一樣，直接看第四段。</p>
+
+      <h2>什麼是鍵盤觸覺回饋</h2>
+      <p>鍵盤觸覺回饋就是你按下每個按鍵時，手指感受到的那一下輕微觸感。很多人搜尋時會叫它「打字震動」或「鍵盤震動」，指的是同一件事。</p>
+      <p>要注意的是，「鍵盤回饋」設定裡的<strong>「聲音」與「觸覺回饋」是兩個獨立開關</strong>。只開聲音不會有震動，只開觸覺回饋也不會有打字聲。想要安靜但有觸感，就把聲音關掉、觸覺回饋留著。</p>
+
+      <h2>已經開啟，為什麼打字仍然沒有震動</h2>
+      <p>Apple 對這個情況有明確說明：<strong>如果你開啟了鍵盤觸覺回饋，但打字時感覺不到，請確認已在「設定」→「輔助使用」→「觸控」中開啟「震動模式」。</strong></p>
+      <p>這是另一項需要檢查的設定——「震動模式」是系統層級的總開關，它關著的時候，鍵盤那一層開了也沒用。</p>
+      <p>如果兩邊都確認開啟仍然沒有反應，再做兩件事縮小範圍：</p>
+      <ul>
+        <li><strong>換一個文字欄位交叉測試。</strong>在「備忘錄」打幾個字，再回到原本沒反應的 App 打同樣的字。只有單一 App 沒反應，問題比較可能在那個 App，而不是系統設定。</li>
+        <li><strong>確認你正在用的是哪一套鍵盤。</strong>前述 Apple 鍵盤回饋路徑可先用來檢查系統鍵盤；第三方鍵盤可能還有自己的設定與權限條件。打字時看一下鍵盤長相，或按地球鍵切換一次就知道你正在用哪一套。</li>
+      </ul>
+
+      <h2>鍵盤震動會不會耗電</h2>
+      <p>Apple 的說法是保守的：<strong>開啟鍵盤觸覺回饋「可能」會影響 iPhone 的電池續航力。</strong></p>
+      <p>官方沒有提供任何具體的耗電幅度，本文也不會給你一個百分比——沒有量測依據的數字沒有意義。實務上這是個人偏好問題：喜歡打字有觸感就開著，覺得沒必要就關掉，隨時可以改回來。</p>
+      <p>來源：<a href="https://support.apple.com/zh-tw/102463" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_keyboard_haptics','support.apple.com')">Apple 支援：更改 iPhone 鍵盤聲音或觸覺回饋</a>（該頁標示發佈日期 2026 年 6 月 1 日）</p>
+
+      <h2>第三方鍵盤為什麼有時沒有震動</h2>
+      <p>如果你裝了第三方注音鍵盤，上面那兩個系統開關不一定能解釋你遇到的狀況。第三方鍵盤<strong>可能有自己的聲音與觸覺設定</strong>，要先在該鍵盤自己的設定裡找一次，不能只看 Apple 內建鍵盤的開關。</p>
+
+      <div class="observed">
+        <span class="tag">裝置實測觀察</span>
+        <p>在 Keyly 的實際裝置測試中，關閉「允許完全取用」後，按鍵觸覺回饋可能無法使用；重新允許後才可恢復。其他第三方鍵盤也可能出現相同狀況，但 Apple 並未在公開文件中說明其原因。</p>
+      </div>
+
+      <p>這段是實測結果，<strong>不是 Apple 公布的系統規則</strong>，也不代表所有第三方鍵盤都必然如此。如果你的第三方鍵盤沒有震動，把「允許完全取用」的狀態列入檢查項目是合理的，但要不要為了震動而開啟這個權限，是你自己的取捨。</p>
+      <p>這個權限實際開放了哪些能力、關閉時鍵盤還能做什麼、以及怎麼判斷一款鍵盤值不值得打開它，我們另外寫了一篇完整說明：<a href="/guides/full-access/" onclick="trackLink('guide_full_access','/guides/full-access/')">「允許完全取用」是什麼？安全嗎？</a>——建議在決定之前先看過。</p>
+
+      <h2>快速判斷表</h2>
+
+      <div class="table-scroll">
+        <table class="triage">
+          <thead>
+            <tr>
+              <th scope="col">情況</th>
+              <th scope="col">優先檢查</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Apple 內建鍵盤完全沒震動</td>
+              <td>「聲音與觸覺回饋」→「鍵盤回饋」→「觸覺回饋」</td>
+            </tr>
+            <tr>
+              <td>已開啟觸覺回饋仍無反應</td>
+              <td>「輔助使用」→「觸控」→「震動模式」</td>
+            </tr>
+            <tr>
+              <td>只有某個 App 沒反應</td>
+              <td>換到備忘錄等其他文字欄位交叉測試</td>
+            </tr>
+            <tr>
+              <td>只有第三方鍵盤沒震動</td>
+              <td>該鍵盤自己的設定，以及「允許完全取用」狀態</td>
+            </tr>
+            <tr>
+              <td>想關掉打字震動</td>
+              <td>關閉「鍵盤回饋」裡的「觸覺回饋」</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>常見問題</h2>
+
+      <details class="faq">
+        <summary>為什麼開啟鍵盤回饋後還是沒有震動？</summary>
+        <div class="faq-body">
+          <p>依 Apple 說明，最常見的原因是「設定」→「輔助使用」→「觸控」裡的「震動模式」沒有開啟。鍵盤那一層的開關要搭配這個系統總開關才會作用。兩邊都確認開啟後仍無反應，就換個 App 的文字欄位交叉測試，先分辨是單一 App 還是整體設定的問題。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>鍵盤震動會很耗電嗎？</summary>
+        <div class="faq-body">
+          <p>Apple 的原文說法是開啟鍵盤觸覺回饋「可能會影響 iPhone 的電池續航力」，沒有給出具體幅度。我們不提供任何未經量測的耗電百分比。這個開關隨時可以關掉，依你自己的偏好決定就好。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>第三方鍵盤一定要允許完全取用才有震動嗎？</summary>
+        <div class="faq-body">
+          <p>不能這樣一概而論。我們能講的是實測結果：在 Keyly 的裝置測試中，關閉「允許完全取用」後按鍵觸覺回饋可能無法使用，重新允許後才恢復；其他第三方鍵盤也可能出現相同狀況。但 <strong>Apple 並未在公開文件中說明其原因</strong>，所以這不是一條可以套用到所有鍵盤的官方規則。你的鍵盤如果沒有震動，可以把這個權限狀態列入檢查，但請先了解<a href="/guides/full-access/" onclick="trackLink('guide_full_access','/guides/full-access/')">這個權限實際開放了什麼</a>再決定。</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-box">
+      <h2>內建鍵盤與第三方鍵盤要分開排查</h2>
+      <p>前述 Apple 鍵盤回饋路徑可先用來檢查系統鍵盤；第三方鍵盤可能還有自己的設定與權限條件。權限的實際範圍見<a class="inline" href="/guides/full-access/" onclick="trackLink('guide_full_access','/guides/full-access/')">「允許完全取用」說明</a>；如果你正在挑第三方注音鍵盤，可以先看<a class="inline" href="/guides/iphone-zhuyin-keyboard/" onclick="trackLink('guide_zhuyin_comparison','/guides/iphone-zhuyin-keyboard/')">各家鍵盤的官方資料比較</a>。</p>
+      <a class="cta-btn" href="https://apps.apple.com/app/id6759639348" target="_blank" rel="noopener noreferrer" onclick="trackDownload('guide_keyboard_haptics_bottom')">在 App Store 下載 Keyly</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-brand">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="fks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="fka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#fks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#fka)"/>
+        </svg>
+        Keyly
+      </a>
+      <div class="footer-links">
+        <a href="/guides/iphone-keyboard-haptics/">鍵盤震動設定</a>
+        <span class="sep">|</span>
+        <a href="/guides/iphone-zhuyin-selection-fixes/">注音選字不準怎麼辦</a>
+        <span class="sep">|</span>
+        <a href="/guides/iphone-zhuyin-keyboard/">iPhone 注音輸入法比較</a>
+        <span class="sep">|</span>
+        <a href="/guides/full-access/">允許完全取用說明</a>
+        <span class="sep">|</span>
+        <a href="/privacy/">隱私權政策</a>
+        <span class="sep">|</span>
+        <a href="mailto:support@keylyapp.com">技術支援</a>
+      </div>
+      <p class="footer-copy">© 2026 Keyly 由台灣團隊專為高效溝通而生。</p>
+    </div>
+  </footer>
+
+</body>
+</html>

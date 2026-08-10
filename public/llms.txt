@@ -14,6 +14,7 @@
 - Guide — iOS "Allow Full Access" explained (Traditional Chinese): https://keylyapp.com/guides/full-access/
 - Guide — iPhone Zhuyin keyboard comparison (Traditional Chinese): https://keylyapp.com/guides/iphone-zhuyin-keyboard/
 - Guide — Fixing inaccurate Zhuyin candidate selection on iPhone (Traditional Chinese): https://keylyapp.com/guides/iphone-zhuyin-selection-fixes/
+- Guide — iPhone keyboard haptics and vibration settings (Traditional Chinese): https://keylyapp.com/guides/iphone-keyboard-haptics/
 - Privacy Policy (Traditional Chinese): https://keylyapp.com/privacy/
 - Privacy Policy (English): https://keylyapp.com/privacy/en/
 - Terms of Service (Traditional Chinese): https://keylyapp.com/terms/

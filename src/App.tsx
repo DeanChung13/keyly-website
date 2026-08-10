@@ -394,6 +394,8 @@ function Footer() {
             <span className="font-bold text-text-primary">Keyly</span>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-3 text-sm text-text-secondary">
+            <a href="/guides/iphone-keyboard-haptics/" onClick={() => trackLinkClick('guide_keyboard_haptics', '/guides/iphone-keyboard-haptics/')} className="hover:text-brand-cyan transition-colors">鍵盤震動設定</a>
+            <span className="text-metal-gray/50">|</span>
             <a href="/guides/iphone-zhuyin-selection-fixes/" onClick={() => trackLinkClick('guide_selection_fixes', '/guides/iphone-zhuyin-selection-fixes/')} className="hover:text-brand-cyan transition-colors">注音選字不準怎麼辦</a>
             <span className="text-metal-gray/50">|</span>
             <a href="/guides/iphone-zhuyin-keyboard/" onClick={() => trackLinkClick('guide_zhuyin_comparison', '/guides/iphone-zhuyin-keyboard/')} className="hover:text-brand-cyan transition-colors">iPhone 注音輸入法比較</a>
