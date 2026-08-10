@@ -626,6 +626,8 @@ function Footer$1() {
         /* @__PURE__ */ jsx("span", { className: "font-bold text-text-primary", children: "Keyly" })
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-wrap justify-center items-center gap-3 text-sm text-text-secondary", children: [
+        /* @__PURE__ */ jsx("a", { href: "/guides/iphone-zhuyin-selection-fixes/", onClick: () => trackLinkClick$1("guide_selection_fixes", "/guides/iphone-zhuyin-selection-fixes/"), className: "hover:text-brand-cyan transition-colors", children: "注音選字不準怎麼辦" }),
+        /* @__PURE__ */ jsx("span", { className: "text-metal-gray/50", children: "|" }),
         /* @__PURE__ */ jsx("a", { href: "/guides/iphone-zhuyin-keyboard/", onClick: () => trackLinkClick$1("guide_zhuyin_comparison", "/guides/iphone-zhuyin-keyboard/"), className: "hover:text-brand-cyan transition-colors", children: "iPhone 注音輸入法比較" }),
         /* @__PURE__ */ jsx("span", { className: "text-metal-gray/50", children: "|" }),
         /* @__PURE__ */ jsx("a", { href: "/guides/full-access/", onClick: () => trackLinkClick$1("guide_full_access", "/guides/full-access/"), className: "hover:text-brand-cyan transition-colors", children: "允許完全取用說明" }),
