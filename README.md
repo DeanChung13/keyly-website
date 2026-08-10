@@ -83,6 +83,7 @@ git push origin main
 - [搜尋需求與 SERP 機會矩陣](docs/seo/2026-08-11-search-opportunity-matrix.md)
 - [內容 Brief：首頁 iPhone 注音主題群優化](docs/seo/content-brief-homepage-iphone-zhuyin.md)
 - [優化 Brief：既有 iPhone 注音鍵盤推薦比較頁](docs/seo/content-brief-iphone-zhuyin-keyboard-recommendation.md)
+- [優化 Brief：既有 iPhone 鍵盤聲音與震動頁](docs/seo/content-brief-iphone-keyboard-sound-haptics.md)
 - [外部曝光與自然連結機會研究](docs/seo/2026-08-11-earned-media-opportunities.md)
 - [內容 Brief：2026 iPhone 注音輸入法推薦與比較](docs/seo/content-brief-iphone-zhuyin-keyboard.md)
 - [內容 Brief：iPhone 注音選字不準的檢查與改善方法](docs/seo/content-brief-iphone-zhuyin-selection-fixes.md)
