@@ -91,6 +91,7 @@ git push origin main
 - [內容 Brief：Apple Intelligence 書寫工具與 AI 鍵盤怎麼選](docs/seo/content-brief-apple-intelligence-vs-ai-keyboard.md)
 - [關鍵字機會研究 — 第二輪](docs/seo/2026-08-11-keyword-opportunity-research-round-2.md)
 - [內容 Brief：iPhone 雙拼、全拼與小鶴雙拼輸入](docs/seo/content-brief-iphone-double-pinyin.md)
+- [內容 Brief：Guides 內容中心與 Footer 資訊架構整理](docs/seo/content-brief-guides-hub-and-footer.md)
 - [SEO 修正方案](docs/superpowers/plans/2026-08-09-seo-audit-fixes.md)
 
 ### ASO

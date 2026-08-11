@@ -394,17 +394,7 @@ function Footer() {
             <span className="font-bold text-text-primary">Keyly</span>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-3 text-sm text-text-secondary">
-            <a href="/guides/iphone-double-pinyin/" onClick={() => trackLinkClick('guide_double_pinyin', '/guides/iphone-double-pinyin/')} className="hover:text-brand-cyan transition-colors">iPhone 雙拼輸入</a>
-            <span className="text-metal-gray/50">|</span>
-            <a href="/guides/apple-intelligence-vs-ai-keyboard/" onClick={() => trackLinkClick('guide_apple_intelligence', '/guides/apple-intelligence-vs-ai-keyboard/')} className="hover:text-brand-cyan transition-colors">書寫工具與 AI 鍵盤</a>
-            <span className="text-metal-gray/50">|</span>
-            <a href="/guides/iphone-keyboard-haptics/" onClick={() => trackLinkClick('guide_keyboard_haptics', '/guides/iphone-keyboard-haptics/')} className="hover:text-brand-cyan transition-colors">鍵盤震動設定</a>
-            <span className="text-metal-gray/50">|</span>
-            <a href="/guides/iphone-zhuyin-selection-fixes/" onClick={() => trackLinkClick('guide_selection_fixes', '/guides/iphone-zhuyin-selection-fixes/')} className="hover:text-brand-cyan transition-colors">注音選字不準怎麼辦</a>
-            <span className="text-metal-gray/50">|</span>
-            <a href="/guides/iphone-zhuyin-keyboard/" onClick={() => trackLinkClick('guide_zhuyin_comparison', '/guides/iphone-zhuyin-keyboard/')} className="hover:text-brand-cyan transition-colors">iPhone 注音輸入法比較</a>
-            <span className="text-metal-gray/50">|</span>
-            <a href="/guides/full-access/" onClick={() => trackLinkClick('guide_full_access', '/guides/full-access/')} className="hover:text-brand-cyan transition-colors">允許完全取用說明</a>
+            <a href="/guides/" onClick={() => trackLinkClick('guides_hub', '/guides/')} className="hover:text-brand-cyan transition-colors">使用指南</a>
             <span className="text-metal-gray/50">|</span>
             <a href="/privacy/" onClick={() => trackLinkClick('privacy_policy', '/privacy/')} className="hover:text-brand-cyan transition-colors">隱私權政策</a>
             <span className="text-metal-gray/50">|</span>

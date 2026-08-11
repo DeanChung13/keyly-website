@@ -14,6 +14,7 @@ The public website content is bilingual:
 
 - Home (Traditional Chinese): https://keylyapp.com/
 - Home (English): https://keylyapp.com/en/
+- Guides hub — iPhone keyboard usage guides (Traditional Chinese): https://keylyapp.com/guides/
 - Guide — iOS "Allow Full Access" explained (Traditional Chinese): https://keylyapp.com/guides/full-access/
 - Guide — iPhone Zhuyin keyboard comparison (Traditional Chinese): https://keylyapp.com/guides/iphone-zhuyin-keyboard/
 - Guide — Fixing inaccurate Zhuyin candidate selection on iPhone (Traditional Chinese): https://keylyapp.com/guides/iphone-zhuyin-selection-fixes/

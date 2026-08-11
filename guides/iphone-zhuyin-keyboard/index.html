@@ -44,7 +44,9 @@
       gtag('event', 'download_click', { event_category: 'engagement', event_label: label });
     }
     function trackLink(name, destination) {
-      gtag('event', 'link_click', { event_category: 'engagement', event_label: name, destination: destination });
+      if (window.location.hostname === 'keylyapp.com' || window.location.hostname === 'www.keylyapp.com') {
+        gtag('event', 'link_click', { event_category: 'engagement', event_label: name, destination: destination });
+      }
     }
   </script>
   <style>
@@ -649,17 +651,11 @@
         Keyly
       </a>
       <div class="footer-links">
-        <a href="/guides/iphone-zhuyin-selection-fixes/">注音選字不準怎麼辦</a>
+        <a href="/guides/" onclick="trackLink('guides_hub','/guides/')">所有使用指南</a>
         <span class="sep">|</span>
-        <a href="/guides/iphone-zhuyin-keyboard/">iPhone 注音輸入法比較</a>
-        <span class="sep">|</span>
-        <a href="/guides/full-access/">允許完全取用說明</a>
+        <a href="/">回首頁</a>
         <span class="sep">|</span>
         <a href="/privacy/">隱私權政策</a>
-        <span class="sep">|</span>
-        <a href="/terms/">服務條款</a>
-        <span class="sep">|</span>
-        <a href="/subscriptions/">自動續訂說明</a>
         <span class="sep">|</span>
         <a href="mailto:support@keylyapp.com">技術支援</a>
       </div>
