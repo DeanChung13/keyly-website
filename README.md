@@ -89,6 +89,8 @@ git push origin main
 - [內容 Brief：iPhone 注音選字不準的檢查與改善方法](docs/seo/content-brief-iphone-zhuyin-selection-fixes.md)
 - [內容 Brief：iPhone 鍵盤震動與觸覺回饋設定](docs/seo/content-brief-iphone-keyboard-haptics.md)
 - [內容 Brief：Apple Intelligence 書寫工具與 AI 鍵盤怎麼選](docs/seo/content-brief-apple-intelligence-vs-ai-keyboard.md)
+- [關鍵字機會研究 — 第二輪](docs/seo/2026-08-11-keyword-opportunity-research-round-2.md)
+- [內容 Brief：iPhone 雙拼、全拼與小鶴雙拼輸入](docs/seo/content-brief-iphone-double-pinyin.md)
 - [SEO 修正方案](docs/superpowers/plans/2026-08-09-seo-audit-fixes.md)
 
 ### ASO
