@@ -19,6 +19,7 @@ The public website content is bilingual:
 - Guide — Fixing inaccurate Zhuyin candidate selection on iPhone (Traditional Chinese): https://keylyapp.com/guides/iphone-zhuyin-selection-fixes/
 - Guide — iPhone keyboard haptics and vibration settings (Traditional Chinese): https://keylyapp.com/guides/iphone-keyboard-haptics/
 - Guide — Apple Intelligence Writing Tools vs a third-party AI keyboard (Traditional Chinese): https://keylyapp.com/guides/apple-intelligence-vs-ai-keyboard/
+- Guide — Double Pinyin (Shuangpin) input on iPhone (Traditional Chinese): https://keylyapp.com/guides/iphone-double-pinyin/
 - Privacy Policy (Traditional Chinese): https://keylyapp.com/privacy/
 - Privacy Policy (English): https://keylyapp.com/privacy/en/
 - Terms of Service (Traditional Chinese): https://keylyapp.com/terms/
