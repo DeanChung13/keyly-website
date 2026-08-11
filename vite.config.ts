@@ -21,6 +21,7 @@ export default defineConfig({
           guidesSelectionFixes: path.resolve(__dirname, 'guides/iphone-zhuyin-selection-fixes/index.html'),
           guidesKeyboardHaptics: path.resolve(__dirname, 'guides/iphone-keyboard-haptics/index.html'),
           guidesAppleIntelligence: path.resolve(__dirname, 'guides/apple-intelligence-vs-ai-keyboard/index.html'),
+          guidesDoublePinyin: path.resolve(__dirname, 'guides/iphone-double-pinyin/index.html'),
           notFound: path.resolve(__dirname, '404.html'),
         },
       },

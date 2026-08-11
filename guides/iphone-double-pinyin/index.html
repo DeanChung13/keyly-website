@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPhone 雙拼輸入怎麼用？全拼、微軟雙拼與小鶴雙拼說明</title>
+  <meta name="description" content="說明全拼與雙拼的差別、微軟雙拼與小鶴雙拼的鍵位邏輯，以及在 iPhone 上使用這些輸入方案的方式與可用選擇。">
+  <link rel="canonical" href="https://keylyapp.com/guides/iphone-double-pinyin/">
+  <link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/guides/iphone-double-pinyin/">
+  <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/guides/iphone-double-pinyin/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='20' fill='%230D142E' /%3E%3Cdefs%3E%3ClinearGradient id='k-stem' x1='30' y1='20' x2='30' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2338C7BA' /%3E%3Cstop offset='1' stop-color='%238E61D9' /%3E%3C/linearGradient%3E%3ClinearGradient id='k-arm' x1='75' y1='20' x2='40' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E6EBF2' /%3E%3Cstop offset='1' stop-color='%23BFCDE0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='25' y='20' width='16' height='60' fill='url(%23k-stem)' /%3E%3Cpath d='M75 20L41 50L75 80H55L31 50L55 20H75Z' fill='url(%23k-arm)' /%3E%3C/svg%3E">
+  <meta property="og:title" content="iPhone 雙拼輸入怎麼用？全拼、微軟雙拼與小鶴雙拼說明">
+  <meta property="og:description" content="說明全拼與雙拼的差別、微軟雙拼與小鶴雙拼的鍵位邏輯，以及在 iPhone 上使用這些輸入方案的方式與可用選擇。">
+  <meta property="og:url" content="https://keylyapp.com/guides/iphone-double-pinyin/">
+  <meta property="og:image" content="https://keylyapp.com/assets/images/og-banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "iPhone 雙拼輸入怎麼用？全拼、微軟雙拼與小鶴雙拼",
+    "description": "說明全拼與雙拼的差別、微軟雙拼與小鶴雙拼的鍵位邏輯，以及在 iPhone 上使用這些輸入方案的方式與可用選擇。",
+    "inLanguage": "zh-Hant-TW",
+    "datePublished": "2026-08-11",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Keyly"
+    }
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (window.location.hostname === 'keylyapp.com' || window.location.hostname === 'www.keylyapp.com') {
+      gtag('js', new Date());
+      gtag('config', 'G-C51YGT0TVX');
+    }
+    function trackDownload(label) {
+      gtag('event', 'download_click', { event_category: 'engagement', event_label: label });
+    }
+    function trackLink(name, destination) {
+      gtag('event', 'link_click', { event_category: 'engagement', event_label: name, destination: destination });
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-page: #F4F7FA;
+      --bg-primary: #0D142E;
+      --brand-cyan: #479ED1;
+      --brand-purple: #8E61D9;
+      --metal-white: #E6EBF2;
+      --metal-gray: #BFCDE0;
+      --text-primary: #0F1726;
+      --text-secondary: #5C708C;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Heiti TC", "Microsoft JhengHei", system-ui, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(191, 205, 224, 0.35);
+    }
+
+    .navbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .navbar-brand svg { border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+
+    .lang-btn {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--metal-gray);
+      border-radius: 999px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .lang-btn:hover { color: var(--brand-cyan); border-color: var(--brand-cyan); }
+
+    .page-wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 4rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--brand-cyan); }
+
+    .page-header { margin-bottom: 1.5rem; }
+
+    .page-header h1 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-meta { font-size: 0.85rem; color: var(--text-secondary); }
+
+    .disclosure {
+      background: #FFF8E7;
+      border: 1px solid #E8D9A8;
+      border-radius: 12px;
+      padding: 0.9rem 1.1rem;
+      font-size: 0.9rem;
+      color: #6B5A2B;
+      margin-bottom: 2rem;
+    }
+
+    .legal-content h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 2.75rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--metal-gray);
+    }
+
+    .legal-content h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 1.75rem 0 0.5rem;
+    }
+
+    .legal-content p { color: var(--text-secondary); margin-bottom: 0.875rem; }
+
+    .legal-content ul, .legal-content ol {
+      margin: 0.5rem 0 0.875rem 1.25rem;
+      color: var(--text-secondary);
+    }
+
+    .legal-content li { margin-bottom: 0.4rem; }
+    .legal-content strong { color: var(--text-primary); font-weight: 700; }
+
+    .legal-content code {
+      font-family: ui-monospace, monospace;
+      font-size: 0.875em;
+      background: var(--metal-white);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      color: var(--text-primary);
+    }
+
+    .legal-content a { color: var(--brand-cyan); text-decoration: none; }
+    .legal-content a:hover { text-decoration: underline; }
+
+    .summary-box {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 14px;
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .summary-box ol { margin: 0.5rem 0 0.5rem 1.2rem; }
+    .summary-box p:last-child { margin-bottom: 0; }
+
+    .note {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-left: 4px solid var(--brand-cyan);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      margin: 1.25rem 0;
+      font-size: 0.92rem;
+    }
+
+    .note p:last-child { margin-bottom: 0; }
+
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid rgba(191, 205, 224, 0.7);
+      border-radius: 12px;
+      background: #fff;
+      margin: 1rem 0 0.5rem;
+    }
+
+    table.compare {
+      border-collapse: collapse;
+      min-width: 720px;
+      width: 100%;
+      font-size: 0.875rem;
+    }
+
+    table.compare th, table.compare td {
+      border-bottom: 1px solid rgba(191, 205, 224, 0.5);
+      border-right: 1px solid rgba(191, 205, 224, 0.35);
+      padding: 0.7rem 0.85rem;
+      text-align: left;
+      vertical-align: top;
+      color: var(--text-secondary);
+    }
+
+    table.compare thead th {
+      background: var(--metal-white);
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    table.compare th[scope="row"] {
+      background: #fff;
+      color: var(--text-primary);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    table.compare tr:last-child th, table.compare tr:last-child td { border-bottom: 0; }
+
+    .table-hint { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
+
+    details.faq {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+
+    details.faq > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.9rem 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    details.faq > summary::-webkit-details-marker { display: none; }
+    details.faq > summary::after { content: " ＋"; color: var(--brand-cyan); }
+    details.faq[open] > summary::after { content: " －"; }
+    details.faq .faq-body { padding: 0 1.15rem 1.1rem; }
+    details.faq .faq-body p:last-child { margin-bottom: 0; }
+
+    .cta-box {
+      background: var(--bg-primary);
+      color: var(--metal-white);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem;
+      margin: 3rem 0 0;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      border: 0;
+      color: var(--metal-white);
+      margin: 0 0 0.5rem;
+      padding: 0;
+      font-size: 1.15rem;
+    }
+
+    .cta-box p { color: var(--metal-gray); margin-bottom: 1.1rem; }
+    .cta-box a.inline { color: var(--metal-white); text-decoration: underline; }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--brand-cyan);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+    }
+
+    .cta-btn:hover { background: var(--brand-purple); }
+
+    .footer {
+      background: var(--bg-page);
+      border-top: 1px solid rgba(191, 205, 224, 0.4);
+      padding: 2.5rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .footer-brand svg { border-radius: 6px; }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--brand-cyan); }
+    .footer-links .sep { color: var(--metal-gray); }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--metal-gray);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="ks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="ka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#ks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#ka)"/>
+        </svg>
+        Keyly
+      </a>
+      <a href="/" class="lang-btn">回首頁</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+    <p class="breadcrumb"><a href="/">Keyly</a> ／ 使用指南 ／ iPhone 雙拼輸入</p>
+
+    <div class="page-header">
+      <h1>iPhone 雙拼輸入怎麼用？全拼、微軟雙拼與小鶴雙拼</h1>
+      <p class="page-meta">資料查核日期：2026 年 8 月 11 日</p>
+    </div>
+
+    <p class="disclosure"><strong>利益揭露：</strong>本文由 Keyly 團隊製作，Keyly 是文中提到的其中一款 iOS 鍵盤。其他 App 的資訊一律引用其台灣 App Store 官方描述，Apple 的說法一律引用 Apple 官方支援文件；官方沒有說明的項目一律標示為「官方頁面未說明」。本文<strong>不主張雙拼優於注音</strong>，也不主張 Keyly 的實作優於其他 App。</p>
+
+    <div class="legal-content">
+      <h2>30 秒快速答案</h2>
+
+      <div class="summary-box">
+        <ol>
+          <li><strong>雙拼是一種拼音輸入方式</strong>：聲母與韻母各對應一個按鍵，一個音節固定敲兩下；全拼則是把完整拼音打出來。</li>
+          <li><strong>要在 iPhone 上用雙拼，需要一套支援雙拼方案的鍵盤</strong>。這不是注音鍵盤的功能，兩者是不同的輸入方式。</li>
+          <li><strong>常見的方案是微軟雙拼與小鶴雙拼</strong>，差別在鍵位配置——也就是哪個字母對應哪個韻母，不是誰比較快。</li>
+        </ol>
+        <p>想先搞懂差別，往下看第一段；只想知道 iPhone 上怎麼開始，直接跳到「在 iPhone 上使用雙拼的方式」。</p>
+      </div>
+
+      <h2>什麼是全拼、什麼是雙拼</h2>
+      <p><strong>全拼</strong>是把完整的漢語拼音打出來。例如要打「中文」，輸入 <code>zhong</code> <code>wen</code>，一共八個按鍵。</p>
+      <p><strong>雙拼</strong>則把每個音節壓縮成固定兩鍵：一鍵給聲母，一鍵給韻母。同樣是「中文」，在雙拼下就是四個按鍵。省下來的按鍵數，換來的是你必須記住「哪個字母代表哪個韻母」。</p>
+      <p>這是個明確的取捨，沒有標準答案：<strong>按鍵數變少，但多了一套要記的鍵位配置</strong>。如果你本來就在用注音而且用得順，這個取捨對你不一定划算——本文後面有一段專門講這件事。</p>
+
+      <h2>微軟雙拼與小鶴雙拼的差別</h2>
+      <p>兩者都是雙拼，都是「聲母一鍵、韻母一鍵」。差別在<strong>鍵位配置</strong>：同一個韻母，在微軟雙拼與小鶴雙拼可能被放在不同的字母鍵上。</p>
+      <p>微軟雙拼的配置源自微軟輸入法；小鶴雙拼是另一套獨立設計的配置。它們互不相容——你熟悉其中一套之後，換到另一套等於要重新記一次。</p>
+      <p>本文<strong>不評斷哪一套比較好或比較快</strong>。這種比較需要受控測試才能成立，我們沒有。實務上的判斷方式比較簡單：看你要用的那套鍵盤支援哪些方案，以及你身邊的參考資料是用哪一套。</p>
+      <p>Apple 也有雙拼相關的官方文件，但那是<strong>給 Mac 用的</strong>：<a href="https://support.apple.com/zh-tw/guide/chinese-input-method/cimf64446397/mac" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_shuangpin_mac','support.apple.com')">在 Mac 上使用繁體雙拼輸入中文</a>。裡面的說明不能直接套用到 iPhone。</p>
+
+      <h2>在 iPhone 上使用雙拼的方式</h2>
+
+      <div class="note">
+        <p><strong>先說 Apple 內建鍵盤的狀況：官方頁面未說明。</strong>Apple 的「中文輸入法使用手冊」目前只涵蓋 Mac，繁體雙拼、簡體雙拼、拼音、注音等章節的網址都指向 Mac。iPhone 的使用手冊有〈在 iPhone 上加入或更改鍵盤〉，但<strong>沒有說明 iPhone 是否提供雙拼輸入來源</strong>。我們不替 Apple 補上這個答案——要確認最快的方式是自己在裝置上檢查一次。</p>
+      </div>
+
+      <p>使用第三方鍵盤時，通用流程是這樣：</p>
+      <ol>
+        <li>先從 App Store 安裝一套支援雙拼方案的鍵盤 App。</li>
+        <li>開啟「設定」→「一般」→「鍵盤」→「鍵盤」。</li>
+        <li>點「加入新的鍵盤…」，在第三方鍵盤區段選擇剛安裝的鍵盤。</li>
+        <li><strong>依該鍵盤 App 的說明選擇雙拼方案</strong>（例如微軟雙拼或小鶴雙拼）。第三方鍵盤的雙拼方案通常需依各 App 的說明設定。</li>
+        <li>打字時點鍵盤上的地球圖示切換。</li>
+      </ol>
+      <p>Apple 對加入與切換鍵盤的官方步驟說明：<a href="https://support.apple.com/zh-tw/guide/iphone/iph73b71eb/ios" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_keyboard_guide','support.apple.com')">在 iPhone 上加入或更改鍵盤</a>。安裝第三方鍵盤前，建議先了解「允許完全取用」這個權限的實際範圍：<a href="/guides/full-access/" onclick="trackLink('guide_full_access','/guides/full-access/')">「允許完全取用」是什麼？安全嗎？</a></p>
+
+      <h2>Keyly 目前支援的方案</h2>
+      <p>以下是本站產品的資訊：<strong>Keyly 自正式版 1.1.0 起支援全拼、微軟雙拼與小鶴雙拼</strong>，需要 iOS 18.0 或以上版本（系統需求來自台灣 App Store 官方資料）。</p>
+      <p>Keyly 的主要定位仍是繁體中文注音鍵盤，雙拼是 1.1.0 加入的輸入方案之一。本文不比較 Keyly 與其他 App 的雙拼實作優劣——那需要受控測試，我們沒有做。</p>
+      <p>來源：<a href="https://apps.apple.com/tw/app/id6759639348" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_keyly','apps.apple.com')">Keyly 台灣 App Store</a>；輸入方案支援範圍為產品方資訊。</p>
+
+      <h2>iOS 上還有哪些選擇</h2>
+      <p>下表只看<strong>一個維度：官方描述是否指明支援雙拼方案</strong>。這不是完整的鍵盤比較——各家的注音、選字、外觀與價格差異請見<a href="/guides/iphone-zhuyin-keyboard/" onclick="trackLink('guide_zhuyin_comparison','/guides/iphone-zhuyin-keyboard/')">iPhone 注音鍵盤推薦與比較</a>。查核日期 2026-08-11。</p>
+
+      <div class="table-scroll">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th scope="col">對象</th>
+              <th scope="col">官方描述是否指明雙拼</th>
+              <th scope="col">來源</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Apple 內建鍵盤</th>
+              <td><strong>官方頁面未說明</strong></td>
+              <td><a href="https://support.apple.com/zh-tw/guide/chinese-input-method/cimf64446397/mac" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_apple_shuangpin_mac','support.apple.com')">Apple 支援</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Keyly</th>
+              <td>是（產品方資訊，1.1.0 起）</td>
+              <td><a href="https://apps.apple.com/tw/app/id6759639348" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_keyly','apps.apple.com')">App Store</a></td>
+            </tr>
+            <tr>
+              <th scope="row">iRime 輸入法</th>
+              <td>是</td>
+              <td><a href="https://apps.apple.com/tw/app/id1142623977" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_irime','apps.apple.com')">App Store</a></td>
+            </tr>
+            <tr>
+              <th scope="row">倉輸入法</th>
+              <td><strong>官方頁面未說明</strong></td>
+              <td><a href="https://apps.apple.com/tw/app/id6446617683" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_cang','apps.apple.com')">App Store</a></td>
+            </tr>
+            <tr>
+              <th scope="row">UrKeyboard</th>
+              <td><strong>官方頁面未說明</strong></td>
+              <td><a href="https://apps.apple.com/tw/app/id898188878" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_urkeyboard','apps.apple.com')">App Store</a></td>
+            </tr>
+            <tr>
+              <th scope="row">胖打注音</th>
+              <td><strong>官方頁面未說明</strong></td>
+              <td><a href="https://apps.apple.com/tw/app/id6761426494" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_panda','apps.apple.com')">App Store</a></td>
+            </tr>
+            <tr>
+              <th scope="row">試試雙拼</th>
+              <td>是（但這是<strong>練習 App，不是鍵盤</strong>）</td>
+              <td><a href="https://apps.apple.com/tw/app/id1613019131" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_app_store_shuangpin_practice','apps.apple.com')">App Store</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-hint">表格可左右捲動。「官方頁面未說明」代表我們在該 App 的官方描述中找不到相關敘述，<strong>不代表它一定不支援</strong>——要確認請直接向該 App 的開發者查詢或實際安裝測試。</p>
+
+      <h2>誰適合改用雙拼，誰不適合</h2>
+
+      <h3>可能適合</h3>
+      <ul>
+        <li>已經熟悉漢語拼音，想減少每個字的按鍵數。</li>
+        <li>願意花時間把一套鍵位配置記起來，並接受過渡期會變慢。</li>
+        <li>曾經因為注音鍵盤的操作方式而想換一種輸入方式。</li>
+      </ul>
+
+      <h3>可能不適合</h3>
+      <ul>
+        <li><strong>平常用注音而且沒有困擾的人。</strong>換方案要從頭學一套鍵位，如果現在打字沒問題，這個成本沒有必要付。</li>
+        <li>不想記憶鍵位對照、希望「裝了就能用」的人。</li>
+        <li>只是偶爾打中文的人，學習成本很難回收。</li>
+      </ul>
+
+      <p>講白一點：<strong>多數注音使用者不需要改用雙拼。</strong>這頁的用意是讓已經在考慮雙拼、或已經在用雙拼的人知道 iPhone 上有哪些做法，不是勸你離開注音。如果你其實只是覺得現在的注音鍵盤不好用，那應該看的是<a href="/guides/iphone-zhuyin-keyboard/" onclick="trackLink('guide_zhuyin_comparison','/guides/iphone-zhuyin-keyboard/')">注音鍵盤的比較</a>，而不是換輸入方式。</p>
+
+      <h2>常見問題</h2>
+
+      <details class="faq">
+        <summary>雙拼和注音差在哪裡？</summary>
+        <div class="faq-body">
+          <p>兩者是不同的中文語音輸入方式。注音使用ㄅㄆㄇㄈ這套注音符號；雙拼以漢語拼音為基礎，並把聲母與韻母各壓縮成一個鍵。它們解決的是同一件事（把讀音變成字），但輸入的符號與鍵位不同。哪一種比較適合你，取決於你熟悉哪一套讀音系統——本文不對兩者做優劣判斷。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>iPhone 內建鍵盤可以用雙拼嗎？</summary>
+        <div class="faq-body">
+          <p><strong>Apple 官方頁面未說明。</strong>Apple 的「中文輸入法使用手冊」中，繁體雙拼、簡體雙拼等章節都是 Mac 版本；iPhone 使用手冊只說明如何加入與切換鍵盤，沒有交代 iPhone 是否提供雙拼輸入來源。我們不替 Apple 推測答案。最直接的確認方式是打開「設定」→「一般」→「鍵盤」→「加入新的鍵盤…」，看中文（簡體／繁體）底下實際列出哪些輸入來源。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>微軟雙拼和小鶴雙拼要選哪一個？</summary>
+        <div class="faq-body">
+          <p>沒有標準答案，取決於你先學會哪一套鍵位，以及你要用的鍵盤支援哪些方案。兩者的差別在韻母被放在哪些字母鍵上，互不相容——換方案等於重新記一次。如果你身邊已經有現成的參考資料或熟悉某一套的人，跟著那一套通常比較省事。本文不宣稱哪一套比較快或比較好。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>學雙拼要多久？</summary>
+        <div class="faq-body">
+          <p>我們不給具體天數或小時數——那要有實測資料才能說，本文沒有。可以確定的是它取決於你原本對漢語拼音的熟悉度、練習的頻率，以及你是否願意在過渡期忍受變慢。App Store 上有專門的雙拼練習 App（例如上表的「試試雙拼」），如果要投入，用練習工具會比直接硬打有系統。</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-box">
+      <h2>雙拼是選項之一，不是所有人都該換</h2>
+      <p>如果你其實只是想找一套更順手的注音鍵盤，先看<a class="inline" href="/guides/iphone-zhuyin-keyboard/" onclick="trackLink('guide_zhuyin_comparison','/guides/iphone-zhuyin-keyboard/')">各家注音鍵盤的官方資料比較</a>。若你確定要用雙拼，Keyly 自 1.1.0 起支援全拼、微軟雙拼與小鶴雙拼，可免費下載試試。</p>
+      <a class="cta-btn" href="https://apps.apple.com/app/id6759639348" target="_blank" rel="noopener noreferrer" onclick="trackDownload('guide_double_pinyin_bottom')">在 App Store 下載 Keyly</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-brand">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="fks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="fka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#fks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#fka)"/>
+        </svg>
+        Keyly
+      </a>
+      <div class="footer-links">
+        <a href="/guides/iphone-zhuyin-keyboard/">iPhone 注音輸入法比較</a>
+        <span class="sep">|</span>
+        <a href="/guides/full-access/">允許完全取用說明</a>
+        <span class="sep">|</span>
+        <a href="/privacy/">隱私權政策</a>
+        <span class="sep">|</span>
+        <a href="/terms/">服務條款</a>
+        <span class="sep">|</span>
+        <a href="mailto:support@keylyapp.com">技術支援</a>
+      </div>
+      <p class="footer-copy">© 2026 Keyly 由台灣團隊專為高效溝通而生。</p>
+    </div>
+  </footer>
+
+</body>
+</html>
