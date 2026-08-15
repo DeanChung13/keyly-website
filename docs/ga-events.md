@@ -45,6 +45,7 @@
 | `download_click` | `engagement` | `guide_keyboard_haptics_bottom` | 鍵盤震動頁結尾 CTA（全頁唯一一個下載 CTA） | `guides/iphone-keyboard-haptics/index.html` |
 | `download_click` | `engagement` | `guide_apple_intelligence_bottom` | 書寫工具比較頁結尾 CTA（全頁唯一一個下載 CTA） | `guides/apple-intelligence-vs-ai-keyboard/index.html` |
 | `download_click` | `engagement` | `guide_double_pinyin_bottom` | 雙拼頁結尾 CTA（全頁唯一一個下載 CTA） | `guides/iphone-double-pinyin/index.html` |
+| `download_click` | `engagement` | `guide_full_access_bottom` | 完全取用頁結尾 CTA（全頁唯一一個下載 CTA） | `guides/full-access/index.html` |
 | `faq_click` | `engagement` | (FAQ 題目) | FAQ 問題點擊展開 | `src/App.tsx` / `AppEn.tsx` |
 | `section_view` | `engagement` | (區塊 ID) | 區塊可見度（捲動深度追蹤） | `src/App.tsx` / `AppEn.tsx` |
 | `feature_click` | `engagement` | (功能標題) | 特色區塊功能卡片點擊 | `src/App.tsx` / `AppEn.tsx` |
@@ -89,6 +90,18 @@
 | `link_click` | `engagement` | `source_apple_support_home` | 選字排查頁指向 Apple 支援首頁 | `guides/iphone-zhuyin-selection-fixes/index.html` |
 
 競品官方連結一律使用既有的 `link_click`，以 `source_` 前綴的 `event_label` 區分產品；不為此新增事件種類。`destination` 參數帶網域。
+
+---
+
+## `rel` 屬性慣例
+
+**指向 Keyly 自己 App Store 頁面的連結，`rel` 一律只寫 `noopener`，不加 `noreferrer`。**
+
+`noreferrer` 會一併抑制 `Referer` 標頭，使 Apple 無法把這次下載歸因為 Web Referrer。安全性由 `noopener` 提供（防止 tabnabbing），移除 `noreferrer` 不影響安全。2026-08-16 已將全站 11 個 Keyly 連結改為只用 `noopener`。
+
+**競品與其他外部連結維持 `noopener noreferrer`**，不需要傳遞來源。目前 13 處。
+
+註：Apple 的 Web Referrer 與 Campaign 資料有隱私門檻（Campaign Link 需至少 5 次 attributed app units 才顯示），因此在下載量提高之前，即使來源傳遞正確也不會出現資料。此變更是前置修正，不是短期可驗證的項目。
 
 ---
 

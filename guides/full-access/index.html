@@ -39,6 +39,9 @@
       gtag('js', new Date());
       gtag('config', 'G-C51YGT0TVX');
     }
+    function trackDownload(label) {
+      gtag('event', 'download_click', { event_category: 'engagement', event_label: label });
+    }
     function trackLink(name, destination) {
       if (window.location.hostname === 'keylyapp.com' || window.location.hostname === 'www.keylyapp.com') {
         gtag('event', 'link_click', { event_category: 'engagement', event_label: name, destination: destination });
@@ -357,7 +360,7 @@
     <div class="cta-box">
       <h2>想先試試不開權限的注音體驗？</h2>
       <p>Keyly 免費下載，核心注音引擎不需要「允許完全取用」也能完整使用。</p>
-      <a class="cta-btn" href="https://apps.apple.com/app/id6759639348" target="_blank" rel="noopener noreferrer">在 App Store 下載 Keyly</a>
+      <a class="cta-btn" href="https://apps.apple.com/app/id6759639348" target="_blank" rel="noopener" onclick="trackDownload('guide_full_access_bottom')">在 App Store 下載 Keyly</a>
     </div>
   </div>
 
