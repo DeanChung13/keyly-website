@@ -18,9 +18,27 @@
 |---|---|---|
 | **產品內分享循環** | **上限 < 2 倍** | ❌ **數學上不可能達成 130 倍。** 它是乘數，不是來源 |
 | **App Store 分類排名** | **不適用** | ❌ **因果方向相反。** 排名是下載量的結果，不是來源 |
-| **Apple Featuring Nomination** | **10–100 倍（若成立）／ 0（若不成立）** | ⚠️ **唯一有正確量級者**，但有一個未實測的技術阻塞條件 |
+| **Apple Featuring Nomination** | **量級正確，但目前無鉤子** | ⛔ **候選鉤子已作廢**（見 §3.3） |
 
-**KR-1 只剩一條路，而且那條路有一道尚未通過的技術驗證關卡。** 這個結論應直接進入 11-15 總停損的判斷。
+> ## 最終結論（2026-08-17 當日更新）
+>
+> 本文初稿的結論是「只剩 Featuring 一條路，有一道技術關卡」。**當日開發者補充第一手實測後，該路徑亦不成立**——Apple Foundation Models 的繁中改寫品質遠不及雲端 AI，已投入一週優化無明顯成效。
+>
+> **KR-1 目前沒有任何有量級的路徑。**
+>
+> | 管道 | 死因 |
+> |---|---|
+> | 產品內分享循環 | 數學上限 < 2 倍 |
+> | 分類排名 | 因果方向相反 |
+> | Featuring | 量級正確，但沒有可提名的產品鉤子 |
+> | ASO 關鍵字 | < 2 倍 |
+> | Threads | 0.14 倍 |
+> | SEO | 無證據 |
+>
+> **這足以啟動 [okr.md](okr.md) 的總停損程序，不必等 11-15。**
+>
+> **開發者 2026-08-17 的決定**：先修好量測（註冊缺少的 GA4 自訂維度），KR-1 暫時擱著。
+> **附帶條件**：量測修復**不暫停 KR-1 的停損時鐘**。修好量測不會生出路徑，兩件事獨立計算。
 
 ---
 
@@ -124,7 +142,21 @@ Keyly 適用的類別是 **App Enhancements**（重大功能更新）。
 
 來源：[TechCrunch WWDC 2026 總整理](https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/)、[9to5Mac iOS 27 鍵盤](https://9to5mac.com/2026/06/12/ios-27-brings-new-keyboards-and-typing-improvements-across-multiple-languages/)
 
-### 3.3 候選鉤子：Foundation Models × 繁體中文
+### 3.3 候選鉤子：Foundation Models × 繁體中文 —— **已作廢（2026-08-17）**
+
+> ## ⛔ 本節提出的鉤子不成立。開發者已實測過。
+>
+> **開發者回報（2026-08-17）**：「Apple 的 Foundation Models 目前的改寫效果很爛，改寫效果遠不及雲端 AI 的改寫。之前投入過 1 個多禮拜的時間去優化，沒有明顯的成效。」
+>
+> **這是第一手實測，效力高於本節引用的任何二手資料。**
+>
+> 死因比 §3.4 的 rate limit 更前面：**rate limit 是「能不能即時跑」，品質是「跑出來能不能用」。品質不過關，rate limit 就不必測了。**
+>
+> **連帶後果**：KR-1 失去唯一有量級的路徑。§1 的分享循環（上限 < 2 倍）與 §2 的分類排名（因果相反）已排除，Featuring 的產品鉤子至此也不成立。**依 §4 待辦第 3 點，應直接進入 [okr.md](okr.md) 的總停損程序。**
+>
+> **本節以下內容保留為紀錄**，說明該鉤子的推導過程與為何看似合理，避免日後有人重新提案。
+
+**以下為已作廢的原始推導，僅供存查：**
 
 **Foundation Models framework**（自 iOS 26 起開放，[Apple Newsroom](https://www.apple.com/newsroom/2025/09/apples-foundation-models-framework-unlocks-new-intelligent-app-experiences/)）讓開發者直接呼叫 Apple Intelligence 的裝置端 LLM，**免費、離線、不傳出裝置**。
 

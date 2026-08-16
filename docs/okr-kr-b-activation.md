@@ -95,7 +95,7 @@
 | 步驟 | 可否重建 | 依據 |
 |---|---|---|
 | 開啟 App | ✅ **可以** | `first_open`、`app_opened` |
-| 開始註冊 | ❌ **不行** | 沒有「開始」事件，只有完成 |
+| 開始註冊 | ✅ **可以**（2026-08-17 更正） | `home_hero_cta_tapped` 的 `cta_type="sign_in"`，實測 109 次／37 人。`cta_type` 未註冊為維度，註冊後即可讀。見 §10 |
 | 完成註冊 | ⚠️ **間接可以** | `onboarding_step_completed` 的 `step=sign_in_completed`，但 `step` 未註冊 → API 讀不到。可用 Supabase `auth.users` 代替 |
 | 啟用鍵盤 | ⚠️ **部分可以** | `keyboard_session_started` 可讀（代表已裝且使用）；`step=keyboard_added` 不可讀 |
 | 開啟完全取用 | ❌ **不行** | 只存在於 `step=full_access_enabled` 與 `home_hero_impression` 的 `full_access_enabled` 參數，兩者皆未註冊 |
@@ -110,7 +110,9 @@
 
 `step`、`success`（`ai_request_completed`）、`full_access_enabled`、`keyboard_added`、`is_signed_in`（後三者在 `home_hero_impression`）
 
-**唯一真正缺少的事件是「開始註冊」**，目前只有完成沒有開始，無法得知有多少人點了註冊卻中途放棄。
+~~**唯一真正缺少的事件是「開始註冊」**，目前只有完成沒有開始，無法得知有多少人點了註冊卻中途放棄。~~
+
+> **更正（2026-08-17）**：該事件**早就存在**。`OnboardingCardView.swift:165` 送出 `home_hero_cta_tapped`（`cta_type="sign_in"`），近兩個月實測 109 次／37 位使用者。缺的是 `cta_type` 的維度註冊，不是事件。**本文至此已三次把「維度未註冊」誤判為「缺少埋點」**（`entry_point`、`step`、`cta_type`）。完整清單見 §10。
 
 另需確認 `ai_prompt_type_selected`、`input_mode_switched`、`subscription_view_opened`、`subscription_cta_tapped`、`subscription_restored` 五個事件為何有定義卻無觸發點 —— 是尚未接上，還是我漏找。
 
@@ -259,7 +261,8 @@ GA4 實測分界正好落在 **2026-08-15**：06-20～08-13 全為 `(not set)`�
 | 註冊五個自訂維度（`step`、`success`、`full_access_enabled`、`keyboard_added`、`is_signed_in`） | — | **2026-08-16 已完成** |
 | GA4 事件資料保留期改 14 個月 | — | **2026-08-17 已完成**（24 小時後生效，不回復已刪除資料） |
 | ~~修 `paywall_opened` 的 `entry_point`~~ | — | **已撤銷**，程式碼無問題，見 §7 更正 |
-| 補「開始註冊」事件 | **2026-08-24** | 未做，需改程式 |
+| ~~補「開始註冊」事件~~ | — | **已撤銷**，事件早就存在，見 §10 |
+| **註冊 §10 的三個 Tier 1 自訂維度** | **2026-08-24** | 未做。**GA4 設定，不需改程式** |
 | 確認五個有定義無觸發點的事件是否漏接 | **2026-08-24** | 未做。**建議做法**：開 GA4 DebugView 跑一次完整流程，比讀程式碼快 |
 
 ### 主行動（產出是數字的變化）
@@ -339,3 +342,56 @@ private func heroVariant() -> String {
 | 「paywall 太早」是 -74% 落差的主因 | **推論**。有機制與時序支持，但未實測。改完 `activation` 狀態後才能驗證 |
 | GA4 `hero_variant` 的實際分布 | **不可用**。301 個 `home_hero_impression` 為 `(not set)`，有值的僅 34 個事件／4 位使用者 |
 | 21 位零使用者的實際原因 | **未訪談**。本節是程式碼與時序推論，不是使用者證言 |
+
+---
+
+## 10. 缺少的自訂維度清單（2026-08-17）
+
+### 「補『開始註冊』事件」已撤銷
+
+§2 曾寫「**唯一真正缺少的事件是「開始註冊」**，目前只有完成沒有開始」。**該診斷錯誤。**
+
+事件早就存在：`OnboardingCardView.swift:165` 的 `onTrackCTA("sign_in", "sign_in")` → `trackHeroCTA()`（`MainTabContainerView.swift:480-488`）→ 送出 `home_hero_cta_tapped`，`cta_type = "sign_in"`。
+
+**實測運作正常**：2026-06-18 ～ 08-17 共 **109 次事件／37 位使用者**。
+
+問題與 `entry_point` 完全相同：**`cta_type` 未註冊為 GA4 自訂維度，Data API 拆不出來。** 修法是註冊維度，不是改程式。
+
+> **這是本輪第三次同一個模式**（`entry_point`、`step`、`cta_type`）。本 repo 的埋點比文件以為的完整得多——**缺的不是事件，是 GA4 的維度設定。**
+
+### 該註冊什麼
+
+GA4 免費版上限為 50 個事件範圍自訂維度，目前用 13 個，**沒有名額壓力**。
+
+#### Tier 1｜直接服務目前的問題（08-24 前完成）
+
+| 參數 | 所屬事件 | 為什麼要 |
+|---|---|---|
+| **`cta_type`** | `home_hero_cta_tapped` | 這就是「開始註冊」。可算出「點了登入 → 完成登入」的流失，即 onboarding 第 4 步的放棄率 |
+| **`remaining_quota_bucket`** | `home_hero_impression` | **把 §9 的根因從推論變成測量。** 可直接驗證「每一次升級提示都顯示給還有額度的人」 |
+| **`current_step`** | `home_hero_cta_tapped` | 使用者在哪一步點 CTA，配合 `step` 可重建完整 onboarding 漏斗 |
+
+#### Tier 2｜服務 KR-3
+
+| 參數 | 所屬事件 | 用途 |
+|---|---|---|
+| `prompt_type` | `ai_request_completed` | 哪些 AI 風格真的被用，可用於 3a 的啟用設計 |
+| `has_trial` | `paywall_plan_selected` 等四個事件 | 試用 vs 直接付費的轉換差異 |
+| `source_screen` | `paywall_opened` | paywall 從哪個畫面開啟 |
+
+#### Tier 3｜補完
+
+`subscription_status`（`home_hero_impression`）、`default_plan`（`paywall_opened`）、`source`（`onboarding_step_completed`／`onboarding_completed`）
+
+#### 不適用
+
+`count`（`keyboard_input_chars`）是數值，若要用需註冊為**自訂指標**而非維度。
+
+### 兩項限制
+
+1. **不回溯。** 08-17 註冊 → 只有 08-17 之後的資料。愈晚做損失愈多。
+2. **可讀時間取決於事件頻率。** `cta_type` 近兩個月 37 位使用者，數週內可讀；`step` 自 08-16 註冊至今僅 2 筆，需要更久。
+
+### 這件事不改變 KR-1
+
+**修好量測不會生出獲客路徑。** 本節全部屬於 KR-3／KR-4 的前置，[KR-1 的停損時鐘照常計算](okr.md)，不因量測工作暫停。
