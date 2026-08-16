@@ -14,7 +14,7 @@
 >
 > **撤銷理由**：該成功條件的達成速度取決於它想量測的那個數字本身。在 26 次／月下，達到 300 需 3 個月、500 需 11 個月——**用結果當前置條件，計畫就不會結束。** 這是開發者回報「每條路都在補資料」的直接來源之一。
 >
-> 現行做法：轉換率的判定門檻改設在**子閘門**（`first_open` → `paywall_opened`，分母 173；`paywall_opened` → `subscription_purchased`，分母 31），而非整體轉換率（分子僅 4）。詳見 [okr.md#kr-3](okr.md)。
+> 現行做法：轉換率的判定門檻改設在**子閘門**（`first_open` → `ai_request_sent`，分母 173；`ai_request_sent` → `subscription_purchased`，分母 37），而非整體轉換率（分子僅 4）。詳見 [okr.md#kr-3](okr.md)。
 >
 > **本文自即日起的角色是新 OKR 算式的基期資料來源**，不再持有獨立目標。
 

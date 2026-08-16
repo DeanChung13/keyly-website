@@ -40,6 +40,12 @@
 
 ### 3. 查證「Apple App Store 不索引 description」
 
+> **狀態：2026-08-17 已查證結案。**
+>
+> 結果：Apple 明列索引欄位為 **title / subtitle / keywords / primary category**（另明文說主要與次要分類都被索引），description 不在其中；但**從未明文說 description 不被索引**——屬間接證據。
+>
+> **據此的決定**：不接受殘餘風險。description 改回凍結至 09-05 Round 1 Review 之後（09-06 再改），截圖／圖示／影片照原訂日期。已寫入 `okr.md` KR-2 與 `okr-kr-a-aso-round-2.md`。
+
 **發現位置**：[`okr-kr-a-aso-round-2.md` 凍結範圍收窄區塊](okr-kr-a-aso-round-2.md)
 
 **為什麼值得做**：這條假設**正在承載一個已生效的決定**——它是把 metadata 凍結範圍從「全部欄位」收窄到「只凍結名稱／副標題／關鍵字」的唯一依據，而該收窄直接讓 KR-2 得以在 09-05 Round 1 Review 之前修改 description。
@@ -49,3 +55,31 @@
 若查證推翻此點：KR-2 的 description 項需退出、等 Round 1 Review 之後再做；截圖、預覽影片、圖示三項不受影響（這三項本來就不進入搜尋索引）。
 
 **查證方向**：Apple 官方 App Store Connect 說明中關於搜尋與 metadata 欄位的段落。
+
+---
+
+### 4. 評估 App Store 主要／次要分類的選擇
+
+**發現位置**：2026-08-17 查證 Apple 官方文件時順帶發現（[developer.apple.com/app-store/search](https://developer.apple.com/app-store/search/)）
+
+**為什麼值得做**：Apple 明文寫
+
+> "Your primary category and optional secondary category are indexed by our search algorithm."
+
+**分類是進搜尋索引的欄位，而全部 30 餘份 `docs/` 從未討論過 Keyly 的分類選擇。** ASO 的注意力全部集中在名稱、副標題、關鍵字三個欄位上，漏掉了第四個。
+
+分類同時影響「App Store 瀏覽」的曝光來源（目前佔 6.1%），以及分類排行榜的進榜可能——後者是 [SUGGESTIONS 第 1 項](#1-撰寫-docsokr-kr-1-exposure-130xmd評估三個從未評估的高天花板零成本管道) 中三個未評估管道之一。
+
+**注意**：分類已比照關鍵字欄位納入 09-05 前的凍結範圍（見 `okr-kr-a-aso-round-2.md`），因此本項最早也要 Round 1 Review 之後才能動。
+
+---
+
+### 5. 移除或接上 `openOnboardingCompletionPaywallIfNeeded()` 死碼
+
+**發現位置**：`~/Documents/keyly` 的 `MainTabContainerView.swift:602-612`
+
+**為什麼值得做**：該函式定義完整但**全專案沒有任何呼叫點**，`PaywallEntryPoint.homeHeroOnboardingComplete` 因此永遠不會出現在資料裡。
+
+它目前沒造成傷害——反而該慶幸，因為它會在使用者剛拿到 50 次免費額度的同一秒彈出 paywall，正是 [§9 根因](okr-kr-b-activation.md) 要避免的行為。
+
+**建議**：直接刪除，不要接上。若保留，未來有人「修好」它會直接惡化 3a。刪除時一併移除 `homeHeroOnboardingComplete` enum case，避免它繼續出現在 `PaywallEntryPoint` 的選項裡誤導人。

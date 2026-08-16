@@ -55,7 +55,7 @@
 >
 > 上表基期取自 App Store Connect Analytics，不受此限制。
 >
-> **KR-3 的 3a／3b 也不受影響**——兩者只用 `eventName` 計數（`first_open`、`paywall_opened`、`subscription_purchased`），不需要任何自訂維度，全期間可讀。
+> **KR-3 的 3a／3b 也不受影響**——兩者只用 `eventName` 計數（`first_open`、`ai_request_sent`、`subscription_purchased`），不需要任何自訂維度，全期間可讀。
 >
 > **受影響的是任何「按參數拆解」的分析**：`entry_point` 的進入點分布、`step` 的 onboarding 分段、`success` 的 AI 成功率、`home_hero_impression` 的三個狀態旗標。這些只能使用 2026-08-16（維度註冊日）之後的資料。
 
@@ -164,17 +164,31 @@ Analytics 有約一週處理延遲（`okr-kr-a-aso-round-2.md:90`），故實際
 
 現況兩段（`okr-kr-a-acquisition.md:31-36`）：曝光→產品頁 15.7%、產品頁→Tap Get 23.9%。
 
-| 行動 | 期限 |
-|---|---|
-| 重做 App Store 截圖（前兩張決定 15.7% 這一段） | 2026-09-10 |
-| 改寫 description 前三行與圖示 | 2026-09-10 |
-| 加上預覽影片 | 2026-09-20 |
+| 行動 | 期限 | 09-05 前可否動 |
+|---|---|---|
+| 重做 App Store 截圖（前兩張決定 15.7% 這一段） | 2026-09-10 | ✅ 可以 |
+| 改圖示 | 2026-09-10 | ✅ 可以 |
+| 加上預覽影片 | 2026-09-20 | ✅ 可以 |
+| 改寫 description 前三行 | **2026-09-06** | ❌ **延到 Round 1 Review 之後** |
 
-#### 已知污染風險
+#### description 延後的理由（2026-08-17 查證 Apple 官方文件後決定）
 
-ASO Round 1 的 09-05 Review 判讀 Search 曝光，本 KR 改的是產品頁轉換，指標不同、大致可分離。但**App Store 搜尋排名會把轉換率納入計算**，改截圖仍可能間接推高曝光而干擾 Round 1 讀數。
+Apple 明確列舉了進入搜尋索引的欄位，**description 不在其中**：
 
-**在 4.47 個月的期限下照做，並在 Round 1 Review 中註明此污染。時間比歸因稀缺。**
+> "Search results are based on a number of factors, including text relevance (matches for your app's **title, subtitle, keywords, and primary category**), as well as user behavior (downloads, ratings and reviews, and more)."
+> —— [developer.apple.com/app-store/search](https://developer.apple.com/app-store/search/)
+
+旁證：官方在 product page 文件寫 "Don't add unnecessary keywords to your description in an attempt to improve search results."
+
+**但 Apple 從未明文寫過「description 不被索引」。** 證據等級是「官方列舉不含它」，屬間接。
+
+**決定：把殘餘風險歸零，而不是接受它。** description 是 KR-2 四個槓桿中最弱的一個——只影響產品頁→下載，且只對展開描述的人生效——延後兩週的成本接近零，但能讓 Round 1 的關鍵字歸因完全乾淨。截圖／圖示／影片是圖片，確定不進索引，照原訂日期進行。
+
+#### 已知污染風險（僅存的一項）
+
+**App Store 搜尋排名會把轉換率納入計算**，因此改截圖若成功提升轉換，可能間接推高 Search 曝光而干擾 Round 1 讀數。這一項無法規避（不改截圖就等於放棄 KR-2）。
+
+**照做，並在 09-05 Round 1 Review 的結論中明確註記此污染，不得將曝光上升全數歸因於關鍵字變更。**
 
 #### 停損門檻
 
@@ -187,15 +201,36 @@ ASO Round 1 的 09-05 Review 判讀 Search 曝光，本 KR 改的是產品頁轉
 現況鏈（`okr-kr-b-activation.md:110-121`）：
 
 ```
-225 下載 → 173 first_open (76.9%) → 31 paywall_opened (17.9%) → 4 purchased (12.9%)
+225 下載 → 173 first_open (76.9%) → 37 ai_request_sent (21.4%) → 4 purchased (10.8%)
 ```
 
-| 子閘門 | 現值 | 目標 |
-|---|---:|---:|
-| **3a**　`first_open` → `paywall_opened` | 17.9% | **32%** |
-| **3b**　`paywall_opened` → `subscription_purchased` | 12.9% | **20%** |
+| 子閘門 | 現值 | 目標 | 分母 |
+|---|---:|---:|---:|
+| **3a　啟用**　`first_open` → `ai_request_sent` | 21.4% | **50%** | 173 |
+| **3b　轉換**　`ai_request_sent` → `subscription_purchased` | 10.8% | **15%** | 37 |
 
-驗算：0.769 × 0.32 × 0.20 = **4.9%** ✓
+驗算：0.769 × 0.50 × 0.15 = **5.8%** ✓（高於 5.0% 目標，留有餘裕）
+
+**附帶追蹤，不作判定**：`paywall_opened` → `paywall_plan_selected` 目前為 31 → 8（**-74%**）。這仍是漏斗後段最大的單一落差，但依下節的發現，它更可能是 3a 的後果而非獨立問題。
+
+> #### 3a 的定義已於 2026-08-17 改向
+>
+> 原定 3a 為「`first_open` → `paywall_opened` 17.9% → 32%」，即**讓更多人看到 paywall**。**方向錯誤，已撤銷。**
+>
+> 查證 iOS 程式碼（`MainTabContainerView.swift:435-440`）後發現，首頁 Hero 只有三個狀態：
+>
+> ```swift
+> if !isKeyboardAdded || !isFullAccessEnabled || !isSignedIn { return "onboarding" }
+> return subscriptionStatus == .active ? "pro_welcome" : "quota_upgrade"
+> ```
+>
+> **沒有「已設定完成、尚未使用」這個狀態。** 使用者做完四步 onboarding 拿到 50 次免費額度的那一瞬間，Hero 直接跳成「解鎖更多次數」，沒有任何東西引導他去用那 50 次。
+>
+> 且 `remainingQuotaBucket()`（`:442-447`）已算出 `0`／`1_2`／`3_plus`，**但只送給 analytics，`heroVariant()` 完全沒用它**——剩 50 次和剩 0 次的人看到相同的升級提示。配合本 repo 既有事實「**沒有任何人耗盡過額度**」，可得：
+>
+> **上線至今每一次「解鎖更多次數」提示，都是顯示給還有免費額度沒用的人。**
+>
+> 因此 App 目前不是 paywall 曝光不足，而是 **paywall 來得太早**。31 → 8 的 -74% 落差、以及 40% 註冊後零使用，共用這一個根因。3a 改為衡量**啟用**（送出第一次 AI 請求），而非 paywall 曝光。
 
 #### 為什麼門檻設在子閘門
 
@@ -203,7 +238,9 @@ ASO Round 1 的 09-05 Review 判讀 Search 曝光，本 KR 改的是產品頁轉
 
 整體毛轉換 1.78% 的分子只有 4。要證明它變成 5.0% 需要數十次購買，而在 KR-1 達成前不可能取得。第一版的停止條件「累積下載達 300–500 才回頭評估轉換」（舊 `okr.md:155`）因此是一個不會結束的計畫——在 26 次／月下需要 3–11 個月。
 
-子閘門的分母是 **173** 與 **31**，現有量級下可讀。**判定用子閘門，不用整體數字。**
+子閘門的分母是 **173** 與 **37**，現有量級下可讀。**判定用子閘門，不用整體數字。**
+
+**口徑限制**：GA4 各事件的 `totalUsers` 是獨立計數，不保證使用者依序經過。上述鏈條沿用 `okr-kr-b-activation.md` 的既有框架，作為比例參考而非嚴格序列漏斗。
 
 #### 行動
 
@@ -212,8 +249,8 @@ ASO Round 1 的 09-05 Review 判讀 Search 曝光，本 KR 改的是產品頁轉
 | ~~修 `paywall_opened` 的 `entry_point`~~ | — | **已撤銷，見下** |
 | 註冊 5 個 GA4 自訂維度 | 已於 2026-08-16 完成 | 前置 |
 | GA4 事件資料保留期改 14 個月 | 已於 2026-08-17 完成 | 前置 |
-| 改首次啟動流程 → 推 3a | 2026-10-10 | 主行動 |
-| 改 paywall 進入時機、方案呈現、試用設計 → 推 3b | 2026-10-10 | 主行動。31 → 8 的 74% 落差是漏斗後段最大單一缺口 |
+| **新增第四個 hero 狀態 `activation`** → 推 3a | **2026-09-15** | **主行動，最高優先**。卡在 `onboarding` 與 `quota_upgrade` 之間：沒用過 AI → 推他去打字；用過了 → 才談加購。判斷資料已存在（`remainingQuotaBucket` 或帳號使用紀錄），目前只送遙測、未用於決策 |
+| 改 paywall 進入時機、方案呈現、試用設計 → 推 3b | 2026-10-10 | 主行動。先做上一項再評估此項——31 → 8 的落差可能是 3a 的後果 |
 
 > **「修 `entry_point`」已撤銷（2026-08-17，查證 iOS 程式碼與 GA4 後）。程式碼沒有問題，不需修改。**
 >
@@ -225,7 +262,7 @@ ASO Round 1 的 09-05 Review 判讀 Search 曝光，本 KR 改的是產品頁轉
 
 #### 停損門檻
 
-**2026-10-31**：3a **< 25%** 且 3b **< 17%** → 宣告轉換乘數封頂，代入算式重算 KR-1 需求。
+**2026-10-31**：3a **< 35%** 且 3b **< 13%** → 宣告轉換乘數封頂，代入算式重算 KR-1 需求。
 
 ### KR-4｜存活率：50% → 60%
 
@@ -287,7 +324,7 @@ n = 4（2 位存活／4 次購買）。**任何百分比門檻在此樣本下都
 | 2026-09-05 | ASO Round 1 Review（不進入 KR 判定） | — |
 | **2026-09-30** | **KR-2 停損**：曝光→下載 ≥ 2.5% | 該乘數封頂 2.5%，重算 KR-1 需求 |
 | **2026-10-15** | **KR-1 停損**：30 天曝光 ≥ 8,000 | **宣告零成本無法提供 130 倍曝光** |
-| **2026-10-31** | **KR-3 停損**：3a ≥ 25% 或 3b ≥ 17% | 轉換乘數封頂，重算 KR-1 需求 |
+| **2026-10-31** | **KR-3 停損**：3a ≥ 35% 或 3b ≥ 13% | 轉換乘數封頂，重算 KR-1 需求 |
 | **2026-11-15** | **總停損** | 見下 |
 
 ### 總停損：2026-11-15

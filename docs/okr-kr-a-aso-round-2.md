@@ -11,10 +11,30 @@
 >
 > | 欄位 | 凍結至 09-05 Review | 理由 |
 > |---|---|---|
-> | 名稱、副標題、關鍵字欄位 | **凍結** | Apple App Store 的搜尋索引只涵蓋這三個欄位（加開發者名稱與 IAP 名稱）。改動會直接污染 Round 1 的關鍵字歸因 |
-> | 截圖、預覽影片、圖示、description | **解凍** | Apple **不索引 description**（與 Google Play 不同），這四項不進入關鍵字歸因 |
+> | 名稱、副標題、關鍵字欄位 | **凍結** | Apple 官方明列為搜尋索引欄位。改動會直接污染 Round 1 的關鍵字歸因 |
+> | **主要分類、次要分類** | **凍結** | 同上，Apple 官方明文說分類也被索引（本 repo 先前從未注意到） |
+> | 截圖、預覽影片、圖示 | **解凍** | 圖片，確定不進文字索引 |
+> | **description** | **凍結**（2026-08-17 改判） | 見下 |
 >
-> **依據等級**：「Apple 不索引 description」屬業界公認的 ASO 行為，本 repo **尚未以 Apple 第一手文件驗證**。若後續查證推翻此點，KR-2 的 description 項需重新評估；截圖、影片、圖示三項不受影響。
+> **依據（2026-08-17 查證 Apple 第一手文件）**
+>
+> > "Search results are based on a number of factors, including text relevance (matches for your app's **title, subtitle, keywords, and primary category**), as well as user behavior (downloads, ratings and reviews, and more)."
+> > —— https://developer.apple.com/app-store/search/
+>
+> > "Your **primary category and optional secondary category are indexed** by our search algorithm."
+> > —— 同上
+>
+> > "Don't add unnecessary keywords to your description in an attempt to improve search results."
+> > —— https://developer.apple.com/app-store/product-page/
+>
+> > "promotional text **doesn't affect your app's search ranking** so it should not be used to display keywords."
+> > —— 同上
+>
+> **description 的判定改為「凍結」。** 我先前寫「Apple 不索引 description」並據此解凍，措辭過強——**Apple 從未明文如此陳述**。實際證據是「官方列舉索引欄位時不含 description」，屬間接證據。
+>
+> 由於 description 是 KR-2 四個槓桿中最弱的一個（只影響產品頁→下載，且只對展開描述的人生效），延到 **2026-09-06** 的成本接近零，卻能讓 Round 1 歸因完全乾淨。**不接受這個殘餘風險，改為消除它。**
+>
+> **兩項新增認知**：（1）**分類也進索引**，此後任何分類調整比照關鍵字欄位處理；（2）**promotional text 確定不影響搜尋排名**，故不受任何凍結限制、可隨時改，但也不該拿來塞關鍵字。
 >
 > **仍存在的間接污染**：App Store 搜尋排名會把轉換率納入計算，因此改截圖提升轉換後，可能間接推高 Search 曝光而干擾 Round 1 讀數。**決定照做**——期限剩 4.47 個月時，時間比歸因稀缺——並須在 09-05 Review 的結論中明確註記此污染，不得將曝光上升全數歸因於 Round 1 的關鍵字變更。
 >
