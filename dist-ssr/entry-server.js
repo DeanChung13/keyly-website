@@ -319,7 +319,7 @@ function TypingAnimation({ locale = "zh-TW" }) {
     ] })
   ] });
 }
-const DOWNLOAD_URL$1 = "https://apps.apple.com/app/id6759639348";
+const DOWNLOAD_URL = "https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8";
 const DOWNLOAD_EVENT$1 = "download_click";
 const trackDownload$1 = (location) => {
   if (typeof gtag !== "undefined") {
@@ -364,7 +364,7 @@ function Logo$1({ className = "w-8 h-8" }) {
   ] });
 }
 function DownloadCTA$1({ centered = false }) {
-  return /* @__PURE__ */ jsx("div", { className: `flex flex-col w-full ${centered ? "items-center" : "items-center lg:items-start"} space-y-6`, children: /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL$1, target: "_blank", rel: "noopener", onClick: () => trackDownload$1(centered ? "cta_section" : "hero"), className: "w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none inline-flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
+  return /* @__PURE__ */ jsx("div", { className: `flex flex-col w-full ${centered ? "items-center" : "items-center lg:items-start"} space-y-6`, children: /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener", onClick: () => trackDownload$1(centered ? "cta_section" : "hero"), className: "w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none inline-flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
     /* @__PURE__ */ jsx(Smartphone, { className: "w-5 h-5" }),
     /* @__PURE__ */ jsx("span", { children: "免費下載" })
   ] }) });
@@ -416,7 +416,7 @@ function Navbar$1() {
       /* @__PURE__ */ jsxs("div", { className: "hidden md:flex items-center space-x-8", children: [
         /* @__PURE__ */ jsx("a", { href: "#features", className: "text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1", children: "功能特色" }),
         /* @__PURE__ */ jsx("a", { href: "#faq", className: "text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1", children: "常見問題" }),
-        /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL$1, target: "_blank", rel: "noopener", onClick: () => trackDownload$1("navbar"), className: "bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors duration-200 flex items-center space-x-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
+        /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener", onClick: () => trackDownload$1("navbar"), className: "bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors duration-200 flex items-center space-x-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
           /* @__PURE__ */ jsx(Download, { className: "w-4 h-4" }),
           /* @__PURE__ */ jsx("span", { children: "免費下載" })
         ] })
@@ -426,7 +426,7 @@ function Navbar$1() {
     isOpen && /* @__PURE__ */ jsxs("div", { className: "md:hidden mt-2 max-w-6xl mx-auto bg-white/95 backdrop-blur-xl border border-metal-gray/30 rounded-2xl px-4 pt-2 pb-4 space-y-2 shadow-lg", children: [
       /* @__PURE__ */ jsx("a", { href: "#features", className: "block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200", onClick: () => setIsOpen(false), children: "功能特色" }),
       /* @__PURE__ */ jsx("a", { href: "#faq", className: "block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200", onClick: () => setIsOpen(false), children: "常見問題" }),
-      /* @__PURE__ */ jsx("a", { href: DOWNLOAD_URL$1, target: "_blank", rel: "noopener", className: "block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md transition-colors duration-200", onClick: () => {
+      /* @__PURE__ */ jsx("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener", className: "block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md transition-colors duration-200", onClick: () => {
         setIsOpen(false);
         trackDownload$1("navbar_mobile");
       }, children: "免費下載" })
@@ -564,7 +564,7 @@ function FAQSection$1() {
         /* @__PURE__ */ jsxs("p", { children: [
           /* @__PURE__ */ jsx("strong", { children: "一般用戶（免費下載）：" }),
           /* @__PURE__ */ jsx("br", {}),
-          "免費下載即可使用注音引擎、完整標準指令庫，並在新登入帳號時一次性獲得 50 次雲端 AI 魔法額度。"
+          "免費下載即可使用注音引擎、完整標準指令庫，並在新登入帳號時一次性獲得 30 次雲端 AI 魔法額度。"
         ] }),
         /* @__PURE__ */ jsxs("p", { children: [
           /* @__PURE__ */ jsx("strong", { children: "Keyly Pro 訂閱（NT$150/月）：" }),
@@ -642,7 +642,6 @@ function Footer$1() {
     /* @__PURE__ */ jsx("div", { className: "mt-8 text-center text-sm text-metal-gray", children: "© 2026 Keyly 由台灣團隊專為高效溝通而生。" })
   ] }) });
 }
-const DOWNLOAD_URL = "https://apps.apple.com/app/id6759639348";
 const DOWNLOAD_EVENT = "download_click";
 const trackDownload = (location) => {
   if (typeof gtag !== "undefined") {

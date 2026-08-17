@@ -7,10 +7,10 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Download, Menu, X, Wand2, Feather, Command, ShieldCheck, ChevronDown, Smartphone } from 'lucide-react';
 import TypingAnimation from './components/TypingAnimation';
+import { DOWNLOAD_URL } from './appStoreLink';
 
 declare const gtag: (...args: unknown[]) => void;
 
-const DOWNLOAD_URL = 'https://apps.apple.com/app/id6759639348';
 const DOWNLOAD_EVENT = 'download_click';
 
 const trackDownload = (location: string) => {
