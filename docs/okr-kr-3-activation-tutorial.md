@@ -13,6 +13,8 @@
 
 **停損日 2026-10-31**（同 KR-3）。
 
+**不會灌水 3a 的分子**：模擬按下 AI 鍵送出的是 `tutorial_cta_tapped`，**不是** `ai_request_sent`。Tutorial 對漏斗的效果改讀 `first_open` → `keyboard_session_started`（現 50.9%），該段只用 `eventName` 計數，不需自訂維度、全期間可讀。
+
 ---
 
 ## 1. 現況
@@ -139,15 +141,25 @@ tutorial 只示範 **3 個**：**高情商請假條、長輩平安喜樂體、�
 
 目前沒有任何 tutorial 相關事件。與 `entry_point`／`step`／`cta_type` 不同，那三個是「事件已在送、只是維度沒註冊」；**這次是事件本身不存在，必須寫程式。**
 
-| 事件 | 參數 | 用途 |
-|---|---|---|
-| `tutorial_started` | — | 分母 |
-| `tutorial_page_viewed` | `page_index` | 在第幾頁跳出 |
-| `tutorial_cta_tapped` | `page_index` | 使用者主動點 AI 指令的次數 |
-| `tutorial_completed` | — | 完成率 |
-| `tutorial_dismissed` | `page_index` | 中途離開的位置 |
+| 事件 | 參數 | 用途 | 狀態 |
+|---|---|---|---|
+| `tutorial_started` | — | 分母 | ✅ 已實作 |
+| `tutorial_page_viewed` | `page_index` | 使用者最遠走到哪一頁 | ✅ 已實作 |
+| `tutorial_cta_tapped` | `page_index`, `prompt_id` | 三個示範哪個真的被試 | ✅ 已實作 |
+| `tutorial_completed` | — | 完成率 | ✅ 已實作 |
+| ~~`tutorial_dismissed`~~ | — | — | ❌ **已移除，見下** |
 
-**參數需同步在 GA4 註冊為自訂維度**（`page_index`），否則 API 讀不到——這是本 repo 已重複踩過三次的坑。
+**GA4 自訂維度 `page_index`、`prompt_id` 已於 2026-08-18 註冊**（目前共 17 個）。
+
+`prompt_id` 是實作時新增的，規格初版只有 `page_index`——沒有它就不知道三個示範哪一個真的被點，而那是挑內容時最想知道的事。
+
+### 為什麼移除 `tutorial_dismissed`
+
+初版規格寫「中途離開的位置⋯必須量得到」，但**做不到**：
+
+Tutorial 不提供「略過」，所以中途離開只會是殺掉 App 或切走，而 **iOS 不保證那時還會呼叫 `onDisappear`**。留著它只會得到一個永遠接近 0 的假指標。
+
+**放棄率改用 `tutorial_started` − `tutorial_completed`**，卡在哪一頁看 `tutorial_page_viewed` 的最大 `page_index`。
 
 事件定義加在 `KeylyCore/Shared/Models/AnalyticsEvent.swift`，與既有 21 個 case 同處。完成後補登 `docs/ga-events.md`。
 
