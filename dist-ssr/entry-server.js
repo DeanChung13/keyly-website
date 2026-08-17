@@ -364,7 +364,7 @@ function Logo$1({ className = "w-8 h-8" }) {
   ] });
 }
 function DownloadCTA$1({ centered = false }) {
-  return /* @__PURE__ */ jsx("div", { className: `flex flex-col w-full ${centered ? "items-center" : "items-center lg:items-start"} space-y-6`, children: /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL$1, target: "_blank", rel: "noopener noreferrer", onClick: () => trackDownload$1(centered ? "cta_section" : "hero"), className: "w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none inline-flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
+  return /* @__PURE__ */ jsx("div", { className: `flex flex-col w-full ${centered ? "items-center" : "items-center lg:items-start"} space-y-6`, children: /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL$1, target: "_blank", rel: "noopener", onClick: () => trackDownload$1(centered ? "cta_section" : "hero"), className: "w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none inline-flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
     /* @__PURE__ */ jsx(Smartphone, { className: "w-5 h-5" }),
     /* @__PURE__ */ jsx("span", { children: "免費下載" })
   ] }) });
@@ -416,7 +416,7 @@ function Navbar$1() {
       /* @__PURE__ */ jsxs("div", { className: "hidden md:flex items-center space-x-8", children: [
         /* @__PURE__ */ jsx("a", { href: "#features", className: "text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1", children: "功能特色" }),
         /* @__PURE__ */ jsx("a", { href: "#faq", className: "text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1", children: "常見問題" }),
-        /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL$1, target: "_blank", rel: "noopener noreferrer", onClick: () => trackDownload$1("navbar"), className: "bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors duration-200 flex items-center space-x-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
+        /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL$1, target: "_blank", rel: "noopener", onClick: () => trackDownload$1("navbar"), className: "bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors duration-200 flex items-center space-x-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
           /* @__PURE__ */ jsx(Download, { className: "w-4 h-4" }),
           /* @__PURE__ */ jsx("span", { children: "免費下載" })
         ] })
@@ -426,7 +426,7 @@ function Navbar$1() {
     isOpen && /* @__PURE__ */ jsxs("div", { className: "md:hidden mt-2 max-w-6xl mx-auto bg-white/95 backdrop-blur-xl border border-metal-gray/30 rounded-2xl px-4 pt-2 pb-4 space-y-2 shadow-lg", children: [
       /* @__PURE__ */ jsx("a", { href: "#features", className: "block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200", onClick: () => setIsOpen(false), children: "功能特色" }),
       /* @__PURE__ */ jsx("a", { href: "#faq", className: "block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200", onClick: () => setIsOpen(false), children: "常見問題" }),
-      /* @__PURE__ */ jsx("a", { href: DOWNLOAD_URL$1, target: "_blank", rel: "noopener noreferrer", className: "block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md transition-colors duration-200", onClick: () => {
+      /* @__PURE__ */ jsx("a", { href: DOWNLOAD_URL$1, target: "_blank", rel: "noopener", className: "block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md transition-colors duration-200", onClick: () => {
         setIsOpen(false);
         trackDownload$1("navbar_mobile");
       }, children: "免費下載" })
@@ -687,7 +687,7 @@ function Logo({ className = "w-8 h-8" }) {
   ] });
 }
 function DownloadCTA({ centered = false }) {
-  return /* @__PURE__ */ jsx("div", { className: `flex flex-col w-full ${centered ? "items-center" : "items-center lg:items-start"} space-y-6`, children: /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener noreferrer", onClick: () => trackDownload(centered ? "cta_section_en" : "hero_en"), className: "w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none inline-flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
+  return /* @__PURE__ */ jsx("div", { className: `flex flex-col w-full ${centered ? "items-center" : "items-center lg:items-start"} space-y-6`, children: /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener", onClick: () => trackDownload(centered ? "cta_section_en" : "hero_en"), className: "w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none inline-flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
     /* @__PURE__ */ jsx(Smartphone, { className: "w-5 h-5" }),
     /* @__PURE__ */ jsx("span", { children: "Download Now" })
   ] }) });
@@ -738,7 +738,7 @@ function Navbar() {
       /* @__PURE__ */ jsxs("div", { className: "hidden md:flex items-center space-x-8", children: [
         /* @__PURE__ */ jsx("a", { href: "#features", className: "text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1", children: "Features" }),
         /* @__PURE__ */ jsx("a", { href: "#faq", className: "text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1", children: "FAQ" }),
-        /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener noreferrer", onClick: () => trackDownload("navbar_en"), className: "bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors duration-200 flex items-center space-x-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
+        /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener", onClick: () => trackDownload("navbar_en"), className: "bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors duration-200 flex items-center space-x-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
           /* @__PURE__ */ jsx(Download, { className: "w-4 h-4" }),
           /* @__PURE__ */ jsx("span", { children: "Download Now" })
         ] })
@@ -748,7 +748,7 @@ function Navbar() {
     isOpen && /* @__PURE__ */ jsxs("div", { className: "md:hidden mt-2 max-w-6xl mx-auto bg-white/95 backdrop-blur-xl border border-metal-gray/30 rounded-2xl px-4 pt-2 pb-4 space-y-2 shadow-lg", children: [
       /* @__PURE__ */ jsx("a", { href: "#features", className: "block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200", onClick: () => setIsOpen(false), children: "Features" }),
       /* @__PURE__ */ jsx("a", { href: "#faq", className: "block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200", onClick: () => setIsOpen(false), children: "FAQ" }),
-      /* @__PURE__ */ jsx("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener noreferrer", className: "block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md transition-colors duration-200", onClick: () => {
+      /* @__PURE__ */ jsx("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener", className: "block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md transition-colors duration-200", onClick: () => {
         setIsOpen(false);
         trackDownload("navbar_mobile_en");
       }, children: "Download Now" })
