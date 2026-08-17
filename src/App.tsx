@@ -319,7 +319,7 @@ function FAQSection() {
         <div className="space-y-4">
           <p>
               <strong>一般用戶（免費下載）：</strong><br />
-            免費下載即可使用注音引擎、完整標準指令庫，並在新登入帳號時一次性獲得 50 次雲端 AI 魔法額度。
+            免費下載即可使用注音引擎、完整標準指令庫，並在新登入帳號時一次性獲得 30 次雲端 AI 魔法額度。
           </p>
           <p>
             <strong>Keyly Pro 訂閱（NT$150/月）：</strong><br />
