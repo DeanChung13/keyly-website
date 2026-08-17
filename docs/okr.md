@@ -381,7 +381,7 @@ n = 4（2 位存活／4 次購買）。**任何百分比門檻在此樣本下都
 
 | 日期 | 事項 | 未達門檻的後果 |
 |---|---|---|
-| **2026-08-24** | **註冊 GA4 Tier 1 自訂維度**（`cta_type`、`remaining_quota_bucket`、`current_step`，見 [KR-B §10](okr-kr-b-activation.md)）<br>確認五個無觸發點事件（建議用 GA4 DebugView）<br>~~KR-1 exposure 研究~~ 08-17 已完成<br>~~補「開始註冊」事件~~ 已撤銷，事件早就存在 | 依規則 2，逾期即視為放棄，不順延。前置逾期則對應主行動在無該資料下進行 |
+| **2026-08-24** | **註冊 `current_step` 自訂維度**（`cta_type`、`remaining_quota_bucket` 已於 08-17 完成）<br>~~確認五個無觸發點事件~~ 08-18 結案：五個全部不接，見 [KR-B §11](okr-kr-b-activation.md)<br>~~KR-1 exposure 研究~~ 08-17 已完成<br>~~補「開始註冊」事件~~ 已撤銷，事件早就存在 | 依規則 2，逾期即視為放棄，不順延。前置逾期則對應主行動在無該資料下進行 |
 | 2026-09-05 | ASO Round 1 Review（不進入 KR 判定） | — |
 | **2026-09-15** | KR-3 主行動：**新增 `activation` hero 狀態**<br>KR-1 主行動：**提交 Apple Featuring Nomination**（需先有 Apple 技術鉤子） | 兩者互為前提：hero 未修完則不提名 |
 | **2026-09-30** | **KR-2 停損**：曝光→下載 ≥ 2.5% | 該乘數封頂 2.5%，重算 KR-1 需求 |

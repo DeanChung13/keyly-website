@@ -114,7 +114,9 @@
 
 > **更正（2026-08-17）**：該事件**早就存在**。`OnboardingCardView.swift:165` 送出 `home_hero_cta_tapped`（`cta_type="sign_in"`），近兩個月實測 109 次／37 位使用者。缺的是 `cta_type` 的維度註冊，不是事件。**本文至此已三次把「維度未註冊」誤判為「缺少埋點」**（`entry_point`、`step`、`cta_type`）。完整清單見 §10。
 
-另需確認 `ai_prompt_type_selected`、`input_mode_switched`、`subscription_view_opened`、`subscription_cta_tapped`、`subscription_restored` 五個事件為何有定義卻無觸發點 —— 是尚未接上，還是我漏找。
+~~另需確認 `ai_prompt_type_selected`、`input_mode_switched`、`subscription_view_opened`、`subscription_cta_tapped`、`subscription_restored` 五個事件為何有定義卻無觸發點 —— 是尚未接上，還是我漏找。~~
+
+> **已於 2026-08-18 判定：五個全部不接。** 見 §11。
 
 ---
 
@@ -228,7 +230,7 @@
 | 下載數與註冊數期間不一致 | 下載 04-07～08-09；註冊 03-11～08-15 |
 | 樣本規模 | 52 位。所有比率的絕對人數在個位到二十幾之間 |
 | 同類 App 留存基準 | **無**。無法判斷本文任何比率是高是低 |
-| 五個有定義無觸發點的事件 | 未確認原因 |
+| ~~五個有定義無觸發點的事件~~ | **已判定不接（2026-08-18），見 §11** |
 
 ### 更正：`entry_point` 的 `(not set)` 不是程式問題（2026-08-17）
 
@@ -263,7 +265,7 @@ GA4 實測分界正好落在 **2026-08-15**：06-20～08-13 全為 `(not set)`�
 | ~~修 `paywall_opened` 的 `entry_point`~~ | — | **已撤銷**，程式碼無問題，見 §7 更正 |
 | ~~補「開始註冊」事件~~ | — | **已撤銷**，事件早就存在，見 §10 |
 | **註冊 §10 的三個 Tier 1 自訂維度** | **2026-08-24** | 未做。**GA4 設定，不需改程式** |
-| 確認五個有定義無觸發點的事件是否漏接 | **2026-08-24** | 未做。**建議做法**：開 GA4 DebugView 跑一次完整流程，比讀程式碼快 |
+| ~~確認五個有定義無觸發點的事件是否漏接~~ | — | **已於 2026-08-18 結案，五個全部不接，見 §11** |
 
 ### 主行動（產出是數字的變化）
 
@@ -277,7 +279,7 @@ GA4 實測分界正好落在 **2026-08-15**：06-20～08-13 全為 `(not set)`�
 
 | 日期 | 事項 |
 |---|---|
-| 2026-08-24 | 兩項前置到期（補「開始註冊」事件、確認五個無觸發點事件）。逾期即放棄該分析，主行動照常於 10-10 執行 |
+| 2026-08-24 | 註冊 `current_step` 自訂維度。其餘前置皆已結案 |
 | 2026-10-31 | KR-3 停損：3a ≥ 35% 或 3b ≥ 13% |
 | 2026-11-15 | 總停損，見 [okr.md](okr.md) |
 
@@ -395,3 +397,36 @@ GA4 免費版上限為 50 個事件範圍自訂維度，目前用 13 個，**沒
 ### 這件事不改變 KR-1
 
 **修好量測不會生出獲客路徑。** 本節全部屬於 KR-3／KR-4 的前置，[KR-1 的停損時鐘照常計算](okr.md)，不因量測工作暫停。
+
+
+---
+
+## 11. 五個無觸發點事件的處置（2026-08-18 結案）
+
+**五個全部不接。** 程式搜尋確認它們確實沒有任何觸發點，但**「沒有 caller」不等於「沒有資料」**——本文先前的推論錯在這裡。
+
+### 三個訂閱事件：已被取代，接了會重複計數
+
+`docs/superpowers/specs/2026-04-02-firebase-main-funnel-design.md:247`（keyly repo）明確把前兩者列為 **Replace Or Deprecate**：
+
+| 舊事件 | 取代者 | 觸發位置 |
+|---|---|---|
+| `subscription_view_opened` | `paywall_opened`（參數更完整） | `MainTabContainerView.swift:251` |
+| `subscription_cta_tapped` | `paywall_purchase_started` | `MainTabContainerView.swift:520` |
+
+購買結果另有 `purchase_result` 與 `subscription_purchased`。所以「誰看了、誰點了、成功與否」**都有資料**。
+
+`subscription_restored` 確實有真實觸發路徑，但原始設計明定不納入主漏斗；除非 KR-3 明確需要「還原成功率」，否則沒有決策用途。
+
+### 兩個 AI 事件：沒有對應的決策
+
+| 事件 | 不接的理由 |
+|---|---|
+| `ai_prompt_type_selected` | `ai_request_completed` 已帶 `prompt_type`，足以分析實際使用與成功率。selected 只多出「選了但沒送出」，目前沒有決策要它支持 |
+| `input_mode_switched` | 尚無產品決策或 KR 需要切換頻率，且鍵盤是熱路徑，不該平白增加事件量 |
+
+依 [okr.md](okr.md) 判定規則 4：答不出「能推這個乘數幾倍」就不排進去。
+
+### 建議工作（不阻擋，未執行）
+
+清掉已被取代的 `subscription_view_opened`、`subscription_cta_tapped` 兩個 case，並修正 keyly repo 的 `docs/analytics-events.md:106` 誤標為「已啟用」的狀態。留著的話，下一個讀到的人（包括我）還是會把它們當成漏接。
