@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>請假訊息不知道怎麼寫？iPhone 鍵盤 AI 幫你寫出得體請假條</title>
+  <meta name="description" content="臨時要請假，訊息打了又刪不知道怎麼措辭？教你用 Keyly 的 AI 改寫功能，把口語的請假訊息改寫成得體、顧全大局的請假條，附真實改寫前後對照。">
+  <link rel="canonical" href="https://keylyapp.com/guides/iphone-ai-leave-request/">
+  <link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/guides/iphone-ai-leave-request/">
+  <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/guides/iphone-ai-leave-request/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='20' fill='%230D142E' /%3E%3Cdefs%3E%3ClinearGradient id='k-stem' x1='30' y1='20' x2='30' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2338C7BA' /%3E%3Cstop offset='1' stop-color='%238E61D9' /%3E%3C/linearGradient%3E%3ClinearGradient id='k-arm' x1='75' y1='20' x2='40' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E6EBF2' /%3E%3Cstop offset='1' stop-color='%23BFCDE0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='25' y='20' width='16' height='60' fill='url(%23k-stem)' /%3E%3Cpath d='M75 20L41 50L75 80H55L31 50L55 20H75Z' fill='url(%23k-arm)' /%3E%3C/svg%3E">
+  <meta property="og:title" content="請假訊息不知道怎麼寫？iPhone 鍵盤 AI 幫你寫出得體請假條">
+  <meta property="og:description" content="臨時要請假，訊息打了又刪不知道怎麼措辭？教你用 Keyly 的 AI 改寫功能，把口語的請假訊息改寫成得體、顧全大局的請假條，附真實改寫前後對照。">
+  <meta property="og:url" content="https://keylyapp.com/guides/iphone-ai-leave-request/">
+  <meta property="og:image" content="https://keylyapp.com/assets/images/og-banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "請假訊息不知道怎麼寫？iPhone 鍵盤 AI 幫你寫出得體請假條",
+    "description": "臨時要請假，訊息打了又刪不知道怎麼措辭？教你用 Keyly 的 AI 改寫功能，把口語的請假訊息改寫成得體、顧全大局的請假條，附真實改寫前後對照。",
+    "inLanguage": "zh-Hant-TW",
+    "datePublished": "2026-08-18",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Keyly"
+    }
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (window.location.hostname === 'keylyapp.com' || window.location.hostname === 'www.keylyapp.com') {
+      gtag('js', new Date());
+      gtag('config', 'G-C51YGT0TVX');
+    }
+    function trackDownload(label) {
+      gtag('event', 'download_click', { event_category: 'engagement', event_label: label });
+    }
+    function trackLink(name, destination) {
+      if (window.location.hostname === 'keylyapp.com' || window.location.hostname === 'www.keylyapp.com') {
+        gtag('event', 'link_click', { event_category: 'engagement', event_label: name, destination: destination });
+      }
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-page: #F4F7FA;
+      --bg-primary: #0D142E;
+      --brand-cyan: #479ED1;
+      --brand-purple: #8E61D9;
+      --metal-white: #E6EBF2;
+      --metal-gray: #BFCDE0;
+      --text-primary: #0F1726;
+      --text-secondary: #5C708C;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Heiti TC", "Microsoft JhengHei", system-ui, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(191, 205, 224, 0.35);
+    }
+
+    .navbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .navbar-brand svg { border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+
+    .lang-btn {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--metal-gray);
+      border-radius: 999px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .lang-btn:hover { color: var(--brand-cyan); border-color: var(--brand-cyan); }
+
+    .page-wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 4rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--brand-cyan); }
+
+    .page-header { margin-bottom: 1.5rem; }
+
+    .page-header h1 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-meta { font-size: 0.85rem; color: var(--text-secondary); }
+
+    .hook-lede {
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-left: 4px solid var(--brand-purple);
+      border-radius: 12px;
+      padding: 1.1rem 1.3rem;
+      margin-bottom: 2rem;
+    }
+
+    .legal-content h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 2.75rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--metal-gray);
+    }
+
+    .legal-content h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 1.75rem 0 0.5rem;
+    }
+
+    .legal-content p { color: var(--text-secondary); margin-bottom: 0.875rem; }
+
+    .legal-content ul, .legal-content ol {
+      margin: 0.5rem 0 0.875rem 1.25rem;
+      color: var(--text-secondary);
+    }
+
+    .legal-content li { margin-bottom: 0.4rem; }
+    .legal-content strong { color: var(--text-primary); font-weight: 700; }
+
+    .legal-content a { color: var(--brand-cyan); text-decoration: none; }
+    .legal-content a:hover { text-decoration: underline; }
+
+    .summary-box {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 14px;
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .summary-box ul, .summary-box ol { margin: 0.5rem 0 0.5rem 1.2rem; }
+    .summary-box p:last-child { margin-bottom: 0; }
+
+    .note {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-left: 4px solid var(--brand-cyan);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      margin: 1.25rem 0;
+      font-size: 0.92rem;
+    }
+
+    .note p:last-child { margin-bottom: 0; }
+
+    .rewrite-pair {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin: 1.25rem 0;
+      align-items: stretch;
+    }
+
+    @media (min-width: 720px) {
+      .rewrite-pair { grid-template-columns: 1fr auto 1fr; align-items: center; }
+    }
+
+    .rewrite-arrow {
+      text-align: center;
+      color: var(--brand-cyan);
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .rewrite-card {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+    }
+
+    .rewrite-card.before { border-left: 4px solid var(--metal-gray); }
+    .rewrite-card.after { border-left: 4px solid var(--brand-cyan); }
+
+    .rewrite-card .label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .rewrite-card .text {
+      color: var(--text-primary);
+      white-space: pre-line;
+      font-size: 0.95rem;
+    }
+
+    .variant-list .rewrite-card { margin-bottom: 0.75rem; }
+    .variant-list .rewrite-card:last-child { margin-bottom: 0; }
+
+    details.faq {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+
+    details.faq > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.9rem 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    details.faq > summary::-webkit-details-marker { display: none; }
+    details.faq > summary::after { content: " ＋"; color: var(--brand-cyan); }
+    details.faq[open] > summary::after { content: " －"; }
+    details.faq .faq-body { padding: 0 1.15rem 1.1rem; }
+    details.faq .faq-body p:last-child { margin-bottom: 0; }
+
+    .cta-box {
+      background: var(--bg-primary);
+      color: var(--metal-white);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem;
+      margin: 3rem 0 0;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      border: 0;
+      color: var(--metal-white);
+      margin: 0 0 0.5rem;
+      padding: 0;
+      font-size: 1.15rem;
+    }
+
+    .cta-box p { color: var(--metal-gray); margin-bottom: 1.1rem; }
+    .cta-box a.inline { color: var(--metal-white); text-decoration: underline; }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--brand-cyan);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+    }
+
+    .cta-btn:hover { background: var(--brand-purple); }
+
+    .footer {
+      background: var(--bg-page);
+      border-top: 1px solid rgba(191, 205, 224, 0.4);
+      padding: 2.5rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .footer-brand svg { border-radius: 6px; }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--brand-cyan); }
+    .footer-links .sep { color: var(--metal-gray); }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--metal-gray);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="ks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="ka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#ks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#ka)"/>
+        </svg>
+        Keyly
+      </a>
+      <a href="/" class="lang-btn">回首頁</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+    <p class="breadcrumb"><a href="/">Keyly</a> ／ <a href="/guides/" onclick="trackLink('guides_hub','/guides/')">使用指南</a> ／ 請假訊息</p>
+
+    <div class="page-header">
+      <h1>請假訊息不知道怎麼寫？AI 幫你寫出得體請假條</h1>
+      <p class="page-meta">更新日期：2026 年 8 月 18 日</p>
+    </div>
+
+    <p class="hook-lede">你是否也遇過：臨時身體不舒服或有急事，訊息打了又刪，不知道要不要講理由、講多少才不會顯得在找藉口，最後隨便傳一句「我今天請假」就送出，傳完還在想主管會怎麼想？</p>
+
+    <div class="legal-content">
+      <h2>問題出在哪：請假訊息難寫的不是「要不要講理由」，是「怎麼讓語氣得體」</h2>
+      <p>網路上很多討論請假的文章，重點放在「請假理由要怎麼掰」；但實際卡住多數人的，其實是<strong>訊息本身的語氣</strong>——用 LINE 或訊息軟體請假，要嘛顯得太隨便（「我請假 有事」），要嘛想寫得正式一點卻不知道怎麼組織，越想越花時間，最後乾脆傳最短的版本，事後又擔心對方覺得不夠尊重。</p>
+      <p>這種尷尬在臨時請假時特別明顯：時間壓力下沒空慢慢斟酌用字，但請假訊息又是會被主管直接看到、留下印象的文字。</p>
+
+      <h2>先學會這個原則：得體的請假訊息，通常包含這三件事</h2>
+      <div class="summary-box">
+        <p>不管用什麼工具，一則讓人讀了不會皺眉的請假訊息，大致會交代這三件事：</p>
+        <ul>
+          <li><strong>清楚的時間範圍</strong>——請假是哪一天、多久，第一句就講清楚，不用對方追問。</li>
+          <li><strong>簡短、不過度解釋的原因</strong>——講一個合理範圍內的理由即可，不需要鉅細靡遺地自我辯護，講太多反而顯得心虛。</li>
+          <li><strong>對工作影響的安排</strong>——這是最容易被忽略、但最能顯得「顧全大局」的一句：手邊的事會怎麼處理、需不需要交接。</li>
+        </ul>
+        <p>比起理由本身，<strong>語氣是不是顯得你有把工作放在心上</strong>，往往才是決定這則訊息讀起來得不得體的關鍵。</p>
+      </div>
+
+      <h2>用 Keyly 的 AI 改寫功能，把口語訊息改成得體請假條</h2>
+      <p>Keyly 是一款可以在任何 App 輸入框使用的繁體中文注音鍵盤，內建 AI 改寫功能，其中「高情商請假條」範本就是針對這個情境設計的。操作方式：</p>
+      <ol>
+        <li><strong>直接打出你原本想傳的內容</strong>，不用管語氣好不好，口語、沒標點都沒關係——例如「明天我要請假 有事」。</li>
+        <li><strong>切換到 Keyly 鍵盤</strong>，點鍵盤上的 AI 改寫圖示。</li>
+        <li><strong>選擇「高情商請假條」範本</strong>。</li>
+        <li><strong>取得改寫結果</strong>，AI 會把原本隨手打的句子，改寫成語氣得體、有交代工作安排的版本。</li>
+        <li><strong>送出前自己再看一次</strong>——確認改寫後的內容符合實際狀況，尤其是請假天數、時間這類事實細節，AI 不會知道你真正的排班或工作安排，這部分務必自己核對後再送出。</li>
+      </ol>
+      <div class="note">
+        <p>如果鍵盤上找不到 AI 改寫選項，通常是「允許完全取用」還沒開啟——AI 改寫需要連網才能運作。設定方式可以參考〈<a href="/guides/full-access/" onclick="trackLink('guide_full_access','/guides/full-access/')">允許完全取用是什麼？安全嗎？</a>〉。</p>
+      </div>
+
+      <h2>實際改寫前後對照</h2>
+      <p>以下是 Keyly「高情商請假條」範本的真實改寫結果（來自產品內建的示範資料，非本文另外生成）：</p>
+
+      <div class="rewrite-pair">
+        <div class="rewrite-card before">
+          <p class="label">改寫前</p>
+          <p class="text">明天我要請假 有事</p>
+        </div>
+        <div class="rewrite-arrow">→</div>
+        <div class="rewrite-card after">
+          <p class="label">Keyly 改寫後</p>
+          <p class="text">關於明天的請假，我有些個人事務需要處理。為了確保工作的順遂推行，我會事先妥善安排好手邊的業務，並與相關同仁協調交接事宜，盡量將影響降到最低。請您放心。</p>
+        </div>
+      </div>
+
+      <p>同一句原文，AI 每次改寫的正式程度略有不同，以下是另外兩種實際版本：</p>
+      <div class="variant-list">
+        <div class="rewrite-card after">
+          <p class="label">版本 2（較簡短）</p>
+          <p class="text">明天我有些家務需要處理，需要請假一天。已經安排好手邊的工作進度，也會確保請假期間不會影響團隊的整體運作。謝謝您的理解。</p>
+        </div>
+        <div class="rewrite-card after">
+          <p class="label">版本 3（較詳細）</p>
+          <p class="text">明早我需要請假一天，因有家務事需要處理。我已妥善安排手邊工作，也會請同事協助處理突發狀況，確保業務不受影響。造成不便之處，敬請見諒。</p>
+        </div>
+      </div>
+
+      <h2>延伸情境：不是所有對象都適合同一種語氣</h2>
+      <p>「高情商請假條」預設是偏正式、對主管或客戶的語氣。如果對象是交情不錯的同事，你可能不需要這麼正式的版本——這種情況下，可以先用「精準校對轉譯」（Keyly 的預設範本，用途是修正語法生硬感、不特別拉高正式度）試試看，改寫幅度會比較輕，保留原本的語氣但去掉隨便感。挑選範本時，可以按你要傳的對象決定用哪一個，不是每次都套最正式的版本。</p>
+
+      <h2>常見問題</h2>
+      <details class="faq">
+        <summary>AI 改寫的請假理由會不會太假？</summary>
+        <div class="faq-body">
+          <p>Keyly 的改寫只會調整你原本輸入內容的語氣與組織方式，不會捏造你沒提到的理由或細節——如果你只打「有事」，改寫結果也只會圍繞「有個人事務需要處理」這類籠統說法，不會自己編造具體原因。想要更明確的理由，還是要自己在原文裡先講清楚。</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary>每次改寫出來的內容都一樣嗎？</summary>
+        <div class="faq-body">
+          <p>不會完全一樣，同一句原文每次改寫用字會有些微差異，正式程度、長短也會略有不同，這是本文對照中看到的實際情況。如果拿到的版本不滿意，可以再重新產生一次。</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary>這個功能適合用在正式的請假系統嗎？</summary>
+        <div class="faq-body">
+          <p>Keyly 是鍵盤，改寫出來的文字可以貼到任何你在打字的地方，包括公司的請假系統或表單欄位。但送出前務必自己確認內容符合公司規定與實際情況，AI 改寫不能取代正式請假流程要求的資訊（例如假別、必要文件）。</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-box">
+      <h2>下次臨時請假，讓 AI 先幫你打草稿</h2>
+      <p>Keyly 是可以在任何 App 輸入框使用的 AI 注音鍵盤，「高情商請假條」只是內建範本之一，其他情境（婉拒、催進度、回覆長輩等）也都有對應範本。免費下載試試看。</p>
+      <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_leave_request_bottom')">在 App Store 下載 Keyly</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-brand">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="fks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="fka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#fks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#fka)"/>
+        </svg>
+        Keyly
+      </a>
+      <div class="footer-links">
+        <a href="/guides/" onclick="trackLink('guides_hub','/guides/')">所有使用指南</a>
+        <span class="sep">|</span>
+        <a href="/">回首頁</a>
+        <span class="sep">|</span>
+        <a href="/privacy/">隱私權政策</a>
+        <span class="sep">|</span>
+        <a href="mailto:support@keylyapp.com">技術支援</a>
+      </div>
+      <p class="footer-copy">© 2026 Keyly 由台灣團隊專為高效溝通而生。</p>
+    </div>
+  </footer>
+
+</body>
+</html>
