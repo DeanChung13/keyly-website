@@ -149,7 +149,7 @@ tutorial 只示範 **3 個**：**高情商請假條、長輩平安喜樂體、�
 | `tutorial_completed` | — | 完成率 | ✅ 已實作 |
 | ~~`tutorial_dismissed`~~ | — | — | ❌ **已移除，見下** |
 
-**GA4 自訂維度 `page_index`、`prompt_id` 已於 2026-08-18 註冊**（目前共 17 個）。
+**GA4 自訂維度 `page_index`、`prompt_id` 已於 2026-08-18 註冊**（~~目前共 17 個~~ **更正 2026-08-19：實測共 19 個**，另含 Tier 1 三個與 `prompt_type`）。
 
 `prompt_id` 是實作時新增的，規格初版只有 `page_index`——沒有它就不知道三個示範哪一個真的被點，而那是挑內容時最想知道的事。
 
