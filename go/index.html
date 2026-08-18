@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>正在前往 Keyly App Store...</title>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=https://apps.apple.com/app/apple-store/id6759639348?pt=686508&amp;ct=threads&amp;mt=8">
+  </noscript>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    (function() {
+      var targetUrl = 'https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=threads&mt=8';
+
+      // 取出 code (支援 /go/t001, /go/t001/, 或 /go/?p=t001) 並加上白名單檢查
+      function extractCode() {
+        var raw = '';
+        var pathname = window.location.pathname || '';
+        var stripped = pathname.replace(/^\/go(?:\/|$)/, '');
+        var match = stripped.match(/^([^\/?#]+)/);
+        if (match && match[1]) {
+          raw = match[1];
+        } else {
+          var search = window.location.search || '';
+          var params = new URLSearchParams(search);
+          if (params.has('p') && params.get('p')) {
+            raw = params.get('p');
+          }
+        }
+
+        // A3: 白名單驗證 ^[a-z0-9_-]{1,16}$
+        if (/^[a-z0-9_-]{1,16}$/.test(raw)) {
+          return raw;
+        }
+        return 'invalid';
+      }
+
+      var code = extractCode();
+      var redirected = false;
+
+      function doRedirect() {
+        if (!redirected) {
+          redirected = true;
+          window.location.replace(targetUrl);
+        }
+      }
+
+      // A1: 1200ms timeout fallback
+      var timeoutId = setTimeout(doRedirect, 1200);
+
+      // A2: hostname guard
+      var hostname = window.location.hostname;
+      if (hostname === 'keylyapp.com' || hostname === 'www.keylyapp.com') {
+        gtag('js', new Date());
+        gtag('config', 'G-C51YGT0TVX');
+        gtag('event', 'go_click', {
+          event_category: 'acquisition',
+          event_label: code,
+          event_callback: function() {
+            clearTimeout(timeoutId);
+            doRedirect();
+          }
+        });
+      }
+    })();
+  </script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #0D142E;
+      color: #E6EBF2;
+      text-align: center;
+    }
+    .container {
+      padding: 24px;
+    }
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      border-top-color: #479ED1;
+      animation: spin 0.8s ease-in-out infinite;
+      margin: 0 auto 16px auto;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    a {
+      color: #479ED1;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="spinner"></div>
+    <p>正在前往 App Store...</p>
+    <p style="font-size: 14px; color: #8F9CAE; margin-top: 8px;">
+      若未自動跳轉，請<a href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&amp;ct=threads&amp;mt=8">點擊此處</a>
+    </p>
+  </div>
+</body>
+</html>

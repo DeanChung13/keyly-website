@@ -34,6 +34,7 @@ export default defineConfig({
           guidesMessageSummary: path.resolve(__dirname, 'guides/iphone-ai-message-summary/index.html'),
           guidesLeaveRequest: path.resolve(__dirname, 'guides/iphone-ai-leave-request/index.html'),
           guidesElderlyReply: path.resolve(__dirname, 'guides/iphone-ai-elderly-reply/index.html'),
+          go: path.resolve(__dirname, 'go/index.html'),
           notFound: path.resolve(__dirname, '404.html'),
         },
       },
