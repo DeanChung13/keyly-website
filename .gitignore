@@ -16,6 +16,7 @@ Thumbs.db
 
 # AI Assistants
 .agent/
+.agents/
 .claude/
 
 # Node.js / Vite
