@@ -101,3 +101,8 @@
 它目前沒造成傷害——反而該慶幸，因為它會在使用者剛拿到 50 次免費額度的同一秒彈出 paywall，正是 [§9 根因](okr-kr-b-activation.md) 要避免的行為。
 
 **建議**：直接刪除，不要接上。若保留，未來有人「修好」它會直接惡化 3a。刪除時一併移除 `homeHeroOnboardingComplete` enum case，避免它繼續出現在 `PaywallEntryPoint` 的選項裡誤導人。
+
+## 2026-08-21 — agent-collaboration skill
+
+四項建議已全數實作並實測（agent-send 的 buffer 競態與 registry 容錯由 claude 修，
+agent-register 由 agy 實作、claude 獨立驗證）。此處保留紀錄，無待辦。
