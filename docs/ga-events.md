@@ -18,7 +18,7 @@
 | 服務條款（英文） | `/terms/en/` | `terms/en/index.html` |
 | 自動續訂說明（中文） | `/subscriptions/` | `subscriptions/index.html` |
 | 自動續訂說明（英文） | `/subscriptions/en/` | `subscriptions/en/index.html` |
-| Guides Hub — 使用指南 | `/guides/` | `guides/index.html` |
+| Guides Hub — 實用指南 | `/guides/` | `guides/index.html` |
 | Guide — 允許完全取用 | `/guides/full-access/` | `guides/full-access/index.html` |
 | Guide — iPhone 注音輸入法比較 | `/guides/iphone-zhuyin-keyboard/` | `guides/iphone-zhuyin-keyboard/index.html` |
 | Guide — 注音選字不準的檢查方法 | `/guides/iphone-zhuyin-selection-fixes/` | `guides/iphone-zhuyin-selection-fixes/index.html` |
@@ -53,11 +53,11 @@
 | `section_view` | `engagement` | (區塊 ID) | 區塊可見度（捲動深度追蹤） | `src/App.tsx` / `AppEn.tsx` |
 | `feature_click` | `engagement` | (功能標題) | 特色區塊功能卡片點擊 | `src/App.tsx` / `AppEn.tsx` |
 | `link_click` | `engagement` | (連結名稱) | 頁尾或其他外部連結點擊 | `src/App.tsx` / `AppEn.tsx` |
-| `link_click` | `engagement` | `guides_hub` | 首頁頁尾前往使用指南 Hub | `src/App.tsx` |
-| `link_click` | `engagement` | `home_nav_guides` | 中文首頁桌面導覽列前往使用指南 Hub | `src/App.tsx` |
-| `link_click` | `engagement` | `home_nav_guides_mobile` | 中文首頁手機選單前往使用指南 Hub | `src/App.tsx` |
-| `link_click` | `engagement` | `guides_hub` | 六個 Guide 頁尾前往使用指南 Hub | `guides/*/index.html` |
-| `link_click` | `engagement` | `guides_hub` | 中文法務頁（隱私權政策／服務條款／自動續訂說明）頁尾前往使用指南 Hub | `privacy/index.html` / `terms/index.html` / `subscriptions/index.html` |
+| `link_click` | `engagement` | `guides_hub` | 首頁頁尾前往實用指南 Hub | `src/App.tsx` |
+| `link_click` | `engagement` | `home_nav_guides` | 中文首頁桌面導覽列前往實用指南 Hub | `src/App.tsx` |
+| `link_click` | `engagement` | `home_nav_guides_mobile` | 中文首頁手機選單前往實用指南 Hub | `src/App.tsx` |
+| `link_click` | `engagement` | `guides_hub` | 六個 Guide 頁尾前往實用指南 Hub | `guides/*/index.html` |
+| `link_click` | `engagement` | `guides_hub` | 中文法務頁（隱私權政策／服務條款／自動續訂說明）頁尾前往實用指南 Hub | `privacy/index.html` / `terms/index.html` / `subscriptions/index.html` |
 | `link_click` | `engagement` | `guide_zhuyin_comparison` | Hub「選擇輸入方式」前往注音鍵盤比較頁 | `guides/index.html` |
 | `link_click` | `engagement` | `guide_double_pinyin` | Hub「選擇輸入方式」前往雙拼頁 | `guides/index.html` |
 | `link_click` | `engagement` | `guide_selection_fixes` | Hub「解決鍵盤問題」前往選字排查頁 | `guides/index.html` |

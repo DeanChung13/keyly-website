@@ -130,7 +130,7 @@ function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1">功能特色</a>
-            <a href="/guides/" onClick={() => trackLinkClick('home_nav_guides', '/guides/')} className="text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1">使用指南</a>
+            <a href="/guides/" onClick={() => trackLinkClick('home_nav_guides', '/guides/')} className="text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1">實用指南</a>
             <a href="#faq" className="text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1">常見問題</a>
             <a href={DOWNLOAD_URL} target="_blank" rel="noopener" onClick={() => trackDownload('navbar')} className="bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors duration-200 flex items-center space-x-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2">
               <Download className="w-4 h-4" />
@@ -151,7 +151,7 @@ function Navbar() {
       {isOpen && (
         <div className="md:hidden mt-2 max-w-6xl mx-auto bg-white/95 backdrop-blur-xl border border-metal-gray/30 rounded-2xl px-4 pt-2 pb-4 space-y-2 shadow-lg">
           <a href="#features" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200" onClick={() => setIsOpen(false)}>功能特色</a>
-          <a href="/guides/" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200" onClick={() => { setIsOpen(false); trackLinkClick('home_nav_guides_mobile', '/guides/'); }}>使用指南</a>
+          <a href="/guides/" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200" onClick={() => { setIsOpen(false); trackLinkClick('home_nav_guides_mobile', '/guides/'); }}>實用指南</a>
           <a href="#faq" className="block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200" onClick={() => setIsOpen(false)}>常見問題</a>
           <a href={DOWNLOAD_URL} target="_blank" rel="noopener" className="block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md transition-colors duration-200" onClick={() => { setIsOpen(false); trackDownload('navbar_mobile'); }}>免費下載</a>
         </div>
@@ -403,7 +403,7 @@ function Footer() {
             <span className="font-bold text-text-primary">Keyly</span>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-3 text-sm text-text-secondary">
-            <a href="/guides/" onClick={() => trackLinkClick('guides_hub', '/guides/')} className="hover:text-brand-cyan transition-colors">使用指南</a>
+            <a href="/guides/" onClick={() => trackLinkClick('guides_hub', '/guides/')} className="hover:text-brand-cyan transition-colors">實用指南</a>
             <span className="text-metal-gray/50">|</span>
             <a href="/privacy/" onClick={() => trackLinkClick('privacy_policy', '/privacy/')} className="hover:text-brand-cyan transition-colors">隱私權政策</a>
             <span className="text-metal-gray/50">|</span>

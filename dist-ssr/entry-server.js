@@ -415,7 +415,7 @@ function Navbar$1() {
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "hidden md:flex items-center space-x-8", children: [
         /* @__PURE__ */ jsx("a", { href: "#features", className: "text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1", children: "功能特色" }),
-        /* @__PURE__ */ jsx("a", { href: "/guides/", onClick: () => trackLinkClick$1("home_nav_guides", "/guides/"), className: "text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1", children: "使用指南" }),
+        /* @__PURE__ */ jsx("a", { href: "/guides/", onClick: () => trackLinkClick$1("home_nav_guides", "/guides/"), className: "text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1", children: "實用指南" }),
         /* @__PURE__ */ jsx("a", { href: "#faq", className: "text-text-secondary hover:text-brand-cyan transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md px-1", children: "常見問題" }),
         /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener", onClick: () => trackDownload$1("navbar"), className: "bg-bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-bg-secondary transition-colors duration-200 flex items-center space-x-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
           /* @__PURE__ */ jsx(Download, { className: "w-4 h-4" }),
@@ -429,7 +429,7 @@ function Navbar$1() {
       /* @__PURE__ */ jsx("a", { href: "/guides/", className: "block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200", onClick: () => {
         setIsOpen(false);
         trackLinkClick$1("home_nav_guides_mobile", "/guides/");
-      }, children: "使用指南" }),
+      }, children: "實用指南" }),
       /* @__PURE__ */ jsx("a", { href: "#faq", className: "block px-3 py-2 text-text-secondary hover:bg-metal-white/50 rounded-md transition-colors duration-200", onClick: () => setIsOpen(false), children: "常見問題" }),
       /* @__PURE__ */ jsx("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener", className: "block px-3 py-2 text-brand-cyan font-medium hover:bg-metal-white/50 rounded-md transition-colors duration-200", onClick: () => {
         setIsOpen(false);
@@ -642,7 +642,7 @@ function Footer$1() {
         /* @__PURE__ */ jsx("span", { className: "font-bold text-text-primary", children: "Keyly" })
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-wrap justify-center items-center gap-3 text-sm text-text-secondary", children: [
-        /* @__PURE__ */ jsx("a", { href: "/guides/", onClick: () => trackLinkClick$1("guides_hub", "/guides/"), className: "hover:text-brand-cyan transition-colors", children: "使用指南" }),
+        /* @__PURE__ */ jsx("a", { href: "/guides/", onClick: () => trackLinkClick$1("guides_hub", "/guides/"), className: "hover:text-brand-cyan transition-colors", children: "實用指南" }),
         /* @__PURE__ */ jsx("span", { className: "text-metal-gray/50", children: "|" }),
         /* @__PURE__ */ jsx("a", { href: "/privacy/", onClick: () => trackLinkClick$1("privacy_policy", "/privacy/"), className: "hover:text-brand-cyan transition-colors", children: "隱私權政策" }),
         /* @__PURE__ */ jsx("span", { className: "text-metal-gray/50", children: "|" }),
