@@ -125,4 +125,20 @@ describe('首頁下載 CTA', () => {
       });
     });
   }
+
+  it('繁中首頁提供注音鍵盤比較入口並送出可辨識的 link_click', () => {
+    render(<App />);
+
+    const comparisonLink = screen.getByRole('link', {
+      name: '還在比較？查看 iPhone 注音鍵盤推薦與功能比較',
+    });
+
+    expect(comparisonLink).toHaveAttribute('href', '/guides/iphone-zhuyin-keyboard/');
+    fireEvent.click(comparisonLink);
+    expect(gtag).toHaveBeenCalledWith('event', 'link_click', {
+      event_category: 'engagement',
+      event_label: 'home_hero_zhuyin_comparison',
+      destination: '/guides/iphone-zhuyin-keyboard/',
+    });
+  });
 });

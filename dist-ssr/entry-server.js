@@ -452,7 +452,18 @@ function Hero$1() {
             ] })
           ] }),
           /* @__PURE__ */ jsx("p", { className: "text-base lg:text-lg text-text-secondary/90 leading-relaxed max-w-xl mx-auto lg:mx-0", children: "為 iPhone 與 iPad 的繁體中文使用者打造的注音輸入法。核心是注音輸入與選字，離線就能使用。AI 分兩種：雲端 AI 的潤飾、翻譯與改寫需要網路；在支援 Apple 裝置端 AI 框架的機型上，另有可離線使用的基礎修正。" }),
-          /* @__PURE__ */ jsx("div", { className: "mt-8", children: /* @__PURE__ */ jsx(DownloadCTA$1, {}) })
+          /* @__PURE__ */ jsxs("div", { className: "mt-8", children: [
+            /* @__PURE__ */ jsx(DownloadCTA$1, {}),
+            /* @__PURE__ */ jsx(
+              "a",
+              {
+                href: "/guides/iphone-zhuyin-keyboard/",
+                onClick: () => trackLinkClick$1("home_hero_zhuyin_comparison", "/guides/iphone-zhuyin-keyboard/"),
+                className: "inline-flex items-center mt-5 text-sm font-medium text-text-secondary hover:text-brand-cyan underline underline-offset-4 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md",
+                children: "還在比較？查看 iPhone 注音鍵盤推薦與功能比較"
+              }
+            )
+          ] })
         ]
       }
     ) }),

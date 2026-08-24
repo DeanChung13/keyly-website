@@ -57,6 +57,7 @@
 | `link_click` | `engagement` | `guide_double_pinyin` | Hub「選擇輸入方式」前往雙拼頁 | `guides/index.html` |
 | `link_click` | `engagement` | `guide_selection_fixes` | Hub「解決鍵盤問題」前往選字排查頁 | `guides/index.html` |
 | `link_click` | `engagement` | `guide_keyboard_haptics` | Hub「解決鍵盤問題」前往鍵盤震動頁 | `guides/index.html` |
+| `link_click` | `engagement` | `home_hero_zhuyin_comparison` | 中文首頁 Hero 前往 iPhone 注音鍵盤推薦與比較 | `src/App.tsx` |
 | `link_click` | `engagement` | `guide_full_access` | Hub「解決鍵盤問題」前往完全取用說明 | `guides/index.html` |
 | `link_click` | `engagement` | `guide_apple_intelligence` | Hub「AI 與寫作功能」前往書寫工具比較頁 | `guides/index.html` |
 | `link_click` | `engagement` | `guide_double_pinyin` | 注音比較頁前往雙拼頁 | `guides/iphone-zhuyin-keyboard/index.html` |

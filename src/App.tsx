@@ -189,6 +189,13 @@ function Hero() {
 
               <div className="mt-8">
                 <DownloadCTA />
+                <a
+                  href="/guides/iphone-zhuyin-keyboard/"
+                  onClick={() => trackLinkClick('home_hero_zhuyin_comparison', '/guides/iphone-zhuyin-keyboard/')}
+                  className="inline-flex items-center mt-5 text-sm font-medium text-text-secondary hover:text-brand-cyan underline underline-offset-4 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md"
+                >
+                  還在比較？查看 iPhone 注音鍵盤推薦與功能比較
+                </a>
               </div>
             </motion.div>
           </div>
