@@ -26,6 +26,7 @@
 | Guide — 書寫工具與 AI 鍵盤怎麼選 | `/guides/apple-intelligence-vs-ai-keyboard/` | `guides/apple-intelligence-vs-ai-keyboard/index.html` |
 | Guide — iPhone 雙拼輸入 | `/guides/iphone-double-pinyin/` | `guides/iphone-double-pinyin/index.html` |
 | Guide — 委婉拒絕訊息範例 | `/guides/iphone-ai-polite-refusal/` | `guides/iphone-ai-polite-refusal/index.html` |
+| Guide — Keyly AI 改寫操作教學 | `/guides/how-to-use-keyly-ai-rewrite/` | `guides/how-to-use-keyly-ai-rewrite/index.html` |
 | 404 頁面 | `/*` | `404.html` |
 
 `gtag('config', ...)` 自 2026-08-11 起以 hostname 判斷是否執行，只有 `keylyapp.com` 與 `www.keylyapp.com` 會送出 page_view；本機與預覽環境不計入。
@@ -48,6 +49,8 @@
 | `download_click` | `engagement` | `guide_double_pinyin_bottom` | 雙拼頁結尾 CTA（全頁唯一一個下載 CTA） | `guides/iphone-double-pinyin/index.html` |
 | `download_click` | `engagement` | `guide_full_access_bottom` | 完全取用頁結尾 CTA（全頁唯一一個下載 CTA） | `guides/full-access/index.html` |
 | `download_click` | `engagement` | `guide_polite_refusal_hero` / `_mid` / `_bottom` | 委婉拒絕頁三段 App Store CTA | `guides/iphone-ai-polite-refusal/index.html` |
+| `download_click` | `engagement` | `guide_ai_rewrite_top` / `guide_ai_rewrite_mid` / `guide_ai_rewrite_bottom` | AI 改寫教學頁三段 App Store 下載 CTA | `guides/how-to-use-keyly-ai-rewrite/index.html` |
+| `link_click` | `engagement` | `guide_ai_rewrite` | Hub「Keyly 使用教學」與各 AI 情境頁前往 AI 改寫教學頁 | `guides/index.html` / `guides/*/index.html` |
 | `copy_template` | `engagement` | `refusal_extra_work` / `refusal_other_owner` / `refusal_invitation` / `refusal_collaboration` / `refusal_after_hours` | 委婉拒絕頁範例複製成功 | `guides/iphone-ai-polite-refusal/index.html` |
 | `faq_click` | `engagement` | (FAQ 題目) | FAQ 問題點擊展開 | `src/App.tsx` / `AppEn.tsx` |
 | `section_view` | `engagement` | (區塊 ID) | 區塊可見度（捲動深度追蹤） | `src/App.tsx` / `AppEn.tsx` |
