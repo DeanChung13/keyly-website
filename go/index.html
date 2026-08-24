@@ -15,7 +15,7 @@
     function gtag(){dataLayer.push(arguments);}
 
     (function() {
-      var targetUrl = 'https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=threads&mt=8';
+      var baseUrl = 'https://apps.apple.com/app/apple-store/id6759639348?pt=686508&mt=8';
 
       // 取出 code (支援 /go/t001, /go/t001/, 或 /go/?p=t001) 並加上白名單檢查
       function extractCode() {
@@ -41,6 +41,8 @@
       }
 
       var code = extractCode();
+      var ct = (code !== 'invalid') ? code : 'threads';
+      var targetUrl = baseUrl + '&ct=' + encodeURIComponent(ct);
       var redirected = false;
 
       function doRedirect() {
