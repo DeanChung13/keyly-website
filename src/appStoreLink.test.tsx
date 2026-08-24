@@ -141,4 +141,28 @@ describe('首頁下載 CTA', () => {
       destination: '/guides/iphone-zhuyin-keyboard/',
     });
   });
+
+  it('繁中首頁的桌面與手機導覽都提供使用指南入口並分別追蹤', () => {
+    render(<App />);
+    openMobileMenu('切換選單');
+
+    const guideLinks = Array.from(
+      document.querySelectorAll<HTMLAnchorElement>('nav a[href="/guides/"]')
+    );
+    expect(guideLinks).toHaveLength(2);
+
+    fireEvent.click(guideLinks[0]);
+    fireEvent.click(guideLinks[1]);
+
+    expect(gtag).toHaveBeenCalledWith('event', 'link_click', {
+      event_category: 'engagement',
+      event_label: 'home_nav_guides',
+      destination: '/guides/',
+    });
+    expect(gtag).toHaveBeenCalledWith('event', 'link_click', {
+      event_category: 'engagement',
+      event_label: 'home_nav_guides_mobile',
+      destination: '/guides/',
+    });
+  });
 });

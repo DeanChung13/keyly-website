@@ -54,6 +54,8 @@
 | `feature_click` | `engagement` | (功能標題) | 特色區塊功能卡片點擊 | `src/App.tsx` / `AppEn.tsx` |
 | `link_click` | `engagement` | (連結名稱) | 頁尾或其他外部連結點擊 | `src/App.tsx` / `AppEn.tsx` |
 | `link_click` | `engagement` | `guides_hub` | 首頁頁尾前往使用指南 Hub | `src/App.tsx` |
+| `link_click` | `engagement` | `home_nav_guides` | 中文首頁桌面導覽列前往使用指南 Hub | `src/App.tsx` |
+| `link_click` | `engagement` | `home_nav_guides_mobile` | 中文首頁手機選單前往使用指南 Hub | `src/App.tsx` |
 | `link_click` | `engagement` | `guides_hub` | 六個 Guide 頁尾前往使用指南 Hub | `guides/*/index.html` |
 | `link_click` | `engagement` | `guides_hub` | 中文法務頁（隱私權政策／服務條款／自動續訂說明）頁尾前往使用指南 Hub | `privacy/index.html` / `terms/index.html` / `subscriptions/index.html` |
 | `link_click` | `engagement` | `guide_zhuyin_comparison` | Hub「選擇輸入方式」前往注音鍵盤比較頁 | `guides/index.html` |
