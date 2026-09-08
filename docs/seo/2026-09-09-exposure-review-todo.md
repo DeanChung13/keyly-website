@@ -1,7 +1,9 @@
 # 2026-09-09 曝光成效檢查：待辦任務
 
 查詢日期：2026-09-09
-資料期間：2026-08-12 ～ 2026-09-08（28 天），對照期 2026-07-15 ～ 2026-08-11
+資料期間：2026-08-12 ～ 2026-09-08（請求 28 天），對照期 2026-07-15 ～ 2026-08-11（28 天）
+**GSC 實際只回傳到 2026-09-06**：09-07、09-08 兩天尚無資料（GSC 約 2 天延遲），
+因此本期 GSC 數字是 **26 天**，對照期為完整 28 天。兩期不同長度，成長幅度若有偏差是**低估**。
 資料來源：GSC `sc-domain:keylyapp.com`（Web）、GA4 property 525557787（keyly-b9b15）
 上位文件：[okr.md](../okr.md) → KR-1、[GSC 曝光基準](2026-08-11-gsc-exposure-baseline.md)
 
@@ -10,7 +12,7 @@
 > **重要讀數限制**：`ebdbe56 feat(growth): optimize search snippets and guide CTAs`
 > 於 **2026-09-04** 進版，距資料截止（09-08）只有 4 天。本文第 1、2 項所測的 28 天窗口
 > **有 24 天在該次優化之前**。因此「CTA 沒有點擊」與「snippet CTR 偏低」都不能當成
-> 該次優化無效的證據；要判定成效，最早應在 **2026-10-02**（改版後滿 28 天）重讀同一組指標。
+> 該次優化無效的證據；要判定成效，最早應在 **2026-10-04**（改版後滿 28 天，再加 GSC 的 2 天延遲）重讀同一組指標。
 
 ---
 
@@ -146,7 +148,9 @@ Query 意圖與頁面主題相符，人也進來了，但幾乎立刻離開。
 
 不加 `platform` 維度會直接誤讀：
 - `sessionDefaultChannelGroup` 的 Direct 117 sessions，其中 **90 是 iOS App**，只有 27 是網站。
-- `landingPagePlusQueryString` 的最大一列 `(not set)` 90 sessions，是 App session（本來就沒有 landing page），**不是網站的歸因遺失**。
+- `landingPagePlusQueryString` 的最大一列 `(not set)` 90 sessions，拆開後 **86 是 iOS App**
+  （本來就沒有 landing page），只有 **4 是 web**。整列不能當成網站的歸因遺失，
+  但那 4 筆 web 的 `(not set)` 仍是真的歸因遺失，量小、暫不處理。
 
 **待決**：是否要在 [docs/analytics/ga4-research-and-monitoring.md](../analytics/ga4-research-and-monitoring.md)
 明文寫入「所有網站報表一律加 `platform == web` 篩選」，避免往後重複踩到。
@@ -158,5 +162,5 @@ Query 意圖與頁面主題相符，人也進來了，但幾乎立刻離開。
 - Guide 頁的實際觸底率／CTA 曝光率（第 1 項的關鍵證據，目前沒有事件可查）。
 - `/guides/iphone-ai-leave-request/` 的頁面內容（第 6 項）。
 - App Store Connect 的同期曝光數（判斷 SEO 是否已在 KR-1 的面上產生變化）。
-- 09-04 snippet／CTA 優化後的乾淨 28 天讀數（最早 2026-10-02）。
+- 09-04 snippet／CTA 優化後的乾淨 28 天讀數（最早 2026-10-04）。
 - GSC `page` × `query` 交叉，用以確認各 Guide 頁實際承接的 query（本輪只取了全站 query）。
