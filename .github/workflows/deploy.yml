@@ -6,7 +6,6 @@ on:
 
 permissions:
   contents: read
-  deployments: write
 
 concurrency:
   group: pages
@@ -24,14 +23,13 @@ jobs:
           cache: npm
 
       - run: npm ci
+      - run: npm run lint
+      - run: npm test
       - run: npm run build
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: 'keyly-website' # ⚠️ 請確保這與你在 Cloudflare 建立的專案名稱一致
-          directory: 'dist'
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          command: pages deploy dist --project-name=keyly-website --branch=main
