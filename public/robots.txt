@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /cdn-cgi/
+Disallow: /go/
 Sitemap: https://keylyapp.com/sitemap.xml
 LLMs: https://keylyapp.com/llms.txt
