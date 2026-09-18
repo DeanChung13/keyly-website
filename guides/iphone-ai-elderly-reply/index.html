@@ -327,6 +327,36 @@
       text-underline-offset: 0.2em;
     }
 
+        .cta-action {
+      grid-area: action;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mid-cta .cta-action {
+      flex-shrink: 0;
+    }
+
+    .cta-sub-proof {
+      margin-top: 0.45rem;
+      font-size: 0.75rem;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      white-space: nowrap;
+    }
+
+    .cta-sub-proof .stars {
+      color: #F59E0B;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
     .feature-cta .cta-btn {
       grid-area: action;
       display: inline-flex;
@@ -380,6 +410,11 @@
           "action";
         gap: 0.85rem;
         padding: 1.25rem 1.25rem;
+      }
+
+            .feature-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .feature-cta .cta-btn {
@@ -471,6 +506,11 @@
         align-items: flex-start;
         gap: 0.85rem;
         padding: 1.15rem 1.15rem;
+      }
+
+            .mid-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .mid-cta .cta-btn {
@@ -596,9 +636,6 @@
     }
 
     .cta-box .cta-btn {
-      grid-area: action;
-      position: relative;
-      z-index: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -651,6 +688,11 @@
           "action";
         gap: 0.75rem;
         padding: 1.6rem 1.35rem;
+      }
+
+            .cta-box .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .cta-box .cta-btn {
@@ -735,7 +777,7 @@
         </svg>
         Keyly
       </a>
-      <a href="/" class="lang-btn">回首頁</a>
+      <a href="/guides/" class="lang-btn" onclick="trackLink('guides_hub','/guides/')">所有實用指南</a>
     </div>
   </nav>
 
@@ -756,7 +798,13 @@
 
       <div class="feature-cta">
         <p>不想每次都自己想措辭？Keyly 的 AI 改寫一鍵把簡短回覆變得有溫度。</p>
-        <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_elderly_reply_hero')">免費下載 Keyly</a>
+        <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_elderly_reply_hero')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <h2>先學會這個原則：溫暖的回覆，不是靠字數，是靠「回應語氣」</h2>
@@ -800,7 +848,13 @@
 
       <div class="mid-cta">
         <p>想直接體驗這個改寫效果？</p>
-        <a class="cta-btn"  href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_elderly_reply_mid')">免費下載 Keyly</a>
+        <div class="cta-action">
+          <a class="cta-btn"  href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_elderly_reply_mid')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <p>同一句原文，AI 每次改寫的用字與表情符號略有不同，以下是另外兩種實際版本：</p>
@@ -851,7 +905,13 @@
     <div class="cta-box">
       <h2>讓長輩讀到訊息，感覺到你有在乎</h2>
       <p>Keyly 是可以在任何 App 輸入框使用的 AI 注音鍵盤，「長輩平安喜樂體」只是內建範本之一，其他情境（請假、整理長訊息、婉拒等）也都有對應範本；若想了解 Keyly 與其他注音輸入法的差異，請見<a class="inline" href="/guides/iphone-zhuyin-keyboard/" onclick="trackLink('guide_zhuyin_comparison_inline','/guides/iphone-zhuyin-keyboard/')">2026 iPhone 注音鍵盤比較</a>。免費下載試試看。</p>
-      <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_elderly_reply_bottom')">免費下載 Keyly</a>
+      <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_elderly_reply_bottom')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
     </div>
   </div>
 

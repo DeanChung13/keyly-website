@@ -344,6 +344,36 @@
       text-underline-offset: 0.2em;
     }
 
+        .cta-action {
+      grid-area: action;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mid-cta .cta-action {
+      flex-shrink: 0;
+    }
+
+    .cta-sub-proof {
+      margin-top: 0.45rem;
+      font-size: 0.75rem;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      white-space: nowrap;
+    }
+
+    .cta-sub-proof .stars {
+      color: #F59E0B;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
     .feature-cta .cta-btn {
       grid-area: action;
       display: inline-flex;
@@ -397,6 +427,11 @@
           "action";
         gap: 0.85rem;
         padding: 1.25rem 1.25rem;
+      }
+
+            .feature-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .feature-cta .cta-btn {
@@ -488,6 +523,11 @@
         align-items: flex-start;
         gap: 0.85rem;
         padding: 1.15rem 1.15rem;
+      }
+
+            .mid-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .mid-cta .cta-btn {
@@ -612,9 +652,6 @@
     }
 
     .cta-box .cta-btn {
-      grid-area: action;
-      position: relative;
-      z-index: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -667,6 +704,11 @@
           "action";
         gap: 0.75rem;
         padding: 1.6rem 1.35rem;
+      }
+
+            .cta-box .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .cta-box .cta-btn {
@@ -751,12 +793,12 @@
         </svg>
         Keyly
       </a>
-      <a href="/" class="lang-btn">回首頁</a>
+      <a href="/guides/" class="lang-btn" onclick="trackLink('guides_hub','/guides/')">所有實用指南</a>
     </div>
   </nav>
 
   <div class="page-wrapper">
-    <p class="breadcrumb"><a href="/">Keyly</a> ／ 使用指南 ／ iPhone 注音輸入法比較</p>
+    <p class="breadcrumb"><a href="/">Keyly</a> ／ <a href="/guides/" onclick="trackLink('guides_hub','/guides/')">使用指南</a> ／ iPhone 注音輸入法比較</p>
 
     <div class="page-header">
       <h1>2026 iPhone 注音鍵盤推薦：內建與 5 款第三方完整比較</h1>
@@ -785,7 +827,13 @@
 
       <div class="feature-cta">
         <p>想在注音打完後直接做 AI 潤飾、翻譯與自訂指令？Keyly 把這些整合在同一個鍵盤裡。</p>
-        <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_zhuyin_comparison_hero')">試用支援 AI 潤飾的注音鍵盤</a>
+        <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_zhuyin_comparison_hero')">試用支援 AI 潤飾的注音鍵盤</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <p>如果你其實還沒打算換鍵盤，只是遇到候選字怪怪的，先看<a href="/guides/iphone-zhuyin-selection-fixes/">iPhone 注音選字不準的 6 個檢查方法</a>——有些狀況可以在系統設定內處理，不需要換掉鍵盤。</p>
@@ -893,7 +941,13 @@
 
       <div class="mid-cta">
         <p>想找一套既能離線打注音、又能在需要時一鍵改寫語氣的 iPhone 鍵盤？</p>
-        <a class="cta-btn"  href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_zhuyin_comparison_mid')">試用支援 AI 潤飾的注音鍵盤</a>
+        <div class="cta-action">
+          <a class="cta-btn"  href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_zhuyin_comparison_mid')">試用支援 AI 潤飾的注音鍵盤</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <h2>各選項適合誰</h2>
@@ -999,7 +1053,13 @@
     <div class="cta-box">
       <h2>iPhone 注音鍵盤怎麼選？給你的最後決策建議</h2>
       <p>如果你要的只是把注音敲成正確的字，上面五款都能做到，照第一道分水嶺挑就好。但如果你要的是「注音打完直接做 AI 潤飾與翻譯」這條路線，在本次比較的六款中，Keyly 是唯一官方描述具備這項能力的選項。App 可免費下載，核心注音引擎不需要開啟「允許完全取用」也能完整使用，親自打打看手感最準。</p>
-      <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_zhuyin_comparison_bottom')">試用支援 AI 潤飾的注音鍵盤</a>
+      <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_zhuyin_comparison_bottom')">試用支援 AI 潤飾的注音鍵盤</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
     </div>
   </div>
 

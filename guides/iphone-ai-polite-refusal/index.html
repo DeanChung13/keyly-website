@@ -352,6 +352,36 @@
       text-underline-offset: 0.2em;
     }
 
+        .cta-action {
+      grid-area: action;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mid-cta .cta-action {
+      flex-shrink: 0;
+    }
+
+    .cta-sub-proof {
+      margin-top: 0.45rem;
+      font-size: 0.75rem;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      white-space: nowrap;
+    }
+
+    .cta-sub-proof .stars {
+      color: #F59E0B;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
     .feature-cta .cta-btn {
       grid-area: action;
       display: inline-flex;
@@ -405,6 +435,11 @@
           "action";
         gap: 0.85rem;
         padding: 1.25rem 1.25rem;
+      }
+
+            .feature-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .feature-cta .cta-btn {
@@ -496,6 +531,11 @@
         align-items: flex-start;
         gap: 0.85rem;
         padding: 1.15rem 1.15rem;
+      }
+
+            .mid-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .mid-cta .cta-btn {
@@ -621,9 +661,6 @@
     }
 
     .cta-box .cta-btn {
-      grid-area: action;
-      position: relative;
-      z-index: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -676,6 +713,11 @@
           "action";
         gap: 0.75rem;
         padding: 1.6rem 1.35rem;
+      }
+
+            .cta-box .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .cta-box .cta-btn {
@@ -760,7 +802,7 @@
         </svg>
         Keyly
       </a>
-      <a href="/" class="lang-btn">回首頁</a>
+      <a href="/guides/" class="lang-btn" onclick="trackLink('guides_hub','/guides/')">所有實用指南</a>
     </div>
   </nav>
 
@@ -790,7 +832,13 @@
 
       <div class="feature-cta">
         <p>不想每次開網頁找範例？用 Keyly 在 iPhone 的任何輸入框直接改寫自己的草稿。</p>
-        <a class="cta-btn" href="/go/?p=guide_refusal" target="_blank" rel="noopener" onclick="trackDownload('guide_polite_refusal_hero')">免費下載 Keyly</a>
+        <div class="cta-action">
+          <a class="cta-btn" href="/go/?p=guide_refusal" target="_blank" rel="noopener" onclick="trackDownload('guide_polite_refusal_hero')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <h2>5 種委婉拒絕訊息範例</h2>
@@ -848,7 +896,13 @@
 
       <div class="mid-cta">
         <p>範例不完全符合你的情況？</p>
-        <a class="cta-btn" href="/go/?p=guide_refusal" target="_blank" rel="noopener" onclick="trackDownload('guide_polite_refusal_mid')">免費下載 Keyly</a>
+        <div class="cta-action">
+          <a class="cta-btn" href="/go/?p=guide_refusal" target="_blank" rel="noopener" onclick="trackDownload('guide_polite_refusal_mid')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <h2>如何讓拒絕聽起來自然，而不是制式客套</h2>
@@ -879,7 +933,13 @@
     <div class="cta-box">
       <h2>不用每次開網頁找範例</h2>
       <p>Keyly 是可以在任何 App 輸入框使用的 AI 注音鍵盤。先打出自己的草稿，再依對象與情境調整語氣，不需要在網頁與通訊軟體之間反覆複製貼上。</p>
-      <a class="cta-btn" href="/go/?p=guide_refusal" target="_blank" rel="noopener" onclick="trackDownload('guide_polite_refusal_bottom')">免費下載 Keyly</a>
+      <div class="cta-action">
+          <a class="cta-btn" href="/go/?p=guide_refusal" target="_blank" rel="noopener" onclick="trackDownload('guide_polite_refusal_bottom')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
     </div>
   </div>
 

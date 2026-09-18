@@ -321,6 +321,36 @@
       text-underline-offset: 0.2em;
     }
 
+        .cta-action {
+      grid-area: action;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mid-cta .cta-action {
+      flex-shrink: 0;
+    }
+
+    .cta-sub-proof {
+      margin-top: 0.45rem;
+      font-size: 0.75rem;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      white-space: nowrap;
+    }
+
+    .cta-sub-proof .stars {
+      color: #F59E0B;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
     .feature-cta .cta-btn {
       grid-area: action;
       display: inline-flex;
@@ -374,6 +404,11 @@
           "action";
         gap: 0.85rem;
         padding: 1.25rem 1.25rem;
+      }
+
+            .feature-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .feature-cta .cta-btn {
@@ -465,6 +500,11 @@
         align-items: flex-start;
         gap: 0.85rem;
         padding: 1.15rem 1.15rem;
+      }
+
+            .mid-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .mid-cta .cta-btn {
@@ -590,9 +630,6 @@
     }
 
     .cta-box .cta-btn {
-      grid-area: action;
-      position: relative;
-      z-index: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -645,6 +682,11 @@
           "action";
         gap: 0.75rem;
         padding: 1.6rem 1.35rem;
+      }
+
+            .cta-box .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .cta-box .cta-btn {
@@ -729,12 +771,12 @@
         </svg>
         Keyly
       </a>
-      <a href="/" class="lang-btn">回首頁</a>
+      <a href="/guides/" class="lang-btn" onclick="trackLink('guides_hub','/guides/')">所有實用指南</a>
     </div>
   </nav>
 
   <div class="page-wrapper">
-    <p class="breadcrumb"><a href="/">Keyly</a> ／ 使用指南 ／ 書寫工具與 AI 鍵盤</p>
+    <p class="breadcrumb"><a href="/">Keyly</a> ／ <a href="/guides/" onclick="trackLink('guides_hub','/guides/')">使用指南</a> ／ 書寫工具與 AI 鍵盤</p>
 
     <div class="page-header">
       <h1>Apple Intelligence 書寫工具與 AI 鍵盤怎麼選？</h1>
@@ -756,7 +798,13 @@
 
       <div class="feature-cta">
         <p>想要把注音輸入與 AI 改寫放進同一個鍵盤流程？Keyly 把兩者整合在一起，不用切換 App。</p>
-        <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_apple_intelligence_hero')">免費下載 Keyly</a>
+        <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_apple_intelligence_hero')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <h2>先確認你的 iPhone 能不能使用 Apple Intelligence</h2>
@@ -816,7 +864,13 @@
 
       <div class="mid-cta">
         <p>不想等系統機型限制，現在就想用上 AI 改寫？</p>
-        <a class="cta-btn"  href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_apple_intelligence_mid')">免費下載 Keyly</a>
+        <div class="cta-action">
+          <a class="cta-btn"  href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_apple_intelligence_mid')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <h2>功能與條件比較表</h2>
@@ -925,7 +979,13 @@
     <div class="cta-box">
       <h2>兩者不是互斥的選擇</h2>
       <p>還在比較各家注音鍵盤，可以看<a class="inline" href="/guides/iphone-zhuyin-keyboard/" onclick="trackLink('guide_zhuyin_comparison','/guides/iphone-zhuyin-keyboard/')">官方資料整理的比較</a>；決定安裝第三方鍵盤前，建議先了解<a class="inline" href="/guides/full-access/" onclick="trackLink('guide_full_access','/guides/full-access/')">「允許完全取用」的實際範圍</a>；如果你想調整的是輸入方式而不是 AI 功能，可以看 <a class="inline" href="/guides/iphone-double-pinyin/" onclick="trackLink('guide_double_pinyin','/guides/iphone-double-pinyin/')">iPhone 雙拼輸入怎麼用</a>。</p>
-      <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_apple_intelligence_bottom')">免費下載 Keyly</a>
+      <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_apple_intelligence_bottom')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
     </div>
   </div>
 

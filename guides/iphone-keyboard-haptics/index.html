@@ -324,6 +324,36 @@
       text-underline-offset: 0.2em;
     }
 
+        .cta-action {
+      grid-area: action;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mid-cta .cta-action {
+      flex-shrink: 0;
+    }
+
+    .cta-sub-proof {
+      margin-top: 0.45rem;
+      font-size: 0.75rem;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      white-space: nowrap;
+    }
+
+    .cta-sub-proof .stars {
+      color: #F59E0B;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
     .feature-cta .cta-btn {
       grid-area: action;
       display: inline-flex;
@@ -377,6 +407,11 @@
           "action";
         gap: 0.85rem;
         padding: 1.25rem 1.25rem;
+      }
+
+            .feature-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .feature-cta .cta-btn {
@@ -468,6 +503,11 @@
         align-items: flex-start;
         gap: 0.85rem;
         padding: 1.15rem 1.15rem;
+      }
+
+            .mid-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .mid-cta .cta-btn {
@@ -593,9 +633,6 @@
     }
 
     .cta-box .cta-btn {
-      grid-area: action;
-      position: relative;
-      z-index: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -648,6 +685,11 @@
           "action";
         gap: 0.75rem;
         padding: 1.6rem 1.35rem;
+      }
+
+            .cta-box .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .cta-box .cta-btn {
@@ -732,12 +774,12 @@
         </svg>
         Keyly
       </a>
-      <a href="/" class="lang-btn">回首頁</a>
+      <a href="/guides/" class="lang-btn" onclick="trackLink('guides_hub','/guides/')">所有實用指南</a>
     </div>
   </nav>
 
   <div class="page-wrapper">
-    <p class="breadcrumb"><a href="/">Keyly</a> ／ 使用指南 ／ 鍵盤震動與觸覺回饋</p>
+    <p class="breadcrumb"><a href="/">Keyly</a> ／ <a href="/guides/" onclick="trackLink('guides_hub','/guides/')">使用指南</a> ／ 鍵盤震動與觸覺回饋</p>
 
     <div class="page-header">
       <h1>iPhone 鍵盤聲音與震動怎麼開？設定與沒反應排查</h1>
@@ -757,7 +799,13 @@
 
       <div class="feature-cta">
         <p>如果不是設定問題，而是正在評估支援震動回饋的第三方注音鍵盤，可以先看<a href="/guides/iphone-zhuyin-keyboard/" onclick="trackLink('guide_zhuyin_comparison_inline','/guides/iphone-zhuyin-keyboard/')">iPhone 注音鍵盤比較</a>，再決定是否嘗試 Keyly。</p>
-        <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_keyboard_haptics_hero')">用 Keyly 試試鍵盤觸覺回饋</a>
+        <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_keyboard_haptics_hero')">用 Keyly 試試鍵盤觸覺回饋</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <p>如果照上面設定完還是沒有震動，往下看官方排查那一段；如果你用的是第三方鍵盤，聲音與震動的來源都可能不同，直接看「第三方鍵盤為什麼有時沒有震動」。</p>
@@ -801,7 +849,13 @@
 
       <div class="mid-cta">
         <p>想要更順手的注音打字體驗？</p>
-        <a class="cta-btn"  href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_keyboard_haptics_mid')">用 Keyly 試試鍵盤觸覺回饋</a>
+        <div class="cta-action">
+          <a class="cta-btn"  href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_keyboard_haptics_mid')">用 Keyly 試試鍵盤觸覺回饋</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <h2>快速判斷表</h2>
@@ -866,7 +920,13 @@
     <div class="cta-box">
       <h2>內建鍵盤與第三方鍵盤要分開排查</h2>
       <p>前述 Apple 鍵盤回饋路徑可先用來檢查系統鍵盤；第三方鍵盤可能還有自己的設定與權限條件。權限的實際範圍見<a class="inline" href="/guides/full-access/" onclick="trackLink('guide_full_access','/guides/full-access/')">「允許完全取用」說明</a>；如果你正在挑第三方注音鍵盤，可以先看<a class="inline" href="/guides/iphone-zhuyin-keyboard/" onclick="trackLink('guide_zhuyin_comparison','/guides/iphone-zhuyin-keyboard/')">各家鍵盤的官方資料比較</a>。</p>
-      <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_keyboard_haptics_bottom')">用 Keyly 試試鍵盤觸覺回饋</a>
+      <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_keyboard_haptics_bottom')">用 Keyly 試試鍵盤觸覺回饋</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
     </div>
   </div>
 

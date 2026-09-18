@@ -330,6 +330,36 @@
       text-underline-offset: 0.2em;
     }
 
+        .cta-action {
+      grid-area: action;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mid-cta .cta-action {
+      flex-shrink: 0;
+    }
+
+    .cta-sub-proof {
+      margin-top: 0.45rem;
+      font-size: 0.75rem;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      white-space: nowrap;
+    }
+
+    .cta-sub-proof .stars {
+      color: #F59E0B;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
     .feature-cta .cta-btn {
       grid-area: action;
       display: inline-flex;
@@ -383,6 +413,11 @@
           "action";
         gap: 0.85rem;
         padding: 1.25rem 1.25rem;
+      }
+
+            .feature-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .feature-cta .cta-btn {
@@ -474,6 +509,11 @@
         align-items: flex-start;
         gap: 0.85rem;
         padding: 1.15rem 1.15rem;
+      }
+
+            .mid-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .mid-cta .cta-btn {
@@ -599,9 +639,6 @@
     }
 
     .cta-box .cta-btn {
-      grid-area: action;
-      position: relative;
-      z-index: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -654,6 +691,11 @@
           "action";
         gap: 0.75rem;
         padding: 1.6rem 1.35rem;
+      }
+
+            .cta-box .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .cta-box .cta-btn {
@@ -738,12 +780,12 @@
         </svg>
         Keyly
       </a>
-      <a href="/" class="lang-btn">回首頁</a>
+      <a href="/guides/" class="lang-btn" onclick="trackLink('guides_hub','/guides/')">所有實用指南</a>
     </div>
   </nav>
 
   <div class="page-wrapper">
-    <p class="breadcrumb"><a href="/">Keyly</a> ／ 使用指南 ／ iPhone 雙拼輸入</p>
+    <p class="breadcrumb"><a href="/">Keyly</a> ／ <a href="/guides/" onclick="trackLink('guides_hub','/guides/')">使用指南</a> ／ iPhone 雙拼輸入</p>
 
     <div class="page-header">
       <h1>iPhone 雙拼輸入怎麼用？全拼、微軟雙拼與小鶴雙拼</h1>
@@ -766,7 +808,13 @@
 
       <div class="feature-cta">
         <p>想直接用支援雙拼的鍵盤，不用自己比較？Keyly 自 1.1.0 起同時支援全拼、微軟雙拼與小鶴雙拼。</p>
-        <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_double_pinyin_hero')">免費下載 Keyly</a>
+        <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_double_pinyin_hero')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <h2>什麼是全拼、什麼是雙拼</h2>
@@ -798,7 +846,13 @@
 
       <div class="mid-cta">
         <p>想省下自己設定的步驟？</p>
-        <a class="cta-btn"  href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_double_pinyin_mid')">免費下載 Keyly</a>
+        <div class="cta-action">
+          <a class="cta-btn"  href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_double_pinyin_mid')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <h2>Keyly 目前支援的方案</h2>
@@ -811,7 +865,13 @@
 
       <div class="feature-cta">
         <p>下表列出的其他 App 官方頁面多數未明確說明雙拼支援；Keyly 自 1.1.0 起明確支援全拼、微軟雙拼與小鶴雙拼。</p>
-        <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_double_pinyin_pretable')">免費下載 Keyly</a>
+        <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_double_pinyin_pretable')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <div class="table-scroll">
@@ -916,7 +976,13 @@
     <div class="cta-box">
       <h2>雙拼是選項之一，不是所有人都該換</h2>
       <p>如果你其實只是想找一套更順手的注音鍵盤，先看<a class="inline" href="/guides/iphone-zhuyin-keyboard/" onclick="trackLink('guide_zhuyin_comparison','/guides/iphone-zhuyin-keyboard/')">各家注音鍵盤的官方資料比較</a>。若你確定要用雙拼，Keyly 自 1.1.0 起支援全拼、微軟雙拼與小鶴雙拼，可免費下載試試。</p>
-      <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_double_pinyin_bottom')">免費下載 Keyly</a>
+      <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_double_pinyin_bottom')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
     </div>
   </div>
 

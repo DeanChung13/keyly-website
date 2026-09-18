@@ -325,6 +325,36 @@
       text-underline-offset: 0.2em;
     }
 
+        .cta-action {
+      grid-area: action;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mid-cta .cta-action {
+      flex-shrink: 0;
+    }
+
+    .cta-sub-proof {
+      margin-top: 0.45rem;
+      font-size: 0.75rem;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      white-space: nowrap;
+    }
+
+    .cta-sub-proof .stars {
+      color: #F59E0B;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
     .feature-cta .cta-btn {
       grid-area: action;
       display: inline-flex;
@@ -378,6 +408,11 @@
           "action";
         gap: 0.85rem;
         padding: 1.25rem 1.25rem;
+      }
+
+            .feature-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .feature-cta .cta-btn {
@@ -469,6 +504,11 @@
         align-items: flex-start;
         gap: 0.85rem;
         padding: 1.15rem 1.15rem;
+      }
+
+            .mid-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .mid-cta .cta-btn {
@@ -594,9 +634,6 @@
     }
 
     .cta-box .cta-btn {
-      grid-area: action;
-      position: relative;
-      z-index: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -649,6 +686,11 @@
           "action";
         gap: 0.75rem;
         padding: 1.6rem 1.35rem;
+      }
+
+            .cta-box .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .cta-box .cta-btn {
@@ -733,12 +775,12 @@
         </svg>
         Keyly
       </a>
-      <a href="/" class="lang-btn">回首頁</a>
+      <a href="/guides/" class="lang-btn" onclick="trackLink('guides_hub','/guides/')">所有實用指南</a>
     </div>
   </nav>
 
   <div class="page-wrapper">
-    <p class="breadcrumb"><a href="/">Keyly</a> ／ 使用指南 ／ 選字亂跳／注音選字不準的檢查方法</p>
+    <p class="breadcrumb"><a href="/">Keyly</a> ／ <a href="/guides/" onclick="trackLink('guides_hub','/guides/')">使用指南</a> ／ 選字亂跳／注音選字不準的檢查方法</p>
 
     <div class="page-header">
       <h1>iPhone 選字亂跳、注音選字不準？先做這 7 個檢查</h1>
@@ -761,7 +803,13 @@
 
       <div class="feature-cta">
         <p>如果排除系統問題後，仍想嘗試不同的選字邏輯或 AI 改寫功能，可以先看<a href="/guides/iphone-zhuyin-keyboard/" onclick="trackLink('guide_zhuyin_comparison_inline','/guides/iphone-zhuyin-keyboard/')">iPhone 注音鍵盤比較</a>，再決定是否嘗試 Keyly。</p>
-        <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_selection_fixes_hero')">試試不同選字邏輯的 Keyly</a>
+        <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_selection_fixes_hero')">試試不同選字邏輯的 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <p>沒有任何一個步驟保證能解決你的狀況。這份順序的用意是先縮小範圍，讓你知道問題出在哪一層，再決定要不要動到會刪資料的操作。</p>
@@ -858,7 +906,13 @@
 
       <div class="mid-cta">
         <p>想跳過反覆排查，直接換一套選字邏輯不同的鍵盤？</p>
-        <a class="cta-btn"  href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_selection_fixes_mid')">試試不同選字邏輯的 Keyly</a>
+        <div class="cta-action">
+          <a class="cta-btn"  href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_selection_fixes_mid')">試試不同選字邏輯的 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <h2>方法四｜檢查替代文字與自訂輸入碼</h2>
@@ -966,7 +1020,13 @@
     <div class="cta-box">
       <h2>先排除設定問題，需求不同再換鍵盤</h2>
       <p>如果上面的檢查做完之後，內建鍵盤其實運作正常，只是不符合你的輸入需求，可以從<a class="inline" href="/guides/iphone-zhuyin-keyboard/">各家注音鍵盤的官方資料比較</a>開始看起。</p>
-      <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_selection_fixes_bottom')">試試不同選字邏輯的 Keyly</a>
+      <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_selection_fixes_bottom')">試試不同選字邏輯的 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
     </div>
   </div>
 

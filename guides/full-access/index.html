@@ -239,8 +239,37 @@
       text-underline-offset: 0.2em;
     }
 
-    .feature-cta .cta-btn {
+    .cta-action {
       grid-area: action;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mid-cta .cta-action {
+      flex-shrink: 0;
+    }
+
+    .cta-sub-proof {
+      margin-top: 0.45rem;
+      font-size: 0.75rem;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      white-space: nowrap;
+    }
+
+    .cta-sub-proof .stars {
+      color: #F59E0B;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .feature-cta .cta-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -292,6 +321,11 @@
           "action";
         gap: 0.85rem;
         padding: 1.25rem 1.25rem;
+      }
+
+      .feature-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .feature-cta .cta-btn {
@@ -383,6 +417,11 @@
         align-items: flex-start;
         gap: 0.85rem;
         padding: 1.15rem 1.15rem;
+      }
+
+      .mid-cta .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .mid-cta .cta-btn {
@@ -507,9 +546,6 @@
     }
 
     .cta-box .cta-btn {
-      grid-area: action;
-      position: relative;
-      z-index: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -562,6 +598,11 @@
           "action";
         gap: 0.75rem;
         padding: 1.6rem 1.35rem;
+      }
+
+      .cta-box .cta-action {
+        width: 100%;
+        align-items: center;
       }
 
       .cta-box .cta-btn {
@@ -646,12 +687,12 @@
         </svg>
         Keyly
       </a>
-      <a href="/" class="lang-btn">回首頁</a>
+      <a href="/guides/" class="lang-btn" onclick="trackLink('guides_hub','/guides/')">所有實用指南</a>
     </div>
   </nav>
 
   <div class="page-wrapper">
-    <p class="breadcrumb"><a href="/">Keyly</a> ／ 使用指南 ／ 允許完全取用</p>
+    <p class="breadcrumb"><a href="/">Keyly</a> ／ <a href="/guides/" onclick="trackLink('guides_hub','/guides/')">使用指南</a> ／ 允許完全取用</p>
 
     <div class="page-header">
       <h1>iPhone 鍵盤「允許完全取用」是什麼？安全嗎？</h1>
@@ -661,7 +702,13 @@
     <div class="legal-content">
       <div class="feature-cta">
         <p>想先試試不開這個權限也能用的注音鍵盤？Keyly 的核心輸入功能在無權限狀態下一樣完整可用。</p>
-        <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_full_access_hero')">免費下載 Keyly</a>
+        <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&amp;ct=website_landing&amp;mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_full_access_hero')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <h2>一、這個開關到底控制什麼</h2>
@@ -691,7 +738,13 @@
 
       <div class="mid-cta">
         <p>想要不用開權限也能完整使用核心注音輸入與離線功能？</p>
-        <a class="cta-btn"  href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_full_access_mid')">免費下載 Keyly</a>
+        <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&amp;ct=website_landing&amp;mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_full_access_mid')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <h2>三、怎麼開啟或關閉</h2>
@@ -723,7 +776,13 @@
     <div class="cta-box">
       <h2>想先試試不開權限的注音體驗？</h2>
       <p>Keyly 免費下載，核心注音引擎不需要「允許完全取用」也能完整使用。</p>
-      <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_full_access_bottom')">免費下載 Keyly</a>
+      <div class="cta-action">
+        <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&amp;ct=website_landing&amp;mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_full_access_bottom')">免費下載 Keyly</a>
+        <div class="cta-sub-proof">
+          <span class="stars">★★★★★ 5.0</span>
+          <span>App Store 滿分好評</span>
+        </div>
+      </div>
     </div>
   </div>
 
