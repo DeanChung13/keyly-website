@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【教學】iPhone 自訂 AI Prompt 鍵盤怎麼用？實戰設定步驟與 10+ 款高頻提示詞範本庫｜Keyly</title>
+  <meta name="description" content="想在 iPhone 上任何 App 直接使用自訂 AI Prompt？本文以真實職場與生活情境，教學如何在 Keyly 鍵盤設定專屬提示詞、免切換 App 一鍵原地回填，並附贈 10+ 款開箱即用的高效 Prompt 範本庫。">
+  <link rel="canonical" href="https://keylyapp.com/guides/iphone-custom-ai-prompt/">
+  <link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/guides/iphone-custom-ai-prompt/">
+  <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/guides/iphone-custom-ai-prompt/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='20' fill='%230D142E' /%3E%3Cdefs%3E%3ClinearGradient id='k-stem' x1='30' y1='20' x2='30' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2338C7BA' /%3E%3Cstop offset='1' stop-color='%238E61D9' /%3E%3C/linearGradient%3E%3ClinearGradient id='k-arm' x1='75' y1='20' x2='40' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E6EBF2' /%3E%3Cstop offset='1' stop-color='%23BFCDE0' /%3E%3C/linearGradient%3E%3Cdefs%3E%3Crect x='25' y='20' width='16' height='60' fill='url(%23k-stem)' /%3E%3Cpath d='M75 20L41 50L75 80H55L31 50L55 20H75Z' fill='url(%23k-arm)' /%3E%3C/svg%3E">
+  <meta property="og:title" content="【教學】iPhone 自訂 AI Prompt 鍵盤怎麼用？實戰設定步驟與 10+ 款高頻提示詞範本庫｜Keyly">
+  <meta property="og:description" content="想在 iPhone 上任何 App 直接使用自訂 AI Prompt？本文以真實職場與生活情境，教學如何在 Keyly 鍵盤設定專屬提示詞、免切換 App 一鍵原地回填，並附贈 10+ 款開箱即用的高效 Prompt 範本庫。">
+  <meta property="og:url" content="https://keylyapp.com/guides/iphone-custom-ai-prompt/">
+  <meta property="og:image" content="https://keylyapp.com/assets/images/og-banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "【教學】iPhone 自訂 AI Prompt 鍵盤怎麼用？實戰設定步驟與 10+ 款高頻提示詞範本庫｜Keyly",
+    "description": "想在 iPhone 上任何 App 直接使用自訂 AI Prompt？本文以真實職場與生活情境，教學如何在 Keyly 鍵盤設定專屬提示詞、免切換 App 一鍵原地回填，並附贈 10+ 款開箱即用的高效 Prompt 範本庫。",
+    "inLanguage": "zh-Hant-TW",
+    "datePublished": "2026-09-19",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Keyly",
+      "url": "https://keylyapp.com/"
+    }
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (window.location.hostname === 'keylyapp.com' || window.location.hostname === 'www.keylyapp.com') {
+      gtag('js', new Date());
+      gtag('config', 'G-C51YGT0TVX');
+    }
+    function trackDownload(label) {
+      gtag('event', 'download_click', { event_category: 'engagement', event_label: label });
+    }
+    function trackLink(name, destination) {
+      if (window.location.hostname === 'keylyapp.com' || window.location.hostname === 'www.keylyapp.com') {
+        gtag('event', 'link_click', { event_category: 'engagement', event_label: name, destination: destination });
+      }
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-page: #F4F7FA;
+      --bg-primary: #0D142E;
+      --brand-cyan: #479ED1;
+      --brand-purple: #8E61D9;
+      --metal-white: #E6EBF2;
+      --metal-gray: #BFCDE0;
+      --text-primary: #0F1726;
+      --text-secondary: #5C708C;
+      --accent-green: #10B981;
+      --accent-amber: #F59E0B;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Heiti TC", "Microsoft JhengHei", system-ui, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(191, 205, 224, 0.35);
+    }
+
+    .navbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .navbar-brand svg { border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+
+    .lang-btn {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--metal-gray);
+      border-radius: 999px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .lang-btn:hover { color: var(--brand-cyan); border-color: var(--brand-cyan); }
+
+    .page-wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 4rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--brand-cyan); }
+
+    .page-header { margin-bottom: 1.75rem; }
+
+    .page-header h1 {
+      font-size: clamp(1.7rem, 4vw, 2.35rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.28;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .page-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(71, 158, 209, 0.12);
+      color: var(--brand-cyan);
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+    }
+
+    .hook-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-left: 4px solid var(--brand-purple);
+      border-radius: 14px;
+      padding: 1.35rem 1.5rem;
+      margin-bottom: 2.25rem;
+      box-shadow: 0 4px 20px rgba(13, 20, 46, 0.04);
+    }
+
+    .hook-card p {
+      font-size: 1.02rem;
+      color: var(--text-primary);
+      line-height: 1.75;
+      margin-bottom: 0.65rem;
+    }
+    .hook-card p:last-child { margin-bottom: 0; }
+
+    .article-body h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 3rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--metal-gray);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .article-body h3 {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 2rem 0 0.65rem;
+    }
+
+    .article-body p {
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .article-body strong { color: var(--text-primary); font-weight: 700; }
+    .article-body a:not(.cta-main-btn) { color: var(--brand-cyan); text-decoration: none; }
+    .article-body a:not(.cta-main-btn):hover { text-decoration: underline; }
+
+    /* Story & Rewrite Cards */
+    .story-section {
+      background: #ffffff;
+      border: 1px solid rgba(191, 205, 224, 0.5);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+      box-shadow: 0 4px 16px rgba(13, 20, 46, 0.03);
+    }
+
+    .story-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed rgba(191, 205, 224, 0.6);
+    }
+
+    .story-tag {
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: var(--brand-purple);
+      background: rgba(142, 97, 217, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+    }
+
+    .story-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .contrast-box {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+      margin: 1.2rem 0;
+    }
+
+    @media (min-width: 680px) {
+      .contrast-box {
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+      }
+    }
+
+    .contrast-card {
+      background: #fcfdfe;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .contrast-card.before {
+      border-left: 4px solid var(--text-secondary);
+      background: #fafbfc;
+    }
+
+    .contrast-card.after {
+      border-left: 4px solid var(--brand-cyan);
+      background: #f5faff;
+    }
+
+    .contrast-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .contrast-label.before { color: var(--text-secondary); }
+    .contrast-label.after { color: var(--brand-cyan); }
+
+    .contrast-text {
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      line-height: 1.65;
+      margin: 0;
+      white-space: pre-line;
+    }
+
+    .contrast-arrow {
+      text-align: center;
+      font-size: 1.4rem;
+      color: var(--brand-cyan);
+      font-weight: 800;
+    }
+
+    /* Prompt Box with One-Click Copy */
+    .prompt-box {
+      background: #0D142E;
+      color: #E6EBF2;
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      margin: 1rem 0;
+      position: relative;
+    }
+
+    .prompt-box-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.65rem;
+      font-size: 0.78rem;
+      color: #7DD3FC;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .prompt-content {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #F1F5F9;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .copy-btn {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: var(--brand-cyan);
+      border-color: var(--brand-cyan);
+    }
+
+    .copy-btn.copied {
+      background: var(--accent-green);
+      border-color: var(--accent-green);
+    }
+
+    /* Step Cards */
+    .step-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.1rem;
+      margin: 1.5rem 0;
+    }
+
+    .step-card {
+      background: #fff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 14px;
+      padding: 1.3rem 1.4rem;
+      display: flex;
+      gap: 1.1rem;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      background: var(--bg-primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .step-content h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.08rem;
+      color: var(--text-primary);
+    }
+
+    .step-content p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* Prompt Catalog Cards */
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .catalog-card {
+      background: #ffffff;
+      border: 1px solid rgba(191, 205, 224, 0.6);
+      border-radius: 14px;
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .catalog-card:hover {
+      box-shadow: 0 8px 24px rgba(13, 20, 46, 0.06);
+    }
+
+    .catalog-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .catalog-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.85rem;
+      line-height: 1.6;
+    }
+    /* Conversion CTA */
+    .feature-cta {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+        "eyebrow action"
+        "copy action";
+      align-items: center;
+      column-gap: 1.5rem;
+      row-gap: 0.35rem;
+      background:
+        radial-gradient(circle at 92% 15%, rgba(142, 97, 217, 0.22), transparent 40%),
+        radial-gradient(circle at 8% 95%, rgba(71, 158, 209, 0.18), transparent 40%),
+        #0D142E;
+      border: 1px solid rgba(230, 235, 242, 0.14);
+      border-radius: 18px;
+      box-shadow: 0 16px 36px rgba(13, 20, 46, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      padding: 1.5rem 1.75rem;
+      margin: 2.5rem 0;
+      text-align: left;
+    }
+
+    .feature-cta::before {
+      content: "KEYLY FOR IPHONE · AI 智慧鍵盤";
+      grid-area: eyebrow;
+      color: #7DD3FC;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      line-height: 1;
+    }
+
+    .feature-cta p {
+      grid-area: copy;
+      margin: 0;
+      color: #E6EBF2;
+      font-size: 0.98rem;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .feature-cta .cta-btn {
+      grid-area: action;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .cta-main-btn,
+    .article-body a.cta-main-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 46px;
+      background: #F8FAFC;
+      color: #0D142E !important;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      padding: 0.7rem 1.3rem;
+      font-weight: 750;
+      font-size: 0.92rem;
+      white-space: nowrap;
+      cursor: pointer;
+      text-decoration: none !important;
+      transition: background-color 180ms ease-out, box-shadow 180ms ease-out, transform 180ms ease-out;
+    }
+
+    .cta-main-btn::after,
+    .article-body a.cta-main-btn::after {
+      content: "→";
+      font-size: 1rem;
+      line-height: 1;
+      transition: transform 180ms ease-out;
+    }
+
+    .cta-main-btn:hover,
+    .article-body a.cta-main-btn:hover {
+      background: #FFFFFF;
+      color: #0D142E !important;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.26);
+      transform: translateY(-2px);
+      text-decoration: none !important;
+    }
+
+    .cta-main-btn:hover::after,
+    .article-body a.cta-main-btn:hover::after {
+      transform: translateX(3px);
+    }
+
+    .cta-main-btn:focus-visible,
+    .article-body a.cta-main-btn:focus-visible {
+      outline: 3px solid #7DD3FC;
+      outline-offset: 3px;
+    }
+
+    .cta-sub-proof {
+      margin-top: 0.45rem;
+      font-size: 0.75rem;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .stars { color: var(--accent-amber); font-weight: 700; }
+
+    @media (max-width: 640px) {
+      .feature-cta {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "eyebrow"
+          "copy"
+          "action";
+        text-align: center;
+        gap: 1rem;
+      }
+      .feature-cta .cta-btn { align-items: center; width: 100%; }
+      .cta-main-btn { width: 100%; justify-content: center; }
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-page);
+      border-top: 1px solid rgba(191, 205, 224, 0.4);
+      padding: 2.5rem 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .footer-brand svg { border-radius: 6px; }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--brand-cyan); }
+    .footer-links .sep { color: var(--metal-gray); }
+    .footer-copy { font-size: 0.8rem; color: var(--text-secondary); text-align: center; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        <svg viewBox="0 0 100 100" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="nav-stem" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/>
+              <stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="nav-arm" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/>
+              <stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#nav-stem)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#nav-arm)"/>
+        </svg>
+        Keyly
+      </a>
+      <a href="/guides/" class="lang-btn" onclick="trackLink('guides_hub','/guides/')">所有實用指南</a>
+    </div>
+  </nav>
+
+  <main class="page-wrapper">
+    <p class="breadcrumb"><a href="/">Keyly</a> ／ <a href="/guides/" onclick="trackLink('guides_hub','/guides/')">使用指南</a> ／ iPhone 自訂 AI Prompt 鍵盤教學</p>
+
+    <header class="page-header">
+      <div class="page-meta" style="margin-bottom: 0.6rem;">
+        <span class="badge-pill">✨ 進階生產力實戰</span>
+        <span>發布於 2026 年 9 月</span>
+        <span>·</span>
+        <span>閱讀時間約 6 分鐘</span>
+      </div>
+      <h1>【教學】iPhone 自訂 AI Prompt 鍵盤怎麼用？實戰設定步驟與 10+ 款高頻提示詞範本庫</h1>
+    </header>
+
+    <div class="hook-card">
+      <p><strong>捫心自問：你也是這樣在 iPhone 上使用 AI 的嗎？</strong></p>
+      <p style="color: var(--text-secondary); font-size: 0.95rem;">在聊天群組看到老闆或客戶提問 → 複製訊息 → 切換跳出 App → 打開 ChatGPT 或 Claude → 貼上文字並手打要求 → 等待 AI 生成 → 複製答案 → 再切換跳回原本的聊天 App → 貼上發送。</p>
+      <p>只要中途一次網路卡頓或誤觸通知，原本的對話思緒就斷了。<strong>真正的 AI 生產力，根本不該讓你離開打字框。</strong>把你的常用指令裝進 Keyly 鍵盤，打字框直接變成你的隨身文字護身符。</p>
+    </div>
+
+    <article class="article-body">
+      <h2>一、為什麼需要「鍵盤內自訂 Prompt」？</h2>
+      <p>很多人以為 AI 鍵盤只是幫忙「修修錯字」或「把口語變正式」。但 Keyly 的<strong>自訂 Prompt（客製化提示詞）</strong>功能，能將你最常使用的專業提示詞、語氣指令與應對指引，直接封裝進 iOS 鍵盤快捷指令中。</p>
+      
+      <p>無論是在 LINE、Slack、IG 訊息、Mail 還是 Notion，只要輸入你的原始草稿，輕輕一點專屬指令，<strong>0.8 秒直接在原地替換成高品質的得體文字</strong>。不跳 App、不複製貼上、零摩擦力完成溝通。</p>
+
+      <h2>二、三大實戰場景：看高情商工作者如何用自訂 Prompt</h2>
+      <p>以下是日常溝通中最常運用的三種實戰情境：</p>
+
+      <!-- 故事 1 -->
+      <div class="story-section">
+        <div class="story-header">
+          <span class="story-title">場景 1：【職場防禦】週五 17:58 分，老闆在群組突襲「進度呢？」</span>
+          <span class="story-tag">向上管理</span>
+        </div>
+        <p style="font-size: 0.92rem; color: var(--text-secondary);">剛收拾好公事包準備打卡，老闆突然群組丟了一句進度追問。心裡滿是無奈，如果直接回「下週再交」顯得散漫，長篇藉口又像推託。手忙腳亂開 ChatGPT 早就超過黃金回覆時間。</p>
+        
+        <div class="contrast-box">
+          <div class="contrast-card before">
+            <span class="contrast-label before">❌ 打字框原始草稿</span>
+            <p class="contrast-text">下週二才會好，因為設計那邊還沒交檔案給我</p>
+          </div>
+          <div class="contrast-arrow">➔</div>
+          <div class="contrast-card after">
+            <span class="contrast-label after">✨ 按下自訂 Prompt【向上得體拆彈】後</span>
+            <p class="contrast-text">主管您好，目前核心架構已完成 80%，正進行跨部門細節對齊，預計下週二前交付最完整版本，確保品質無虞。祝您週末愉快！</p>
+          </div>
+        </div>
+
+        <div class="prompt-box">
+          <div class="prompt-box-header">
+            <span>PROMPT 範本：向上管理得體拆彈器</span>
+            <button class="copy-btn" onclick="copyPrompt(this, 'prompt-story-1')">一鍵複製指令</button>
+          </div>
+          <div class="prompt-content" id="prompt-story-1">你是一位擅長職場溝通與向上管理的公關專家。請將以下文字改寫為向主管或老闆匯報進度的得體訊息：展現進度掌控感、交代合理時程與品質堅持，語氣專業自信且富有禮貌。重要規則：直接輸出改寫後的內容，嚴禁輸出任何引言、問候或解釋。</div>
+        </div>
+      </div>
+
+      <!-- 故事 2 -->
+      <div class="story-section">
+        <div class="story-header">
+          <span class="story-title">場景 2：【社交太極】難以拒絕的長輩聚會與假日無效社交</span>
+          <span class="story-tag">社交邊界</span>
+        </div>
+        <p style="font-size: 0.92rem; color: var(--text-secondary);">週末只想在家補眠躺平，長輩或不太熟的同事突然熱情邀約聚餐。直白說「不想去」得罪人，說「我有事」又會被打破砂鍋問到底。用高情商太極指令，既給滿情緒價值，又優雅封死追問。</p>
+        
+        <div class="contrast-box">
+          <div class="contrast-card before">
+            <span class="contrast-label before">❌ 打字框原始草稿</span>
+            <p class="contrast-text">這週六想待在家休息，就不去聚餐了謝謝</p>
+          </div>
+          <div class="contrast-arrow">➔</div>
+          <div class="contrast-card after">
+            <span class="contrast-label after">✨ 按下自訂 Prompt【高情商委婉太極】後</span>
+            <p class="contrast-text">謝謝叔叔/主管貼心想到我！這週末剛好已排定固定的家庭行程，實在不巧無法前往。非常期待下次能有機會跟大家聚聚，祝大家週六玩得開心！</p>
+          </div>
+        </div>
+
+        <div class="prompt-box">
+          <div class="prompt-box-header">
+            <span>PROMPT 範本：高情商委婉太極拒絕器</span>
+            <button class="copy-btn" onclick="copyPrompt(this, 'prompt-story-2')">一鍵複製指令</button>
+          </div>
+          <div class="prompt-content" id="prompt-story-2">你是一位高情商溝通顧問。請將以下想拒絕的內容改寫為得體、溫暖且無法被進一步追問的婉拒訊息：表達誠摯感謝、以無法更動的既定行程為由婉拒、並給予真誠祝福與下次相聚的期待。重要規則：直接輸出回覆內容，不加引號或前置說明。</div>
+        </div>
+      </div>
+
+      <!-- 故事 3 -->
+      <div class="story-section">
+        <div class="story-header">
+          <span class="story-title">場景 3：【跨國商務】在 Slack 上與外商客戶即時談判</span>
+          <span class="story-tag">雙語即戰力</span>
+        </div>
+        <p style="font-size: 0.92rem; color: var(--text-secondary);">外國客戶在 Slack 問到敏感合約問題，你需要立刻回覆道地的美式商務英文。不用再開 Google 翻譯再切 DeepL，直接在對話框打中文草稿，一秒披上「資深外商經理人」的外衣。</p>
+        
+        <div class="contrast-box">
+          <div class="contrast-card before">
+            <span class="contrast-label before">❌ 打字框原始中文草稿</span>
+            <p class="contrast-text">麻煩盡快看一下合約第三條，我們法務急著等審查</p>
+          </div>
+          <div class="contrast-arrow">➔</div>
+          <div class="contrast-card after">
+            <span class="contrast-label after">✨ 按下自訂 Prompt【地道商務美語】後</span>
+            <p class="contrast-text">Could you please take a quick look at Section 3 of the agreement at your earliest convenience? Our legal team is eagerly waiting to proceed. Much appreciated!</p>
+          </div>
+        </div>
+
+        <div class="prompt-box">
+          <div class="prompt-box-header">
+            <span>PROMPT 範本：地道商務美語轉換</span>
+            <button class="copy-btn" onclick="copyPrompt(this, 'prompt-story-3')">一鍵複製指令</button>
+          </div>
+          <div class="prompt-content" id="prompt-story-3">You are an experienced native English executive communications specialist. Translate and refine the following Chinese text into natural, polite, and professional American business English. Avoid overly rigid machine-translation phrasing. Output ONLY the refined English sentence with no intro, quotation marks, or explanations.</div>
+        </div>
+      </div>
+
+      <!-- 中場 CTA -->
+      <div class="feature-cta">
+        <p>在任何 App 輸入框切換 Keyly，點擊 ✨ 即可直接呼叫專屬 Prompt 並原地回填文字。</p>
+        <div class="cta-btn">
+          <a href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&amp;ct=website_landing&amp;mt=8" target="_blank" rel="noopener" class="cta-main-btn" onclick="trackDownload('guide_custom_prompt_mid')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
+      </div>
+
+      <h2>三、實戰教學：3 步驟在 Keyly App 設定第一個專屬 Prompt</h2>
+      <p>在 Keyly 設定自訂 Prompt 非常簡單，只需花 30 秒（若想先了解基礎 AI 改寫操作與免費額度，可參考 <a href="/guides/how-to-use-keyly-ai-rewrite/" onclick="trackLink('guide_ai_rewrite','/guides/how-to-use-keyly-ai-rewrite/')">Keyly AI 改寫操作教學</a>）：</p>
+
+      <div class="step-list">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>打開 Keyly App，進入「AI 指令」標籤頁</h3>
+            <p>點擊底部選單的「AI 指令」，即可瀏覽 Keyly 內建的所有實用推薦指令，以及你的個人自訂收藏庫。</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>點擊右上角「新增 Prompt」（或由現有範本匯入）</h3>
+            <p>輸入好記的指令名稱（例如：職場向上拆彈）、挑選對應的分類圖示（專業、改寫、翻譯、創意、校對），並在內容框貼上你的提示詞咒語。</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>在下方「即時預覽區」測試，確認後點擊「儲存」</h3>
+            <p>在預覽區輸入測試文字點擊生成，滿意效果後點擊儲存。切換到任何 App 的 Keyly 鍵盤，點擊 ✨ AI 圖示，你的自訂指令已經排在第一位隨時待命！</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>四、撰寫強大手機 Prompt 的「3 大黃金心法」</h2>
+      <p>手機打字與電腦不同，使用者追求的是「快」與「乾淨」。要寫出回填後不需再手動修剪的 Prompt，請牢記三原則：</p>
+      <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <li><strong>原則 1：賦予明確角色</strong> ── 如「你是一位擅長商務溝通的公關總監」、「你是一位嚴苛的繁體中文文字校對專家」。</li>
+        <li><strong>原則 2：嚴格限制輸出格式（最重要！）</strong> ── 務必加上「<strong>直接輸出最終改寫結果，嚴禁包含任何問候語、解釋、前言或前後引號</strong>」，避免 AI 多嘴吐出「好的，這是為您改寫的內容：」。</li>
+        <li><strong>原則 3：定調語氣與目標</strong> ── 指明「語氣謙虛但堅定」、「簡潔俐落無冗言贅字」。</li>
+      </ul>
+
+      <h2>五、開箱即用！10+ 款高頻實戰 Prompt 範本庫</h2>
+      <p>點擊下方任一範本卡片的「一鍵複製」，打開 Keyly App 貼上即可直接使用：</p>
+
+      <div class="catalog-grid">
+        <!-- 卡片 1 -->
+        <div class="catalog-card">
+          <div class="catalog-title">⏳ 零火藥味催促進度</div>
+          <div class="catalog-desc">催促外部合作廠商或跨部門同事交件，兼具專業度與壓迫感，卻完全挑不出失禮。</div>
+          <div class="prompt-box">
+            <div class="prompt-box-header">
+              <span>PROMPT 指令</span>
+              <button class="copy-btn" onclick="copyPrompt(this, 'prompt-cat-1')">一鍵複製</button>
+            </div>
+            <div class="prompt-content" id="prompt-cat-1">你是一位擅長跨部門溝通的專案經理。請將以下文字改寫為客氣、專業且具備執行時限的催促進度訊息：展現對對方的體諒與重視，但明確告知因專案里程碑需要近期取得回覆。直接輸出結果，不加贅字與引號。</div>
+          </div>
+        </div>
+
+        <!-- 卡片 2 -->
+        <div class="catalog-card">
+          <div class="catalog-title">📝 雜亂逐字稿一鍵條列摘要</div>
+          <div class="catalog-desc">會議中快速隨手記下的碎片文字或語音輸入，一鍵整理成井然有序的重點與待辦事項（Action Items）。</div>
+          <div class="prompt-box">
+            <div class="prompt-box-header">
+              <span>PROMPT 指令</span>
+              <button class="copy-btn" onclick="copyPrompt(this, 'prompt-cat-2')">一鍵複製</button>
+            </div>
+            <div class="prompt-content" id="prompt-cat-2">你是一位頂級商務特助。請整理以下雜亂的會議或口述筆記，提煉出精準的核心結論，並以清楚的條列式（Bullet Points）呈現待辦事項與負責分工。文字要求極度精簡，直接輸出條列內容。</div>
+          </div>
+        </div>
+
+        <!-- 卡片 3 -->
+        <div class="catalog-card">
+          <div class="catalog-title">🛡️ 委婉拒絕臨時插單</div>
+          <div class="catalog-desc">其他部門突然塞來臨時需求，幫你在不撕破臉的前提下，以「現有專案排程優先級」客觀回絕。</div>
+          <div class="prompt-box">
+            <div class="prompt-box-header">
+              <span>PROMPT 指令</span>
+              <button class="copy-btn" onclick="copyPrompt(this, 'prompt-cat-3')">一鍵複製</button>
+            </div>
+            <div class="prompt-content" id="prompt-cat-3">請將以下文字改寫為職場得體的回絕訊息：說明目前團隊產能已全數聚焦在當季核心專案上，若此需求具急迫性，建議需由主管共同評估優先級排序。語氣誠懇、客觀且專業。直接輸出改寫文字。</div>
+          </div>
+        </div>
+
+        <!-- 卡片 4 -->
+        <div class="catalog-card">
+          <div class="catalog-title">☀️ 長輩親戚群組暖心回覆</div>
+          <div class="catalog-desc">長輩傳來早安圖或關心訊息，一秒生成溫暖貼心、孝順有禮的回應，情緒價值給好給滿。</div>
+          <div class="prompt-box">
+            <div class="prompt-box-header">
+              <span>PROMPT 指令</span>
+              <button class="copy-btn" onclick="copyPrompt(this, 'prompt-cat-4')">一鍵複製</button>
+            </div>
+            <div class="prompt-content" id="prompt-cat-4">請以一位溫柔、孝順且懂事的晚輩口氣，回覆以下長輩的訊息：給予正面能量、關心對方作息與健康，語氣自然真誠，適度搭配 1~2 個溫馨 Emoji。直接輸出回覆內容。</div>
+          </div>
+        </div>
+
+        <!-- 卡片 5 -->
+        <div class="catalog-card">
+          <div class="catalog-title">👔 台灣繁體公文與正式信件潤飾</div>
+          <div class="catalog-desc">去除口語化贅詞與枝節，將口語表述轉換為符合台灣商業習慣、結構嚴謹且文雅得體的正式商務中文。</div>
+          <div class="prompt-box">
+            <div class="prompt-box-header">
+              <span>PROMPT 指令</span>
+              <button class="copy-btn" onclick="copyPrompt(this, 'prompt-cat-5')">一鍵複製</button>
+            </div>
+            <div class="prompt-content" id="prompt-cat-5">你是一位資深文字編輯。請將以下文字改寫為符合台灣商務習慣的正式文字：修飾口語俗套、確保專有名詞精準、句構嚴謹流暢。直接輸出改寫成果，不要加入前言與後語。</div>
+          </div>
+        </div>
+
+        <!-- 卡片 6 -->
+        <div class="catalog-card">
+          <div class="catalog-title">🔍 全半形標點與錯別字嚴格校對</div>
+          <div class="catalog-desc">全面掃除繁體中文中的錯別字、贅字、全半形標點符號混用，還原極致純淨的專業排版排查。</div>
+          <div class="prompt-box">
+            <div class="prompt-box-header">
+              <span>PROMPT 指令</span>
+              <button class="copy-btn" onclick="copyPrompt(this, 'prompt-cat-6')">一鍵複製</button>
+            </div>
+            <div class="prompt-content" id="prompt-cat-6">你是一位極度嚴謹的繁體中文校對專家。請校正以下文字的所有錯別字、語病，並將所有半形標點（如英文逗號、句號）依台灣標準替換為全形標點符號，中英文之間保留一個半形空格。保持原文原意，直接輸出校對後的文字。</div>
+          </div>
+        </div>
+      </div>
+      <!-- 結尾 CTA -->
+      <div class="feature-cta" style="margin-top: 3rem;">
+        <p>擁有屬於你的 iPhone 專屬 AI 提示詞鍵盤。從今天起，不再當個在 App 之間手忙腳亂複製貼上的文字苦工。</p>
+        <div class="cta-btn">
+          <a href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&amp;ct=website_landing&amp;mt=8" target="_blank" rel="noopener" class="cta-main-btn" onclick="trackDownload('guide_custom_prompt_bottom')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-brand">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="100" height="100" rx="20" fill="#0D142E"/>
+          <defs>
+            <linearGradient id="fks" x1="30" y1="20" x2="30" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38C7BA"/><stop offset="1" stop-color="#8E61D9"/>
+            </linearGradient>
+            <linearGradient id="fka" x1="75" y1="20" x2="40" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6EBF2"/><stop offset="1" stop-color="#BFCDE0"/>
+            </linearGradient>
+          </defs>
+          <rect x="25" y="20" width="16" height="60" fill="url(#fks)"/>
+          <path d="M75 20L41 50L75 80H55L31 50L55 20H75Z" fill="url(#fka)"/>
+        </svg>
+        Keyly
+      </a>
+      <div class="footer-links">
+        <a href="/guides/" onclick="trackLink('guides_hub','/guides/')">所有使用指南</a>
+        <span class="sep">|</span>
+        <a href="/">回首頁</a>
+        <span class="sep">|</span>
+        <a href="/privacy/">隱私權政策</a>
+        <span class="sep">|</span>
+        <a href="mailto:support@keylyapp.com">技術支援</a>
+      </div>
+      <p class="footer-copy">© 2026 Keyly 由台灣團隊專為高效溝通而生。</p>
+    </div>
+  </footer>
+
+  <script>
+    function copyPrompt(button, elementId) {
+      const text = document.getElementById(elementId).innerText.trim();
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = button.innerText;
+        button.innerText = "✓ 已複製！";
+        button.classList.add("copied");
+        if (typeof gtag === 'function') {
+          gtag('event', 'copy_template', { event_category: 'engagement', event_label: elementId });
+        }
+        setTimeout(() => {
+          button.innerText = originalText;
+          button.classList.remove("copied");
+        }, 2000);
+      }).catch(err => {
+        console.error("Copy failed:", err);
+      });
+    }
+  </script>
+</body>
+</html>

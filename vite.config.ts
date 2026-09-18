@@ -36,6 +36,7 @@ export default defineConfig({
           guidesPoliteRefusal: path.resolve(__dirname, 'guides/iphone-ai-polite-refusal/index.html'),
           guidesElderlyReply: path.resolve(__dirname, 'guides/iphone-ai-elderly-reply/index.html'),
           guidesHowToUseAiRewrite: path.resolve(__dirname, 'guides/how-to-use-keyly-ai-rewrite/index.html'),
+          guidesCustomAiPrompt: path.resolve(__dirname, 'guides/iphone-custom-ai-prompt/index.html'),
           go: path.resolve(__dirname, 'go/index.html'),
           notFound: path.resolve(__dirname, '404.html'),
         },

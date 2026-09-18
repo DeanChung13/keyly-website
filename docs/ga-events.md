@@ -50,7 +50,10 @@
 | `download_click` | `engagement` | `guide_full_access_bottom` | 完全取用頁結尾 CTA（全頁唯一一個下載 CTA） | `guides/full-access/index.html` |
 | `download_click` | `engagement` | `guide_polite_refusal_hero` / `_mid` / `_bottom` | 委婉拒絕頁三段 App Store CTA | `guides/iphone-ai-polite-refusal/index.html` |
 | `download_click` | `engagement` | `guide_ai_rewrite_top` / `guide_ai_rewrite_mid` / `guide_ai_rewrite_bottom` | AI 改寫教學頁三段 App Store 下載 CTA | `guides/how-to-use-keyly-ai-rewrite/index.html` |
+| `download_click` | `engagement` | `guide_custom_prompt_mid` / `guide_custom_prompt_bottom` | 自訂 Prompt 教學頁兩段 App Store 下載 CTA | `guides/iphone-custom-ai-prompt/index.html` |
 | `link_click` | `engagement` | `guide_ai_rewrite` | Hub「Keyly 使用教學」與各 AI 情境頁前往 AI 改寫教學頁 | `guides/index.html` / `guides/*/index.html` |
+| `link_click` | `engagement` | `guide_custom_prompt` | Hub 與教學頁前往自訂 Prompt 教學頁 | `guides/index.html` / `guides/how-to-use-keyly-ai-rewrite/index.html` |
+| `copy_template` | `engagement` | (範本元素 ID，如 `prompt-story-1`, `prompt-cat-1` 等) | 自訂 Prompt 教學頁範本複製成功 | `guides/iphone-custom-ai-prompt/index.html` |
 | `copy_template` | `engagement` | `refusal_extra_work` / `refusal_other_owner` / `refusal_invitation` / `refusal_collaboration` / `refusal_after_hours` | 委婉拒絕頁範例複製成功 | `guides/iphone-ai-polite-refusal/index.html` |
 | `faq_click` | `engagement` | (FAQ 題目) | FAQ 問題點擊展開 | `src/App.tsx` / `AppEn.tsx` |
 | `section_view` | `engagement` | (區塊 ID) | 區塊可見度（捲動深度追蹤） | `src/App.tsx` / `AppEn.tsx` |

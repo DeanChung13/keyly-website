@@ -372,8 +372,37 @@
       text-underline-offset: 0.2em;
     }
 
-    .feature-cta .cta-btn {
+    .cta-action {
       grid-area: action;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mid-cta .cta-action {
+      flex-shrink: 0;
+    }
+
+    .cta-sub-proof {
+      margin-top: 0.45rem;
+      font-size: 0.75rem;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      white-space: nowrap;
+    }
+
+    .cta-sub-proof .stars {
+      color: #F59E0B;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .feature-cta .cta-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -613,9 +642,6 @@
     }
 
     .cta-box .cta-btn {
-      grid-area: action;
-      position: relative;
-      z-index: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -755,7 +781,7 @@
   </nav>
 
   <div class="page-wrapper">
-    <p class="breadcrumb"><a href="/">Keyly</a> ／ <a href="/guides/" onclick="trackLink('guides_hub','/guides/')">實用指南</a> ／ Keyly AI 改寫教學</p>
+    <p class="breadcrumb"><a href="/">Keyly</a> ／ <a href="/guides/" onclick="trackLink('guides_hub','/guides/')">使用指南</a> ／ Keyly AI 改寫教學</p>
 
     <div class="page-header">
       <h1>Keyly AI 改寫怎麼用？iPhone 鍵盤 30 秒快速上手指南</h1>
@@ -771,7 +797,13 @@
 
       <div class="feature-cta">
         <p>想要在任何 iPhone 輸入框直接使用 AI 改寫？Keyly 免費下載，完成登入後一次性獲得 30 次免費雲端 AI 使用額度，核心注音離線可用。</p>
-        <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_ai_rewrite_top')">免費下載 Keyly</a>
+        <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&amp;ct=website_landing&amp;mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_ai_rewrite_top')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <h2>30 秒快速上手步驟</h2>
@@ -806,7 +838,7 @@
           <div class="step-num">4</div>
           <div class="step-content">
             <h3>選擇情境範本或指令，確認結果送出</h3>
-            <p>選擇符合當下需求的內建範本（如「精煉重點摘要」、「高情商請假條」等）或自訂指令，生成後先確認改寫結果，核對符合實際狀況後再送出。</p>
+            <p>選擇符合當下需求的內建範本（如「精煉重點摘要」、「高情商請假條」等）或<a href="/guides/iphone-custom-ai-prompt/" onclick="trackLink('guide_custom_prompt','/guides/iphone-custom-ai-prompt/')">自訂 Prompt</a>，生成後先確認改寫結果，核對符合實際狀況後再送出。</p>
           </div>
         </div>
       </div>
@@ -873,7 +905,13 @@
 
       <div class="mid-cta">
         <p>想親自體驗 30 秒直接改寫訊息的便利感？</p>
-        <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_ai_rewrite_mid')">免費下載 Keyly</a>
+        <div class="cta-action">
+          <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&amp;ct=website_landing&amp;mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_ai_rewrite_mid')">免費下載 Keyly</a>
+          <div class="cta-sub-proof">
+            <span class="stars">★★★★★ 5.0</span>
+            <span>App Store 滿分好評</span>
+          </div>
+        </div>
       </div>
 
       <h2>免費額度、網路需求與隱私說明</h2>
@@ -921,7 +959,13 @@
     <div class="cta-box">
       <h2>在 iPhone 任何輸入框，享受流暢的 AI 寫作體驗</h2>
       <p>Keyly 整合台灣專屬注音引擎與雲端 AI 潤飾，完成登入後一次性獲得 30 次免費雲端 AI 使用額度，核心注音離線可用。</p>
-      <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&ct=website_landing&mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_ai_rewrite_bottom')">免費下載 Keyly</a>
+      <div class="cta-action">
+        <a class="cta-btn" href="https://apps.apple.com/app/apple-store/id6759639348?pt=686508&amp;ct=website_landing&amp;mt=8" target="_blank" rel="noopener" onclick="trackDownload('guide_ai_rewrite_bottom')">免費下載 Keyly</a>
+        <div class="cta-sub-proof">
+          <span class="stars">★★★★★ 5.0</span>
+          <span>App Store 滿分好評</span>
+        </div>
+      </div>
     </div>
   </div>
 
