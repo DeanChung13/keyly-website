@@ -2,7 +2,7 @@ import { jsxs, jsx } from "react/jsx-runtime";
 import { renderToString } from "react-dom/server";
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { ShieldCheck, Sparkles, MousePointer2, Download, X, Menu, ChevronDown, Smartphone, Wand2, Feather, Command } from "lucide-react";
+import { ShieldCheck, Sparkles, MousePointer2, Download, X, Menu, ChevronDown, Smartphone, Star, Wand2, Feather, Command } from "lucide-react";
 const keyboardImg = "/assets/keyboard-C-cJCmuM.webp";
 const zhTWShowcases = [
   // 1. 視覺震撼：混亂變秩序。第一秒就讓使用者看到 AI 處理繁瑣資訊的強大實力。
@@ -364,10 +364,18 @@ function Logo$1({ className = "w-8 h-8" }) {
   ] });
 }
 function DownloadCTA$1({ centered = false }) {
-  return /* @__PURE__ */ jsx("div", { className: `flex flex-col w-full ${centered ? "items-center" : "items-center lg:items-start"} space-y-6`, children: /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener", onClick: () => trackDownload$1(centered ? "cta_section" : "hero"), className: "w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none inline-flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
-    /* @__PURE__ */ jsx(Smartphone, { className: "w-5 h-5" }),
-    /* @__PURE__ */ jsx("span", { children: "免費下載" })
-  ] }) });
+  return /* @__PURE__ */ jsxs("div", { className: `flex flex-col w-full ${centered ? "items-center" : "items-center lg:items-start"} space-y-3`, children: [
+    /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener", onClick: () => trackDownload$1(centered ? "cta_section" : "hero"), className: "w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none inline-flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
+      /* @__PURE__ */ jsx(Smartphone, { className: "w-5 h-5" }),
+      /* @__PURE__ */ jsx("span", { children: "免費下載" })
+    ] }),
+    /* @__PURE__ */ jsxs("div", { className: "inline-flex items-center space-x-1.5 text-xs text-text-secondary/90 pt-0.5", children: [
+      /* @__PURE__ */ jsx("div", { className: "flex text-amber-400", "aria-label": "5 星好評", children: [...Array(5)].map((_, i) => /* @__PURE__ */ jsx(Star, { className: "w-3.5 h-3.5 fill-amber-400 text-amber-400" }, i)) }),
+      /* @__PURE__ */ jsx("span", { className: "font-semibold text-text-primary", children: "5.0" }),
+      /* @__PURE__ */ jsx("span", { className: "text-text-secondary/40", children: "·" }),
+      /* @__PURE__ */ jsx("span", { children: "App Store 滿分好評" })
+    ] })
+  ] });
 }
 function App$1() {
   useEffect(() => {
@@ -702,10 +710,18 @@ function Logo({ className = "w-8 h-8" }) {
   ] });
 }
 function DownloadCTA({ centered = false }) {
-  return /* @__PURE__ */ jsx("div", { className: `flex flex-col w-full ${centered ? "items-center" : "items-center lg:items-start"} space-y-6`, children: /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener", onClick: () => trackDownload(centered ? "cta_section_en" : "hero_en"), className: "w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none inline-flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
-    /* @__PURE__ */ jsx(Smartphone, { className: "w-5 h-5" }),
-    /* @__PURE__ */ jsx("span", { children: "Download Now" })
-  ] }) });
+  return /* @__PURE__ */ jsxs("div", { className: `flex flex-col w-full ${centered ? "items-center" : "items-center lg:items-start"} space-y-3`, children: [
+    /* @__PURE__ */ jsxs("a", { href: DOWNLOAD_URL, target: "_blank", rel: "noopener", onClick: () => trackDownload(centered ? "cta_section_en" : "hero_en"), className: "w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none inline-flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2", children: [
+      /* @__PURE__ */ jsx(Smartphone, { className: "w-5 h-5" }),
+      /* @__PURE__ */ jsx("span", { children: "Download Now" })
+    ] }),
+    /* @__PURE__ */ jsxs("div", { className: "inline-flex items-center space-x-1.5 text-xs text-text-secondary/90 pt-0.5", children: [
+      /* @__PURE__ */ jsx("div", { className: "flex text-amber-400", "aria-label": "5 star rating", children: [...Array(5)].map((_, i) => /* @__PURE__ */ jsx(Star, { className: "w-3.5 h-3.5 fill-amber-400 text-amber-400" }, i)) }),
+      /* @__PURE__ */ jsx("span", { className: "font-semibold text-text-primary", children: "5.0" }),
+      /* @__PURE__ */ jsx("span", { className: "text-text-secondary/40", children: "·" }),
+      /* @__PURE__ */ jsx("span", { children: "App Store Rating" })
+    ] })
+  ] });
 }
 function App() {
   useEffect(() => {

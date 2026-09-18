@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Download, Menu, X, Wand2, Feather, Command, ShieldCheck, ChevronDown, Smartphone } from 'lucide-react';
+import { Download, Menu, X, Wand2, Feather, Command, ShieldCheck, ChevronDown, Smartphone, Star } from 'lucide-react';
 import TypingAnimation from './components/TypingAnimation';
 import { DOWNLOAD_URL } from './appStoreLink';
 
@@ -65,11 +65,21 @@ function Logo({ className = 'w-8 h-8' }: { className?: string }) {
 
 function DownloadCTA({ centered = false }: { centered?: boolean }) {
   return (
-    <div className={`flex flex-col w-full ${centered ? 'items-center' : 'items-center lg:items-start'} space-y-6`}>
+    <div className={`flex flex-col w-full ${centered ? 'items-center' : 'items-center lg:items-start'} space-y-3`}>
       <a href={DOWNLOAD_URL} target="_blank" rel="noopener" onClick={() => trackDownload(centered ? 'cta_section_en' : 'hero_en')} className="w-auto bg-bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-bg-secondary transition-all duration-200 transform hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none inline-flex items-center justify-center space-x-2 shadow-lg shadow-bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2">
         <Smartphone className="w-5 h-5" />
         <span>Download Now</span>
       </a>
+      <div className="inline-flex items-center space-x-1.5 text-xs text-text-secondary/90 pt-0.5">
+        <div className="flex text-amber-400" aria-label="5 star rating">
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+          ))}
+        </div>
+        <span className="font-semibold text-text-primary">5.0</span>
+        <span className="text-text-secondary/40">·</span>
+        <span>App Store Rating</span>
+      </div>
     </div>
   );
 }
