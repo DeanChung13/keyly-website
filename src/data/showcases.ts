@@ -68,64 +68,24 @@ export const zhTWShowcases: Showcase[] = [
   }
 ];
 
+// Verified outputs from the app tutorial (keyly/Keyly/Resources/tutorial.en-US.json).
 export const enShowcases: Showcase[] = [
   {
-    id: 'style_chaos_to_order',
-    promptTitle: 'Idea Organizer',
-    before: 'meeting tomorrow need slides order boba tea half sugar also print 5 copies of report and call mike',
-    after: '📍 Tomorrow\'s To-Do List:\n1. Prepare meeting slides\n2. Order boba tea (Half Sugar)\n3. Print 5 copies of the report\n4. Call Mike for follow-up'
-  },
-  // 2. Social Media Viral: Capturing the Gen Z / Millennial digital tone.
-  {
-    id: 'style_social_viral',
-    promptTitle: 'Viral Content Creator',
-    before: 'just got home from work so tired its so late',
-    after: '2 AM vibes... just me, my iced coffee, and this deadline. 🫠 Is this what they call "the hustle" or am I just sleep-deprived? Send help (and snacks). 🍕✨\n\n#WorkLife #NightOwl #GrindSet'
-  },
-  // 3. Workplace Diplomacy: Turning blunt thoughts into professional communication.
-  {
-    id: 'style_workplace_survival',
-    promptTitle: 'Professional Diplomat',
-    before: 'This is not my job, go ask someone else.',
-    after: 'Thank you for reaching out. This falls under the [Department Name]\'s scope of responsibility. I recommend contacting them directly for the most accurate assistance. Let me know if you need help with the handoff!'
-  },
-  // 4. Travel Companion (Japanese): Showing off the seamless translation power.
-  {
-    id: 'style_travel_japan',
-    promptTitle: 'Travel Sidekick',
-    before: 'Excuse me, are there any good local izakayas nearby that don\'t have a long wait?',
-    after: 'すみません、この近くにおすすめの地元の居酒屋はありますか？並ばずに入れるお店がいいです。'
-  },
-  // 5. Business English Pro: Elevating standard English to executive level.
-  {
-    id: 'style_global_business',
-    promptTitle: 'Executive Presence',
-    before: 'Boss, I need more time for the report to check the numbers.',
-    after: 'Hi [Name], I would appreciate a bit more time to verify the data in this report to ensure full accuracy. I will provide you with a revised timeline by end of day.'
-  },
-  // 6. Polite Decline: Solving the universal pain point of saying "No".
-  {
-    id: 'style_polite_decline',
-    promptTitle: 'Graceful Refusal',
-    before: 'I dont have time for this now, ask someone else or wait until next week.',
-    after: 'Thanks for the proposal. I’m currently at full capacity with a high-priority project and won\'t be able to take this on right now. Perhaps we can touch base next week once I’ve cleared my current queue?'
+    id: "sound_professional",
+    promptTitle: "Sound Professional",
+    before: "can we move the meeting to thursday i need more time to review the numbers",
+    after: "Could we reschedule the meeting for Thursday? I need a bit more time to review the numbers."
   },
   {
-    id: 'style_social_rescue',
-    promptTitle: 'Social Rescue',
-    before: 'My manager asked what I think the company should improve. What should I say?',
-    after: '1. (Professional) The company could review internal communication workflows to improve cross-team execution.\n2. (Sincere) I have noticed meetings are fairly frequent, and trimming them slightly could create more room for delivery work.\n3. (High-EQ) The team atmosphere is already strong. Adding more skill-sharing sessions could make it even better.'
+    id: "proofread_polish",
+    promptTitle: "Fix Grammar & Typos",
+    before: "thanks for sending this over i will take a look and get back to you tommorow",
+    after: "Thanks for sending this over. I will take a look and get back to you tomorrow."
   },
   {
-    id: 'style_high_eq',
-    promptTitle: 'High-EQ Reply',
-    before: 'Your approach is making this difficult for me. Can you be more professional?',
-    after: 'I would like to align on expectations around the current workflow so our collaboration can move more smoothly. Would you be open to a quick discussion on how we can improve the process and help both sides work more effectively?'
-  },
-  {
-    id: 'style_threads_shitpost',
-    promptTitle: 'Threads Post',
-    before: "I'm exhausted after work and want bubble tea, but I also don't want to gain weight. What do I do?",
-    after: "Need help, internet...\n\nMy soul wants bubble tea, but my body is filing a formal complaint. Does anyone else know this exact after-work crisis? Do I choose happiness or the scale? Or does half sugar somehow cancel the calories out? Asking for a friend.\n\n#AfterWorkMood #BubbleTeaProblems #TinyLifeCrisis"
+    id: "cut_the_fluff",
+    promptTitle: "Cut the Fluff",
+    before: "just wanted to reach out and let you know that we are currently in the process of reviewing the proposal",
+    after: "We are reviewing the proposal."
   }
 ];

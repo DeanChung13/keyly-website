@@ -173,16 +173,16 @@ function Hero() {
           <div className="lg:col-span-6 text-center lg:text-left mb-16 lg:mb-0 z-10">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <div className="text-sm font-semibold tracking-[0.08em] text-text-secondary/80 mb-4">
-                Built in Taiwan · tuned for iOS Zhuyin input
+                AI keyboard for iPhone · also supports Zhuyin
               </div>
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black text-text-primary leading-tight mb-6">
-                AI Zhuyin keyboard for faster, clearer writing on iPhone<br />
+                Rewrite your messages in any app, right from your keyboard<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">
-                  rewrite and refine text in one tap
+                  Sound Professional, Cut the Fluff, and more
                 </span>
               </h1>
               <p className="text-lg text-text-secondary/90 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Keyly unifies speed, writing quality, and privacy so translation, rewriting, and refinement happen directly in your typing flow.
+                Type a rough draft, tap a prompt, and Keyly rewrites it in place. Fix typos, soften the tone, or translate without leaving the chat.
               </p>
 
               <div className="mt-8">
@@ -361,9 +361,9 @@ function CTA() {
     <section id="download" className="py-24 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-brand-cyan/5"></div>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <h2 className="text-4xl font-bold text-text-primary mb-6">Try a smarter Zhuyin keyboard for iPhone</h2>
+        <h2 className="text-4xl font-bold text-text-primary mb-6">Rewrite messages without leaving the chat</h2>
         <p className="text-xl text-text-secondary mb-10">
-          Get Keyly and speed up Traditional Chinese typing, rewriting, and translation in one keyboard.
+          Get Keyly for AI rewriting and translation in any app, plus Zhuyin typing for Traditional Chinese.
         </p>
         <DownloadCTA centered />
       </div>
