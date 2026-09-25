@@ -309,7 +309,7 @@ function FAQSection() {
         <div className="space-y-4">
           <p>
             <strong>Standard users (free download):</strong><br />
-            Free download includes the high-speed Zhuyin engine, the full standard prompt library, and a one-time gift of 50 cloud AI requests for newly signed-in accounts.
+            Free download includes the high-speed Zhuyin engine, the full standard prompt library, and a one-time gift of 30 cloud AI requests for newly signed-in accounts.
           </p>
           <p>
             <strong>Keyly Pro subscription (NT$150/month):</strong><br />
