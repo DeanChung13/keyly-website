@@ -176,9 +176,9 @@ function Hero() {
                 AI keyboard for iPhone · also supports Zhuyin
               </div>
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black text-text-primary leading-tight mb-6">
-                Rewrite your messages in any app, right from your keyboard<br />
+                Rewrite any message,<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">
-                  Sound Professional, Cut the Fluff, and more
+                  right from your keyboard
                 </span>
               </h1>
               <p className="text-lg text-text-secondary/90 leading-relaxed max-w-xl mx-auto lg:mx-0">
