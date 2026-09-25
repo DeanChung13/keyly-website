@@ -1,12 +1,15 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { enShowcases } from './showcases';
 
-const appResource = (path: string) =>
-  JSON.parse(readFileSync(resolve(process.cwd(), '../keyly', path), 'utf8'));
+// The app repo is a sibling checkout locally; CI does not have it.
+const appRepo = resolve(process.cwd(), '../keyly');
 
-describe('English homepage showcases', () => {
+const appResource = (path: string) =>
+  JSON.parse(readFileSync(resolve(appRepo, path), 'utf8'));
+
+describe.skipIf(!existsSync(appRepo))('English homepage showcases', () => {
   it('reference real en-US prompts by id and title', () => {
     const prompts: Array<{ id: string; title: string }> = appResource(
       'KeylyCore/Shared/Resources/prompts.en-US.json'
