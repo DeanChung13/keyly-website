@@ -312,7 +312,7 @@ function FAQSection() {
             Free download includes the high-speed Zhuyin engine, the full standard prompt library, and a one-time gift of 30 cloud AI requests for newly signed-in accounts.
           </p>
           <p>
-            <strong>Keyly Pro subscription (NT$150/month):</strong><br />
+            <strong>Keyly Pro subscription (US$4.99/month or US$39.99/year; the annual plan includes a 3-day free trial):</strong><br />
             Built for heavy professional use. It unlocks unlimited cloud AI processing and adds the AI Prompt Manager so you can create, edit, and save custom commands that match your workflow.
           </p>
         </div>
