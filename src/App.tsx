@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, Zap, Globe, User, ChevronRight, Keyboard, Smartphone, Download, Menu, X, Wand2, Feather, Command, ShieldCheck, ChevronDown, Star } from 'lucide-react';
+import { Sparkles, Zap, Globe, User, ChevronRight, Keyboard, Smartphone, Download, Menu, X, Wand2, Feather, Command, ShieldCheck, ChevronDown, Star , Repeat } from 'lucide-react';
 import HeroFilm from './components/HeroFilm';
 import CustomPromptsFilm from './components/CustomPromptsFilm';
 import { DOWNLOAD_URL } from './appStoreLink';
@@ -239,33 +239,58 @@ function Hero() {
 function CustomPrompts() {
   return (
     <section id="custom-prompts" className="py-24 bg-white relative overflow-hidden">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-text-primary">每天要回的那幾種訊息，<br className="hidden md:block"/>按一下就好。</h2>
-        <p className="text-lg text-text-secondary mb-8 leading-relaxed">用一句話寫下你的 AI 指令，存起來，在任何 App 的鍵盤上一鍵改好。不用複製貼上、不用切到 ChatGPT。</p>
-        <ul className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-10 text-text-secondary text-lg">
-          <li className="flex items-center">
-            <span className="text-accent-mint mr-2 font-bold">✦</span>
-            <span>寫一次，天天用</span>
-          </li>
-          <li className="flex items-center">
-            <span className="text-accent-mint mr-2 font-bold">✦</span>
-            <span>不用跳 App、不用複製貼上</span>
-          </li>
-          <li className="flex items-center">
-            <span className="text-accent-mint mr-2 font-bold">✦</span>
-            <span>改出來就是你要的格式和口吻</span>
-          </li>
-        </ul>
-        <a 
-          href="/guides/iphone-custom-ai-prompt/" 
-          onClick={() => trackLinkClick('custom_prompts', '/guides/iphone-custom-ai-prompt/')}
-          className="inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold rounded-full text-white bg-brand-cyan hover:bg-brand-cyan/90 transition-all shadow-sm hover:shadow-md active:scale-95"
-        >
-          看怎麼寫自己的指令
-        </a>
-      </div>
-      <div className="w-full sm:px-6 lg:px-8 max-w-6xl mx-auto">
-         <CustomPromptsFilm locale="zh" />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div className="grid lg:grid-cols-12 gap-12 items-end mb-14">
+          <div className="lg:col-span-7">
+            <div className="flex items-center gap-2 mb-4 text-sm font-semibold tracking-wide text-brand-cyan">
+              <Sparkles className="w-4 h-4" />
+              <span>自訂 AI 指令</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.15] text-text-primary">
+              每天要回的那幾種訊息，<br />按一下就好。
+            </h2>
+            <p className="mt-5 text-lg md:text-xl text-text-secondary leading-relaxed max-w-xl" style={{ textWrap: 'pretty' }}>
+              用一句話寫下你的 AI 指令，存起來，在任何 App 的鍵盤上一鍵改好。不用複製貼上、不用切到 ChatGPT。
+            </p>
+          </div>
+          
+          <div className="lg:col-span-5">
+            <ul className="divide-y divide-metal-gray/15">
+              <li className="py-4 flex items-center gap-4">
+                <div className="w-9 h-9 rounded-xl bg-[#F4F7FA] border border-metal-gray/20 flex items-center justify-center shrink-0">
+                  <Repeat className="w-5 h-5 text-brand-cyan" />
+                </div>
+                <span className="text-base md:text-lg font-medium text-text-primary">寫一次，天天用</span>
+              </li>
+              <li className="py-4 flex items-center gap-4">
+                <div className="w-9 h-9 rounded-xl bg-[#F4F7FA] border border-metal-gray/20 flex items-center justify-center shrink-0">
+                  <Keyboard className="w-5 h-5 text-brand-purple" />
+                </div>
+                <span className="text-base md:text-lg font-medium text-text-primary">不用跳 App、複製貼上</span>
+              </li>
+              <li className="py-4 flex items-center gap-4">
+                <div className="w-9 h-9 rounded-xl bg-[#F4F7FA] border border-metal-gray/20 flex items-center justify-center shrink-0">
+                  <Wand2 className="w-5 h-5 text-accent-mint" />
+                </div>
+                <span className="text-base md:text-lg font-medium text-text-primary">你要的格式和口吻</span>
+              </li>
+            </ul>
+            
+            <a 
+              href="/guides/iphone-custom-ai-prompt/" 
+              onClick={() => trackLinkClick('custom_prompts', '/guides/iphone-custom-ai-prompt/')}
+              className="inline-flex items-center gap-1.5 mt-6 font-semibold text-brand-cyan hover:gap-2.5 transition-all"
+            >
+              看怎麼寫自己的指令
+              <ChevronRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+
+        <div className="w-full">
+           <CustomPromptsFilm locale="zh" />
+        </div>
       </div>
     </section>
   );
