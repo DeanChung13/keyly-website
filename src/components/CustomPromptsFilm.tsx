@@ -4,8 +4,6 @@ import { Play, Pause } from 'lucide-react';
 export default function CustomPromptsFilm({ locale = 'zh' }: { locale?: 'zh' | 'en' }) {
   const ref = useRef<HTMLVideoElement>(null);
   
-  // We initialize the media query explicitly to get the correct initial state before hydration issues if possible,
-  // but for SSR safety, we can initialize to false and update on mount.
   const [reduceMotion, setReduceMotion] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
 
@@ -32,7 +30,6 @@ export default function CustomPromptsFilm({ locale = 'zh' }: { locale?: 'zh' | '
       const playPromise = video.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {
-          // Auto-play might be blocked by browser
           setIsPlaying(false);
         });
       }
@@ -55,6 +52,7 @@ export default function CustomPromptsFilm({ locale = 'zh' }: { locale?: 'zh' | '
         <video 
           ref={ref}
           className="absolute top-0 left-0 w-full h-full object-cover"
+          autoPlay={!reduceMotion}
           muted 
           loop 
           playsInline 
@@ -67,7 +65,7 @@ export default function CustomPromptsFilm({ locale = 'zh' }: { locale?: 'zh' | '
         </video>
         
         <button 
-          className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity"
+          className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center transition-transform hover:scale-105 active:scale-95"
           aria-label={isPlaying ? pauseLabel : playLabel}
           onClick={(e) => {
             e.stopPropagation();
@@ -75,9 +73,9 @@ export default function CustomPromptsFilm({ locale = 'zh' }: { locale?: 'zh' | '
           }}
         >
           {isPlaying ? (
-            <Pause className="w-5 h-5 fill-current" />
+            <Pause className="w-5 h-5 text-white" fill="currentColor" />
           ) : (
-            <Play className="w-5 h-5 fill-current ml-0.5" />
+            <Play className="w-5 h-5 text-white ml-0.5" fill="currentColor" />
           )}
         </button>
       </div>
