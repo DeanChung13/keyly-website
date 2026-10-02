@@ -6,7 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, Zap, Globe, User, ChevronRight, Keyboard, Smartphone, Download, Menu, X, Wand2, Feather, Command, ShieldCheck, ChevronDown, Star } from 'lucide-react';
-import TypingAnimation from './components/TypingAnimation';
+import HeroFilm from './components/HeroFilm';
 import { DOWNLOAD_URL } from './appStoreLink';
 
 declare const gtag: (...args: unknown[]) => void;
@@ -223,9 +223,7 @@ function Hero() {
               {/* Decorative blobs */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-brand-cyan/30 to-brand-purple/30 rounded-full blur-3xl -z-10 opacity-50"></div>
 
-              <React.Suspense fallback={<div className="w-full aspect-[4/3] rounded-3xl bg-metal-gray/10 animate-pulse border border-metal-gray/20"></div>}>
-                <TypingAnimation />
-              </React.Suspense>
+              <HeroFilm />
             </motion.div>
           </div>
         </div>

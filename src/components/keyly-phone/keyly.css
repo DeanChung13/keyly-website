@@ -1,0 +1,93 @@
+.k-phone,.k-phone *{box-sizing:border-box}
+.k-phone{width:456px;height:972px;flex:none;position:relative;padding:8px;border-radius:70px;background:linear-gradient(115deg,#798087 0%,#d8dad9 11%,#6d7277 25%,#c5c9cb 48%,#64696f 74%,#e3e5e5 91%,#71777c 100%);box-shadow:0 34px 76px #0b11235e,0 0 0 1px #31363b;isolation:isolate;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang TC",sans-serif;color:#161a22}
+.k-phone:before{content:"";position:absolute;inset:2px;border-radius:68px;background:#050608;z-index:-1}
+.k-phone-screen{width:440px;height:956px;border-radius:62px;overflow:hidden;background:#fff;display:flex;flex-direction:column;position:relative;box-shadow:0 0 0 1px #111}
+.k-side-button{position:absolute;display:block;width:3px;border-radius:2px;background:linear-gradient(90deg,#34383e,#bdc3c6,#4b5055);z-index:-2}
+.k-side-action{height:28px;left:-3px;top:136px}.k-side-volume-up{height:56px;left:-3px;top:205px}.k-side-volume-down{height:56px;left:-3px;top:273px}.k-side-power{height:86px;right:-3px;top:235px}
+.k-status{height:62px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:11px 35px 0 43px;font-size:16px;font-weight:700;letter-spacing:-.25px;position:relative;z-index:3;background:#fff;color:#090b10;font-variant-numeric:tabular-nums}
+.k-island{position:absolute;width:126px;height:37px;left:50%;top:11px;transform:translateX(-50%);border-radius:22px;background:#030305;box-shadow:inset 0 1px 1px #25262b}
+.k-status-signals{display:flex;align-items:center;gap:6px;height:16px;color:#090b10}
+.k-signal{display:block;width:17px;height:12px;background:linear-gradient(to top,currentColor 28%,transparent 28%) 0 0/3px 100%,linear-gradient(to top,currentColor 50%,transparent 50%) 5px 0/3px 100%,linear-gradient(to top,currentColor 75%,transparent 75%) 10px 0/3px 100%,linear-gradient(to top,currentColor 100%,transparent 100%) 15px 0/3px 100%;background-repeat:no-repeat}
+.k-wifi{display:block;width:17px;height:12px;border:2px solid currentColor;border-left-color:transparent;border-right-color:transparent;border-bottom-color:transparent;border-radius:50%;position:relative}.k-wifi:after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:currentColor;left:4px;top:5px}
+.k-battery{display:block;width:23px;height:11px;border:1.5px solid currentColor;border-radius:3px;position:relative}.k-battery:before{content:"";position:absolute;inset:1px;background:currentColor;border-radius:1px}.k-battery:after{content:"";position:absolute;width:2px;height:5px;right:-4px;top:2px;background:currentColor;border-radius:0 1px 1px 0}
+.k-phone-content{min-height:0;flex:1;display:flex;flex-direction:column;padding-bottom:0;background:#e5e5ea}
+.k-home-indicator{width:135px;height:5px;background:#151515;border-radius:9px;align-self:center;position:absolute;bottom:8px;z-index:5}
+.k-chat{flex:1;min-height:0;display:flex;flex-direction:column;background:#fff}
+.k-chat-header{height:54px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 17px;border-bottom:1px solid #e9e9ed;background:#fff;font-size:17px}
+.k-chat-header strong{font-size:17px;font-weight:650;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#141820}
+.k-chat-back{width:32px;color:#007aff}.k-chat-menu{width:32px;text-align:right;color:#007aff;font-size:18px;letter-spacing:1px;transform:translateY(-4px)}
+.k-chat-messages{flex:1;min-height:0;overflow:hidden;padding:21px 19px 15px;display:flex;flex-direction:column;gap:16px;justify-content:flex-end}
+.k-message-row{display:flex;align-items:flex-end;gap:8px}.k-from-me{justify-content:flex-end}
+.k-avatar{flex:none;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:#e3e8ef;color:#59677b;font-size:13px;font-weight:650}
+.k-message{max-width:322px;padding:10px 14px 11px;border-radius:18px 18px 18px 6px;background:#f0f0f3;color:#171920;font-size:18px;line-height:1.38;white-space:pre-wrap;overflow-wrap:anywhere}
+.k-from-me .k-message{background:#007aff;color:#fff;border-radius:18px 18px 6px 18px}
+.k-composer{flex:none;min-height:62px;padding:7px 11px;display:flex;align-items:flex-end;gap:9px;background:#fafafa;border-top:1px solid #e5e5ea}
+.k-add{width:26px;height:39px;display:grid;place-items:center;font-size:27px;line-height:1;color:#007aff}
+.k-input{flex:1;min-width:0;min-height:38px;max-height:260px;border-radius:19px;border:1px solid #cfd1d6;padding:7px 12px 6px;background:#fff;display:flex;align-items:flex-end;flex-wrap:wrap;position:relative}
+.k-draft{display:inline;max-width:100%;color:#161a22;font-size:18px;line-height:23px;white-space:pre-wrap;overflow-wrap:anywhere}
+.k-caret{display:inline-block;width:2px;height:23px;flex:none;background:#007aff;margin-left:1px}
+.k-placeholder{position:absolute;top:7px;left:12px;font-size:18px;color:#a0a2a9;pointer-events:none}
+.k-send{width:31px;height:31px;display:grid;place-items:center;margin-bottom:4px;border-radius:50%;background:#007aff;color:#fff}
+.k-keyboard{width:100%;height:auto;flex:none;position:relative;background:#e5e5ea;overflow:hidden}
+.k-candidate-bar{height:44px;display:flex;align-items:center;padding:2px 5px;border-bottom:1px solid #d4d4d9;background:#e5e5ea}
+.k-candidate-scroll{min-width:0;flex:1;display:flex;align-items:center;gap:5px;overflow:hidden;white-space:nowrap}
+.k-candidate{display:block;flex:none;min-width:43px;padding:4px 10px;border-radius:10px;background:#f9f9fa;color:#1b1d21;text-align:center;font-size:23px;line-height:30px}
+.k-candidate.k-picked{background:#fff;color:#007aff}
+.k-candidate-expand{width:42px;display:grid;place-items:center;color:#555961}
+.k-idle-prompt{flex:none;max-width:100%;border-radius:21px;background:#fff;color:#007aff;padding:7px 13px;font-size:16px;line-height:25px;font-weight:500}
+.k-key-area{height:215px;display:flex;flex-direction:column;gap:6px;padding:0 0 1px}
+.k-key-row{display:flex;height:38px;flex:none;gap:6px;width:100%}
+.k-key{width:calc((100% - 60px)/11);height:38px;flex:none;padding:0;display:grid;place-items:stretch;position:relative}
+.k-key-surface{width:100%;height:100%;border-radius:6px;display:grid;place-items:center;background:#fff;color:#111;font-size:22px;font-weight:400;line-height:1;box-shadow:0 1px 0 #aab0bc}
+.k-key.k-pressed{z-index:4}.k-key.k-pressed .k-key-surface{background:#b7c5d7;transform:translateY(1px) scale(.97);box-shadow:0 0 0 2px #5f82ad}
+.k-key-popover{position:absolute;left:50%;bottom:43px;transform:translateX(-50%);min-width:53px;height:52px;padding:0 6px;display:grid;place-items:center;border-radius:11px;background:#fff;color:#111;font-size:31px;box-shadow:0 4px 14px #28344b44;border:1px solid #d8dce3;pointer-events:none}
+.k-key-popover:after{content:"";position:absolute;bottom:-7px;left:50%;width:13px;height:13px;background:#fff;transform:translateX(-50%) rotate(45deg);border-right:1px solid #d8dce3;border-bottom:1px solid #d8dce3}
+.k-function-key .k-key-surface{background:#b3b5bf;color:#24252a}.k-function-key.k-pressed .k-key-surface{background:#8d93a0}
+.k-ai-key .k-key-surface{background:linear-gradient(105deg,#2671f8,#a853df);color:#fff;box-shadow:0 1px 0 #7881aa}
+.k-ai-key.k-pressed .k-key-surface{background:linear-gradient(105deg,#1255d4,#7b32bd);transform:scale(1.09);box-shadow:0 2px 11px #536ce980}
+.k-return-key .k-key-surface{background:#8e8e93;color:#fff}
+.k-space-key .k-key-surface{font-size:16px}.k-row-4 .k-key:first-child .k-key-surface{font-size:15px}
+.k-prompt-picker{position:absolute;top:0;left:0;right:0;height:44px;z-index:3;background:#e5e5ea;border-bottom:1px solid #d4d4d9;overflow:hidden}
+.k-prompt-scroll{width:100%;height:100%;display:flex;align-items:center;gap:7px;padding:0 5px;white-space:nowrap;overflow:hidden}
+.k-prompt-item{flex:none;border-radius:16px;padding:6px 12px;background:#fff;color:#404b5e;font-size:15px;font-weight:500;line-height:20px;box-shadow:0 1px 0 #b5bcc650}
+.k-prompt-item.k-selected{color:#007aff;box-shadow:inset 0 0 0 2px #479ed1,0 1px 0 #b5bcc650}
+
+.k-system-bar{height:60px;display:flex;justify-content:space-between;align-items:flex-start;padding:6px 22px 0;color:#55565c;background:#e5e5ea}
+.k-row-4 .k-key:nth-child(2) .k-key-surface{font-size:16px}
+
+/* ── 依使用者 2026-10-01 實機注音鍵盤截圖（1206px 寬 @3x）逐鍵量測，換算成螢幕寬百分比 ──
+   鍵寬 92/1206、鍵距 16/1206、左右邊 10/1206；第 2 排起點 42/1206、第 3 排 78/1206（ㄣ、ㄤ 不延伸）；
+   列高 111px、列距 20px；底排 123/ABC/AI 各 130、空白 442、換行 274，間距 20。 */
+.k-keyboard{background:linear-gradient(#E4E5EA,#DCDDE3)}
+.k-candidate-bar{height:48px;padding:0 0 0 12px;border-bottom:1px solid rgba(60,60,67,.12);background:transparent}
+.k-idle-prompt{padding:0 13px;height:34px;line-height:34px;border-radius:17px;font-size:16px;font-weight:600;color:#3478F6;background:#fff}
+.k-key-area{height:auto;gap:7.3px;padding:2px 0 0}
+.k-key-row{height:40.5px;gap:1.33%;padding:0 .83%;width:100%}
+.k-key{width:7.63%;height:40.5px}
+.k-row-1{padding-left:3.48%}.k-row-2{padding-left:6.47%}
+.k-row-4{gap:1.66%}
+.k-row-4 .k-key{flex:none;width:10.78%}.k-row-4 .k-key:nth-child(4){width:36.65%}.k-row-4 .k-key:nth-child(5){width:22.72%}
+.k-key-surface{border-radius:7px;font-size:27px;font-weight:400;color:#000;box-shadow:0 1px 0 rgba(0,0,0,.28)}
+.k-function-key .k-key-surface{background:#ABAFBA;color:#000}
+.k-row-4 .k-key:first-child .k-key-surface,.k-row-4 .k-key:nth-child(2) .k-key-surface{font-size:18px}
+.k-space-key .k-key-surface{font-size:18px}
+.k-return-key .k-key-surface{background:#8E8E93;color:#fff}
+.k-ai-key .k-key-surface{background:linear-gradient(110deg,#2F7BF6,#A855E8)}
+.k-system-bar{height:84px;padding:12px 24px 0;color:#000;background:transparent}
+.k-prompt-picker{height:48px;background:#E4E5EA}
+/* 百分比會以「扣掉 padding 後的寬」計算，導致有縮排的列鍵變窄、ㄤ 與 ㄣ 對齊；改用 440pt 螢幕換算的固定 px */
+.k-key-row{gap:5.84px;padding:0 3.65px}
+.k-key{width:33.57px;flex:none}
+.k-row-1{padding-left:15.3px}.k-row-2{padding-left:28.46px}
+.k-row-4{gap:7.3px}
+.k-row-4 .k-key{width:47.43px}.k-row-4 .k-key:nth-child(4){width:161.26px}.k-row-4 .k-key:nth-child(5){width:99.97px}
+/* 英文 QWERTY：四排、鍵高 49.6、列距 12.8；第二排不縮排；shift 與 z 之間空 15.5 */
+.k-layout-qwerty .k-key-area{gap:12.8px;padding-top:4px}
+.k-layout-qwerty .k-key-row{height:49.6px;gap:6.2px;padding:0 3.65px}
+.k-layout-qwerty .k-key{width:37.6px;height:49.6px}
+.k-layout-qwerty .k-row-1{padding-left:3.65px}
+.k-layout-qwerty .k-row-2 .k-key:nth-child(2){margin-left:15.5px}.k-layout-qwerty .k-row-2 .k-key:last-child{margin-left:15.5px}
+.k-layout-qwerty .k-row-2 .k-key:not(:first-child):not(:last-child){width:36.8px}
+.k-layout-qwerty .k-row-3{gap:6.2px}
+.k-layout-qwerty .k-key-surface{font-size:30px}
+.k-layout-qwerty .k-space-key .k-key-surface,.k-layout-qwerty .k-row-3 .k-key:first-child .k-key-surface{font-size:20px}
