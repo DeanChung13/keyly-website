@@ -231,22 +231,22 @@ function CustomPrompts() {
           </p>
         </div>
 
-        <ul className="mt-10 grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-          <li className="bg-[#F4F7FA] rounded-2xl p-5 border border-metal-gray/20 flex items-center gap-3.5">
-            <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0">
-              <Keyboard className="w-5 h-5 text-brand-cyan" />
+        <ul className="mt-8 md:mt-10 grid md:grid-cols-3 gap-2 md:gap-4 max-w-5xl mx-auto">
+          <li className="bg-[#F4F7FA] rounded-xl md:rounded-2xl px-3 py-1.5 md:p-5 border border-metal-gray/20 flex items-center gap-2.5 md:gap-3.5">
+            <div className="w-7 h-7 md:w-10 md:h-10 bg-white rounded-lg md:rounded-xl shadow-sm flex items-center justify-center shrink-0">
+              <Keyboard className="w-4 h-4 md:w-5 md:h-5 text-brand-cyan" />
             </div>
             <span className="text-[15px] md:text-base font-semibold text-text-primary leading-snug lg:whitespace-nowrap">Write once, use every day</span>
           </li>
-          <li className="bg-[#F4F7FA] rounded-2xl p-5 border border-metal-gray/20 flex items-center gap-3.5">
-            <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0">
-              <Repeat className="w-5 h-5 text-brand-purple" />
+          <li className="bg-[#F4F7FA] rounded-xl md:rounded-2xl px-3 py-1.5 md:p-5 border border-metal-gray/20 flex items-center gap-2.5 md:gap-3.5">
+            <div className="w-7 h-7 md:w-10 md:h-10 bg-white rounded-lg md:rounded-xl shadow-sm flex items-center justify-center shrink-0">
+              <Repeat className="w-4 h-4 md:w-5 md:h-5 text-brand-purple" />
             </div>
             <span className="text-[15px] md:text-base font-semibold text-text-primary leading-snug lg:whitespace-nowrap">No app switching, no copy-paste</span>
           </li>
-          <li className="bg-[#F4F7FA] rounded-2xl p-5 border border-metal-gray/20 flex items-center gap-3.5">
-            <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0">
-              <Wand2 className="w-5 h-5 text-accent-mint" />
+          <li className="bg-[#F4F7FA] rounded-xl md:rounded-2xl px-3 py-1.5 md:p-5 border border-metal-gray/20 flex items-center gap-2.5 md:gap-3.5">
+            <div className="w-7 h-7 md:w-10 md:h-10 bg-white rounded-lg md:rounded-xl shadow-sm flex items-center justify-center shrink-0">
+              <Wand2 className="w-4 h-4 md:w-5 md:h-5 text-accent-mint" />
             </div>
             <span className="text-[15px] md:text-base font-semibold text-text-primary leading-snug lg:whitespace-nowrap">Comes out in your format and your voice</span>
           </li>
