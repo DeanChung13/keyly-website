@@ -32,13 +32,8 @@ export default function CustomPromptsFilm({ locale = 'zh' }: { locale?: 'zh' | '
   const basename = locale === 'en' ? 'custom-en' : 'custom-zh';
 
   return (
-    <div className="flex flex-col items-center">
-      <div 
-        className="relative [--s:0.56] sm:[--s:0.62] lg:[--s:0.75] overflow-hidden rounded-[calc(2.5rem*var(--s))] sm:rounded-[calc(2.8rem*var(--s))] shadow-2xl ring-[calc(1px/var(--s))] ring-black/10 bg-[#F2F2F7]"
-        style={{ width: 'calc(456px * var(--s))', height: 'calc(972px * var(--s))' }} 
-        role="img" 
-        aria-label={locale === 'en' ? 'Keyly Custom Prompt Demo' : 'Keyly 自訂指令示範'}
-      >
+    <div className="w-full mx-auto overflow-hidden sm:rounded-[2rem] shadow-2xl ring-1 ring-black/10 bg-[#F2F2F7]">
+      <div className="relative aspect-video w-full">
         <video 
           ref={ref}
           className="absolute top-0 left-0 w-full h-full object-cover"
@@ -48,6 +43,7 @@ export default function CustomPromptsFilm({ locale = 'zh' }: { locale?: 'zh' | '
           playsInline 
           preload="metadata" 
           poster={`/videos/${basename}.jpg`}
+          aria-label={locale === 'en' ? 'Keyly Custom Prompt Demo' : 'Keyly 自訂指令示範'}
         >
           <source src={`/videos/${basename}.webm`} type="video/webm" />
           <source src={`/videos/${basename}.mp4`} type="video/mp4" />
