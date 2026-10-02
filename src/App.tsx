@@ -103,7 +103,7 @@ export default function App() {
       { threshold: 0.3 } // 區塊出現 30% 時觸發
     );
 
-    const sections = ['features', 'faq', 'download'];
+    const sections = ['custom-prompts', 'features', 'faq', 'download'];
     sections.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
@@ -244,7 +244,7 @@ function CustomPrompts() {
              <CustomPromptsFilm locale="zh" />
           </div>
           <div className="order-1 lg:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-text-primary">每天要回的那幾種訊息，按一下就好。</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-text-primary">每天要回的那幾種訊息，<br className="hidden md:block"/>按一下就好。</h2>
             <p className="text-lg text-text-secondary mb-8 leading-relaxed">用一句話寫下你的 AI 指令，存起來，在任何 App 的鍵盤上一鍵改好。不用複製貼上、不用切到 ChatGPT。</p>
             <ul className="space-y-4 mb-10 text-text-secondary text-lg">
               <li className="flex items-start">

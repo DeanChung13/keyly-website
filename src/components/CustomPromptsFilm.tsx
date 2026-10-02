@@ -5,26 +5,31 @@ import { Phone, ChatScreen, Keyboard, PromptPicker } from './keyly-phone/ui';
 function EditorScreen({ name, instr, saved, locale }: { name: string, instr: string, saved: boolean, locale: 'zh' | 'en' }) {
   const isEn = locale === 'en';
   return (
-    <div className="flex flex-col h-full bg-[#F2F2F7] text-[15px] select-none font-sans">
+    <div className="flex flex-col h-full bg-[#F2F2F7] text-[15px] select-none font-sans overflow-hidden">
       <div className="flex justify-between items-center px-4 py-3 bg-white shadow-[0_0.5px_0_rgba(0,0,0,0.1)]">
         <span className="text-brand-cyan">{isEn ? 'Cancel' : '取消'}</span>
-        <b className="font-semibold">{isEn ? 'New AI Prompt' : '新增 AI 指令'}</b>
+        <b className="font-semibold">{isEn ? 'New prompt' : '新增 AI 指令'}</b>
         <span className={`font-semibold transition-colors ${saved ? 'text-black/30' : 'text-brand-cyan'}`}>{isEn ? 'Save' : '儲存'}</span>
       </div>
-      <div className="px-4 pt-6 pb-2 text-[13px] text-black/50 uppercase">{isEn ? 'Basics' : '基本設定'}</div>
+      <div className="px-4 pt-4 pb-2 text-[13px] text-black/50 uppercase">{isEn ? 'Basics' : '基本資訊'}</div>
       <div className="bg-white border-y border-black/5 flex flex-col">
         <div className="px-4 py-3 border-b border-black/5 flex items-center">
-          {name || <span className="text-black/30">{isEn ? 'Prompt Name, e.g. "To Boss"' : '指令名稱，如「長輩圖語氣」'}</span>}
+          {name || <span className="text-black/30">{isEn ? 'Title' : '標題'}</span>}
         </div>
         <div className="px-4 py-3 flex justify-between items-center">
-          <span>{isEn ? 'Category' : '指令分類'}</span>
+          <span>{isEn ? 'Category' : '類別'}</span>
           <span className="text-black/50">{isEn ? 'Creative' : '創意'}</span>
         </div>
       </div>
-      <div className="px-4 pt-6 pb-2 text-[13px] text-black/50 uppercase">{isEn ? 'Instruction' : '指令內容'}</div>
-      <div className="bg-white border-y border-black/5 px-4 py-3 min-h-[120px] relative">
+      <div className="px-4 pt-4 pb-2 text-[13px] text-black/50 uppercase">{isEn ? 'Instruction' : '指令內容'}</div>
+      <div className="bg-white border-y border-black/5 px-4 py-3 min-h-[90px] relative">
         <span className="leading-relaxed">{instr || <span className="text-black/30">{isEn ? 'What should the AI do?' : '給 AI 的提示詞...'}</span>}</span>
         {!saved && <span className="inline-block w-0.5 h-[1.1em] bg-brand-cyan align-middle ml-0.5 animate-pulse" />}
+      </div>
+      <div className="px-4 pt-4 pb-2 text-[13px] text-black/50 uppercase">{isEn ? 'Preview' : '測試預覽'}</div>
+      <div className="bg-white border-y border-black/5 px-4 py-3 min-h-[60px] flex justify-between items-center text-black/30">
+        <i>{isEn ? 'Type something to test' : '輸入一段想測試的文字'}</i>
+        <div className="bg-brand-cyan/10 text-brand-cyan px-2 py-1 rounded text-xs">{isEn ? 'Run AI preview' : '執行 AI 預覽'}</div>
       </div>
     </div>
   );

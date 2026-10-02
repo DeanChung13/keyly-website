@@ -103,7 +103,7 @@ export default function App() {
       { threshold: 0.3 }
     );
 
-    const sections = ['features', 'faq', 'download'];
+    const sections = ['custom-prompts', 'features', 'faq', 'download'];
     sections.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
