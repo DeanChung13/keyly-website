@@ -258,13 +258,13 @@ function CustomPrompts() {
         <ul className="mt-10 grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
           <li className="bg-[#F4F7FA] rounded-2xl p-5 border border-metal-gray/20 flex items-center gap-3.5">
             <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0">
-              <Repeat className="w-5 h-5 text-brand-cyan" />
+              <Keyboard className="w-5 h-5 text-brand-cyan" />
             </div>
             <span className="text-[15px] md:text-base font-semibold text-text-primary leading-snug lg:whitespace-nowrap">寫一次，天天用</span>
           </li>
           <li className="bg-[#F4F7FA] rounded-2xl p-5 border border-metal-gray/20 flex items-center gap-3.5">
             <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0">
-              <Keyboard className="w-5 h-5 text-brand-purple" />
+              <Repeat className="w-5 h-5 text-brand-purple" />
             </div>
             <span className="text-[15px] md:text-base font-semibold text-text-primary leading-snug lg:whitespace-nowrap">不用跳 App、不用複製貼上</span>
           </li>
