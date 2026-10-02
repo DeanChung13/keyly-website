@@ -217,56 +217,56 @@ function CustomPrompts() {
     <section id="custom-prompts" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid lg:grid-cols-12 gap-12 items-end mb-14">
-          <div className="lg:col-span-7">
-            <div className="flex items-center gap-2 mb-4 text-sm font-semibold tracking-wide text-brand-cyan">
-              <Sparkles className="w-4 h-4" />
-              <span>Custom AI prompts</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.15] text-text-primary">
-              The messages you send every day,<br />one tap away.
-            </h2>
-            <p className="mt-5 text-lg md:text-xl text-text-secondary leading-relaxed max-w-xl" style={{ textWrap: 'pretty' }}>
-              Write your own AI instruction in one sentence, save it, and rewrite in any app right from your keyboard. No copy-paste, no switching to ChatGPT.
-            </p>
+        {/* 與 #features 一致：置中標題（text-3xl/4xl）＋ #F4F7FA 卡片；影片之後才放教學連結 */}
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 mb-5 rounded-full bg-brand-cyan/10 text-brand-cyan text-sm font-semibold">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Custom AI prompts</span>
           </div>
-          
-          <div className="lg:col-span-5">
-            <ul className="divide-y divide-metal-gray/15">
-              <li className="py-4 flex items-center gap-4">
-                <div className="w-9 h-9 rounded-xl bg-[#F4F7FA] border border-metal-gray/20 flex items-center justify-center shrink-0">
-                  <Repeat className="w-5 h-5 text-brand-cyan" />
-                </div>
-                <span className="text-base md:text-lg font-medium text-text-primary">Write once, use every day</span>
-              </li>
-              <li className="py-4 flex items-center gap-4">
-                <div className="w-9 h-9 rounded-xl bg-[#F4F7FA] border border-metal-gray/20 flex items-center justify-center shrink-0">
-                  <Keyboard className="w-5 h-5 text-brand-purple" />
-                </div>
-                <span className="text-base md:text-lg font-medium text-text-primary">No app switching, no copy-paste</span>
-              </li>
-              <li className="py-4 flex items-center gap-4">
-                <div className="w-9 h-9 rounded-xl bg-[#F4F7FA] border border-metal-gray/20 flex items-center justify-center shrink-0">
-                  <Wand2 className="w-5 h-5 text-accent-mint" />
-                </div>
-                <span className="text-base md:text-lg font-medium text-text-primary">Comes out in your format and your voice</span>
-              </li>
-            </ul>
-            
-            <a 
-              href="/guides/iphone-custom-ai-prompt/" 
-              onClick={() => trackLinkClick('custom_prompts_en', '/guides/iphone-custom-ai-prompt/')}
-              className="inline-flex items-center gap-1.5 mt-6 font-semibold text-brand-cyan hover:gap-2.5 transition-all"
-            >
-              See how to write your own
-              <ChevronRight className="w-4 h-4" />
-            </a>
-            <p className="mt-2 text-xs text-metal-gray">(Guide currently available in Traditional Chinese)</p>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-snug text-text-primary" style={{ textWrap: 'balance' }}>
+            The messages you send every day,<br />one tap away.
+          </h2>
+          <p className="mt-4 text-base md:text-lg text-text-secondary leading-relaxed max-w-3xl mx-auto" style={{ textWrap: 'balance' }}>
+            Write your own AI instruction in one sentence, save it, and rewrite in any app right from your keyboard. No copy-paste, no switching to ChatGPT.
+          </p>
         </div>
 
-        <div className="w-full">
-           <CustomPromptsFilm locale="en" />
+        <ul className="mt-10 grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          <li className="bg-[#F4F7FA] rounded-2xl p-5 border border-metal-gray/20 flex items-center gap-3.5">
+            <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0">
+              <Repeat className="w-5 h-5 text-brand-cyan" />
+            </div>
+            <span className="text-[15px] md:text-base font-semibold text-text-primary leading-snug lg:whitespace-nowrap">Write once, use every day</span>
+          </li>
+          <li className="bg-[#F4F7FA] rounded-2xl p-5 border border-metal-gray/20 flex items-center gap-3.5">
+            <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0">
+              <Keyboard className="w-5 h-5 text-brand-purple" />
+            </div>
+            <span className="text-[15px] md:text-base font-semibold text-text-primary leading-snug lg:whitespace-nowrap">No app switching, no copy-paste</span>
+          </li>
+          <li className="bg-[#F4F7FA] rounded-2xl p-5 border border-metal-gray/20 flex items-center gap-3.5">
+            <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0">
+              <Wand2 className="w-5 h-5 text-accent-mint" />
+            </div>
+            <span className="text-[15px] md:text-base font-semibold text-text-primary leading-snug lg:whitespace-nowrap">Comes out in your format and your voice</span>
+          </li>
+        </ul>
+
+        <div className="mt-14 w-full">
+          <CustomPromptsFilm locale="en" />
+        </div>
+
+        <div className="mt-8 text-center">
+          <a
+            href="/guides/iphone-custom-ai-prompt/"
+            onClick={() => trackLinkClick('custom_prompts_en', '/guides/iphone-custom-ai-prompt/')}
+            className="inline-flex items-center gap-1.5 font-semibold text-brand-cyan hover:gap-2.5 transition-all"
+          >
+            See how to write your own
+            <ChevronRight className="w-4 h-4" />
+          </a>
+          <p className="mt-2 text-xs text-metal-gray">(Guide currently available in Traditional Chinese)</p>
+          
         </div>
       </div>
     </section>
