@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Download, Menu, X, Wand2, Feather, Command, ShieldCheck, ChevronDown, Smartphone, Star } from 'lucide-react';
 import HeroFilm from './components/HeroFilm';
+import CustomPromptsFilm from './components/CustomPromptsFilm';
 import { DOWNLOAD_URL } from './appStoreLink';
 
 declare const gtag: (...args: unknown[]) => void;
@@ -116,6 +117,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <CustomPrompts />
         <Features />
         <FAQSection />
         <CTA />
@@ -201,6 +203,47 @@ function Hero() {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-brand-cyan/30 to-brand-purple/30 rounded-full blur-3xl -z-10 opacity-50"></div>
               <HeroFilm locale="en" />
             </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+function CustomPrompts() {
+  return (
+    <section id="custom-prompts" className="py-24 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="order-2 lg:order-1 flex justify-center lg:justify-end">
+             <CustomPromptsFilm locale="en" />
+          </div>
+          <div className="order-1 lg:order-2">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-text-primary">The messages you send every day, one tap away.</h2>
+            <p className="text-lg text-text-secondary mb-8 leading-relaxed">Write your own AI instruction in one sentence, save it, and rewrite in any app right from your keyboard. No copy-paste, no switching to ChatGPT.</p>
+            <ul className="space-y-4 mb-10 text-text-secondary text-lg">
+              <li className="flex items-start">
+                <span className="text-accent-mint mr-3 mt-1 font-bold">✦</span>
+                <span>Write once, use every day</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-accent-mint mr-3 mt-1 font-bold">✦</span>
+                <span>No app switching, no copy-paste</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-accent-mint mr-3 mt-1 font-bold">✦</span>
+                <span>Comes out in your format and your voice</span>
+              </li>
+            </ul>
+            <a 
+              href="/guides/iphone-custom-ai-prompt/" 
+              onClick={() => trackLinkClick('custom_prompts_en', '/guides/iphone-custom-ai-prompt/')}
+              className="inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold rounded-full text-white bg-brand-cyan hover:bg-brand-cyan/90 transition-all shadow-sm hover:shadow-md active:scale-95"
+            >
+              See how to write your own
+            </a>
+            <p className="mt-4 text-xs text-metal-gray">(Guide currently available in Traditional Chinese)</p>
           </div>
         </div>
       </div>

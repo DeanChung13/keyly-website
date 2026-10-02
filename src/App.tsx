@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, Zap, Globe, User, ChevronRight, Keyboard, Smartphone, Download, Menu, X, Wand2, Feather, Command, ShieldCheck, ChevronDown, Star } from 'lucide-react';
 import HeroFilm from './components/HeroFilm';
+import CustomPromptsFilm from './components/CustomPromptsFilm';
 import { DOWNLOAD_URL } from './appStoreLink';
 
 declare const gtag: (...args: unknown[]) => void;
@@ -116,6 +117,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <CustomPrompts />
         <Features />
         <FAQSection />
         <CTA />
@@ -225,6 +227,46 @@ function Hero() {
 
               <HeroFilm />
             </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+function CustomPrompts() {
+  return (
+    <section id="custom-prompts" className="py-24 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="order-2 lg:order-1 flex justify-center lg:justify-end">
+             <CustomPromptsFilm locale="zh" />
+          </div>
+          <div className="order-1 lg:order-2">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-text-primary">每天要回的那幾種訊息，按一下就好。</h2>
+            <p className="text-lg text-text-secondary mb-8 leading-relaxed">用一句話寫下你的 AI 指令，存起來，在任何 App 的鍵盤上一鍵改好。不用複製貼上、不用切到 ChatGPT。</p>
+            <ul className="space-y-4 mb-10 text-text-secondary text-lg">
+              <li className="flex items-start">
+                <span className="text-accent-mint mr-3 mt-1 font-bold">✦</span>
+                <span>寫一次，天天用</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-accent-mint mr-3 mt-1 font-bold">✦</span>
+                <span>不用跳 App、不用複製貼上</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-accent-mint mr-3 mt-1 font-bold">✦</span>
+                <span>改出來就是你要的格式和口吻</span>
+              </li>
+            </ul>
+            <a 
+              href="/guides/iphone-custom-ai-prompt/" 
+              onClick={() => trackLinkClick('custom_prompts', '/guides/iphone-custom-ai-prompt/')}
+              className="inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold rounded-full text-white bg-brand-cyan hover:bg-brand-cyan/90 transition-all shadow-sm hover:shadow-md active:scale-95"
+            >
+              看怎麼寫自己的指令
+            </a>
           </div>
         </div>
       </div>
