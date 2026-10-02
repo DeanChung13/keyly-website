@@ -44,7 +44,7 @@ export default function CustomPromptsFilm({ locale = 'zh' }: { locale?: 'zh' | '
   const pauseLabel = isEn ? 'Pause video' : '暫停影片';
 
   return (
-    <div className="w-full mx-auto overflow-hidden sm:rounded-[2rem] shadow-2xl ring-1 ring-black/10 bg-[#F2F2F7]">
+    <div className="w-full mx-auto overflow-hidden sm:rounded-[2rem] shadow-2xl sm:ring-1 ring-black/10 bg-[#F2F2F7]">
       <div 
         className="relative aspect-video w-full group cursor-pointer"
         onClick={() => setIsPlaying(!isPlaying)}

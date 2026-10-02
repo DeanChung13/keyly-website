@@ -276,7 +276,7 @@ function CustomPrompts() {
           </li>
         </ul>
 
-        <div className="mt-14 w-full">
+        <div className="mt-14 -mx-4 sm:mx-0">
           <CustomPromptsFilm locale="zh" />
         </div>
 
