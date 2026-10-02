@@ -267,13 +267,13 @@ function CustomPrompts() {
                 <div className="w-9 h-9 rounded-xl bg-[#F4F7FA] border border-metal-gray/20 flex items-center justify-center shrink-0">
                   <Keyboard className="w-5 h-5 text-brand-purple" />
                 </div>
-                <span className="text-base md:text-lg font-medium text-text-primary">不用跳 App、複製貼上</span>
+                <span className="text-base md:text-lg font-medium text-text-primary">不用跳 App、不用複製貼上</span>
               </li>
               <li className="py-4 flex items-center gap-4">
                 <div className="w-9 h-9 rounded-xl bg-[#F4F7FA] border border-metal-gray/20 flex items-center justify-center shrink-0">
                   <Wand2 className="w-5 h-5 text-accent-mint" />
                 </div>
-                <span className="text-base md:text-lg font-medium text-text-primary">你要的格式和口吻</span>
+                <span className="text-base md:text-lg font-medium text-text-primary">改出來就是你要的格式和口吻</span>
               </li>
             </ul>
             
