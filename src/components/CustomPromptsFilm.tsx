@@ -64,19 +64,24 @@ export default function CustomPromptsFilm({ locale = 'zh' }: { locale?: 'zh' | '
           <source src={`/videos/${basename}.mp4`} type="video/mp4" />
         </video>
         
-        <button 
-          className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center transition-transform hover:scale-105 active:scale-95"
+        {/* 參考 mimic-website 的 FilmVideo：白色膠囊＋品牌色圓形圖示＋文字 */}
+        <button
+          type="button"
+          className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-white py-1.5 pl-1.5 pr-4 text-sm font-extrabold text-text-primary shadow-[0_10px_30px_rgba(15,23,42,.18)] ring-4 ring-transparent transition-shadow duration-200 hover:shadow-[0_12px_34px_rgba(15,23,42,.26)] focus-visible:outline-none focus-visible:ring-brand-cyan/40 cursor-pointer"
           aria-label={isPlaying ? pauseLabel : playLabel}
           onClick={(e) => {
             e.stopPropagation();
             setIsPlaying(!isPlaying);
           }}
         >
-          {isPlaying ? (
-            <Pause className="w-5 h-5 text-white" fill="currentColor" />
-          ) : (
-            <Play className="w-5 h-5 text-white ml-0.5" fill="currentColor" />
-          )}
+          <span className="grid h-8 w-8 place-items-center rounded-full bg-brand-cyan text-white">
+            {isPlaying ? (
+              <Pause className="h-4 w-4" fill="currentColor" />
+            ) : (
+              <Play className="ml-0.5 h-4 w-4" fill="currentColor" />
+            )}
+          </span>
+          {isPlaying ? (isEn ? 'Pause' : '暫停') : (isEn ? 'Play' : '播放')}
         </button>
       </div>
     </div>
