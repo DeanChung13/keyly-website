@@ -227,7 +227,7 @@ function CustomPrompts() {
             The messages you send every day,<br />one tap away.
           </h2>
           <p className="mt-4 text-base md:text-lg text-text-secondary leading-relaxed max-w-3xl mx-auto" style={{ textWrap: 'balance' }}>
-            Write your own AI instruction in one sentence, save it, and rewrite in any app right from your keyboard. No copy-paste, no switching to ChatGPT.
+            Write your own AI instruction in one sentence, save it, and rewrite in any app right from your keyboard. No copying into another AI app and pasting it back.
           </p>
         </div>
 

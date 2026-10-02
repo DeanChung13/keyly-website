@@ -251,7 +251,7 @@ function CustomPrompts() {
             每天要回的那幾種訊息，<br />按一下就好。
           </h2>
           <p className="mt-4 text-base md:text-lg text-text-secondary leading-relaxed max-w-3xl mx-auto">
-            用一句話寫下你的 AI 指令，存起來，在任何 App 的鍵盤上一鍵改好。<br className="hidden md:block" />不用複製貼上、不用切到 ChatGPT。
+            用一句話寫下你的 AI 指令，存起來，在任何 App 的鍵盤上一鍵改好。<br className="hidden md:block" />不用再複製到其他 AI App、改完又貼回來。
           </p>
         </div>
 
