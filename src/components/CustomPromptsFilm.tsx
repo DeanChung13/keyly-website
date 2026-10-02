@@ -52,7 +52,7 @@ const DATA = {
       input: '主管 剛剛設計回了 說週五才能給圖 那下週一可能真的來不及 要不要先跟客戶說一聲',
       output: '設計圖週五才會好，下週一恐難如期交付，建議向客戶說明。\n\n重點：\n1. 圖檔延遲至週五\n2. 下週一交付恐不及'
     },
-    picker: ['回主管', '職場正式語氣', '縮短並抓出重點', '語意不變改錯字']
+    picker: ['回主管', '職場正式語氣', '精簡文字', '校對錯字']
   },
   en: {
     layout: 'qwerty', placeholder: 'iMessage',
@@ -68,7 +68,7 @@ const DATA = {
       input: "design just got back, they can't send files until friday so monday probably won't work, should we give the client a heads up",
       output: "The design team is delayed until Friday, impacting our Monday timeline, so we should alert the client.\n* Files won't be available until Friday, pushing back our Monday availability.\n* Proactive client communication is recommended due to the potential delay."
     },
-    picker: ['Reply to Boss', 'Sound Professional', 'Shorten & Extract', 'Fix Grammar & Typos']
+    picker: ['Reply to Boss', 'Sound Professional', 'Cut the Fluff', 'Fix Grammar & Typos']
   }
 } as const;
 
