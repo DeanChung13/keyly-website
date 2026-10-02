@@ -225,11 +225,11 @@ function CustomPrompts() {
           </li>
           <li className="flex items-center">
             <span className="text-accent-mint mr-2 font-bold">✦</span>
-            <span>No app switching</span>
+            <span>No app switching, no copy-paste</span>
           </li>
           <li className="flex items-center">
             <span className="text-accent-mint mr-2 font-bold">✦</span>
-            <span>Your format, your voice</span>
+            <span>Comes out in your format and your voice</span>
           </li>
         </ul>
         <a 

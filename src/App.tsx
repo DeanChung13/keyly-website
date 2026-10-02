@@ -249,11 +249,11 @@ function CustomPrompts() {
           </li>
           <li className="flex items-center">
             <span className="text-accent-mint mr-2 font-bold">✦</span>
-            <span>不用跳 App、複製貼上</span>
+            <span>不用跳 App、不用複製貼上</span>
           </li>
           <li className="flex items-center">
             <span className="text-accent-mint mr-2 font-bold">✦</span>
-            <span>你要的格式和口吻</span>
+            <span>改出來就是你要的格式和口吻</span>
           </li>
         </ul>
         <a 
