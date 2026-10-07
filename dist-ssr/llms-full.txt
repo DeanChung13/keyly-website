@@ -22,6 +22,8 @@ The public website content is bilingual:
 - Guide — Apple Intelligence Writing Tools vs a third-party AI keyboard (Traditional Chinese): https://keylyapp.com/guides/apple-intelligence-vs-ai-keyboard/
 - Guide — Double Pinyin (Shuangpin) input on iPhone (Traditional Chinese): https://keylyapp.com/guides/iphone-double-pinyin/
 - Guide — iPhone custom AI prompt keyboard tutorial and templates (Traditional Chinese): https://keylyapp.com/guides/iphone-custom-ai-prompt/
+- Guide — LINE translation with the Keyly zhuyin keyboard (Traditional Chinese): https://keylyapp.com/guides/line-translation/
+- Guide — iPhone translation keyboard comparison (Traditional Chinese): https://keylyapp.com/guides/iphone-translation-keyboard-comparison/
 - Privacy Policy (Traditional Chinese): https://keylyapp.com/privacy/
 - Privacy Policy (English): https://keylyapp.com/privacy/en/
 - Terms of Service (Traditional Chinese): https://keylyapp.com/terms/

@@ -73,6 +73,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://keylyapp.com/guides/line-translation/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keylyapp.com/guides/iphone-translation-keyboard-comparison/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keylyapp.com/guides/iphone-ai-elderly-reply/</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>

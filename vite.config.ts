@@ -34,6 +34,8 @@ export default defineConfig({
           guidesMessageSummary: path.resolve(__dirname, 'guides/iphone-ai-message-summary/index.html'),
           guidesLeaveRequest: path.resolve(__dirname, 'guides/iphone-ai-leave-request/index.html'),
           guidesPoliteRefusal: path.resolve(__dirname, 'guides/iphone-ai-polite-refusal/index.html'),
+          guidesLineTranslation: path.resolve(__dirname, 'guides/line-translation/index.html'),
+          guidesTranslationKeyboardComparison: path.resolve(__dirname, 'guides/iphone-translation-keyboard-comparison/index.html'),
           guidesElderlyReply: path.resolve(__dirname, 'guides/iphone-ai-elderly-reply/index.html'),
           guidesHowToUseAiRewrite: path.resolve(__dirname, 'guides/how-to-use-keyly-ai-rewrite/index.html'),
           guidesCustomAiPrompt: path.resolve(__dirname, 'guides/iphone-custom-ai-prompt/index.html'),
