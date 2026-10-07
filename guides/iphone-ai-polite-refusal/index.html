@@ -927,17 +927,8 @@
       </div>
 
       <h3>自訂指令改寫前後示範</h3>
-      <div class="rewrite-pair">
-        <div class="rewrite-card before">
-          <p class="label">改寫前（隨手草稿）</p>
-          <p class="text">這週工作排太滿了，沒辦法幫你做那個簡報。</p>
-        </div>
-        <div class="rewrite-arrow">→</div>
-        <div class="rewrite-card after">
-          <p class="label">自訂指令改寫後</p>
-          <p class="text">謝謝你先來詢問。因為這週工作排得比較滿，手邊暫時沒有多餘心力協助製作這份簡報，這次可能無法幫上忙，還請見諒。</p>
-        </div>
-      </div>
+      <div data-rewrite-film><script type="application/json">{"label": "示範：在 LINE 用 Keyly 打出拒絕草稿，點 AI 鍵選自訂的「委婉拒絕」指令，得體婉拒直接填回輸入框後送出", "scenes": [{"chat": "Amy（行銷部）", "label": "", "input": "這週工作排太滿了，沒辦法幫你做那個簡報。", "output": "謝謝你先來詢問。因為這週工作排得比較滿，手邊暫時沒有多餘心力協助製作這份簡報，這次可能無法幫上忙，還請見諒。", "template": "委婉拒絕", "picker": ["委婉拒絕", "校對錯字", "請假訊息", "整理成條列"], "history": [{"from": "them", "text": "嗨～在忙嗎？"}, {"from": "me", "text": "還好，怎麼了？"}, {"from": "them", "text": "下週有個客戶提案"}, {"from": "them", "text": "簡報設計我們部門沒人會"}, {"from": "them", "text": "你之前做的那份超好看"}, {"from": "them", "text": "可以幫忙做一份嗎？🙏"}]}]}</script></div>
+      <p class="rwf-note">示意動畫，實際介面以 App 為準。</p>
 
       <h2>如何讓拒絕聽起來自然，而不是制式客套</h2>
       <p>範例中的原因、日期與替代方案都應依真實情況調整。對熟悉的同事或朋友，可以縮短開場；對主管、客戶或合作對象，則應明確交代界線與後續安排。不要加入自己無法履行的承諾，只為了讓拒絕聽起來比較好聽。</p>
@@ -1008,5 +999,6 @@
     </div>
   </footer>
 
+  <script type="module" src="/src/rewrite-film.tsx"></script>
 </body>
 </html>

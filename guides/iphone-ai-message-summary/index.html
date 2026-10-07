@@ -836,21 +836,8 @@
       <h2>實際改寫前後對照</h2>
       <p>以下是 Keyly「整理成條列」範本的真實改寫結果（來自產品內建的示範資料，非本文另外生成）。原文是刻意打得很隨性、沒有標點的口語訊息：</p>
 
-      <div class="rewrite-pair">
-        <div class="rewrite-card before">
-          <p class="label">改寫前</p>
-          <p class="text">那個我剛跟客戶談完 他們說原本的方案價格可以接受但是希望交期能提前兩週 然後付款方式想改成分三期 另外他們下週三要開內部會議所以希望我們週二前把修改後的報價單給他們 對了他們也問說如果追加數量的話有沒有折扣</p>
-        </div>
-        <div class="rewrite-arrow">→</div>
-        <div class="rewrite-card after">
-          <p class="label">Keyly 改寫後</p>
-          <p class="text">1. 客戶表示對原方案價格感到滿意。
-2. 客戶希望將交期提前兩週。
-3. 客戶提出將付款方式改為分三期。
-4. 客戶下週三將召開內部會議，希望我們能在週二前提供修改後的報價單。
-5. 客戶詢問若追加數量，是否有折扣的可能性。</p>
-        </div>
-      </div>
+      <div data-rewrite-film><script type="application/json">{"label": "示範：在 LINE 用 Keyly 打出口語訊息，點 AI 鍵選「整理成條列」，條列重點直接填回輸入框後送出", "scenes": [{"chat": "王經理", "label": "情境一：把口語訊息整理成重點", "input": "那個我剛跟客戶談完 他們說原本的方案價格可以接受但是希望交期能提前兩週 然後付款方式想改成分三期 另外他們下週三要開內部會議所以希望我們週二前把修改後的報價單給他們 對了他們也問說如果追加數量的話有沒有折扣", "output": "1. 客戶表示對原方案價格感到滿意。\n2. 客戶希望將交期提前兩週。\n3. 客戶提出將付款方式改為分三期。\n4. 客戶下週三將召開內部會議，希望我們能在週二前提供修改後的報價單。\n5. 客戶詢問若追加數量，是否有折扣的可能性。", "template": "整理成條列", "picker": ["整理成條列", "請假訊息", "校對錯字", "長輩圖祝福語"], "history": [{"from": "them", "text": "下午跟客戶的會開完了嗎？"}, {"from": "me", "text": "剛結束，正要回報"}, {"from": "them", "text": "好，他們怎麼說？"}, {"from": "them", "text": "價格那邊有卡住嗎"}, {"from": "me", "text": "價格沒問題，但有幾個新需求"}, {"from": "them", "text": "你整理一下傳給我"}]}]}</script></div>
+      <p class="rwf-note">示意動畫，實際介面以 App 為準。</p>
 
       <div class="mid-cta">
         <p>想直接體驗這個改寫效果？</p>
@@ -952,5 +939,6 @@
     </div>
   </footer>
 
+  <script type="module" src="/src/rewrite-film.tsx"></script>
 </body>
 </html>

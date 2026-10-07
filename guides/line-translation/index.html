@@ -810,7 +810,7 @@
   <div class="page-wrapper">
     <p class="breadcrumb"><a href="/">Keyly</a> ／ <a href="/guides/" onclick="trackLink('guides_hub','/guides/')">使用指南</a> ／ LINE 翻譯</p>
     <div class="page-header">
-      <h1>LINE 翻譯怎麼用最快？iPhone 打中文直接翻成外文送出</h1>
+      <h1>LINE 翻譯怎麼用最快？iPhone 打中文直接翻成英文、日文送出</h1>
       <p class="page-meta">更新日期：2026 年 10 月 7 日</p>
     </div>
     <p class="hook-lede">在 LINE 跟外國朋友聊天、回海外客戶訊息、和代購賣家確認細節時，最麻煩的不是翻譯本身，而是在 LINE 和翻譯 App 之間來回複製貼上。用 Keyly 注音鍵盤，直接在 LINE 輸入框打中文，一鍵就換成外文送出。</p>
@@ -847,36 +847,9 @@
           <li><strong>點 AI 圖示選翻譯：</strong>點擊鍵盤工具列上的 AI 圖示，選擇翻譯，結果會直接取代輸入框裡的文字，確認後送出。</li>
         </ol>
       </div>
-      <style>
-        .ltf-mount { min-height: 660px; margin: 1.25rem 0 0.5rem; }
-        .ltf { display: flex; flex-direction: column; align-items: center; }
-        .ltf-phone { position: relative; }
-        .ltf-phone .k-chat-messages { background: #8CABD9; }
-        .ltf-phone .k-from-me .k-message { background: #85E36B; color: #111; }
-        .ltf-phone .k-from-them .k-message { background: #fff; color: #111; }
-        .ltf-sweep { position: absolute; inset: 3%; border-radius: 2rem; pointer-events: none; mix-blend-mode: multiply; }
-        .ltf-steps { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin: 1.1rem 0 0; padding: 0; }
-        .ltf-steps li { display: flex; align-items: center; gap: 0.45rem; padding: 0.4rem 0.85rem; border-radius: 999px; background: #fff; color: var(--text-secondary); font-size: 0.85rem; box-shadow: 0 0 0 1px rgba(191, 205, 224, 0.7); transition: background-color 200ms, color 200ms; }
-        .ltf-steps li b { display: grid; place-items: center; width: 1.3rem; height: 1.3rem; border-radius: 50%; background: var(--metal-white); font-size: 0.75rem; }
-        .ltf-steps li.is-active { background: var(--bg-primary); color: #fff; }
-        .ltf-steps li.is-active b { background: var(--brand-cyan); color: #fff; }
-        .mock-note { font-size: 0.8rem; color: var(--text-secondary); text-align: center; margin-bottom: 1.5rem; }
-      </style>
-      <div id="line-translation-film" class="ltf-mount"></div>
-      <script type="module" src="/src/line-translation-film.tsx"></script>
-      <p class="mock-note">示意動畫，實際介面以 App 為準。</p>
       <h3>翻譯前後示範</h3>
-      <div class="rewrite-pair">
-        <div class="rewrite-card before">
-          <p class="label">注音打的中文</p>
-          <p class="text">不好意思這麼晚回覆，報價單我明天中午前寄給你。</p>
-        </div>
-        <div class="rewrite-arrow">→</div>
-        <div class="rewrite-card after">
-          <p class="label">翻譯後</p>
-          <p class="text">Sorry for the late reply. I'll send you the quotation by noon tomorrow.</p>
-        </div>
-      </div>
+      <div data-rewrite-film><script type="application/json">{"label": "示範：在 LINE 聊天室用 Keyly 注音鍵盤打中文，點 AI 鍵選「翻成英文」，英文直接填回輸入框後送出", "scenes": [{"chat": "Mike", "label": "", "input": "不好意思這麼晚回覆，報價單我明天中午前寄給你。", "output": "Sorry for the late reply. I'll send you the quotation by noon tomorrow.", "template": "翻成英文", "picker": ["翻成英文", "校對錯字", "吐槽一下", "長輩圖祝福語"], "history": [{"from": "them", "text": "Hi! This is Mike from Brightline."}, {"from": "me", "text": "Hi Mike, nice to meet you!"}, {"from": "them", "text": "Nice to meet you too 😊"}, {"from": "them", "text": "We are interested in 500 units."}, {"from": "me", "text": "Great, let me check with my team."}, {"from": "them", "text": "Thanks! Any update on the quotation?"}]}]}</script></div>
+      <p class="rwf-note">示意動畫，實際介面以 App 為準。</p>
 
       <h2>方法二：用自訂 AI 指令，指定語言和語氣</h2>
       <p>要翻成日文、韓文，或是希望英文聽起來更正式、更口語，可以在 Keyly 建立自己的翻譯指令。建立後一樣從鍵盤工具列一鍵套用。</p>
@@ -1028,5 +1001,6 @@
     </div>
   </footer>
 
+  <script type="module" src="/src/rewrite-film.tsx"></script>
 </body>
 </html>
