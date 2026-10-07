@@ -70,7 +70,7 @@ export default function RewriteFilm({ label, scenes }: FilmConfig) {
       {scenes.length > 1 && <p className="rwf-scene" aria-hidden="true">{f.s.label}</p>}
       <div className="rwf-phone" style={{ width: 456 * scale, height: 972 * scale }} role="img" aria-label={label}>
         <div style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }} aria-hidden="true">
-          <Phone>
+          <Phone className="k-theme-line">
             <ChatScreen title={f.s.chat} messages={f.messages} draft={f.draft} />
             <Keyboard pressed={f.key} candidates={[]} aiState={f.phase === 1 ? 'pressed' : 'idle'} layout="zhuyin">
               <PromptPicker items={f.s.picker} selected={f.phase >= 1 ? f.s.template : ''} />

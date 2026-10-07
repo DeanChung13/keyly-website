@@ -91,3 +91,7 @@
 .k-layout-qwerty .k-row-3{gap:6.2px}
 .k-layout-qwerty .k-key-surface{font-size:30px}
 .k-layout-qwerty .k-space-key .k-key-surface,.k-layout-qwerty .k-row-3 .k-key:first-child .k-key-surface{font-size:20px}
+/* LINE 風格聊天室：藍底、我方綠色泡泡 */
+.k-theme-line .k-chat-messages{background:#8CABD9}
+.k-theme-line .k-from-me .k-message{background:#85E36B;color:#111}
+.k-theme-line .k-from-them .k-message{background:#fff;color:#111}

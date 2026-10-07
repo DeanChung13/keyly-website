@@ -2,10 +2,6 @@
 .rwf { display: flex; flex-direction: column; align-items: center; }
 .rwf-scene { margin: 0 0 0.75rem; font-size: 0.85rem; font-weight: 700; color: var(--text-primary, #0F1726); }
 .rwf-phone { position: relative; }
-/* LINE 風格聊天室 */
-.rwf-phone .k-chat-messages { background: #8CABD9; }
-.rwf-phone .k-from-me .k-message { background: #85E36B; color: #111; }
-.rwf-phone .k-from-them .k-message { background: #fff; color: #111; }
 .rwf-sweep { position: absolute; inset: 3%; border-radius: 2rem; pointer-events: none; mix-blend-mode: multiply; }
 .rwf-steps { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin: 1.1rem 0 0; padding: 0; }
 .rwf-steps li { display: flex; align-items: center; gap: 0.45rem; padding: 0.4rem 0.85rem; border-radius: 999px; background: #fff; color: var(--text-secondary, #5C708C); font-size: 0.85rem; box-shadow: 0 0 0 1px rgba(191, 205, 224, 0.7); transition: background-color 200ms, color 200ms; }
