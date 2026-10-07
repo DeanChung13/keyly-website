@@ -73,7 +73,7 @@ function ChatScreen({ title = "相親相愛一家人", messages = [], draft = ""
       /* @__PURE__ */ jsx("span", { className: "k-chat-menu", children: "•••" })
     ] }),
     /* @__PURE__ */ jsx("div", { className: "k-chat-messages", children: messages.map((message, index) => /* @__PURE__ */ jsxs("div", { className: `k-message-row ${message.from === "me" ? "k-from-me" : "k-from-them"}`, children: [
-      message.from === "them" && /* @__PURE__ */ jsx("span", { className: "k-avatar", "aria-hidden": "true", children: title.slice(0, 1) }),
+      message.from === "them" && /* @__PURE__ */ jsx("span", { className: "k-avatar", "aria-hidden": "true", children: message.avatar ?? title.slice(0, 1) }),
       /* @__PURE__ */ jsx("div", { className: "k-message", children: message.text })
     ] }, index)) }),
     /* @__PURE__ */ jsxs("div", { className: "k-composer", children: [
@@ -179,13 +179,13 @@ const FILMS = {
     placeholder: "輸入訊息",
     label: "Keyly 注音鍵盤示範：打字後按 AI 鍵，把一句話改寫成不同風格",
     picker: ["吐槽一下", "吟詩作對", "長輩圖祝福語", "校對錯字"],
-    hook: { duration: 4, chat: "訊息", history: [{ from: "them", text: "我們昨天聊的那件事" }, { from: "me", text: "嗯…" }], them: "欸 你到底怎麼想？", text: "其實我覺得", caption: "打了又刪，刪了又打" },
+    hook: { duration: 4, chat: "小安", history: [{ from: "them", text: "欸你昨天怎麼先走了" }, { from: "me", text: "有點累就先回家了" }, { from: "them", text: "是不是因為阿哲講的那些話" }, { from: "me", text: "也還好啦…" }, { from: "them", text: "你可以跟我說沒關係" }], them: "欸 你到底怎麼想？", text: "其實我覺得", caption: "打了又刪，刪了又打" },
     scenes: [
       {
         duration: 9,
         accent: "#FF6B4A",
         chat: "阿哲",
-        history: [{ from: "me", text: "到哪了？" }, { from: "them", text: "出門了出門了" }, { from: "me", text: "我們都已經在餐廳了喔" }],
+        history: [{ from: "me", text: "七點餐廳門口集合喔" }, { from: "them", text: "好 準時到" }, { from: "me", text: "到哪了？" }, { from: "them", text: "出門了出門了" }, { from: "me", text: "我們都已經點完菜了" }],
         them: "我快到了！",
         input: "你每次都說快到了結果根本還沒出門",
         output: "你每次都說「快到了」，乾脆叫「預約遲到」好了，根本還沒出門是在演哪齣？",
@@ -196,7 +196,7 @@ const FILMS = {
         duration: 9,
         accent: "#7C6CF2",
         chat: "小雨",
-        history: [{ from: "them", text: "下班了嗎？" }, { from: "me", text: "剛到家" }],
+        history: [{ from: "them", text: "下班了嗎？" }, { from: "me", text: "剛到家" }, { from: "them", text: "我也是，今天累爆" }, { from: "me", text: "辛苦了，有吃飯嗎" }, { from: "them", text: "有啦，吃了一碗熱湯麵" }],
         them: "今天好冷喔",
         input: "天氣變冷了，突然有點想你",
         output: "風生微冽覺微寒，\n忽有相思起寸端。\n滿目關情何處寄，\n心隨清念共闌珊。",
@@ -207,8 +207,9 @@ const FILMS = {
         duration: 8,
         accent: "#F0A020",
         chat: "相親相愛一家人",
-        history: [{ from: "them", text: "大家早" }, { from: "them", text: "今天降溫，出門記得多穿一件" }],
+        history: [{ from: "them", text: "中秋節大家都會回來吧？", avatar: "媽" }, { from: "me", text: "會！我負責買柚子" }, { from: "them", text: "好 那我來準備烤肉", avatar: "爸" }, { from: "them", text: "天氣預報說那天不會下雨 ☀️", avatar: "姊" }, { from: "them", text: "今天降溫，出門記得多穿一件", avatar: "媽" }],
         them: "🌅 早安",
+        themAvatar: "爸",
         input: "早安，祝你今天順利",
         output: "🌸 早安！美好清晨從心開始！送上一份最誠摯的祝願，願您今天步步順暢、事事順心如意☀️ 人生處處是風景，平安喜樂福常在！💖🙏🍀",
         template: "長輩圖祝福語",
@@ -284,7 +285,7 @@ function frameAt(film, t) {
       return {
         accent: s.accent,
         chat: s.chat,
-        messages: [...s.history, { from: "them", text: s.them }],
+        messages: [...s.history, { from: "them", text: s.them, avatar: s.themAvatar }],
         draft: phase >= 2 ? s.output : [...s.input].slice(0, n).join(""),
         key,
         phase,
@@ -338,7 +339,7 @@ function HeroFilm({ locale = "zh" }) {
   const f = frameAt(film, t);
   return /* @__PURE__ */ jsxs("div", { ref, className: "flex flex-col items-center", style: { ["--accent"]: f.accent }, children: [
     /* @__PURE__ */ jsxs("div", { className: "relative [--s:0.56] sm:[--s:0.62] lg:[--s:0.75]", style: { width: "calc(456px * var(--s))", height: "calc(972px * var(--s))" }, role: "img", "aria-label": film.label, children: [
-      /* @__PURE__ */ jsx("div", { className: "origin-top-left", style: { transform: "scale(var(--s))" }, "aria-hidden": "true", children: /* @__PURE__ */ jsxs(Phone, { children: [
+      /* @__PURE__ */ jsx("div", { className: "origin-top-left", style: { transform: "scale(var(--s))" }, "aria-hidden": "true", children: /* @__PURE__ */ jsxs(Phone, { className: locale === "zh" ? "k-theme-line" : "", children: [
         /* @__PURE__ */ jsx(ChatScreen, { title: f.chat, messages: f.messages, draft: f.draft, placeholder: film.placeholder }),
         /* @__PURE__ */ jsx(Keyboard, { pressed: f.key, candidates: [], idlePrompt: f.template, aiState: f.phase >= 1 ? "pressed" : "idle", layout: film.layout, children: f.phase === 1 && /* @__PURE__ */ jsx(PromptPicker, { items: film.picker, selected: f.template }) })
       ] }) }),
