@@ -3,7 +3,7 @@ import { Phone, ChatScreen, Keyboard, PromptPicker } from './keyly-phone/ui.jsx'
 
 // 指南頁共用的改寫示範動畫：聊天室打字 → AI 鍵選指令 → 掃光 → 結果回填 → 送出。
 // 節奏沿用 HeroFilm；多個情境依序循環。
-export type Msg = { from: 'me' | 'them'; text: string };
+export type Msg = { from: 'me' | 'them'; text: string; avatar?: string };
 export type Scene = { chat: string; history: Msg[]; input: string; output: string; template: string; picker: string[]; label: string };
 export type FilmConfig = { label: string; scenes: Scene[] };
 
