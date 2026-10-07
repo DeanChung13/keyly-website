@@ -11,9 +11,9 @@ const INITIAL: Record<string, string> = {你:'ㄋ',每:'ㄇ',次:'ㄘ',都:'ㄉ'
   天:'ㄊ',氣:'ㄑ',變:'ㄅ',冷:'ㄌ',突:'ㄊ',然:'ㄖ',有:'ㄧ',點:'ㄉ',想:'ㄒ',早:'ㄗ',安:'ㄢ',祝:'ㄓ',今:'ㄐ',順:'ㄕ',利:'ㄌ',
   其:'ㄑ',實:'ㄕ',我:'ㄨ',覺:'ㄐ',得:'ㄉ'};
 
-type Msg = { from: 'me' | 'them'; text: string };
+type Msg = { from: 'me' | 'them'; text: string; avatar?: string };
 // history：最後一則（them）之前的對話，填滿聊天室上方
-type Scene = { duration: number; accent: string; chat: string; history: Msg[]; them: string; input: string; output: string; template: string; caption: string };
+type Scene = { duration: number; accent: string; chat: string; history: Msg[]; them: string; themAvatar?: string; input: string; output: string; template: string; caption: string };
 type Film = { layout: 'zhuyin' | 'qwerty'; placeholder: string; label: string; picker: string[];
   hook: { duration: number; chat: string; history: Msg[]; them: string; text: string; caption: string }; scenes: Scene[] };
 type Frame = { accent: string; chat: string; messages: Msg[]; draft: string; key: string | null; phase: number; template: string; caption: string; sweep: number; label: string };
@@ -22,13 +22,13 @@ const FILMS: Record<'zh' | 'en', Film> = {
   zh: {
     layout: 'zhuyin', placeholder: '輸入訊息', label: 'Keyly 注音鍵盤示範：打字後按 AI 鍵，把一句話改寫成不同風格',
     picker: ['吐槽一下', '吟詩作對', '長輩圖祝福語', '校對錯字'],
-    hook: { duration: 4, chat: '訊息', history: [{ from: 'them', text: '我們昨天聊的那件事' }, { from: 'me', text: '嗯…' }], them: '欸 你到底怎麼想？', text: '其實我覺得', caption: '打了又刪，刪了又打' },
+    hook: { duration: 4, chat: '小安', history: [{ from: 'them', text: '欸你昨天怎麼先走了' }, { from: 'me', text: '有點累就先回家了' }, { from: 'them', text: '是不是因為阿哲講的那些話' }, { from: 'me', text: '也還好啦…' }, { from: 'them', text: '你可以跟我說沒關係' }], them: '欸 你到底怎麼想？', text: '其實我覺得', caption: '打了又刪，刪了又打' },
     scenes: [
-      { duration: 9, accent: '#FF6B4A', chat: '阿哲', history: [{ from: 'me', text: '到哪了？' }, { from: 'them', text: '出門了出門了' }, { from: 'me', text: '我們都已經在餐廳了喔' }], them: '我快到了！', input: '你每次都說快到了結果根本還沒出門',
+      { duration: 9, accent: '#FF6B4A', chat: '阿哲', history: [{ from: 'me', text: '七點餐廳門口集合喔' }, { from: 'them', text: '好 準時到' }, { from: 'me', text: '到哪了？' }, { from: 'them', text: '出門了出門了' }, { from: 'me', text: '我們都已經點完菜了' }], them: '我快到了！', input: '你每次都說快到了結果根本還沒出門',
         output: '你每次都說「快到了」，乾脆叫「預約遲到」好了，根本還沒出門是在演哪齣？', template: '吐槽一下', caption: '朋友又遲到了' },
-      { duration: 9, accent: '#7C6CF2', chat: '小雨', history: [{ from: 'them', text: '下班了嗎？' }, { from: 'me', text: '剛到家' }], them: '今天好冷喔', input: '天氣變冷了，突然有點想你',
+      { duration: 9, accent: '#7C6CF2', chat: '小雨', history: [{ from: 'them', text: '下班了嗎？' }, { from: 'me', text: '剛到家' }, { from: 'them', text: '我也是，今天累爆' }, { from: 'me', text: '辛苦了，有吃飯嗎' }, { from: 'them', text: '有啦，吃了一碗熱湯麵' }], them: '今天好冷喔', input: '天氣變冷了，突然有點想你',
         output: '風生微冽覺微寒，\n忽有相思起寸端。\n滿目關情何處寄，\n心隨清念共闌珊。', template: '吟詩作對', caption: '有點想你，說不出口' },
-      { duration: 8, accent: '#F0A020', chat: '相親相愛一家人', history: [{ from: 'them', text: '大家早' }, { from: 'them', text: '今天降溫，出門記得多穿一件' }], them: '🌅 早安', input: '早安，祝你今天順利',
+      { duration: 8, accent: '#F0A020', chat: '相親相愛一家人', history: [{ from: 'them', text: '中秋節大家都會回來吧？', avatar: '媽' }, { from: 'me', text: '會！我負責買柚子' }, { from: 'them', text: '好 那我來準備烤肉', avatar: '爸' }, { from: 'them', text: '天氣預報說那天不會下雨 ☀️', avatar: '姊' }, { from: 'them', text: '今天降溫，出門記得多穿一件', avatar: '媽' }], them: '🌅 早安', themAvatar: '爸', input: '早安，祝你今天順利',
         output: '🌸 早安！美好清晨從心開始！送上一份最誠摯的祝願，願您今天步步順暢、事事順心如意☀️ 人生處處是風景，平安喜樂福常在！💖🙏🍀', template: '長輩圖祝福語', caption: '長輩群組的早安' },
     ],
   },
@@ -73,7 +73,7 @@ function frameAt(film: Film, t: number): Frame {
       const [n, key] = typing(local, s.input, film.layout);
       const phase = local < AI_AT ? 0 : local < SWEEP_AT ? 1 : local < DONE_AT ? 2 : 3;
       const p = Math.min(1, Math.max(0, (local - SWEEP_AT) / (DONE_AT - SWEEP_AT)));
-      return { accent: s.accent, chat: s.chat, messages: [...s.history, { from: 'them', text: s.them }], draft: phase >= 2 ? s.output : [...s.input].slice(0, n).join(''),
+      return { accent: s.accent, chat: s.chat, messages: [...s.history, { from: 'them', text: s.them, avatar: s.themAvatar }], draft: phase >= 2 ? s.output : [...s.input].slice(0, n).join(''),
         key, phase, template: s.template, caption: s.caption, sweep: p > 0 && p < 1 ? p : 0, label: s.template };
     }
     local -= s.duration;
@@ -118,7 +118,7 @@ export default function HeroFilm({ locale = 'zh' }: { locale?: 'zh' | 'en' }) {
       {/* 影片的手機是 iPhone 17 Pro Max 實際尺寸（456×972），整支等比例縮小 */}
       <div className="relative [--s:0.56] sm:[--s:0.62] lg:[--s:0.75]" style={{ width: 'calc(456px * var(--s))', height: 'calc(972px * var(--s))' }} role="img" aria-label={film.label}>
         <div className="origin-top-left" style={{ transform: 'scale(var(--s))' }} aria-hidden="true">
-          <Phone>
+          <Phone className={locale === 'zh' ? 'k-theme-line' : ''}>
             <ChatScreen title={f.chat} messages={f.messages} draft={f.draft} placeholder={film.placeholder} />
             <Keyboard pressed={f.key} candidates={[]} idlePrompt={f.template} aiState={f.phase >= 1 ? 'pressed' : 'idle'} layout={film.layout}>
               {f.phase === 1 && <PromptPicker items={film.picker} selected={f.template} />}

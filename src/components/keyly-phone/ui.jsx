@@ -46,7 +46,7 @@ export function ChatScreen({title = '相親相愛一家人', messages = [], draf
     <div className="k-chat-header"><span className="k-chat-back"><Icon name="back" size={23}/></span><strong>{title}</strong><span className="k-chat-menu">•••</span></div>
     <div className="k-chat-messages">
       {messages.map((message, index) => <div key={index} className={`k-message-row ${message.from === 'me' ? 'k-from-me' : 'k-from-them'}`}>
-        {message.from === 'them' && <span className="k-avatar" aria-hidden="true">{title.slice(0, 1)}</span>}
+        {message.from === 'them' && <span className="k-avatar" aria-hidden="true">{message.avatar ?? title.slice(0, 1)}</span>}
         <div className="k-message">{message.text}</div>
       </div>)}
     </div>
