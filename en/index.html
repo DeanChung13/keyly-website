@@ -23,23 +23,56 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Keyly",
-      "operatingSystem": "iOS",
-      "applicationCategory": "UtilitiesApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "ratingCount": "4"
-      },
-      "description": "Rewrite messages in any app with Keyly's AI keyboard. Use Sound Professional, Fix Grammar & Typos, or Decline Politely. Also supports Zhuyin typing."
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://keylyapp.com/#website",
+          "name": "Keyly",
+          "url": "https://keylyapp.com/",
+          "publisher": {
+            "@id": "https://keylyapp.com/#organization"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://keylyapp.com/#organization",
+          "name": "Keyly",
+          "url": "https://keylyapp.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://keylyapp.com/assets/images/logo-512.png",
+            "width": 512,
+            "height": 512
+          },
+          "sameAs": [
+            "https://apps.apple.com/app/id6759639348"
+          ],
+          "email": "support@keylyapp.com"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Keyly",
+          "operatingSystem": "iOS",
+          "applicationCategory": "UtilitiesApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "ratingCount": "4"
+          },
+          "description": "Rewrite messages in any app with Keyly's AI keyboard. Use Sound Professional, Fix Grammar & Typos, or Decline Politely. Also supports Zhuyin typing.",
+          "publisher": {
+            "@id": "https://keylyapp.com/#organization"
+          },
+          "downloadUrl": "https://apps.apple.com/app/id6759639348"
+        }
+      ]
     }
-    </script>
+  </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX"></script>
     <script>

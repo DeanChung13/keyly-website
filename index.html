@@ -26,23 +26,57 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Keyly",
-      "operatingSystem": "iOS",
-      "applicationCategory": "UtilitiesApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "ratingCount": "4"
-      },
-      "description": "Keyly 是 iPhone 與 iPad 上的 AI 注音鍵盤，支援繁體中文輸入、文字潤飾、翻譯與離線隱私模式，讓訊息、貼文與工作寫作更快更準。"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://keylyapp.com/#website",
+          "name": "Keyly",
+          "url": "https://keylyapp.com/",
+          "inLanguage": "zh-TW",
+          "publisher": {
+            "@id": "https://keylyapp.com/#organization"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://keylyapp.com/#organization",
+          "name": "Keyly",
+          "url": "https://keylyapp.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://keylyapp.com/assets/images/logo-512.png",
+            "width": 512,
+            "height": 512
+          },
+          "sameAs": [
+            "https://apps.apple.com/app/id6759639348"
+          ],
+          "email": "support@keylyapp.com"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Keyly",
+          "operatingSystem": "iOS",
+          "applicationCategory": "UtilitiesApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "ratingCount": "4"
+          },
+          "description": "Keyly 是 iPhone 與 iPad 上的 AI 注音鍵盤，支援繁體中文輸入、文字潤飾、翻譯與離線隱私模式，讓訊息、貼文與工作寫作更快更準。",
+          "publisher": {
+            "@id": "https://keylyapp.com/#organization"
+          },
+          "downloadUrl": "https://apps.apple.com/app/id6759639348"
+        }
+      ]
     }
-    </script>
+  </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C51YGT0TVX"></script>
     <script>

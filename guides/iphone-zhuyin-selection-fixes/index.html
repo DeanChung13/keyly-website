@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>【2026】iPhone 注音選字不準、亂跳怎麼解？原生排查與第三方替代推薦 — Keyly</title>
-  <meta name="description" content="受夠 iPhone 內建注音永遠選不對字、越打越氣？先試系統重置與鍵盤辭典修正，若依舊難用，盤點真正懂繁體中文邏輯的第三方注音輸入替代解方！">
+  <title>iPhone 選字亂跳、自動選字怎麼關？注音選字不準的 7 個檢查 — Keyly</title>
+  <meta name="description" content="iPhone 注音沒有單獨的「自動選字」開關，選字亂跳可先從自動修正、預測字詞、滑動輸入交叉測試。照 7 個檢查依序排除，最後才重置鍵盤辭典；還是不順手再考慮第三方注音鍵盤。">
   <link rel="canonical" href="https://keylyapp.com/guides/iphone-zhuyin-selection-fixes/">
   <link rel="alternate" hreflang="zh-TW" href="https://keylyapp.com/guides/iphone-zhuyin-selection-fixes/">
   <link rel="alternate" hreflang="x-default" href="https://keylyapp.com/guides/iphone-zhuyin-selection-fixes/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='20' fill='%230D142E' /%3E%3Cdefs%3E%3ClinearGradient id='k-stem' x1='30' y1='20' x2='30' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2338C7BA' /%3E%3Cstop offset='1' stop-color='%238E61D9' /%3E%3C/linearGradient%3E%3ClinearGradient id='k-arm' x1='75' y1='20' x2='40' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E6EBF2' /%3E%3Cstop offset='1' stop-color='%23BFCDE0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='25' y='20' width='16' height='60' fill='url(%23k-stem)' /%3E%3Cpath d='M75 20L41 50L75 80H55L31 50L55 20H75Z' fill='url(%23k-arm)' /%3E%3C/svg%3E">
-  <meta property="og:title" content="【2026】iPhone 注音選字不準、亂跳怎麼解？原生排查與第三方替代推薦 — Keyly">
-  <meta property="og:description" content="受夠 iPhone 內建注音永遠選不對字、越打越氣？先試系統重置與鍵盤辭典修正，若依舊難用，盤點真正懂繁體中文邏輯的第三方注音輸入替代解方！">
+  <meta property="og:title" content="iPhone 選字亂跳、自動選字怎麼關？注音選字不準的 7 個檢查 — Keyly">
+  <meta property="og:description" content="iPhone 注音沒有單獨的「自動選字」開關，選字亂跳可先從自動修正、預測字詞、滑動輸入交叉測試。照 7 個檢查依序排除，最後才重置鍵盤辭典；還是不順手再考慮第三方注音鍵盤。">
   <meta property="og:url" content="https://keylyapp.com/guides/iphone-zhuyin-selection-fixes/">
-  <meta property="og:image" content="https://keylyapp.com/assets/images/og-banner.png">
+  <meta property="og:image" content="https://keylyapp.com/assets/images/og/iphone-zhuyin-selection-fixes.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:type" content="article">
@@ -20,16 +20,58 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "【2026】iPhone 注音選字不準、亂跳怎麼解？原生排查與第三方替代推薦 — Keyly",
-    "description": "受夠 iPhone 內建注音永遠選不對字、越打越氣？先試系統重置與鍵盤辭典修正，若依舊難用，盤點真正懂繁體中文邏輯的第三方注音輸入替代解方！",
-    "inLanguage": "zh-Hant-TW",
-    "datePublished": "2026-08-11",
-    "dateModified": "2026-08-18",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Keyly"
-    }
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "iPhone 選字亂跳、注音選字不準？先做這 7 個檢查",
+        "name": "iPhone 選字亂跳、自動選字怎麼關？注音選字不準的 7 個檢查 — Keyly",
+        "description": "iPhone 注音沒有單獨的「自動選字」開關，選字亂跳可先從自動修正、預測字詞、滑動輸入交叉測試。照 7 個檢查依序排除，最後才重置鍵盤辭典；還是不順手再考慮第三方注音鍵盤。",
+        "inLanguage": "zh-Hant-TW",
+        "datePublished": "2026-08-11",
+        "dateModified": "2026-10-14",
+        "image": "https://keylyapp.com/assets/images/og/iphone-zhuyin-selection-fixes.png",
+        "mainEntityOfPage": "https://keylyapp.com/guides/iphone-zhuyin-selection-fixes/",
+        "author": {
+          "@type": "Organization",
+          "name": "Keyly 團隊",
+          "url": "https://keylyapp.com/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Keyly",
+          "url": "https://keylyapp.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://keylyapp.com/assets/images/logo-512.png",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Keyly",
+            "item": "https://keylyapp.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "使用指南",
+            "item": "https://keylyapp.com/guides/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "注音選字不準的檢查方法",
+            "item": "https://keylyapp.com/guides/iphone-zhuyin-selection-fixes/"
+          }
+        ]
+      }
+    ]
   }
   </script>
   <!-- Google tag (gtag.js) -->
@@ -784,10 +826,11 @@
 
     <div class="page-header">
       <h1>iPhone 選字亂跳、注音選字不準？先做這 7 個檢查</h1>
-      <p class="page-meta">更新日期：2026 年 8 月 18 日</p>
+      <p class="page-meta">更新日期：2026 年 10 月 14 日 · 作者：Keyly 團隊</p>
     </div>
 
     <div class="legal-content">
+      <p><strong>找「自動選字」開關？</strong>iPhone 的鍵盤設定裡沒有叫做「自動選字」的開關。最接近、而且可以隨時開關復原的是「自動修正」與「預測字詞」，適合先拿來交叉測試，做法在下方方法三。</p>
       <div class="summary-box">
         <p><strong>30 秒排查順序</strong>——由影響最小、最容易復原的步驟開始：</p>
         <ol>
@@ -882,6 +925,7 @@
       <p>來源：<a href="https://applealmond.com/posts/236097" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_applealmond_slideinput','applealmond.com')">蘋果仁：iOS 18 新功能，打注音也能滑動輸入</a>、<a href="https://mrmad.com.tw/iphone-slide-to-enter-phonetic-notation" target="_blank" rel="noopener noreferrer" onclick="trackLink('source_mrmad_slideinput','mrmad.com.tw')">瘋先生：iPhone 滑動輸入注音怎麼用</a></p>
 
       <h2>方法三｜檢查自動修正與預測字詞</h2>
+      <p>很多人會搜尋「iPhone 自動選字關閉」，但 iOS 並沒有這個名稱的設定；想關掉的通常是下面這兩項。</p>
       <p>依 Apple 官方說明，<strong>「自動修正」會使用鍵盤辭典來檢查你輸入的內容</strong>並自動修正。「預測字詞」則會依你過去的對話、書寫風格，甚至你在 Safari 造訪過的網站，顯示接下來可能輸入的字詞選項。Apple 沒有說明這兩項與注音候選字的排序之間有什麼關係，本文也不做這個推論；把它們列在這裡的用意，是它們都是<strong>可以隨時開關、隨時復原</strong>的設定，適合拿來做交叉測試，先確認你的狀況跟它們有沒有關。</p>
 
       <h3>開啟或關閉「自動修正」</h3>
