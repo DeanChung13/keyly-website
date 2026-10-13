@@ -414,8 +414,8 @@ function CustomPromptsFilm({ locale = "zh" }) {
             poster: `/videos/${basename}.jpg`,
             "aria-label": isEn ? "Keyly Custom Prompt Demo" : "Keyly 自訂指令示範",
             children: [
-              /* @__PURE__ */ jsx("source", { src: `/videos/${basename}.webm`, type: "video/webm" }),
-              /* @__PURE__ */ jsx("source", { src: `/videos/${basename}.mp4`, type: "video/mp4" })
+              /* @__PURE__ */ jsx("source", { src: `/videos/${basename}.mp4`, type: "video/mp4" }),
+              /* @__PURE__ */ jsx("source", { src: `/videos/${basename}.webm`, type: "video/webm" })
             ]
           }
         ),
