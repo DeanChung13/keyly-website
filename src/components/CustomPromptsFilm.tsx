@@ -60,8 +60,9 @@ export default function CustomPromptsFilm({ locale = 'zh' }: { locale?: 'zh' | '
           poster={`/videos/${basename}.jpg`}
           aria-label={isEn ? 'Keyly Custom Prompt Demo' : 'Keyly 自訂指令示範'}
         >
-          <source src={`/videos/${basename}.webm`} type="video/webm" />
+          {/* mp4 檔案比 webm 小（814 KB vs 1.1 MB），放前面讓瀏覽器優先選它 */}
           <source src={`/videos/${basename}.mp4`} type="video/mp4" />
+          <source src={`/videos/${basename}.webm`} type="video/webm" />
         </video>
         
         {/* 參考 mimic-website 的 FilmVideo：白色膠囊＋品牌色圓形圖示＋文字 */}
