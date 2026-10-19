@@ -32,3 +32,6 @@ yarn-error.log*
 .AppleDouble
 .LSOverride
 Icon
+
+# SSR build output
+dist-ssr/
