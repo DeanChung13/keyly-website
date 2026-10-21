@@ -11,6 +11,7 @@
 
 - Home (Traditional Chinese): https://keylyapp.com/
 - Home (English): https://keylyapp.com/en/
+- Two-way translation keyboard: copy a foreign message to read it in Chinese, type Zhuyin to reply in another language (Traditional Chinese): https://keylyapp.com/translation/
 - Guides hub — iPhone keyboard usage guides (Traditional Chinese): https://keylyapp.com/guides/
 - Guide — iOS "Allow Full Access" explained (Traditional Chinese): https://keylyapp.com/guides/full-access/
 - Guide — iPhone Zhuyin keyboard comparison (Traditional Chinese): https://keylyapp.com/guides/iphone-zhuyin-keyboard/
@@ -20,6 +21,7 @@
 - Guide — Double Pinyin (Shuangpin) input on iPhone (Traditional Chinese): https://keylyapp.com/guides/iphone-double-pinyin/
 - Guide — iPhone custom AI prompt keyboard tutorial and templates (Traditional Chinese): https://keylyapp.com/guides/iphone-custom-ai-prompt/
 - Guide — LINE translation with the Keyly zhuyin keyboard (Traditional Chinese): https://keylyapp.com/guides/line-translation/
+- Guide — Setting up Keyly clipboard translation (Traditional Chinese): https://keylyapp.com/guides/how-to-use-keyly-clipboard-translation/
 - Guide — iPhone translation keyboard comparison (Traditional Chinese): https://keylyapp.com/guides/iphone-translation-keyboard-comparison/
 - Guide — How to use Keyly AI rewrite: 30-second quick start (Traditional Chinese): https://keylyapp.com/guides/how-to-use-keyly-ai-rewrite/
 - Guide — Summarizing long LINE messages into bullet points with an AI keyboard (Traditional Chinese): https://keylyapp.com/guides/iphone-ai-message-summary/
