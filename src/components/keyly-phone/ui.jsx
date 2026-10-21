@@ -91,12 +91,14 @@ function Key({value, pressed, aiState, width, layout}) {
 }
 
 // 候選列 44pt、鍵區 221pt；五排使用 Keyly 的原始鍵序與底排寬度權重。
-export function Keyboard({pressed, candidates = [], pickedIndex = 0, aiState = 'idle', idlePrompt = '', layout = 'zhuyin', children, className = ''}) {
+// top：放在候選列上方（例如剪貼簿翻譯卡）；chips：閒置列的指令 pill，suggested 為排到最前面的建議指令，tapped 為正被點的那一顆
+export function Keyboard({pressed, candidates = [], pickedIndex = 0, aiState = 'idle', idlePrompt = '', layout = 'zhuyin', top = null, chips = null, suggested = null, tapped = null, children = null, className = ''}) {
   const rows = layout === 'qwerty' ? QWERTY_ROWS : ZHUYIN_ROWS;
   return <div className={`k-keyboard k-layout-${layout} ${className}`}>
+    {top}
     <div className="k-candidate-bar">
       <div className="k-candidate-scroll">
-        {candidates.length ? candidates.map((candidate, index) => <span key={`${candidate}-${index}`} className={`k-candidate ${index === pickedIndex ? 'k-picked' : ''}`}>{candidate}</span>) : (idlePrompt && <span className="k-idle-prompt">{idlePrompt}</span>)}
+        {candidates.length ? candidates.map((candidate, index) => <span key={`${candidate}-${index}`} className={`k-candidate ${index === pickedIndex ? 'k-picked' : ''}`}>{candidate}</span>) : chips ? chips.map((chip) => <span key={chip} className={`k-chip ${chip === suggested ? 'k-chip-suggested' : ''} ${chip === tapped ? 'k-chip-tapped' : ''}`}>{chip === suggested && <i className="k-chip-dot"/>}{chip}</span>) : (idlePrompt && <span className="k-idle-prompt">{idlePrompt}</span>)}
       </div>
       {candidates.length > 0 && <span className="k-candidate-expand"><Icon name="chevron" size={17}/></span>}
     </div>
@@ -116,6 +118,17 @@ export function PromptPicker({items = [], selected, className = ''}) {
   return <div className={`k-prompt-picker ${className}`}>
     <div className="k-prompt-scroll">
       {items.map((item, index) => <span key={`${item}-${index}`} className={`k-prompt-item ${item === selected ? 'k-selected' : ''}`}>{item}</span>)}
+    </div>
+  </div>;
+}
+
+// 剪貼簿翻譯卡：依 2026-10-22 實機截圖（LINE、基本翻譯）——引擎標籤、✕、譯文、免責聲明與「翻得更自然」
+export function TranslationCard({badge = '基本翻譯', text = '', className = ''}) {
+  return <div className={`k-tcard-wrap ${className}`}>
+    <div className="k-tcard">
+      <div className="k-tcard-head"><span className="k-tcard-badge">{badge}</span><span className="k-tcard-close" aria-hidden="true">✕</span></div>
+      <p className="k-tcard-text">{text}</p>
+      <div className="k-tcard-foot"><span className="k-tcard-note">AI 翻譯，僅供參考</span><span className="k-tcard-retry"><Icon name="sparkles" size={18}/>翻得更自然</span></div>
     </div>
   </div>;
 }

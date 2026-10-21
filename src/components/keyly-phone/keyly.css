@@ -95,3 +95,18 @@
 .k-theme-line .k-chat-messages{background:#8CABD9}
 .k-theme-line .k-from-me .k-message{background:#85E36B;color:#111}
 .k-theme-line .k-from-them .k-message{background:#fff;color:#111}
+
+/* 剪貼簿翻譯卡與閒置列指令 pill（依實機截圖量測，440pt 螢幕） */
+.k-tcard-wrap{padding:10px 10px 4px}
+.k-tcard{background:#fff;border-radius:14px;padding:9px 12px 8px;box-shadow:0 1px 2px #0000000f}
+.k-tcard-head{display:flex;align-items:center;justify-content:space-between}
+.k-tcard-badge{font-size:12px;font-weight:600;line-height:20px;padding:0 8px;border-radius:7px;background:#E3F6E8;color:#34A853}
+.k-tcard-close{width:26px;height:26px;border-radius:13px;display:grid;place-items:center;background:#EDEEF1;color:#55565c;font-size:13px}
+.k-tcard-text{margin:6px 0 4px;font-size:17px;line-height:1.45;font-weight:500;color:#111}
+.k-tcard-foot{display:flex;align-items:center;justify-content:space-between}
+.k-tcard-note{font-size:11px;color:#9a9ba1}
+.k-tcard-retry{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:15px;background:#E4F1F8;color:#2F86B8;font-size:14px;font-weight:600}
+.k-chip{flex:none;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 13px;border-radius:17px;background:#F3F3F5;color:#111;font-size:15px;font-weight:500;transition:background .1s}
+.k-chip-dot{width:8px;height:8px;border-radius:4px;background:#5B5BF0}
+.k-chip-suggested{background:#fff;box-shadow:0 1px 0 #b5bcc650}
+.k-chip-tapped{background:#C9D8F5}

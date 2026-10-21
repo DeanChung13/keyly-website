@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, Zap, Globe, User, ChevronRight, Keyboard, Smartphone, Download, Menu, X, Wand2, Feather, Command, ShieldCheck, ChevronDown, Star , Repeat } from 'lucide-react';
 import HeroFilm from './components/HeroFilm';
+import TranslationFilm from './components/TranslationFilm';
 import CustomPromptsFilm from './components/CustomPromptsFilm';
 import { DOWNLOAD_URL } from './appStoreLink';
 
@@ -186,30 +187,57 @@ function Hero() {
               transition={{ duration: 0.5 }}
             >
               <div className="text-sm font-semibold tracking-[0.08em] text-text-secondary/80 mb-4">
-                台灣團隊打造 · iOS 注音輸入體驗
+                台灣團隊打造 · iPhone 注音雙向翻譯鍵盤
               </div>
               <h1 className="font-black text-text-primary leading-tight mb-6">
-                <span className="block text-2xl lg:text-3xl xl:text-4xl mb-2">iPhone 注音鍵盤</span>
+                <span className="block text-2xl lg:text-3xl xl:text-4xl mb-2 text-text-secondary">iPhone 翻譯鍵盤</span>
                 <span className="block text-5xl lg:text-5xl xl:text-6xl">
-                  指尖上的 AI 智慧，<br />
+                  用注音打中文，<br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">
-                    文字轉化一鍵完成
+                    跟任何國家的人聊天
                   </span>
                 </span>
               </h1>
               <p className="text-base lg:text-lg text-text-secondary/90 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                為 iPhone 與 iPad 的繁體中文使用者打造的注音輸入法。核心是注音輸入與選字，離線就能使用。AI 分兩種：雲端 AI 的潤飾、翻譯與改寫需要網路；在支援 Apple 裝置端 AI 框架的機型上，另有可離線使用的基礎修正。
+                對方傳任何語言，複製就自動翻譯；你用注音打中文，一鍵翻成對方的語言送出。LINE、IG、WhatsApp 都不用切換 App。注音輸入永久免費，離線也能順暢打字。
               </p>
 
               <div className="mt-8">
                 <DownloadCTA />
-                <a
-                  href="/guides/iphone-zhuyin-keyboard/"
-                  onClick={() => trackLinkClick('home_hero_zhuyin_comparison', '/guides/iphone-zhuyin-keyboard/')}
-                  className="inline-flex items-center mt-5 text-sm font-medium text-text-secondary hover:text-brand-cyan underline underline-offset-4 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md"
-                >
-                  還在比較？查看 iPhone 注音鍵盤推薦與功能比較
-                </a>
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-6 text-sm font-medium text-text-secondary">
+                  <a
+                    href="/translation/"
+                    onClick={() => trackLinkClick('hero_translation_hub', '/translation/')}
+                    className="text-brand-cyan hover:underline inline-flex items-center gap-1 font-semibold"
+                  >
+                    了解雙向翻譯功能 <ChevronRight className="w-4 h-4" />
+                  </a>
+                  <span className="text-metal-gray/50">·</span>
+                  <a
+                    href="/guides/line-translation/"
+                    onClick={() => trackLinkClick('home_hero_line_guide', '/guides/line-translation/')}
+                    className="hover:text-text-primary transition-colors"
+                  >
+                    LINE 翻譯教學
+                  </a>
+                  <span className="text-metal-gray/50">·</span>
+                  <a
+                    href="/guides/iphone-translation-keyboard-comparison/"
+                    onClick={() => trackLinkClick('home_hero_translation_comparison', '/guides/iphone-translation-keyboard-comparison/')}
+                    className="hover:text-text-primary transition-colors"
+                  >
+                    6 款翻譯鍵盤評測
+                  </a>
+                </div>
+                <div className="mt-3">
+                  <a
+                    href="/guides/iphone-zhuyin-keyboard/"
+                    onClick={() => trackLinkClick('home_hero_zhuyin_comparison', '/guides/iphone-zhuyin-keyboard/')}
+                    className="inline-flex items-center text-sm font-medium text-text-secondary hover:text-brand-cyan underline underline-offset-4 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-md"
+                  >
+                    還在比較？查看 iPhone 注音鍵盤推薦與功能比較
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -225,7 +253,7 @@ function Hero() {
               {/* Decorative blobs */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-brand-cyan/30 to-brand-purple/30 rounded-full blur-3xl -z-10 opacity-50"></div>
 
-              <HeroFilm />
+              <TranslationFilm />
             </motion.div>
           </div>
         </div>
@@ -299,24 +327,24 @@ function CustomPrompts() {
 function Features() {
   const features = [
     {
-      icon: <Wand2 className="w-6 h-6 text-brand-cyan" />,
-      title: "專屬你的文字濾鏡",
-      description: "情書、隨手抒發或商業報告，先把草稿打出來，再套用你設定的 AI 濾鏡調整語氣。這一層是選用的：離線時鍵盤照常運作，連上網路才會使用雲端模型。"
+      icon: <Globe className="w-6 h-6 text-brand-cyan" />,
+      title: "雙向無縫跨國翻譯",
+      description: "外國朋友傳訊息來，複製就看懂；你用熟悉的注音打字，一鍵翻成外語直接送出。支援看懂 17 種語言，LINE、IG、WhatsApp 都不用切換 App。"
     },
     {
-      icon: <Feather className="w-6 h-6 text-brand-purple" />,
+      icon: <Wand2 className="w-6 h-6 text-brand-purple" />,
+      title: "翻譯之外，把話說好",
+      description: "情書、隨手抒發或商業報告，先把草稿打出來，再套用你設定的 AI 濾鏡調整語氣。離線時鍵盤照常運作，連上網路即可使用雲端頂尖模型。"
+    },
+    {
+      icon: <Feather className="w-6 h-6 text-accent-mint" />,
       title: "為打字手感調校的注音引擎",
-      description: "我們自行開發注音引擎，並針對第三方鍵盤的反應速度調校觸控邊界與震動回饋。目標是讓連續輸入不卡頓，尤其在盲打時。"
-    },
-    {
-      icon: <Command className="w-6 h-6 text-accent-mint" />,
-      title: "隨打即用的智慧快捷",
-      description: "除了挑錯字，你可以自訂專屬的「AI 指令」：翻譯外文、精簡長段落，或把一句話改寫成得體的說法，單手一滑就能叫出來。"
+      description: "我們自行開發原生注音引擎，並針對第三方鍵盤的反應速度調校觸控邊界與震動回饋。目標是讓連續輸入不卡頓，盲打也得心應手。"
     },
     {
       icon: <ShieldCheck className="w-6 h-6 text-brand-cyan" />,
-      title: "高規格隱私防線",
-      description: "您的對話隱私是我們的核心使命。Keyly 採用「最小化與必要性」原則，僅在提供服務所需範圍內處理資料，原則上不作不必要的長期保存；若因法令義務、安全防護或交易驗證需要，才會在必要期間內保留部分資料。我們嚴格遵守 Apple 隱私規範，不監控、不側錄，亦不將您的私人數據用於模型訓練。"
+      title: "本機優先的隱私防線",
+      description: "剪貼簿辨識完全在 iPhone 本機進行，純數字、沒有空格的密碼與驗證碼、網址與電話號碼自動略過不翻譯。剪貼簿原文與譯文僅暫存於手機記憶體，鍵盤收起立即清除；Keyly 不會在自身的伺服器保存您的對話內容。"
     }
   ];
 
@@ -324,7 +352,7 @@ function Features() {
     <section id="features" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-text-primary">Keyly 這套 iPhone 注音輸入法怎麼運作？</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-text-primary">雙向翻譯與 AI 寫作，Keyly 怎麼運作？</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -356,20 +384,28 @@ function Features() {
 function FAQSection() {
   const faqs = [
     {
+      question: "Keyly 會自動讀剪貼簿，會不會讀到我的密碼或私訊？",
+      answer: "只有在 Keyly 鍵盤開著時才會讀取剪貼簿，且 iOS 會先詢問是否「允許貼上」，沒點允許就讀不到（您也可以在 iOS「設定 › App › Keyly › 從其他 App 貼上」設為永遠允許，即可省去每次彈窗）。Keyly 本機內建過濾機制，純數字、沒有空格的密碼與驗證碼、網址與電話號碼都不會被翻譯或送出。剪貼簿原文與譯文僅暫存於手機記憶體，鍵盤收起立即清除；在 iOS 26 以上預設於 iPhone 本機完成翻譯，原文不離開手機；若使用雲端 AI 翻譯，Keyly 亦不會在自身伺服器保存內容。"
+    },
+    {
+      question: "看懂對方傳來的訊息，會扣 30 次 AI 額度嗎？",
+      answer: "在支援本機翻譯的機型（iOS 26+）上看懂對方不扣額度；iOS 18～25 若使用雲端翻譯，則與 AI 改寫共用雲端額度。30 次雲端額度用完後，注音輸入與本機看懂對方的訊息依然永久免費可用，額度用完也絕不會鎖住你的打字鍵盤。"
+    },
+    {
       question: "如果不常用 AI，單純當作一般鍵盤好用嗎？",
       answer: "可以。Keyly 的核心就是注音輸入本身，AI 是額外那一層。即使離線或完全不使用 AI，注音輸入、選字與自訂詞都照常運作，不需要開啟任何連網功能。"
     },
     {
       question: "Keyly 鍵盤支援哪些語言？",
-      answer: "主要是繁體中文（注音），並支援中英混合輸入。翻譯與潤飾則由 AI 功能處理，需要連線。（註：AI 生成內容僅供參考，請於正式場合自行核實。）"
+      answer: "打字為繁體中文（注音），並支援中英混合輸入。翻譯支援英文、日文、韓文、越南文、印尼文、西班牙文、法文、德文等 17 種主流語言（基本翻譯支援語言以 iOS 為準，雲端 AI 翻譯支援更多）。AI 生成內容僅供參考。"
     },
     {
       question: "為什麼安裝時需要開啟「允許完全取用」權限？",
       answer: (
         <div className="space-y-3">
-          <p>這是開啟 AI 魔法的技術門票！受限於 iOS 安全機制，第三方鍵盤必須取得此權限，才能透過網路與雲端 AI 引擎連線以提供潤飾服務。</p>
-          <p><strong>如果不開啟也沒關係：</strong>注音輸入引擎不需要這個權限，選字、自訂詞與日常打字都能照常使用。另外，在支援 Apple 裝置端 AI 框架的機型上，基礎的裝置端 AI 修正也不需要連網，該功能處理的內容留在裝置上。</p>
-          <p><strong>若您選擇開啟：</strong>我們採取最小化資料原則，僅在您主動觸發 AI 功能時處理必要內容。資料以即時處理為主，並在技術與營運可行範圍內縮短保存時間；如涉及法令遵循、安全防護或交易驗證需求，可能於必要期間保留部分紀錄。Keyly 嚴格遵守 Apple 規範，不監控、不側錄您的私人對話。</p>
+          <p>這是開啟 AI 潤飾與剪貼簿翻譯的技術門票！受限於 iOS 安全機制，第三方鍵盤必須取得完全取用權限，才能讀取您複製的訊息並提供剪貼簿翻譯，或透過網路連線雲端 AI 服務。</p>
+          <p><strong>如果不開啟也沒關係：</strong>注音輸入引擎不需要這個權限，選字、自訂詞與日常打字都能永久離線使用。另外，在支援 Apple 裝置端 AI 框架的機型上，基礎的裝置端文字修正也不需要連網，該功能處理的內容留在裝置上（剪貼簿翻譯仍需完全取用以讀取文字，基本翻譯首次使用時需下載語言資料）。</p>
+          <p><strong>若您選擇開啟：</strong>我們採取最小化資料原則，僅在您主動觸發 AI 功能或複製訊息時即時處理。Keyly 嚴格遵守 Apple 規範，不監控、不側錄您的私人對話，密碼與驗證碼亦會自動略過。</p>
           <p>
             <a href="/guides/full-access/" className="text-brand-cyan underline underline-offset-4 hover:text-accent-mint">
               延伸閱讀：「允許完全取用」到底開放了什麼？安全嗎？
@@ -399,12 +435,12 @@ function FAQSection() {
       answer: (
         <div className="space-y-4">
           <p>
-              <strong>一般用戶（免費下載）：</strong><br />
-            免費下載即可使用注音引擎、完整標準指令庫，並在新登入帳號時一次性獲得 30 次雲端 AI 魔法額度。
+            <strong>一般用戶（免費下載）：</strong><br />
+            免費下載即可永久使用極速注音引擎、完整標準指令庫與自訂指令管理，並在新登入帳號時一次性獲得 30 次雲端 AI 額度。
           </p>
           <p>
             <strong>Keyly Pro 訂閱（月訂 NT$150，年訂 NT$1,190，年訂可免費試用 3 天）：</strong><br />
-            專為高頻率專業人士打造。徹底解鎖無限次雲端 AI 運算，並獨享「AI 指令管理員」，支援自定義指令的新增、編輯與收藏，讓 AI 貼近你的使用習慣。
+            專為高頻率專業人士打造。解鎖不限次數的雲端 AI 運算（設有防濫用頻率保護），享有專屬連線特權，優先對接全球頂尖模型，讓回覆翻譯與文字潤飾更自然流暢。
           </p>
         </div>
       )
