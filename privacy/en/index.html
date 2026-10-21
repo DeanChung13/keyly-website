@@ -263,18 +263,19 @@
   <div class="page-wrapper">
     <div class="page-header">
       <h1>Privacy Policy</h1>
-      <p class="page-meta">Last updated: October 14, 2026</p>
+      <p class="page-meta">Last updated: October 21, 2026</p>
     </div>
 
     <div class="summary-card">
-      💡 <strong>Summary:</strong> Keyly processes data only to provide account, subscription, and cloud AI features that you actively use. We do not automatically upload your everyday typing just because you installed or use the keyboard.
+      💡 <strong>Summary:</strong> Keyly processes data only to provide account, subscription, and cloud AI features (such as text rewrites and cloud AI translation) that you actively trigger or enable. We do not automatically upload your everyday typing or clipboard contents just because you installed or use the keyboard.
     </div>
 
     <div class="legal-content">
       <h2>1. Overview</h2>
-      <p>Keyly is an iOS third-party keyboard and AI-assisted writing app. It includes an on-device typing experience, a Sign in with Apple account system, optional cloud AI features, and subscription and quota management.</p>
-      <p>We follow a data minimization approach. We do not collect keyboard input for advertising, and we do not upload ordinary typing content to our servers unless you actively use a feature that requires it. When you use account, subscription, or cloud AI features, we do process the data needed to provide those services.</p>
-      <p>If you do not use account, billing, or cloud AI features, most of the Keyly typing and settings experience can remain on-device.</p>
+      <p>Keyly is an iOS third-party keyboard and AI-assisted writing app. It includes an on-device typing experience, a Sign in with Apple account system, clipboard translation capabilities, optional cloud AI features, and subscription and quota management.</p>
+      <p>To provide full writing assistance and clipboard translation, you need to enable "Allow Full Access" in iOS settings. We promise that enabling this permission is strictly for synchronizing settings between the app and the keyboard extension, reading the clipboard to detect foreign text, and transmitting data for cloud AI features when requested.</p>
+      <p>We follow a data minimization approach. We do not collect keyboard input for advertising, and we do not upload ordinary typing or clipboard content to our servers without your explicit action or configured opt-in. When you use account, subscription, or cloud AI features, we process only the de-identified data needed to provide those services.</p>
+      <p>If you do not use account, billing, or cloud AI features, most of Keyly's typing, settings, and built-in basic offline translation can remain completely on-device.</p>
 
       <h2>1.1 Service Market and Data Controller</h2>
       <p>Keyly is currently operated primarily for the Taiwan market. Our data-handling practices are mainly aligned with the laws of the Republic of China (Taiwan) and Apple platform requirements.</p>
@@ -297,25 +298,33 @@
       <p>If you purchase a Keyly subscription or quota package, we may process transaction information needed for App Store verification, your current subscription status and renewal timing, and AI quota-related records.</p>
 
       <h3>2.3 Cloud AI Request Data</h3>
-      <p>When you actively use a cloud AI feature, the system processes the text you submit and the request context needed to generate a result. To protect your privacy:</p>
+      <p>When you use cloud AI features (including AI writing rewrites and cloud AI translation), the system processes the submitted text and the request context needed to generate a result:</p>
       <ul>
+        <li><strong>AI Writing Rewrites:</strong> When you type or select text and tap the AI rewrite button, the specified text is sent to cloud AI for processing.</li>
+        <li><strong>AI Translation:</strong> If you enable "Always use AI translation" with auto-translate turned on in settings, the keyboard sends copied foreign text to cloud AI when detected; or when you manually tap "✨ Make it more natural" on a translation card, that text is submitted for re-translation.</li>
         <li><strong>Anonymization:</strong> We strive to remove personally identifiable information from requests before sending them to cloud AI processing engines.</li>
-        <li><strong>Usage Restrictions:</strong> This data is used only when you explicitly trigger cloud AI functionality, is not retained as general keyboard behavior tracking data, and is not used to train third-party AI models.</li>
+        <li><strong>Usage Restrictions & No Stored Content:</strong> This data is processed solely for the duration of fulfilling the request. We do not store your submitted text or translation outputs in our databases, and we do not use your inputs to train third-party AI models.</li>
       </ul>
-      <p>If you use only local features or on-device AI modes, the related content does not need to go through the cloud AI path.</p>
+      <p>If you use Apple's built-in "Basic translation" on supported devices (iOS 26+), all translation runs entirely on-device and clipboard text never leaves your phone. Similarly, on-device local AI rewrite modes process text entirely locally.</p>
 
+      <h3>2.4 Clipboard Data</h3>
+      <p>When clipboard translation is enabled and Full Access is granted in iOS settings, the Keyly keyboard reads clipboard text upon opening to detect whether it contains a foreign-language message requiring translation:</p>
+      <ul>
+        <li><strong>Local In-Memory Evaluation:</strong> Clipboard text is evaluated in memory on your device. Unless you have configured cloud AI translation or manually tap to re-translate via cloud AI, clipboard contents are never uploaded to any server. We never store your clipboard text on servers or databases.</li>
+        <li><strong>Full User Control:</strong> You can disable "Auto-translate copied text" at any time in Keyly settings, or select 100% on-device "Basic translation" (iOS 26+).</li>
+      </ul>
 
-      <h3>2.4 Local Settings and Personalization Data</h3>
+      <h3>2.5 Local Settings and Personalization Data</h3>
       <p>Keyly stores necessary local data on your device, such as keyboard and AI preferences, settings shared between the app and the keyboard extension, personal dictionary or learning results, and local caches and session state.</p>
 
-      <h3>2.5 Diagnostics, Analytics, and Remote Configuration Data</h3>
-      <p>Keyly currently uses Firebase Analytics, Firebase Remote Config, and Supabase to support product operations. These services may process data related to product behavior, feature flags, reliability, diagnostics, or service security. We do not send keyboard text content as general analytics events.</p>
+      <h3>2.6 Diagnostics, Analytics, and Remote Configuration Data</h3>
+      <p>Keyly currently uses Firebase Analytics, Firebase Remote Config, and Supabase to support product operations. These services may process data related to product behavior, feature flags, reliability, diagnostics, or service security. We do not send keyboard text content or clipboard text as general analytics events.</p>
 
       <h2>3. How We Use Data</h2>
       <ul>
         <li>To create and maintain your account</li>
         <li>To verify session state and protect account security</li>
-        <li>To provide cloud AI features</li>
+        <li>To provide cloud AI text rewrites and cloud AI translation</li>
         <li>To verify subscription, quota, and payment entitlements</li>
         <li>To store your settings and personalization preferences</li>
         <li>To prevent abuse, keep the service reliable, and troubleshoot problems</li>
@@ -325,19 +334,20 @@
       <h2>4. What We Do Not Do</h2>
       <ul>
         <li>We do not sell your personal data for advertising purposes</li>
-        <li>We do not collect keyboard input as general tracking data without your action</li>
-        <li>We do not automatically upload everything you type just because you installed the keyboard</li>
+        <li>We do not collect keyboard input or clipboard text as general tracking data without your action or configuration</li>
+        <li>We do not automatically upload everything you type or copy just because you installed the keyboard</li>
+        <li>We do not store your typing history, original texts, or clipboard contents on our servers</li>
         <li><strong>We never access or upload sensitive identity information such as credit card numbers, passwords, or addresses without permission.</strong></li>
       </ul>
 
       <h2>5. Third-Party Services</h2>
       <p>Keyly may use the following third-party services or platforms to process necessary data:</p>
       <ul>
-        <li>Apple: sign-in, App Store subscriptions, and transaction flows</li>
+        <li>Apple: sign-in, App Store subscriptions, transaction flows, and on-device built-in translation engine for iOS 26+ (runs offline on-device, without server processing)</li>
         <li>Supabase: accounts, database, edge functions, and related backend capabilities</li>
         <li>Firebase: analytics and remote configuration</li>
-        <li>Anthropic (Claude): primary cloud AI provider that processes the text you submit, only when you actively use cloud AI features</li>
-        <li>Google (Gemini): backup cloud AI provider, used for the same requests only when the primary provider is unavailable</li>
+        <li>Anthropic (Claude): primary cloud AI provider for writing assistance rewrites, processing submitted text only when you use AI rewrite features</li>
+        <li>Google (Gemini): cloud AI translation provider, and backup provider for writing assistance rewrites</li>
         <li>Cloudflare: hosts the Keyly API that relays cloud AI requests</li>
       </ul>
       <p>Each third-party service handles data under its own policies and practices.</p>
