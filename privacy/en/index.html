@@ -263,7 +263,7 @@
   <div class="page-wrapper">
     <div class="page-header">
       <h1>Privacy Policy</h1>
-      <p class="page-meta">Last updated: October 21, 2026</p>
+      <p class="page-meta">Last updated: October 22, 2026</p>
     </div>
 
     <div class="summary-card">
@@ -301,17 +301,22 @@
       <p>When you use cloud AI features (including AI writing rewrites and cloud AI translation), the system processes the submitted text and the request context needed to generate a result:</p>
       <ul>
         <li><strong>AI Writing Rewrites:</strong> When you type or select text and tap the AI rewrite button, the specified text is sent to cloud AI for processing.</li>
-        <li><strong>AI Translation:</strong> If you enable "Always use AI translation" with auto-translate turned on in settings, the keyboard sends copied foreign text to cloud AI when detected; or when you manually tap "✨ Make it more natural" on a translation card, that text is submitted for re-translation.</li>
+        <li><strong>AI Translation:</strong> Clipboard translation offers two methods: "Basic translation" and "AI translation." The keyboard sends detected foreign text to cloud AI in the following cases: (1) your device runs a version earlier than iOS 26, where Basic translation is unavailable and AI translation is the default; (2) you select "Always use AI translation" in settings; or (3) you tap "✨ Make it more natural" on a translation card to re-translate that message with AI. Only the foreign text and the settings needed to produce the translation (such as the target language) are sent.</li>
         <li><strong>Anonymization:</strong> We strive to remove personally identifiable information from requests before sending them to cloud AI processing engines.</li>
         <li><strong>Usage Restrictions & No Stored Content:</strong> This data is processed solely for the duration of fulfilling the request. We do not store your submitted text or translation outputs in our databases, and we do not use your inputs to train third-party AI models.</li>
       </ul>
-      <p>If you use Apple's built-in "Basic translation" on supported devices (iOS 26+), all translation runs entirely on-device and clipboard text never leaves your phone. Similarly, on-device local AI rewrite modes process text entirely locally.</p>
+      <p>If you use "Basic translation" (Apple's on-device translation) on iOS 26 or later, translation happens on your device and clipboard text is not sent to Keyly or any third-party server; the translation data for a language must be downloaded before first use. On-device local AI rewrite mode processes text on your phone, but if Apple Intelligence is unavailable on your device, AI rewrites are processed by cloud AI instead.</p>
 
       <h3>2.4 Clipboard Data</h3>
-      <p>When clipboard translation is enabled and Full Access is granted in iOS settings, the Keyly keyboard reads clipboard text upon opening to detect whether it contains a foreign-language message requiring translation:</p>
+      <p>Clipboard translation requires Full Access to be granted in iOS settings. The Keyly keyboard accesses the clipboard as follows:</p>
       <ul>
-        <li><strong>Local In-Memory Evaluation:</strong> Clipboard text is evaluated in memory on your device. Unless you have configured cloud AI translation or manually tap to re-translate via cloud AI, clipboard contents are never uploaded to any server. We never store your clipboard text on servers or databases.</li>
-        <li><strong>Full User Control:</strong> You can disable "Auto-translate copied text" at any time in Keyly settings, or select 100% on-device "Basic translation" (iOS 26+).</li>
+        <li><strong>When "Auto-translate copied text" is off:</strong> the keyboard only checks whether the clipboard has new text and does not read its contents. The text is obtained and translated only when you tap the system "Paste" button on the keyboard.</li>
+        <li><strong>When "Auto-translate copied text" is on:</strong> the keyboard reads clipboard text once when it appears, and again if the clipboard changes while the keyboard is open. It does not read the clipboard while the keyboard is not shown. iOS may ask whether to "Allow Paste"; you can change this permission in Settings › Apps › Keyly › Paste from Other Apps. Without permission, Keyly cannot read the clipboard.</li>
+        <li><strong>On-Device Detection:</strong> Whether text is in a foreign language is determined on your device. URLs, phone numbers, digits-only text, single strings without spaces (such as most passwords and verification codes), and text not detected as a foreign language are neither translated nor sent.</li>
+        <li><strong>When Text Is Sent:</strong> Detected foreign text is sent to cloud AI only in the AI translation cases listed in Section 2.3.</li>
+        <li><strong>No Storage:</strong> Clipboard text and translations exist only in the keyboard's memory, are never written to device storage or logs, and are cleared when the keyboard is dismissed. Keyly does not store your clipboard contents or translations on its servers or databases; text sent to cloud AI providers is handled under the providers' data processing terms listed in Section 5.</li>
+        <li><strong>No Analytics or Advertising Use:</strong> Clipboard contents are never reported as analytics events or used for advertising.</li>
+        <li><strong>Your Control:</strong> You can turn off "Auto-translate copied text" or change the translation method in Keyly's Clipboard Translation settings at any time. If you turn off Full Access, Keyly cannot read the clipboard.</li>
       </ul>
 
       <h3>2.5 Local Settings and Personalization Data</h3>
@@ -343,7 +348,7 @@
       <h2>5. Third-Party Services</h2>
       <p>Keyly may use the following third-party services or platforms to process necessary data:</p>
       <ul>
-        <li>Apple: sign-in, App Store subscriptions, transaction flows, and on-device built-in translation engine for iOS 26+ (runs offline on-device, without server processing)</li>
+        <li>Apple: sign-in, App Store subscriptions, transaction flows, and on-device Basic translation engine on iOS 26 or later (processed on-device, without server processing)</li>
         <li>Supabase: accounts, database, edge functions, and related backend capabilities</li>
         <li>Firebase: analytics and remote configuration</li>
         <li>Anthropic (Claude): primary cloud AI provider for writing assistance rewrites, processing submitted text only when you use AI rewrite features</li>
