@@ -35,3 +35,6 @@ Icon
 
 # SSR build output
 dist-ssr/
+
+# Local Review Screenshots
+docs/screenshots/
