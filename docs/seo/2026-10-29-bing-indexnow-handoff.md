@@ -62,3 +62,24 @@
 
 - 照 MimicMic EXP-006 的方式，用 ChatGPT 訪客模式（不登入）固定問幾句跟 Keyly 有關的問題，例如「iPhone 注音輸入法推薦」，每兩週記錄一次 Keyly 有沒有被提到、描述對不對。
 - 官網 GA4 的 `sessionSourceMedium` 看 chatgpt.com 帶來的流量。
+
+## 執行結果（2026-10-29）
+
+### Bing Webmaster Tools
+
+- 從 Google Search Console 匯入成功，不需要 `BingSiteAuth.xml`。Google 只要求授權 Bing 唯讀存取 Search Console。受限使用者的權限沒有造成問題。
+- 提交 `https://keylyapp.com/sitemap.xml`，當天狀態為「Processing」，還沒發現任何網址。
+- URL Submission 送出 10 個網址，Bing 回覆成功，當天額度剩 90：`/`、`/en/`、`/translation/`、`/guides/`、`/guides/iphone-zhuyin-keyboard/`、`/guides/iphone-double-pinyin/`、`/guides/how-to-use-keyly-ai-rewrite/`、`/guides/full-access/`、`/guides/line-translation/`、`/guides/iphone-translation-keyboard-comparison/`。
+- 首頁 URL Inspection：已收錄，2026-05-02 被發現，最後爬取 2026-10-24 20:09，沒有標出 SEO 問題。
+
+### IndexNow
+
+- 金鑰：`7af3ecb02c6d7fea85cbe26b064c5476`，檔案 `public/7af3ecb02c6d7fea85cbe26b064c5476.txt`。
+- `scripts/indexnow.mjs` 從 mimic-website 複製，只改了金鑰和網域。`deploy.yml` 在 Cloudflare 部署後加上「Notify IndexNow」這一步。
+- 測試 `src/indexnow.test.ts` 確認 `public/` 裡的金鑰檔和腳本裡的金鑰一致。vitest 執行時沒有 `dist/`，所以讀 `public/`。
+- `public/_redirects` 只有 `/go/*`，不影響金鑰檔，沒有改。
+- commit `09c19cc`，已部署。GitHub Actions 紀錄為 `IndexNow: 202 for 25 URLs`，線上金鑰檔能正確打開。
+
+### 還沒確認的
+
+- 約 2026-10-31 回 Bing Webmaster Tools，確認 sitemap 已讀取、發現 25 個網址。
