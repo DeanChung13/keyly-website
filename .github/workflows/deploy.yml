@@ -33,3 +33,8 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist --project-name=keyly-website --branch=main
+
+      # The site is already live; a failed ping only means a slower recrawl.
+      - name: Notify IndexNow
+        continue-on-error: true
+        run: node scripts/indexnow.mjs
